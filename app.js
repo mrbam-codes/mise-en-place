@@ -17,7 +17,7 @@ const ORD=['First','Second','Third'];
 
 /* ---------- saved progress (this phone only) ---------- */
 const KEY='mep-v1',DAYRE=/^\d{4}-\d{2}-\d{2}$/;
-const fresh=()=>({days:{},areas:{},lessons:{},points:0,badges:{},review:[],prog:{},learned:{},sound:false});
+const fresh=()=>({days:{},areas:{},lessons:{},points:0,badges:{},review:[],prog:{},learned:{},sound:false,kimchi:{}});
 let S=(()=>{try{const s=JSON.parse(localStorage.getItem(KEY));return s&&s.days?Object.assign(fresh(),s):fresh()}catch(e){return fresh()}})();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 const LEVELS=[[0,'Commis'],[100,'Demi chef'],[300,'Chef de partie'],[600,'Sous chef'],[1000,'Head chef'],[1600,'Chef patron'],[2500,'Restaurateur']];
@@ -41,6 +41,25 @@ const BADGES=[
  ['back','Comeback','Clear a question you once got wrong',()=>!!S.cleared],
  ['p1','Floor ready','Finish the quizzes to day 73',()=>doneDays().some(d=>courseDay(d)>=73)]];
 function award(){const got=[];BADGES.forEach(([id,n,d,t])=>{if(!S.badges[id]&&t()){S.badges[id]=todayStr();got.push(n)}});return got}
+
+/* ---------- Kimchi (the kitten): a quiz reward and a daily hide-and-seek in one lesson ---------- */
+const K=()=>window.KIMCHI||null;
+/* which lesson he hides in: seeded by the date, never the first ticket, same all day */
+function kimchiAt(b){const n=(b.lessons||[]).length;if(n<2||!K())return -1;let h=2166136261;for(const c of b.date){h^=c.charCodeAt(0);h=Math.imul(h,16777619)>>>0}return 1+h%(n-1)}
+const kimchiFound=b=>!!(S.kimchi&&S.kimchi[b.date]);
+function kimchiHint(b){const t=el('span','khint');t.id='khint';t.textContent=kimchiFound(b)?'You found Kimchi today. He moves to a new hiding place tomorrow.':'Kimchi is hiding in one of today’s lessons. Can you find him?';return t}
+function kimchiCameo(b,i){
+  const box=el('div','kcam'),win=el('div','kwin'),lip=el('div','klip'),tx=el('div','ktx');box.setAttribute('aria-live','polite');
+  const say=()=>{tx.textContent='';if(kimchiFound(b))tx.append(el('b',null,'You found Kimchi!'),el('span',null,'He was hiding in lesson '+(i+1)+'. Tomorrow he’ll pick a new spot.'));else tx.append(el('b',null,'Psst…'),el('span',null,'someone is reading along with you.'))};
+  say();win.append(lip);box.append(win,tx);let host=null;
+  const io=new IntersectionObserver(es=>{if(!es.some(e=>e.isIntersecting))return;io.disconnect();box.classList.add('up');
+    if(!host){host=el('div','kpeek');win.prepend(host);K().cameo(host,K().cameoFor(b.day),112)}
+    if(!kimchiFound(b)){S.kimchi=S.kimchi||{};S.kimchi[b.date]=Date.now();save();say();fizz(24);const h=document.getElementById('khint');if(h)h.replaceWith(kimchiHint(b))}},{threshold:.6});
+  setTimeout(()=>io.observe(box),300);return box}
+function kimchiReward(bd,b){
+  if(!K())return;const sk=streak(),r=el('div','kreward'),stage=el('div','kstage'),ov=el('div','kov');
+  ov.append(el('b',null,sk>1?sk+'-day streak':'Day '+b.day+' done'),el('span',null,sk>1?'Kimchi is proud of you. Same time tomorrow?':'Kimchi approves. Come back tomorrow to start a streak.'));
+  r.append(stage,ov);bd.append(r);K().mount(stage,K().forDay(b.day))}
 
 /* ---------- gold bubbles on a right answer ---------- */
 function fizz(n,big){const c=document.getElementById('fx');if(!c||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const d=Math.min(devicePixelRatio||1,2);c.width=innerWidth*d;c.height=innerHeight*d;const x=c.getContext('2d'),col=['#b48a3c','#e4cf9c','#f7dc8e','#d6a548'];
@@ -94,6 +113,7 @@ function play(items,o){
     const perfect=right===items.length&&items.length>=5&&!o.review&&!o.practice;if(perfect)gained+=20;
     const res=o.done?o.done({right,total:items.length,gained,missed,picks,perfect}):{badges:[]};
     if(perfect)fizz(120,true);
+    if(o.reward)try{o.reward(bd)}catch(e){}
     bd.append(el('div','meta',o.title+' complete'),el('div','score',right+'/'+items.length),el('div','pts',o.practice?'Practice run: not scored':'+'+gained+' points'+(perfect?' (includes the perfect bonus)':'')));
     const L=level(S.points),w=L.next?Math.round(100*(S.points-L.from)/(L.next-L.from)):100;
     const bx=el('div','quizcard');const br=el('div','bar');br.append(el('i'));br.firstChild.style.width=w+'%';
@@ -116,7 +136,7 @@ function finishDay(b,items,r){
 function startQuiz(b,items,redraw){
   if(S.days[b.date])return play(items,{title:'Practice',practice:true});
   const prog=(S.prog[b.date]||[]).filter(k=>Number.isInteger(k)&&k>=0&&k<4);
-  play(items,{title:'Today’s quiz',resume:prog,each:(it,ok,i,picks)=>{S.prog[b.date]=picks.slice();save()},done:r=>finishDay(b,items,r),after:redraw})}
+  play(items,{title:'Today’s quiz',resume:prog,each:(it,ok,i,picks)=>{S.prog[b.date]=picks.slice();save()},done:r=>finishDay(b,items,r),reward:bd=>kimchiReward(bd,b),after:redraw})}
 function startReview(redraw){
   const t=todayStr(),due=S.review.filter(x=>x.due<=t).slice(0,5);if(!due.length)return;const steps=[1,3,7,14,30];
   play(due,{title:'Review',review:true,each:(it,ok)=>{const r=S.review.find(x=>x.id===it.id);if(!r)return;
@@ -195,6 +215,7 @@ function openLesson(b,i,after){
   const f=el('div','fig');f.id=id+'-fig';const g=drawSvg(l.svg);if(g){f.dataset.ok='1';f.append(g);build(g)}else f.append(el('p','note','The diagram could not be drawn.'));
   f.append(el('div','alt',l.alt));const zb=el('button','zoom','Enlarge diagram ⤢');zb.onclick=()=>enlarge(l);if(g)f.append(zb);lb.append(f,el('p',null,l.intro));
   (l.points||[]).forEach((pt,k)=>{const h=el('h4',null,pt.h);if(!k)h.id=id+'-pts';lb.append(h,el('p',null,pt.p))});
+  if(i===kimchiAt(b))try{lb.append(kimchiCameo(b,i))}catch(e){}
   const w=el('div','work');w.id=id+'-work';w.append(el('b',null,'At work'),el('p',null,l.atWork));const tk=el('p','take',l.takeaway);tk.id=id+'-take';lb.append(w,tk);
   const sr=el('div','src');sr.append('Source · ');(l.sources||[]).forEach((s2,j)=>{if(j)sr.append(' · ');sr.append(link(s2.name+' ↗',s2.url))});lb.append(sr);
   if(l.checked)lb.append(el('div','checked','Figures re-checked: '+l.checked));
@@ -207,6 +228,7 @@ function tickets(b){
   const sec=el('section');sec.id='lessons';const hd=el('div','lhead');hd.append(el('h2',null,'Today’s tickets'));
   const r=el('div','r'),b1=el('b');b1.append(el('span','bell'),'THE PASS');const cnt=el('span');r.append(b1,cnt);hd.append(r);
   const n=b.lessons.length;const sub=el('p','lsub');sub.append(el('span',null,n+' tickets on the pass. Swipe, then tap to fire.'));sec.append(hd,sub);
+  if(kimchiAt(b)>0)sec.append(kimchiHint(b));
   const pass=el('div','pass'),lamp=el('div','lamp'),rail=el('div','rail'),ou=el('div','orderup','Order up!'),full=el('div','full','SERVICE COMPLETE · SEE YOU TOMORROW');
   const snd=el('button','snd');const sndTxt=()=>snd.textContent=S.sound?'SOUND ON':'SOUND OFF';sndTxt();snd.setAttribute('aria-label','Turn pass sounds on or off');snd.onclick=()=>{S.sound=!S.sound;save();sndTxt();if(S.sound)bell(0)};
   pass.append(lamp,rail,ou,full);sub.append(snd);const slotX=i=>{const w=pass.clientWidth||360,gap=(w-n*76)/(n+1);return Math.round(gap+i*(76+gap))};
