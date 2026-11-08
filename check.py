@@ -142,6 +142,9 @@ PALETTE = {"#ea5f36", "#fce9e3", "#ac4627", "#865d00", "#eee8db", "#009b37", "#d
            "#258fec", "#e0effc", "#1b68ad", "#b31e65", "#f4dfe9", "#7647cd", "#ece5f8",
            "#b48a3c", "#e4cf9c", "#857353", "#2b2417", "#fffdf8", "#fcf9f2", "#ffffff", "#000000"}
 NAMED_OK = {"none", "white", "black", "transparent", "currentcolor"}
+FAMILY = {"#ea5f36": "Kitchen", "#fce9e3": "Kitchen", "#ac4627": "Kitchen", "#865d00": "Drinks", "#eee8db": "Drinks",
+          "#009b37": "Money", "#dbf1e3": "Money", "#00792b": "Money", "#258fec": "Opening", "#e0effc": "Opening",
+          "#1b68ad": "Opening", "#b31e65": "Brand", "#f4dfe9": "Brand", "#7647cd": "Guests", "#ece5f8": "Guests"}
 
 
 def colour_ok(v):
@@ -203,6 +206,9 @@ def svg(where, s):
             texts += 1
         if tag in ("rect", "circle", "ellipse", "line", "polyline", "polygon", "path"):
             shapes += 1
+    fams = {FAMILY[v.strip().lower()] for el in root.iter() for k, v in el.attrib.items()
+            if k in ("fill", "stroke", "stop-color") and v.strip().lower() in FAMILY}
+    need(len(fams) <= 2, f"{where}: uses {len(fams)} colour families ({', '.join(sorted(fams))}); use one, or two only to compare two things")
     need(texts >= 3, f"{where}: the diagram needs at least 3 text labels")
     need(shapes >= 3, f"{where}: the diagram needs at least 3 drawn shapes")
 
