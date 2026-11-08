@@ -1,0 +1,353 @@
+{
+ "date": "2026-11-09",
+ "dayLabel": "Monday 9 November 2026",
+ "day": 2,
+ "phase": 1,
+ "welcome": "Day two: how a kitchen brigade shrinks to four people, where every £100 of sales really goes, and the guest journey from first search to next booking.",
+ "lessons": [
+  {
+   "n": 4,
+   "area": "kitchen",
+   "module": "Kitchen organisation",
+   "title": "The classic brigade and who does what",
+   "outcome": "You will be able to map every classic brigade role onto a small modern kitchen",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 444\" role=\"img\" aria-label=\"Org chart of the classic kitchen brigade above, and the same roles collapsed into a four-person kitchen below\"><text x=\"170\" y=\"18\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">The classic brigade</text><rect x=\"110\" y=\"28\" width=\"120\" height=\"26\" rx=\"6\" fill=\"#c4562a\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"45\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#fff\" font-family=\"Figtree, sans-serif\">Chef de cuisine</text><line x1=\"170\" y1=\"54\" x2=\"170\" y2=\"64\" stroke=\"#857353\" stroke-width=\"1.5\"/><rect x=\"120\" y=\"64\" width=\"100\" height=\"24\" rx=\"6\" fill=\"#f8e3d8\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"80\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Sous chef</text><line x1=\"170\" y1=\"88\" x2=\"170\" y2=\"100\" stroke=\"#857353\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"100\" x2=\"280\" y2=\"100\" stroke=\"#857353\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"100\" x2=\"60\" y2=\"108\" stroke=\"#857353\" stroke-width=\"1.5\"/><rect x=\"10\" y=\"108\" width=\"100\" height=\"30\" rx=\"6\" fill=\"#fffdf8\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"60\" y=\"121\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Saucier</text><text x=\"60\" y=\"133\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">sauces</text><line x1=\"170\" y1=\"100\" x2=\"170\" y2=\"108\" stroke=\"#857353\" stroke-width=\"1.5\"/><rect x=\"120\" y=\"108\" width=\"100\" height=\"30\" rx=\"6\" fill=\"#fffdf8\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"121\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Poissonnier</text><text x=\"170\" y=\"133\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">fish</text><line x1=\"280\" y1=\"100\" x2=\"280\" y2=\"108\" stroke=\"#857353\" stroke-width=\"1.5\"/><rect x=\"230\" y=\"108\" width=\"100\" height=\"30\" rx=\"6\" fill=\"#fffdf8\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"280\" y=\"121\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Rôtisseur</text><text x=\"280\" y=\"133\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">roasts</text><rect x=\"10\" y=\"144\" width=\"100\" height=\"30\" rx=\"6\" fill=\"#fffdf8\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"60\" y=\"157\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Garde manger</text><text x=\"60\" y=\"169\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">cold larder</text><rect x=\"120\" y=\"144\" width=\"100\" height=\"30\" rx=\"6\" fill=\"#fffdf8\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"157\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Entremetier</text><text x=\"170\" y=\"169\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">veg, soups</text><rect x=\"230\" y=\"144\" width=\"100\" height=\"30\" rx=\"6\" fill=\"#fffdf8\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"280\" y=\"157\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Pâtissier</text><text x=\"280\" y=\"169\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">pastry</text><line x1=\"170\" y1=\"174\" x2=\"170\" y2=\"186\" stroke=\"#857353\" stroke-width=\"1.5\"/><line x1=\"90\" y1=\"186\" x2=\"250\" y2=\"186\" stroke=\"#857353\" stroke-width=\"1.5\"/><line x1=\"90\" y1=\"186\" x2=\"90\" y2=\"192\" stroke=\"#857353\" stroke-width=\"1.5\"/><line x1=\"250\" y1=\"186\" x2=\"250\" y2=\"192\" stroke=\"#857353\" stroke-width=\"1.5\"/><rect x=\"40\" y=\"192\" width=\"100\" height=\"24\" rx=\"6\" fill=\"#f8e3d8\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"90\" y=\"208\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Commis</text><rect x=\"200\" y=\"192\" width=\"100\" height=\"24\" rx=\"6\" fill=\"#f8e3d8\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"250\" y=\"208\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Plongeur</text><text x=\"170\" y=\"236\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Chefs de partie run the six stations</text><line x1=\"20\" y1=\"250\" x2=\"320\" y2=\"250\" stroke=\"#e4cf9c\" stroke-width=\"1.5\"/><text x=\"170\" y=\"274\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">The same roles, four people</text><rect x=\"90\" y=\"286\" width=\"160\" height=\"38\" rx=\"6\" fill=\"#c4562a\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"302\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#fff\" font-family=\"Figtree, sans-serif\">Head chef</text><text x=\"170\" y=\"316\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"400\" fill=\"#fff\" font-family=\"Figtree, sans-serif\">cuisine + sous + pass</text><line x1=\"170\" y1=\"324\" x2=\"170\" y2=\"336\" stroke=\"#857353\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"336\" x2=\"280\" y2=\"336\" stroke=\"#857353\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"336\" x2=\"60\" y2=\"344\" stroke=\"#857353\" stroke-width=\"1.5\"/><rect x=\"10\" y=\"344\" width=\"100\" height=\"50\" rx=\"6\" fill=\"#f8e3d8\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"60\" y=\"362\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Hot chef</text><text x=\"60\" y=\"377\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">sauce, fish,</text><text x=\"60\" y=\"389\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">roasts</text><line x1=\"170\" y1=\"336\" x2=\"170\" y2=\"344\" stroke=\"#857353\" stroke-width=\"1.5\"/><rect x=\"120\" y=\"344\" width=\"100\" height=\"50\" rx=\"6\" fill=\"#f8e3d8\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"362\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Cold chef</text><text x=\"170\" y=\"377\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">larder, veg,</text><text x=\"170\" y=\"389\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">pastry</text><line x1=\"280\" y1=\"336\" x2=\"280\" y2=\"344\" stroke=\"#857353\" stroke-width=\"1.5\"/><rect x=\"230\" y=\"344\" width=\"100\" height=\"50\" rx=\"6\" fill=\"#f8e3d8\" stroke=\"#c4562a\" stroke-width=\"1.5\"/><text x=\"280\" y=\"362\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Porter</text><text x=\"280\" y=\"377\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">wash-up,</text><text x=\"280\" y=\"389\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">basic prep</text><text x=\"170\" y=\"418\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#b48a3c\" font-family=\"Figtree, sans-serif\">10 classic roles, 4 people.</text><text x=\"170\" y=\"434\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Name who covers each one on a day off.</text></svg>",
+   "alt": "Top: the classic brigade, from chef de cuisine and sous chef down to six chefs de partie, then commis and plongeur. Bottom: the same ten roles shared by a head chef, a hot chef, a cold chef and a porter.",
+   "intro": "When a chef says 'I'm on garnish tonight' or 'the sous is off', they are using a map drawn over a century ago. Auguste Escoffier organised the kitchen brigade at the Savoy in London, modelling it on a military chain of command. Each person owns one job and answers to the one above. Very few kitchens still run the full version, but every kitchen still runs on its logic.",
+   "points": [
+    {
+     "h": "The full tree",
+     "p": "The chef de cuisine plans the menu, buys and runs the kitchen. The sous chef is second in command: rotas, stock, safety standards, and covering any station. Below them sit the chefs de partie, each running a station. The saucier makes sauces, stocks and soups. The poissonnier handles fish from filleting to cooking. The rôtisseur takes roasts and braises. The garde manger runs the cold larder: salads, charcuterie, pâtés. The entremetier does vegetables and, in big kitchens, soups. The pâtissier owns desserts. Commis chefs cook under each chef de partie, and the plongeur keeps the wash-up and kitchen clean."
+    },
+    {
+     "h": "Collapsing it into four",
+     "p": "Escoffier's own trade has moved on: modern kitchens merge stations into broader roles, and big brigades now mostly survive on cruise ships and high-volume sites. In a four-person kitchen, the head chef also does the sous chef's admin and runs the pass. A hot chef takes sauce, fish and roasts. A cold chef takes larder, vegetables and pastry. A porter covers wash-up and basic prep. The ten roles still exist. They just share four pairs of hands."
+    },
+    {
+     "h": "The risk the old system warned about",
+     "p": "A brigade so specialised can stall when one person is missing. A small kitchen has the opposite problem: when the head chef is off, nobody holds the sous chef's jobs. Ordering, rotas and safety records quietly slip. That is why the classic tree is still useful: it is a checklist of every job that must have an owner, even if one person wears three hats."
+    }
+   ],
+   "atWork": "Draw your own kitchen's tree this week with the chef. Write each classic role in the box of whoever does it now. Then circle any role with no cover on that person's day off. Those gaps are where service problems will start.",
+   "takeaway": "Every classic brigade role still exists in a small kitchen. Know who owns each one, and who covers it.",
+   "sources": [
+    {
+     "name": "Escoffier, kitchen hierarchy explained",
+     "url": "https://www.escoffier.edu/blog/culinary-pastry-careers/different-types-of-chef-jobs-in-the-brigade-de-cuisine/"
+    },
+    {
+     "name": "Culinary Lore, the kitchen brigade system",
+     "url": "https://culinarylore.com/food-history:kitchen-brigade-system/"
+    },
+    {
+     "name": "Reluctant Gourmet, how Escoffier changed cooking",
+     "url": "https://reluctantgourmet.com/escoffier-kitchen-brigade-system/"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "area": "money",
+   "module": "Reading the numbers",
+   "title": "Where a £100 sale goes",
+   "outcome": "You will be able to trace £100 of sales through every cost to profit",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 314\" role=\"img\" aria-label=\"Waterfall chart: £100 of sales falls by food £28, labour £32, rent £10 and other costs £22, leaving £8 profit\"><text x=\"170\" y=\"20\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Where £100 of sales goes</text><rect x=\"20\" y=\"50\" width=\"40\" height=\"200\" rx=\"3\" fill=\"#e4cf9c\" stroke=\"#b48a3c\" stroke-width=\"1.5\"/><text x=\"40\" y=\"44\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">£100</text><text x=\"40\" y=\"266\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Sales</text><line x1=\"60\" y1=\"50\" x2=\"74\" y2=\"50\" stroke=\"#857353\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><rect x=\"74\" y=\"50\" width=\"40\" height=\"56\" rx=\"3\" fill=\"#dce9cf\" stroke=\"#5e8f3a\" stroke-width=\"1.5\"/><text x=\"94\" y=\"44\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">-£28</text><text x=\"94\" y=\"266\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Food</text><line x1=\"114\" y1=\"106\" x2=\"128\" y2=\"106\" stroke=\"#857353\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><rect x=\"128\" y=\"106\" width=\"40\" height=\"64\" rx=\"3\" fill=\"#dce9cf\" stroke=\"#5e8f3a\" stroke-width=\"1.5\"/><text x=\"148\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">-£32</text><text x=\"148\" y=\"266\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Labour</text><line x1=\"168\" y1=\"170\" x2=\"182\" y2=\"170\" stroke=\"#857353\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><rect x=\"182\" y=\"170\" width=\"40\" height=\"20\" rx=\"3\" fill=\"#dce9cf\" stroke=\"#5e8f3a\" stroke-width=\"1.5\"/><text x=\"202\" y=\"164\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">-£10</text><text x=\"202\" y=\"266\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Rent</text><line x1=\"222\" y1=\"190\" x2=\"236\" y2=\"190\" stroke=\"#857353\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><rect x=\"236\" y=\"190\" width=\"40\" height=\"44\" rx=\"3\" fill=\"#dce9cf\" stroke=\"#5e8f3a\" stroke-width=\"1.5\"/><text x=\"256\" y=\"184\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">-£22</text><text x=\"256\" y=\"266\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Other</text><line x1=\"276\" y1=\"234\" x2=\"290\" y2=\"234\" stroke=\"#857353\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><rect x=\"290\" y=\"234\" width=\"40\" height=\"16\" rx=\"3\" fill=\"#5e8f3a\" stroke=\"#5e8f3a\" stroke-width=\"1.5\"/><text x=\"310\" y=\"228\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#5e8f3a\" font-family=\"Figtree, sans-serif\">£8</text><text x=\"310\" y=\"266\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Profit</text><line x1=\"14\" y1=\"250\" x2=\"330\" y2=\"250\" stroke=\"#857353\" stroke-width=\"1.5\"/><path d=\"M74 284 L74 290 L182 290 L182 284\" fill=\"none\" stroke=\"#b48a3c\" stroke-width=\"1.5\"/><text x=\"128\" y=\"304\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"700\" fill=\"#b48a3c\" font-family=\"Figtree, sans-serif\">Prime cost £60</text><text x=\"290\" y=\"304\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"700\" fill=\"#5e8f3a\" font-family=\"Figtree, sans-serif\">Margin 8%</text></svg>",
+   "alt": "Waterfall chart. £100 of sales loses £28 to food, £32 to labour, £10 to rent and £22 to other costs, leaving £8 profit. Food and labour together make a £60 prime cost.",
+   "intro": "A full room on Saturday feels like money. Then the month's P&L arrives and the profit line is tiny. The waterfall shows why. Start with £100 of sales, before VAT, and take off each cost in turn. What is left at the end is profit, and in a restaurant it is small.",
+   "points": [
+    {
+     "h": "The model in the picture",
+     "p": "Food and drink cost £28. Labour, including wages, holiday and employer costs, takes £32. Rent takes £10. Everything else takes £22: energy, rates, card fees, repairs, insurance, marketing. That leaves £8, an 8% net margin. Food plus labour is called prime cost, here £60. It is the part a manager controls most each week. Toast's UK guide uses the same rule of thumb: about a third to cost of goods, about a third to labour."
+    },
+    {
+     "h": "Reality is often thinner",
+     "p": "Treat £8 as a good result, not a given. Syrve puts most restaurants' net margin between 2% and 8%, and full-service restaurants at 3% to 6%, with labour around 25% to 35% of revenue. A UK worked example from Viewality starts at £100 taken at the till, removes £16.67 of VAT, and ends with just £4.17 profit. Labour is getting dearer too: GOV.UK confirms the National Living Wage for those 21 and over rises 50p (3.9%) to £13.21 from April 2027."
+    },
+    {
+     "h": "Mind the VAT gap",
+     "p": "VAT at the standard 20% applies to most restaurant sales, so a guest's £120 bill is only £100 of sales to you. Always read margins on net sales. Then do the sum that changes behaviour: at an 8% margin, £10 of waste needs £125 of extra sales just to earn it back. One point of labour overspend, £1 in every £100, wipes out an eighth of the profit."
+    }
+   ],
+   "atWork": "Take last week's sales for one site, take off VAT, and divide each cost line by net sales. Put your numbers next to £28, £32, £10 and £22. The line furthest from the model is your first conversation with the team this week.",
+   "takeaway": "Out of £100 of sales, maybe £8 is profit. Every £1 saved is worth £12.50 of new sales.",
+   "sources": [
+    {
+     "name": "Syrve, a complete guide to restaurant profit margins",
+     "url": "https://www.syrve.com/en-gb/blog/a-complete-guide-to-restaurant-profit-margins"
+    },
+    {
+     "name": "Viewality, how much profit does a UK restaurant make",
+     "url": "https://shop.viewalitymedia.com/guides/restaurant-profit-margin-uk/"
+    },
+    {
+     "name": "GOV.UK, VAT rates",
+     "url": "https://www.gov.uk/vat-rates"
+    },
+    {
+     "name": "GOV.UK, minimum wage rates for 2027",
+     "url": "https://www.gov.uk/government/publications/minimum-wage-rates-for-2027"
+    }
+   ],
+   "checked": "VAT standard rate 20% checked on GOV.UK VAT rates; National Living Wage £13.21 from April 2027 (up 50p, 3.9%) checked on GOV.UK minimum wage rates for 2027, both on 9 November 2026."
+  },
+  {
+   "n": 6,
+   "area": "guests",
+   "module": "Hospitality and the guest experience",
+   "title": "The guest journey from search to afterglow",
+   "outcome": "You will be able to map every touchpoint from first search to the next booking",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 292\" role=\"img\" aria-label=\"Journey map of seven guest stages with touchpoints below and a feeling line above that dips at booking and paying\"><defs><marker id=\"ah\" markerWidth=\"8\" markerHeight=\"8\" refX=\"4\" refY=\"4\" orient=\"auto\"><path d=\"M0 0 L8 4 L0 8 Z\" fill=\"#b48a3c\"/></marker></defs><text x=\"170\" y=\"20\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">The guest journey</text><text x=\"8\" y=\"44\" text-anchor=\"start\" font-size=\"10\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Feeling</text><line x1=\"8\" y1=\"128\" x2=\"332\" y2=\"128\" stroke=\"#e4cf9c\" stroke-width=\"1.5\" stroke-dasharray=\"2 4\"/><polyline points=\"26,88 74,112 122,100 170,58 218,110 266,76 314,66\" fill=\"none\" stroke=\"#7a5aa8\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><circle cx=\"26\" cy=\"88\" r=\"4\" fill=\"#7a5aa8\"/><line x1=\"26\" y1=\"94\" x2=\"26\" y2=\"144\" stroke=\"#e4cf9c\" stroke-width=\"1.5\"/><circle cx=\"26\" cy=\"152\" r=\"9\" fill=\"#e9e1f4\" stroke=\"#7a5aa8\" stroke-width=\"1.5\"/><text x=\"26\" y=\"156\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"700\" fill=\"#7a5aa8\" font-family=\"Figtree, sans-serif\">1</text><text x=\"26\" y=\"178\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Discover</text><text x=\"26\" y=\"196\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Search</text><text x=\"26\" y=\"208\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Reviews</text><circle cx=\"74\" cy=\"112\" r=\"5\" fill=\"#c4562a\"/><line x1=\"74\" y1=\"118\" x2=\"74\" y2=\"144\" stroke=\"#e4cf9c\" stroke-width=\"1.5\"/><circle cx=\"74\" cy=\"152\" r=\"9\" fill=\"#e9e1f4\" stroke=\"#7a5aa8\" stroke-width=\"1.5\"/><text x=\"74\" y=\"156\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"700\" fill=\"#7a5aa8\" font-family=\"Figtree, sans-serif\">2</text><text x=\"74\" y=\"178\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Book</text><text x=\"74\" y=\"196\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Website</text><text x=\"74\" y=\"208\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Confirm</text><circle cx=\"122\" cy=\"100\" r=\"4\" fill=\"#7a5aa8\"/><line x1=\"122\" y1=\"106\" x2=\"122\" y2=\"144\" stroke=\"#e4cf9c\" stroke-width=\"1.5\"/><circle cx=\"122\" cy=\"152\" r=\"9\" fill=\"#e9e1f4\" stroke=\"#7a5aa8\" stroke-width=\"1.5\"/><text x=\"122\" y=\"156\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"700\" fill=\"#7a5aa8\" font-family=\"Figtree, sans-serif\">3</text><text x=\"122\" y=\"178\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Arrive</text><text x=\"122\" y=\"196\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Door</text><text x=\"122\" y=\"208\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Greeting</text><circle cx=\"170\" cy=\"58\" r=\"4\" fill=\"#7a5aa8\"/><line x1=\"170\" y1=\"64\" x2=\"170\" y2=\"144\" stroke=\"#e4cf9c\" stroke-width=\"1.5\"/><circle cx=\"170\" cy=\"152\" r=\"9\" fill=\"#e9e1f4\" stroke=\"#7a5aa8\" stroke-width=\"1.5\"/><text x=\"170\" y=\"156\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"700\" fill=\"#7a5aa8\" font-family=\"Figtree, sans-serif\">4</text><text x=\"170\" y=\"178\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Dine</text><text x=\"170\" y=\"196\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Pacing</text><text x=\"170\" y=\"208\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Check-in</text><circle cx=\"218\" cy=\"110\" r=\"5\" fill=\"#c4562a\"/><line x1=\"218\" y1=\"116\" x2=\"218\" y2=\"144\" stroke=\"#e4cf9c\" stroke-width=\"1.5\"/><circle cx=\"218\" cy=\"152\" r=\"9\" fill=\"#e9e1f4\" stroke=\"#7a5aa8\" stroke-width=\"1.5\"/><text x=\"218\" y=\"156\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"700\" fill=\"#7a5aa8\" font-family=\"Figtree, sans-serif\">5</text><text x=\"218\" y=\"178\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Pay</text><text x=\"218\" y=\"196\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Bill</text><text x=\"218\" y=\"208\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Split</text><circle cx=\"266\" cy=\"76\" r=\"4\" fill=\"#7a5aa8\"/><line x1=\"266\" y1=\"82\" x2=\"266\" y2=\"144\" stroke=\"#e4cf9c\" stroke-width=\"1.5\"/><circle cx=\"266\" cy=\"152\" r=\"9\" fill=\"#e9e1f4\" stroke=\"#7a5aa8\" stroke-width=\"1.5\"/><text x=\"266\" y=\"156\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"700\" fill=\"#7a5aa8\" font-family=\"Figtree, sans-serif\">6</text><text x=\"266\" y=\"178\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Leave</text><text x=\"266\" y=\"196\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Coats</text><text x=\"266\" y=\"208\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Goodbye</text><circle cx=\"314\" cy=\"66\" r=\"4\" fill=\"#7a5aa8\"/><line x1=\"314\" y1=\"72\" x2=\"314\" y2=\"144\" stroke=\"#e4cf9c\" stroke-width=\"1.5\"/><circle cx=\"314\" cy=\"152\" r=\"9\" fill=\"#e9e1f4\" stroke=\"#7a5aa8\" stroke-width=\"1.5\"/><text x=\"314\" y=\"156\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"700\" fill=\"#7a5aa8\" font-family=\"Figtree, sans-serif\">7</text><text x=\"314\" y=\"178\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Remember</text><text x=\"314\" y=\"196\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Thank-you</text><text x=\"314\" y=\"208\" text-anchor=\"middle\" font-size=\"9\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Review</text><text x=\"170\" y=\"44\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"600\" fill=\"#7a5aa8\" font-family=\"Figtree, sans-serif\">Peak at the table</text><path d=\"M314 222 Q314 246 290 246 L50 246 Q26 246 26 226\" fill=\"none\" stroke=\"#b48a3c\" stroke-width=\"1.5\" stroke-dasharray=\"4 3\" marker-end=\"url(#ah)\"/><text x=\"170\" y=\"264\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"700\" fill=\"#b48a3c\" font-family=\"Figtree, sans-serif\">The next booking starts here</text><circle cx=\"104\" cy=\"280\" r=\"4\" fill=\"#c4562a\"/><text x=\"112\" y=\"284\" text-anchor=\"start\" font-size=\"9.5\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Dips: waiting or friction</text></svg>",
+   "alt": "Seven stages left to right: discover, book, arrive, dine, pay, leave, remember, with two touchpoints under each. A feeling line above peaks at the table and dips at booking and paying. An arrow loops back to discover.",
+   "intro": "Most managers judge a night by what happens between the door and the bill. The guest's night is longer. It starts with a search on a phone days before, and it ends weeks later when they decide whether to come back. A journey map lays all of it out in a line so you can see where the feeling rises and where it drops.",
+   "points": [
+    {
+     "h": "Seven stages, many touchpoints",
+     "p": "Discover: search results, photos and reviews. Book: the website or booking page, then the confirmation. Arrive: the door, the greeting, any wait. Dine: the pacing of courses and the check-ins. Pay: asking for the bill, splitting it, paying. Leave: coats and the goodbye. Remember: the thank-you message and the review request. Each touchpoint is a moment where the guest decides how they feel about you."
+    },
+    {
+     "h": "Find the dips",
+     "p": "The feeling line usually peaks at the table and sags where guests wait or struggle. Booking is one: Spotty Media advises testing the full booking route on a phone with a real date and party size. Arriving is another: OpenTable found diners would wait 22 minutes in 2026, down from 29 in 2025, and 67% would rather eat elsewhere than queue. Paying is the third. In one study of 66 restaurants, checks paid on a tabletop device finished 23% faster."
+    },
+    {
+     "h": "The loop back",
+     "p": "The last stage feeds the first. A timely thank-you and a simple review request turn tonight into tomorrow's search result. OpenTable reports 21% of Brits want to become a regular somewhere in 2027, rising to 36% of Gen Z. The goodbye and the follow-up are where a regular is made, yet they get the least training."
+    }
+   ],
+   "atWork": "This week, walk one stage as a guest. Book a table on your own site from your phone, or time how long a table waits for the bill on Friday. Write down every touchpoint you meet and mark where it felt slow. Fix one dip before the weekend.",
+   "takeaway": "The night starts at the search and ends at the next booking. Find the dips and fix them first.",
+   "sources": [
+    {
+     "name": "Spotty Media, customer journey in hospitality",
+     "url": "https://spotty.media/inspiration/customer-journey-in-hospitality/"
+    },
+    {
+     "name": "PayMongo, restaurant customer journey",
+     "url": "https://www.paymongo.com/blog/restaurant-customer-journey"
+    },
+    {
+     "name": "Restaurant Online, OpenTable dining trends for 2027",
+     "url": "https://www.restaurantonline.co.uk/Article/2026/11/04/more-meals-out-more-micro-occasions-opentable-reveals-its-dining-trends-for-2027/"
+    }
+   ]
+  }
+ ],
+ "news": [
+  {
+   "area": "industry",
+   "headline": "Budget rates relief for hospitality, but no VAT cut",
+   "summary": "The 28 October Budget raised the small business rate relief threshold from £12,000 to £18,000 for hospitality, retail and leisure, and minimum wage rates rise 3.9%. No VAT cut came despite a 400,000-signature petition.",
+   "why": "Rates relief helps small sites most, which matters when you plan your own. Budget for the wage rise now: it lands in April 2027.",
+   "source": {
+    "name": "The Caterer",
+    "date": "28 Oct",
+    "url": "https://www.thecaterer.com/news/are-we-screaming-into-the-void-hospitality-reacts-to-2026-autumn-budget"
+   }
+  },
+  {
+   "area": "industry",
+   "headline": "National Living Wage to reach £13.21 in April 2027",
+   "summary": "GOV.UK confirms all minimum rates rise 3.9% from April 2027: the National Living Wage for those 21 and over goes up 50p to £13.21, and the 18 to 20 rate rises 42p to £11.27.",
+   "why": "Labour is the biggest line in today's £100 waterfall. Rework next year's rotas and labour targets with the new rates before spring.",
+   "source": {
+    "name": "GOV.UK",
+    "date": "28 Oct",
+    "url": "https://www.gov.uk/government/publications/minimum-wage-rates-for-2027"
+   }
+  },
+  {
+   "area": "trends",
+   "headline": "OpenTable: more meals out and more 'micro occasions' in 2027",
+   "summary": "UK dining at OpenTable restaurants rose 10% in 2026 and groups of six or more rose 18%. 65% expect to eat out as often or more in 2027, and 68% will mark everyday moments at restaurants.",
+   "why": "Small celebrations are a reason to visit. Train hosts to ask what brings a table in tonight, and act on the answer.",
+   "source": {
+    "name": "Restaurant Online",
+    "date": "4 Nov",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/04/more-meals-out-more-micro-occasions-opentable-reveals-its-dining-trends-for-2027/"
+   }
+  },
+  {
+   "area": "finedining",
+   "headline": "Claude Bosi to close Brooklands and return to Michelin House",
+   "summary": "Two-Michelin-starred Brooklands by Claude Bosi at The Peninsula London will close in January 2027 after three years. Bosi plans a new project at the Bibendum building, where his eponymous restaurant held two stars from 2018 to 2025.",
+   "why": "Even two stars in a luxury hotel is no guarantee. Watch how top chefs pick sites they control: it is the same choice you will face.",
+   "source": {
+    "name": "Restaurant Online",
+    "date": "4 Nov",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/04/claude-bosi-to-return-to-michelin-house-as-he-announces-closure-of-his-the-peninsula-london-restaurant/"
+   }
+  },
+  {
+   "area": "openings",
+   "headline": "Florence Knight opens Lunette at the St Clement",
+   "summary": "Lunette, Florence Knight's first solo restaurant, is on the 11th floor of the St Clement hotel in Temple. Lunch is a set four courses at £70, dinner a set six courses at £110.",
+   "why": "Set menus at two price points keep food cost and kitchen labour predictable. A useful model for a small team.",
+   "source": {
+    "name": "The Caterer",
+    "date": "2 Nov",
+    "url": "https://www.thecaterer.com/news/first-look-chef-florence-knight-opens-lunette-at-the-st-clement-hotel"
+   }
+  },
+  {
+   "area": "openings",
+   "headline": "London Museum's Smithfield restaurants and bars open 28 November",
+   "summary": "The London Museum's new home in Smithfield opens on 28 November. Robin Gill runs the restaurants and cafes and Mr Lyan runs the bars, including a non-alcoholic bar, with operator Green & Fortune.",
+   "why": "A dedicated non-alcoholic bar from a top bar team shows where drinks lists are heading. Check your own zero-alcohol offer.",
+   "source": {
+    "name": "Hot Dinners",
+    "date": "29 Oct",
+    "url": "https://www.hot-dinners.com/Features/Hot-Dinners-recommends/new-london-restaurants-opening-in-november-2026"
+   }
+  }
+ ],
+ "newsNote": "Fine dining and trends were thin in the last 7 days, so each has one item. Industry items date from the 28 October Budget.",
+ "try": {
+  "title": "Run one table through the £100 and the journey",
+  "steps": [
+   "Pick one table from tonight's service and note its bill, minus 20% VAT, as net sales.",
+   "Split that net figure using £28 food, £32 labour, £10 rent, £22 other, and say the £8 profit aloud at pre-shift.",
+   "Ask the team which of the seven journey stages that table waited longest at, and who in the brigade or on the floor owned it."
+  ],
+  "why": "It joins all three lessons to one real table. The team sees how thin the profit is, where the guest felt the wait, and which role owns the fix."
+ },
+ "quiz": [
+  {
+   "q": "In a four-person kitchen, the head chef is off on Tuesdays. Which classic role is most likely to go uncovered?",
+   "options": [
+    "Plongeur",
+    "The sous chef's admin: rotas, ordering and safety records",
+    "Garde manger",
+    "Pâtissier"
+   ],
+   "answer": 1,
+   "why": "In a small kitchen the head chef usually also does the sous chef's jobs. When they are off, nobody owns those, so rotas, ordering and records slip.",
+   "from": 1
+  },
+  {
+   "q": "A guest pays a £120 bill. With 20% VAT and the course model, roughly how much profit does the restaurant keep?",
+   "options": [
+    "£9.60",
+    "£12",
+    "£8",
+    "£4"
+   ],
+   "answer": 2,
+   "why": "£120 including 20% VAT is £100 of net sales. At an 8% margin that leaves £8.",
+   "from": 2
+  },
+  {
+   "q": "Your margin is 8%. A chef bins £10 of fish. How much extra sales do you need to earn that £10 back?",
+   "options": [
+    "£10.80",
+    "£80",
+    "£50",
+    "£125"
+   ],
+   "answer": 3,
+   "why": "£10 divided by 8% is £125. Savings drop straight to profit, but sales only bring 8p of profit per £1.",
+   "from": 2
+  },
+  {
+   "q": "Which change most directly fixes a dip at the 'arrive' stage of the journey?",
+   "options": [
+    "Greeting every table at the door within a minute and giving an honest wait time",
+    "Sending a review request the next morning",
+    "Adding a dessert to the menu",
+    "Redesigning the bill folder"
+   ],
+   "answer": 0,
+   "why": "Arrive covers the door, the greeting and any wait. OpenTable found diners would wait only 22 minutes in 2026, so the door is where the feeling can drop.",
+   "from": 3
+  },
+  {
+   "q": "From April 2027, what is the National Living Wage for workers aged 21 and over?",
+   "options": [
+    "£12.71",
+    "£13.21",
+    "£11.27",
+    "£13.71"
+   ],
+   "answer": 1,
+   "why": "GOV.UK confirms a 50p rise, 3.9%, to £13.21 an hour from April 2027.",
+   "from": "news"
+  }
+ ],
+ "terms": [
+  {
+   "term": "Chef de partie",
+   "def": "The chef in charge of one station, such as sauces, fish or pastry, with commis chefs working under them.",
+   "lesson": 1
+  },
+  {
+   "term": "Commis",
+   "def": "A junior chef who cooks under a chef de partie and learns each station.",
+   "lesson": 1
+  },
+  {
+   "term": "Plongeur",
+   "def": "The classic brigade's dishwasher, who keeps the wash-up and kitchen clean. Today usually called the kitchen porter.",
+   "lesson": 1
+  },
+  {
+   "term": "Prime cost",
+   "def": "Food and drink cost plus labour cost, shown as a share of net sales. In today's model it is £60 of every £100.",
+   "lesson": 2
+  },
+  {
+   "term": "Net sales",
+   "def": "Sales after VAT is taken off. Read all cost percentages and margins against this figure, not the till total.",
+   "lesson": 2
+  },
+  {
+   "term": "Net profit margin",
+   "def": "What is left from sales after every cost, as a percentage. Most restaurants land between 2% and 8%.",
+   "lesson": 2
+  },
+  {
+   "term": "Touchpoint",
+   "def": "Any moment a guest meets the restaurant, from a search result to the goodbye at the door or a thank-you message.",
+   "lesson": 3
+  },
+  {
+   "term": "Journey map",
+   "def": "A picture of every stage and touchpoint of a guest's visit in order, with a line showing how they feel at each one.",
+   "lesson": 3
+  }
+ ],
+ "toolkit": [
+  {
+   "name": "Small-kitchen role map",
+   "kind": "template",
+   "items": [
+    "List the ten classic roles: chef de cuisine, sous chef, six chefs de partie, commis, plongeur.",
+    "Write the name of who does each role now.",
+    "Write the name of who covers it on that person's day off.",
+    "Circle any role with no cover and agree an owner this week."
+   ],
+   "lesson": 1
+  },
+  {
+   "name": "The £100 waterfall",
+   "kind": "formula",
+   "items": [
+    "Net sales = till total divided by 1.2 when all sales carry 20% VAT.",
+    "Each cost % = cost line divided by net sales.",
+    "Prime cost = food % plus labour %.",
+    "Profit = net sales minus food, labour, rent and other.",
+    "Sales needed to cover a loss = loss divided by net margin."
+   ],
+   "lesson": 2
+  },
+  {
+   "name": "Journey dip check",
+   "kind": "checklist",
+   "items": [
+    "Book a table on your own site from a phone, with a real date and party size.",
+    "Time the wait from the door to the seat on a busy night.",
+    "Time the wait from asking for the bill to paying.",
+    "Check a thank-you or review request goes out after the visit.",
+    "Mark the slowest stage and fix that one first."
+   ],
+   "lesson": 3
+  }
+ ]
+}
