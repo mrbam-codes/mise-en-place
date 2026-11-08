@@ -175,7 +175,7 @@ def svg(where, s):
                 problems.append(f"{where}: svg attribute {name!r} may only point inside the drawing, url(#id)")
             if name == "font-size":
                 m = re.match(r"^(\d+(\.\d+)?)(px)?$", v.strip())
-                need(m is not None and float(m.group(1)) >= 9, f"{where}: font-size {v!r} is below 9 and unreadable on a phone")
+                need(m is not None and float(m.group(1)) >= 11, f"{where}: font-size {v!r} is below 11 and unreadable on a phone")
         if tag in ("text", "tspan") and (el.text or "").strip():
             texts += 1
         if tag in ("rect", "circle", "ellipse", "line", "polyline", "polygon", "path"):
@@ -314,7 +314,7 @@ def render(date):
     handler = functools.partial(QuietHandler, directory=str(ROOT))
     server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
-    page = f"http://127.0.0.1:{server.server_port}/index.html?d={date}&still"
+    page = f"http://127.0.0.1:{server.server_port}/index.html?d={date}&still&open=1"
     try:
         out = subprocess.run(
             [chrome, "--headless=new", "--no-sandbox", "--disable-gpu", "--window-size=390,844",
@@ -324,9 +324,10 @@ def render(date):
         server.shutdown()
     b = json.loads((ROOT / "briefs" / f"{date}.json").read_text(encoding="utf-8"))
     n = len(b.get("lessons") or [])
-    got = out.count('class="lesson"')
-    need(got == n, f"page rendered {got} lessons, expected {n}")
-    need(out.count('class="fig" data-ok="1"') == n, "page did not draw every lesson diagram (an svg was refused by the page)")
+    got = len(re.findall(r'<button class="tk[ "]', out))
+    need(got == n, f"page rendered {got} lesson tickets, expected {n}")
+    need(out.count('class="glimpse" data-ok="1"') == n, "page did not draw every ticket's diagram close-up (an svg was refused by the page)")
+    need('class="lsheet"' in out and re.search(r'class="fig"[^>]*data-ok="1"', out) is not None, "page could not open lesson 1 with its diagram")
     need('data-hero="' in out, "page did not start its opening")
     need('class="quizcard"' in out, "page did not render the quiz")
     need('class="news"' in out, "page did not render the news")

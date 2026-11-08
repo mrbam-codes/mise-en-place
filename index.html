@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#fcf9f2">
 <title>Mise en Place</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23fcf9f2' stroke='%23b48a3c' stroke-width='2'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='%23b48a3c' font-family='Georgia'%3EM%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Marcellus&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Marcellus&family=Figtree:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap">
 <style>
 /* Champagne: daylight gold on ivory, thin gold rules, engraved small capitals, centred. Bright backgrounds only. */
 :root{--ivory:#fcf9f2;--ivory2:#f4ecda;--ink:#2b2417;--body:#4a3f2c;--gold:#b48a3c;--goldd:#8a6626;--goldl:#e4cf9c;--mute:#857353;--card:#fffdf8;--ok:#4f7d2e;--no:#a8452e;
@@ -98,6 +98,82 @@ input,textarea{width:100%;font:inherit;font-size:16px;padding:12px;border-radius
 textarea{min-height:90px}
 .arch a{display:flex;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid var(--goldl);text-decoration:none;color:var(--ink);font-size:16px}
 .arch a span{color:var(--mute);font-size:14px}
+/* lesson tickets: The Pass receipts in the Atelier carousel */
+#lessons .lhead{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:34px}
+#lessons .lhead h2{font:400 30px/1 var(--disp);margin:0}
+#lessons .lhead .r{text-align:right;font:700 12px/1.5 'Courier Prime',ui-monospace,monospace;color:#6b655a;letter-spacing:.06em}
+#lessons .lhead .r b{display:block;color:var(--ink);font-size:13px}
+.bell{display:inline-block;width:15px;height:15px;border-radius:50% 50% 3px 3px;background:radial-gradient(circle at 35% 30%,#fff,#c7a64d 55%,#8a6a1c);vertical-align:-3px;margin-right:6px;transform-origin:50% 0;animation:ding 1.2s .5s ease-out}
+@keyframes ding{20%{transform:rotate(-14deg)}40%{transform:rotate(12deg)}60%{transform:rotate(-6deg)}80%{transform:rotate(3deg)}}
+#lessons .lsub{margin:6px 0 0;font-size:15px;color:var(--mute)}
+.car{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:22px 7% 18px;margin:0 calc(-1 * max(18px,env(safe-area-inset-left)));scrollbar-width:none}
+.car::-webkit-scrollbar{display:none}
+.tk{flex:0 0 86%;max-width:440px;scroll-snap-align:center;position:relative;border:0;text-align:left;padding:0 0 26px;background:none;--lift:0px;transform:translateY(var(--lift));filter:drop-shadow(0 6px 8px #3a2e1814);transition:transform .35s cubic-bezier(.2,.9,.2,1),opacity .35s,filter .35s;animation:print .9s cubic-bezier(.3,.9,.3,1) backwards}
+.tk:nth-child(2){animation-delay:.3s}.tk:nth-child(3){animation-delay:.6s}
+@keyframes print{from{clip-path:inset(0 0 100% 0);transform:translateY(-14px)}}
+.tk:not(.off){--lift:-6px;filter:drop-shadow(0 4px 6px #3a2e181c) drop-shadow(0 22px 26px #3a2e1838)}
+@media(hover:hover){.tk:not(.off):hover{--lift:-12px;filter:drop-shadow(0 6px 8px #3a2e1822) drop-shadow(0 34px 34px #3a2e1848)}}
+.tk:not(.off):active{--lift:-2px;filter:drop-shadow(0 3px 4px #3a2e1826) drop-shadow(0 10px 14px #3a2e1830);transition-duration:.12s}
+.tk.off{transform:scale(.94);opacity:.72}
+.tk:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.paper{position:relative;background:#fff;padding:20px 20px 30px;min-height:500px;display:flex;flex-direction:column;clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),95% 100%,90% calc(100% - 12px),85% 100%,80% calc(100% - 12px),75% 100%,70% calc(100% - 12px),65% 100%,60% calc(100% - 12px),55% 100%,50% calc(100% - 12px),45% 100%,40% calc(100% - 12px),35% 100%,30% calc(100% - 12px),25% 100%,20% calc(100% - 12px),15% 100%,10% calc(100% - 12px),5% 100%,0 calc(100% - 12px))}
+.paper::before{content:'';position:absolute;inset:0 0 auto;height:6px;background:var(--c)}
+.rows{display:flex;justify-content:space-between;gap:8px;font:700 12px 'Courier Prime',ui-monospace,monospace;letter-spacing:.08em;color:#4a453c;margin-top:6px}
+.rows.lt{font-weight:400}
+.rows .ar{color:#fff;background:var(--c);padding:2px 8px;white-space:nowrap}
+.rn{font:400 92px/.8 var(--disp);color:var(--c);margin-top:14px}
+.dash{border:0;border-top:2px dashed #d8d2c4;margin:14px 0 0}
+.tk h3{font:400 27px/1.1 var(--disp);margin:12px 0 8px;color:#1f1c16;text-wrap:balance}
+.tk p{margin:0 0 16px;font-size:15.5px;line-height:1.5;color:#4a453c}
+.glimpse{margin-top:auto;height:150px;border-radius:12px;background:#faf8f3;border:1px solid #efe9dc;overflow:hidden}
+.glimpse svg{display:block;width:100%;height:100%}
+.fire{display:flex;justify-content:space-between;gap:8px;margin-top:14px;font:700 13px 'Courier Prime',ui-monospace,monospace;letter-spacing:.08em;color:#23201a}
+.fire span:first-child{color:#6b655a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.stamp{position:absolute;right:18px;top:118px;font:700 28px 'Courier Prime',ui-monospace,monospace;color:#c4562a;border:3px solid #c4562a;padding:2px 12px;transform:rotate(-12deg) scale(2.2);opacity:0;letter-spacing:.12em;pointer-events:none;background:rgba(255,255,255,.75)}
+.tk.done .stamp{opacity:.9;transform:rotate(-12deg) scale(1);transition:transform .35s cubic-bezier(.3,1.6,.5,1),opacity .2s}
+.pager{display:flex;justify-content:center;gap:6px}
+.pager i{width:6px;height:6px;border-radius:50%;background:#ddd6c8;transition:all .3s}.pager i.on{width:22px;border-radius:6px;background:var(--ink)}.pager i.ok{background:#c4562a}
+/* the reading sheet */
+.lwrap{position:fixed;inset:0;z-index:25}
+.lscrim{position:absolute;inset:0;background:rgba(35,32,26,.25);animation:fade .3s both}
+@keyframes fade{from{opacity:0}}
+.lsheet{position:absolute;left:0;right:0;bottom:0;top:max(44px,env(safe-area-inset-top));max-width:640px;margin:0 auto;border-radius:26px 26px 0 0;background:#fff;box-shadow:0 -20px 40px -20px #3a2e1855;overflow-y:auto;-webkit-overflow-scrolling:touch;animation:rise .45s cubic-bezier(.2,.9,.2,1) both}
+@keyframes rise{from{transform:translateY(100%)}}
+.lsheet .grab{width:42px;height:5px;border-radius:5px;background:#ddd6c8;margin:10px auto 0}
+.lsheet .x{position:absolute;top:10px;right:12px;z-index:3;width:44px;height:44px;border-radius:50%;border:0;background:#f3efe6;font:600 18px var(--ui)}
+.lsheet .rcpt{display:flex;justify-content:space-between;gap:8px;padding:8px 22px 0;font:700 12px 'Courier Prime',ui-monospace,monospace;letter-spacing:.08em;color:#4a453c}
+.lsheet .tabs{position:sticky;top:0;z-index:2;display:flex;gap:6px;padding:12px 18px;background:#fff;border-bottom:1px solid #f0ebe0;overflow-x:auto;scrollbar-width:none}
+.lsheet .tabs::-webkit-scrollbar{display:none}
+.lsheet .tabs button{flex:0 0 auto;border:1px solid #e6e0d3;background:#fff;border-radius:99px;min-height:40px;padding:0 14px;font:600 13px var(--ui);color:#4a453c}
+.lsheet .tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.lb{padding:6px 20px calc(44px + env(safe-area-inset-bottom))}
+.lb h2{font:400 30px/1.12 var(--disp);margin:10px 0 8px;color:#1f1c16;text-wrap:balance}
+.lb .out{font-style:italic;color:#5a5347;font-size:16px;line-height:1.45;margin:0 0 14px}
+.lb .fig{margin:0 -20px;padding:14px 0 10px;background:#fbfaf7}
+.lb .fig svg{display:block;width:100%;height:auto}
+.lb .fig .alt{font-size:13px;color:#6b655a;text-align:center;margin:8px 20px 0;line-height:1.45}
+.lb .zoom{display:block;margin:10px auto 0;border:1px solid #e6e0d3;background:#fff;border-radius:99px;min-height:40px;padding:0 16px;font:600 13px var(--ui);color:#23201a}
+.lb p{font-size:16.5px;line-height:1.65;color:#2f2b24;margin:14px 0 0}
+.lb h4{font:700 13px 'Courier Prime',ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a5a2b;margin:26px 0 0}
+.lb h4+p{margin-top:6px}
+.lb .work{margin-top:22px;padding:14px 16px;border-radius:14px;background:#fbfaf7;border:1px solid #ece6d8}
+.lb .work b{display:block;font:700 12px 'Courier Prime',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a5a2b;margin-bottom:4px}
+.lb .work p{margin:0;font-size:16px}
+.lb .take{font:400 22px/1.3 var(--disp);color:#1f1c16;text-align:center;margin:22px 0 0;padding:16px 0;border-top:2px dashed #d8d2c4;border-bottom:2px dashed #d8d2c4}
+.lb .src{font-size:13px;color:#6b655a;text-align:center;margin-top:14px;line-height:1.7}
+.lb .src a{color:var(--goldd)}
+.lb .checked{font-size:12.5px;color:#6b655a;text-align:center;margin-top:6px;line-height:1.45}
+.lb .served{display:block;width:100%;margin-top:22px;min-height:52px;border:0;border-radius:14px;background:#c4562a;color:#fff;font:700 15px 'Courier Prime',ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase}
+.lb .served.was{background:#fff;color:#c4562a;border:2px solid #c4562a}
+.big{position:fixed;inset:0;z-index:28;background:#fff;display:flex;flex-direction:column;animation:fade .25s both}
+.big .bar2{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:max(12px,env(safe-area-inset-top)) 16px 12px;border-bottom:1px solid #f0ebe0;font:600 14px var(--ui);color:#4a453c}
+.big .bar2 button{border:0;background:var(--ink);color:#fff;border-radius:99px;min-height:44px;padding:0 18px;font:600 14px var(--ui)}
+.big .pan{flex:1;overflow:auto;-webkit-overflow-scrolling:touch}
+.big .pan svg{display:block;width:200%;max-width:1100px;height:auto;padding:14px}
+.big .hint2{padding:8px 16px calc(14px + env(safe-area-inset-bottom));font-size:13px;color:#6b655a;text-align:center}
+@media (prefers-reduced-motion: reduce){.tk,.lsheet,.lscrim,.big,.bell{animation:none!important}.building>*{animation:none!important}}
+@keyframes build{from{opacity:0;transform:translateY(6px) scale(.97)}to{opacity:1;transform:none}}
+.building>*{animation:build .5s cubic-bezier(.2,.9,.2,1) both;transform-box:fill-box;transform-origin:center}
 #fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:30}
 @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}
 </style>

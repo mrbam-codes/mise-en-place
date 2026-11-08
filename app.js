@@ -17,7 +17,7 @@ const ORD=['First','Second','Third'];
 
 /* ---------- saved progress (this phone only) ---------- */
 const KEY='mep-v1',DAYRE=/^\d{4}-\d{2}-\d{2}$/;
-const fresh=()=>({days:{},areas:{},lessons:{},points:0,badges:{},review:[],prog:{}});
+const fresh=()=>({days:{},areas:{},lessons:{},points:0,badges:{},review:[],prog:{},learned:{}});
 let S=(()=>{try{const s=JSON.parse(localStorage.getItem(KEY));return s&&s.days?Object.assign(fresh(),s):fresh()}catch(e){return fresh()}})();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 const LEVELS=[[0,'Commis'],[100,'Demi chef'],[300,'Chef de partie'],[600,'Sous chef'],[1000,'Head chef'],[1600,'Chef patron'],[2500,'Restaurateur']];
@@ -154,9 +154,9 @@ async function openProgress(){
   g.append(stat(streak()+(streak()===1?' day':' days'),'Current streak'),stat(days.length+(days.length===1?' day':' days'),'Quizzes finished'),stat(S.review.length+'','Questions in review'),stat(tt?Math.round(100*tc/tt)+'%':'None yet','Right answers ('+tc+' of '+tt+')'));bd.append(g);
   bd.append(el('h3',null,'By area'));
   Object.keys(AREA).forEach(k=>{const[c,n]=S.areas[k]||[0,0],p=n?Math.round(100*c/n):0;const row=el('div');row.style.margin='10px 0';const r2=el('div','row'),lab=el('span'),d=el('i','dot');d.style.background=AREA[k][1];lab.append(d,AREA[k][0]);r2.append(lab,el('span',null,n?c+' of '+n+' right':'No answers yet'));const br=el('div','bar');br.style.maxWidth='none';br.append(el('i'));br.firstChild.style.width=p+'%';br.firstChild.style.background=AREA[k][1];row.append(r2,br);bd.append(row)});
-  bd.append(el('h3',null,'The 661-lesson map'));const gr=el('div','grid');bd.append(gr,el('p','meta','One square per lesson, coloured by area. Squares light up once you have taken that day’s quiz.'));
+  bd.append(el('h3',null,'The 661-lesson map'));const gr=el('div','grid');bd.append(gr,el('p','meta','One square per lesson, coloured by area. A square lights up when you serve that lesson or take that day’s quiz.'));
   try{const c=await fetch('course.json',{cache:'force-cache'}).then(r=>r.json());const seen=new Set(days.map(courseDay));
-    c.lessons.forEach(l=>{const i=el('i',seen.has(l.day)?'d':'');i.style.background=AREA[l.area][1];i.title='Day '+l.day+': '+l.title;gr.append(i)})}catch(e){gr.append(el('p','meta','The map could not load.'))}
+    c.lessons.forEach(l=>{const i=el('i',seen.has(l.day)||(S.learned&&S.learned[l.n])?'d':'');i.style.background=AREA[l.area][1];i.title='Day '+l.day+': '+l.title;gr.append(i)})}catch(e){gr.append(el('p','meta','The map could not load.'))}
   bd.append(el('h3',null,'Badges'));const bg=el('div','badges');BADGES.forEach(([id,n,d])=>{const c=el('div','bd'+(S.badges[id]?'':' lock'));c.append(el('b',null,n),S.badges[id]?'Earned '+S.badges[id]:d);bg.append(c)});bd.append(bg);
   bd.append(el('h3',null,'Back up your progress'),el('p','meta','Your streak and answers live only on this phone. Copy a backup code to keep them safe or move them to a new phone.'));
   const ex=el('button','btn','Copy backup code'),ta=el('textarea');ta.placeholder='Paste a backup code here to restore';ta.setAttribute('aria-label','Backup code');
@@ -167,16 +167,52 @@ async function openProgress(){
 
 /* ---------- the page ---------- */
 function rule(t,id){const r=el('div','rule',t);if(id)r.id=id;return r}
-function lessonEl(l,i){
-  const s=el('section','lesson'),a=AREA[l.area]||['',''];s.id='lesson-'+(i+1);
-  const r=rule(ORD[i]+' · '+a[0]);const d=el('i','dot');d.style.background=a[1];r.insertBefore(d,r.childNodes[0]);s.append(r);
-  s.append(el('div','mod','Lesson '+l.n+' · '+l.module),el('h2','t',l.title),el('p','outcome',l.outcome));
-  const f=el('div','fig'),g=drawSvg(l.svg);if(g){f.dataset.ok='1';f.append(g)}else f.append(el('p','note','The diagram could not be drawn.'));f.append(el('div','alt',l.alt));s.append(f);
-  s.append(el('p',null,l.intro));(l.points||[]).forEach(p=>s.append(el('h3',null,p.h),el('p',null,p.p)));
-  const w=el('div','atwork');w.append(el('b',null,'At work'),el('p',null,l.atWork));s.append(w,el('p','take',l.takeaway));
-  const sr=el('div','src');sr.append('Source · ');(l.sources||[]).forEach((x,j)=>{if(j)sr.append(' · ');sr.append(link(x.name+' ↗',x.url))});s.append(sr);
-  if(l.checked)s.append(el('div','checked','Figures re-checked: '+l.checked));
-  return s}
+const mins=l=>Math.max(2,Math.round([l.intro,l.atWork,l.takeaway].concat((l.points||[]).map(p=>p.p)).join(' ').split(/\s+/).length/110))+' min';
+const pad3=n=>String(n).padStart(3,'0');
+const ROMAN=['I','II','III'];
+function glimpse(src){const g=drawSvg(src);if(!g)return null;const vb=(g.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+  if(vb.length===4&&vb.every(isFinite)){const cw=vb[2]*.6,ch=vb[3]*.42;g.setAttribute('viewBox',(vb[0]+(vb[2]-cw)/2)+' '+(vb[1]+vb[3]*.2)+' '+cw+' '+ch);g.setAttribute('preserveAspectRatio','xMidYMid slice')}
+  g.setAttribute('aria-hidden','true');return g}
+function glide(box,to){const from=box.scrollTop,d=to-from,t0=performance.now(),T=matchMedia('(prefers-reduced-motion: reduce)').matches?0:420;if(!T){box.scrollTop=to;return}setTimeout(()=>{box.scrollTop=to},T+80);(function f(t){const k=Math.min(1,(t-t0)/T),e=1-Math.pow(1-k,3);box.scrollTop=from+d*e;if(k<1)requestAnimationFrame(f)})(t0)}
+function build(svg){svg.classList.add('building');[...svg.children].forEach((c,i)=>c.style.animationDelay=(i*28)+'ms')}
+function enlarge(l){const prev=document.activeElement,bg=el('div','big');bg.setAttribute('role','dialog');bg.setAttribute('aria-modal','true');bg.setAttribute('aria-label','Diagram: '+l.title);
+  const br=el('div','bar2');br.append(el('span',null,l.title));const cb=el('button',null,'Done');cb.onclick=()=>history.back();br.append(cb);
+  const pan=el('div','pan'),g=drawSvg(l.svg);if(g)pan.append(g);bg.append(br,pan,el('div','hint2','Drag to move around the diagram'));document.body.append(bg);
+  history.pushState({s:1},'');stack.push({sh:bg,prev});cb.focus()}
+function openLesson(b,i,after){
+  const l=b.lessons[i],a=AREA[l.area]||['','#b48a3c'],prev=document.activeElement,id='L'+i;
+  const wrap=el('div','lwrap'),scrim=el('div','lscrim'),sh=el('div','lsheet');sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-label','Lesson '+l.n+': '+l.title);
+  const x=el('button','x','✕');x.setAttribute('aria-label','Close lesson');
+  const rc=el('div','rcpt');rc.append(el('span',null,'LESSON '+pad3(l.n)+' · '+a[0].toUpperCase()),el('span',null,mins(l).toUpperCase()));
+  const lb=el('div','lb');lb.append(el('h2',null,l.title),el('p','out',l.outcome));
+  const f=el('div','fig');f.id=id+'-fig';const g=drawSvg(l.svg);if(g){f.dataset.ok='1';f.append(g);build(g)}else f.append(el('p','note','The diagram could not be drawn.'));
+  f.append(el('div','alt',l.alt));const zb=el('button','zoom','Enlarge diagram ⤢');zb.onclick=()=>enlarge(l);if(g)f.append(zb);lb.append(f,el('p',null,l.intro));
+  (l.points||[]).forEach((pt,k)=>{const h=el('h4',null,pt.h);if(!k)h.id=id+'-pts';lb.append(h,el('p',null,pt.p))});
+  const w=el('div','work');w.id=id+'-work';w.append(el('b',null,'At work'),el('p',null,l.atWork));const tk=el('p','take',l.takeaway);tk.id=id+'-take';lb.append(w,tk);
+  const sr=el('div','src');sr.append('Source · ');(l.sources||[]).forEach((s2,j)=>{if(j)sr.append(' · ');sr.append(link(s2.name+' ↗',s2.url))});lb.append(sr);
+  if(l.checked)lb.append(el('div','checked','Figures re-checked: '+l.checked));
+  const was=!!(S.learned&&S.learned[l.n]);const sv=el('button','served'+(was?' was':''),was?'Served ✓ · close':'Mark as served');lb.append(sv);
+  const tabs=el('div','tabs');[['Diagram','-fig'],['Key points','-pts'],['At work','-work'],['Remember','-take']].forEach(([t,sf],j)=>{const bt=el('button',j?'':'on',t);bt.onclick=()=>{[...tabs.children].forEach(z=>z.classList.remove('on'));bt.classList.add('on');const tg=document.getElementById(id+sf);if(tg)glide(sh,tg.offsetTop-tabs.offsetHeight-10)};tabs.append(bt)});
+  sh.append(el('div','grab'),x,rc,tabs,lb);wrap.append(scrim,sh);document.body.append(wrap);document.body.style.overflow='hidden';
+  history.pushState({s:1},'');stack.push({sh:wrap,prev});x.onclick=scrim.onclick=()=>history.back();x.focus();
+  sv.onclick=()=>{if(!was){S.learned=S.learned||{};S.learned[l.n]=b.date;save();after&&after()}history.back()}}
+function tickets(b){
+  const sec=el('section');sec.id='lessons';const hd=el('div','lhead');hd.append(el('h2',null,'Today’s tickets'));
+  const r=el('div','r'),b1=el('b');b1.append(el('span','bell'),'THE PASS');const cnt=el('span');r.append(b1,cnt);hd.append(r);
+  sec.append(hd,el('p','lsub',b.lessons.length+' tickets on the pass. Swipe, then tap to fire.'));
+  const car=el('div','car'),pager=el('div','pager'),tks=[];
+  const mark=()=>{let n=0;tks.forEach((t,i)=>{const on=!!(S.learned&&S.learned[b.lessons[i].n]);t.classList.toggle('done',on);pager.children[i].classList.toggle('ok',on);if(on)n++});cnt.textContent=n+'/'+tks.length+' SERVED'};
+  b.lessons.forEach((l,i)=>{const a=AREA[l.area]||['','#b48a3c'];const t=el('button','tk');t.style.setProperty('--c',a[1]);t.setAttribute('aria-label','Ticket '+(i+1)+' of '+b.lessons.length+': lesson '+l.n+', '+l.title+', '+mins(l));
+    const pa=el('div','paper'),r1=el('div','rows');r1.append(el('span',null,'LESSON '+pad3(l.n)),el('span','ar',a[0].toUpperCase()));
+    const r2=el('div','rows lt');r2.append(el('span',null,'COVERS '+mins(l).toUpperCase()),el('span',null,'TICKET '+(i+1)+'/'+b.lessons.length));
+    const gl=el('div','glimpse'),gs=glimpse(l.svg);if(gs){gl.dataset.ok='1';gl.append(gs)}
+    const fire=el('div','fire');fire.append(el('span',null,l.module.toUpperCase()),el('span',null,'FIRE →'));
+    pa.append(r1,r2,el('div','rn',ROMAN[i]||String(i+1)),el('hr','dash'),el('h3',null,l.title),el('p',null,l.outcome),gl,fire);
+    t.append(pa,el('div','stamp','SERVED'));car.append(t);tks.push(t);pager.append(el('i',i?'':'on'));
+    t.onclick=()=>openLesson(b,i,mark)});
+  const upd=()=>{const w=tks[0].offsetWidth+14,idx=Math.max(0,Math.min(tks.length-1,Math.round(car.scrollLeft/w)));[...pager.children].forEach((d,i)=>d.classList.toggle('on',i===idx));tks.forEach((t,i)=>t.classList.toggle('off',i!==idx))};
+  car.addEventListener('scroll',()=>requestAnimationFrame(upd));requestAnimationFrame(upd);
+  sec.append(car,pager);mark();return sec}
 function render(b,list){
   const app=document.getElementById('app');app.textContent='';
   const isToday=b.date===todayStr(),sk=streak(),heroSk=sk+(isToday&&!S.days[b.date]?1:0);
@@ -188,8 +224,8 @@ function render(b,list){
   if(!isToday){const n=el('p','note','You are reading an earlier day. ');const a=el('a',null,'Go to today');a.href='./';n.append(a);app.append(n)}
   app.append(el('p','welcome',b.welcome));
   const pg=el('div','prog','Day '+b.day+' of '+TOTAL+' · Phase '+b.phase+' of 5'),bar=el('div','bar');bar.append(el('i'));bar.firstChild.style.width=Math.round(100*b.day/TOTAL)+'%';pg.append(bar);app.append(pg);
-  const ch=el('div','chips');[['Lessons','#lesson-1'],['Quiz','#quiz'],['News','#news'],['Words','#words']].forEach(([t,hr])=>{const a=el('a',null,t);a.href=hr;ch.append(a)});app.append(ch);
-  b.lessons.forEach((l,i)=>app.append(lessonEl(l,i)));
+  const ch=el('div','chips');[['Lessons','#lessons'],['Quiz','#quiz'],['News','#news'],['Words','#words']].forEach(([t,hr])=>{const a=el('a',null,t);a.href=hr;ch.append(a)});app.append(ch);
+  app.append(tickets(b));
   const t=el('section','tryit');t.append(rule('Try this at work'),el('h2',null,b.try.title));const ol=el('ol');b.try.steps.forEach(s=>ol.append(el('li',null,s)));t.append(ol,el('p','why',b.try.why));app.append(t);
   const items=dayItems(b),qc=el('section','quizcard');qc.id='quiz';
   const rv=el('section','reviewcard');
@@ -207,7 +243,8 @@ function render(b,list){
   if((b.toolkit||[]).length){wd.append(rule('Added to your toolkit'));b.toolkit.forEach(x=>wd.append(toolCard(x)))}app.append(wd);
   const more=el('div','chips');more.style.marginTop='34px';[['Glossary',()=>openGlossary(list)],['Toolkit',()=>openToolkit(list)],['Progress',openProgress],['Past days',()=>openArchive(list)]].forEach(([t,f])=>{const x=el('button',null,t);x.onclick=f;more.append(x)});app.append(more);
   app.append(el('footer',null,'Mise en Place · a daily course for running and opening a restaurant. Your streak and answers are saved only on this phone. News links go to the original reporting; lessons are a study guide, so check the official source before acting on anything legal.'));
-  if(location.hash){const tgt=document.getElementById(location.hash.slice(1));tgt&&tgt.scrollIntoView()}}
+  if(location.hash){const tgt=document.getElementById(location.hash.slice(1));tgt&&tgt.scrollIntoView()}
+  const op=+new URLSearchParams(location.search).get('open');if(op>=1&&op<=b.lessons.length)openLesson(b,op-1)}
 async function boot(){
   const app=document.getElementById('app');
   try{const list=await fetch('briefs/index.json',{cache:'no-cache'}).then(r=>r.json());
