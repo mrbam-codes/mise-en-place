@@ -113,62 +113,146 @@
  ],
  "news": [
   {
-   "area": "industry",
-   "headline": "Hospitality Awards UK gala at the Waldorf Hilton on Monday",
-   "summary": "The fourth Hospitality Awards UK takes place on Monday 9 November at The Waldorf Hilton London, Aldwych. It is an invitation-only, black-tie evening recognising achievement across UK hospitality.",
-   "why": "Awards shortlists are a free map of who the industry rates this year. Worth a look for names, venues and managers to learn from.",
-   "source": {
-    "name": "The Luxe Review",
-    "date": "6 Nov",
-    "url": "https://theluxereview.com/2026/11/06/hospitality-awards-uk-returns-to-the-waldorf-hilton-for-fourth-annual-black-tie-gala/"
-   }
-  },
-  {
-   "area": "trends",
-   "headline": "Eating out costs more per visit, but people go out less",
-   "summary": "Lumina Intelligence found average spend per eating-out visit reached £18.35 in the first quarter of 2026, up 5.5% on a year earlier, while the share of people eating out fell to 53.3%.",
-   "why": "Guests are spending more when they come but choosing visits carefully. Every visit has to feel worth it, which is today's hospitality lesson in numbers.",
-   "source": {
-    "name": "Lumina Intelligence",
-    "date": "5 May",
-    "url": "https://www.lumina-intelligence.com/blog/uk-restaurant-consumer-trends-2026/"
-   }
-  },
-  {
    "area": "finedining",
    "headline": "Top kitchens drop turbot and lobster as costs soar",
-   "summary": "Starred chefs are cutting expensive dishes. Tommy Banks says turbot rose from £14.50 a kilo in 2018 to £65 a kilo, so his restaurants stopped serving it routinely. St John co-founder Jon Spiteri is also quoted.",
-   "why": "Food cost pressure hits fine dining first. Watch how chefs swap to cheaper fish and cuts without lowering the experience: it is a menu skill you will need.",
+   "gist": "Turbot has gone from £14.50 a kilo in 2018 to £65, so starred chefs are cutting premium dishes.",
+   "big": {
+    "value": "£65",
+    "label": "a kilo of turbot"
+   },
+   "read": {
+    "what": "Starred restaurants are cutting expensive dishes such as lobster, turbot and premium steak. Tommy Banks says turbot rose from £14.50 a kilo in 2018 to £65 a kilo, so his restaurants stopped serving it routinely.",
+    "how": "Chefs are swapping to cheaper fish and cuts to keep menu prices manageable. St John co-founder Jon Spiteri, now at The Latimer, is also quoted on rising costs.",
+    "soWhat": "Food cost pressure hits fine dining first and then spreads. Knowing when to swap an ingredient, and how to explain it to guests, is a core skill.",
+    "take": "Re-cost your three most expensive dishes this month. If one ingredient has more than doubled, plan the swap before the margin forces it."
+   },
    "source": {
     "name": "IndexBox",
     "date": "31 Oct",
     "url": "https://www.indexbox.io/blog/uk-fine-dining-restaurants-drop-lobster-and-steak-as-food-costs-soar/"
+   },
+   "photo": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Scophthalmidae_Scophthalmus_maximus_2.jpg/960px-Scophthalmidae_Scophthalmus_maximus_2.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Scophthalmidae_Scophthalmus_maximus_2.jpg",
+    "credit": "NasserHalaweh, Wikimedia Commons",
+    "licence": "CC BY-SA 4.0",
+    "alt": "A whole turbot, the flat fish prized in fine dining"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 230\" role=\"img\" aria-label=\"Turbot price per kilo: £14.50 in 2018, £65 in 2026\"><rect x=\"70\" y=\"156.65\" width=\"76\" height=\"33.349999999999994\" rx=\"8\" fill=\"#d9c7b0\"/><text x=\"108\" y=\"146.65\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">£14.5</text><text x=\"108\" y=\"210\" text-anchor=\"middle\" font-size=\"12\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">2018</text><rect x=\"200\" y=\"40.5\" width=\"76\" height=\"149.5\" rx=\"8\" fill=\"#a3456b\"/><text x=\"238\" y=\"30.5\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">£65</text><text x=\"238\" y=\"210\" text-anchor=\"middle\" font-size=\"12\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">2026</text><line x1=\"40\" y1=\"190\" x2=\"300\" y2=\"190\" stroke=\"#e4cf9c\" stroke-width=\"2\"/><path d=\"M150 150 C 175 120, 185 100, 196 60\" fill=\"none\" stroke=\"#a3456b\" stroke-width=\"2.5\" stroke-dasharray=\"4 4\"/><text x=\"150\" y=\"40\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#a3456b\" font-family=\"Figtree, sans-serif\">About 4.5 times the price</text><text x=\"170\" y=\"226\" text-anchor=\"middle\" font-size=\"11\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Turbot, £ per kilo</text></svg>",
+   "drawingAlt": "Turbot rose from £14.50 a kilo in 2018 to £65 a kilo, about 4.5 times the price."
+  },
+  {
+   "area": "trends",
+   "headline": "Eating out costs more per visit, but fewer people go",
+   "gist": "Average spend per visit hit £18.35 in early 2026, up 5.5%, while the share of people eating out fell to 53.3%.",
+   "big": {
+    "value": "£18.35",
+    "label": "spend per visit"
+   },
+   "read": {
+    "what": "Lumina Intelligence found average spend per eating-out visit reached £18.35 in the first quarter of 2026, up 5.5% on a year earlier. The share of people eating out fell to 53.3%, down 3 percentage points.",
+    "how": "Those who still eat out go more often: 1.6 visits a week, up 5.5%. People aged 25 to 34 made 24.1% of occasions. Lumina valued the UK restaurant market at £18.5 billion in 2025, down 2.0%.",
+    "soWhat": "Fewer guests, each spending more and choosing more carefully. Every visit has to feel worth the money.",
+    "take": "Watch two numbers on your floor: spend per head and how often regulars come back. Growth now comes from loyalty more than new faces."
+   },
+   "source": {
+    "name": "Lumina Intelligence",
+    "date": "5 May",
+    "url": "https://www.lumina-intelligence.com/blog/uk-restaurant-consumer-trends-2026/"
+   },
+   "photo": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Interior_of_a_London_restaurant_-_geograph.org.uk_-_8378583.jpg/960px-Interior_of_a_London_restaurant_-_geograph.org.uk_-_8378583.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Interior_of_a_London_restaurant_-_geograph.org.uk_-_8378583.jpg",
+    "credit": "Alan Hughes, Wikimedia Commons",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Diners' tables inside a London restaurant"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 200\" role=\"img\" aria-label=\"Spend per visit up 5.5% to £18.35, share of people eating out down 3 points to 53.3%\"><rect x=\"14\" y=\"14\" width=\"150\" height=\"160\" rx=\"16\" fill=\"#fffdf8\" stroke=\"#e4cf9c\" stroke-width=\"1.5\"/><text x=\"89\" y=\"60\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">£18.35</text><text x=\"89\" y=\"82\" text-anchor=\"middle\" font-size=\"12\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">spend per visit</text><polygon points=\"74,126 89,106 104,126\" fill=\"#5e8f3a\"/><text x=\"89\" y=\"150\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#5e8f3a\" font-family=\"Figtree, sans-serif\">+5.5%</text><text x=\"89\" y=\"166\" text-anchor=\"middle\" font-size=\"11\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">up on a year earlier</text><rect x=\"176\" y=\"14\" width=\"150\" height=\"160\" rx=\"16\" fill=\"#fffdf8\" stroke=\"#e4cf9c\" stroke-width=\"1.5\"/><text x=\"251\" y=\"60\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">53.3%</text><text x=\"251\" y=\"82\" text-anchor=\"middle\" font-size=\"12\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">of people eat out</text><polygon points=\"236,108 251,128 266,108\" fill=\"#c4562a\"/><text x=\"251\" y=\"150\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#c4562a\" font-family=\"Figtree, sans-serif\">−3 points</text><text x=\"251\" y=\"166\" text-anchor=\"middle\" font-size=\"11\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">down on a year earlier</text><text x=\"170\" y=\"194\" text-anchor=\"middle\" font-size=\"11\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">UK eating out, first quarter of 2026</text></svg>",
+   "drawingAlt": "Spend per visit up 5.5% to £18.35, while the share of people eating out fell 3 points to 53.3%."
+  },
+  {
+   "area": "industry",
+   "headline": "Hospitality Awards UK gala at the Waldorf Hilton on Monday",
+   "gist": "The fourth Hospitality Awards UK is an invitation-only, black-tie evening on Monday 9 November at The Waldorf Hilton London, Aldwych.",
+   "big": {
+    "value": "9 Nov",
+    "label": "gala night"
+   },
+   "read": {
+    "what": "The Hospitality Awards UK returns for its fourth year on Monday 9 November at The Waldorf Hilton London on Aldwych. It is an invitation-only, black-tie gala recognising achievement across UK hospitality, organised by Confassociazioni.",
+    "how": "",
+    "soWhat": "Shortlists and winners are a free map of the venues, managers and teams the industry rates this year.",
+    "take": "When the winners are out, pick one front-of-house winner and look at what they are known for. It is a quick way to benchmark your own floor."
+   },
+   "source": {
+    "name": "The Luxe Review",
+    "date": "6 Nov",
+    "url": "https://theluxereview.com/2026/11/06/hospitality-awards-uk-returns-to-the-waldorf-hilton-for-fourth-annual-black-tie-gala/"
+   },
+   "photo": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Waldorf_Hotel%2C_London%2C_2016.jpg/960px-Waldorf_Hotel%2C_London%2C_2016.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Waldorf_Hotel,_London,_2016.jpg",
+    "credit": "Bjørn Erik Pedersen, Wikimedia Commons",
+    "licence": "CC BY-SA 4.0",
+    "alt": "The Waldorf Hotel on Aldwych, London"
    }
   },
   {
    "area": "openings",
    "headline": "Big Mamma's Edmondo arrives in the City",
-   "summary": "Big Mamma's first site in the City of London, Edmondo, was due to open on 6 November at 6 Lombard Street, near Bank, serving Italian food.",
-   "why": "Its first site in the City, near Bank. When a big group picks a new area, ask why there and why now: footfall, lunch trade and rent decide where a restaurant can work.",
+   "gist": "Big Mamma's first City of London site, the Italian Edmondo, was due to open on 6 November at 6 Lombard Street near Bank.",
+   "big": {
+    "value": "EC3",
+    "label": "near Bank"
+   },
+   "read": {
+    "what": "Edmondo, from the Big Mamma group, was due to open on 6 November at 6 Lombard Street, EC3, near Bank. It is the group's first site in the City of London and serves Italian food.",
+    "how": "",
+    "soWhat": "A big group choosing the City shows where operators see trade: office workers and after-work crowds near Bank.",
+    "take": "When a group picks a new area, ask why there and why now. Footfall, lunch trade and rents decide where a restaurant can work."
+   },
    "source": {
     "name": "Hot Dinners",
     "date": "29 Oct",
     "url": "https://www.hot-dinners.com/Features/Hot-Dinners-recommends/new-london-restaurants-opening-in-november-2026"
+   },
+   "photo": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Lombard_Street%2C_London_2022-04-16.jpg/960px-Lombard_Street%2C_London_2022-04-16.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lombard_Street,_London_2022-04-16.jpg",
+    "credit": "Roy Katzenberg, Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "alt": "Lombard Street in the City of London, near Bank"
    }
   },
   {
    "area": "openings",
-   "headline": "Tom Booton's first solo restaurant due on Pimlico Road",
-   "summary": "Chef Tom Booton opens his first solo restaurant, modern British, at 87 Pimlico Road on 23 November. Kudu's team also open Braai Bird, rotisserie chicken with South African sauces, in Nunhead on 19 November.",
-   "why": "Two models in one month: a chef's personal restaurant and a tight single-dish concept from an established group. Both are routes to your own place.",
+   "headline": "Tom Booton goes solo on Pimlico Road",
+   "gist": "Chef Tom Booton opens his first solo restaurant, modern British, at 87 Pimlico Road on 23 November.",
+   "big": {
+    "value": "23 Nov",
+    "label": "opening day"
+   },
+   "read": {
+    "what": "Chef Tom Booton opens his first solo restaurant, modern British, at 87 Pimlico Road, SW1, on 23 November. In the same month Kudu's team open Braai Bird in Nunhead on 19 November: rotisserie chicken with South African sauces.",
+    "how": "",
+    "soWhat": "Two routes to your own place in one month: a chef's personal restaurant, and a tight single-dish idea from an established group.",
+    "take": "Notice how narrow Braai Bird's idea is. A simple concept is cheaper to open, easier to staff and easier to explain."
+   },
    "source": {
     "name": "Hot Dinners",
     "date": "29 Oct",
     "url": "https://www.hot-dinners.com/Features/Hot-Dinners-recommends/new-london-restaurants-opening-in-november-2026"
+   },
+   "photo": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/ENG_London_Pimlico_Road_01.jpg/960px-ENG_London_Pimlico_Road_01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:ENG_London_Pimlico_Road_01.jpg",
+    "credit": "-wuppertaler, Wikimedia Commons",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Shops and restaurants along Pimlico Road, London"
    }
   }
  ],
- "newsNote": "A quiet Sunday for trade news. The trends item is the latest hard data found, from May.",
+ "newsNote": "A quiet Sunday for trade news. The trends story is the latest hard data found, from May.",
  "try": {
   "title": "Run a four-objective walk before service",
   "steps": [
