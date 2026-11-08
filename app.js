@@ -206,7 +206,7 @@ function enlarge(l){const prev=document.activeElement,bg=el('div','big');bg.setA
   const br=el('div','bar2');br.append(el('span',null,l.title));const cb=el('button',null,'Done');cb.onclick=()=>history.back();br.append(cb);
   const pan=el('div','pan'),g=drawSvg(l.svg);if(g)pan.append(g);bg.append(br,pan,el('div','hint2','Drag to move around the diagram'));document.body.append(bg);
   history.pushState({s:1},'');stack.push({sh:bg,prev});cb.focus()}
-function openLesson(b,i,after){
+function openLesson(b,i,after,undo){
   const l=b.lessons[i],a=AREA[l.area]||['','#b48a3c'],prev=document.activeElement,id='L'+i;
   const wrap=el('div','lwrap'),scrim=el('div','lscrim'),sh=el('div','lsheet');sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-label','Lesson '+l.n+': '+l.title);
   const x=el('button','x','✕');x.setAttribute('aria-label','Close lesson');
@@ -220,6 +220,7 @@ function openLesson(b,i,after){
   const sr=el('div','src');sr.append('Source · ');(l.sources||[]).forEach((s2,j)=>{if(j)sr.append(' · ');sr.append(link(s2.name+' ↗',s2.url))});lb.append(sr);
   if(l.checked)lb.append(el('div','checked','Figures re-checked: '+l.checked));
   const was=!!(S.learned&&S.learned[l.n]);const sv=el('button','served'+(was?' was':''),was?'Served ✓ · close':'Mark as served');lb.append(sv);
+  if(was){const un=el('button','unserve','Not finished? Take it off the pass');un.onclick=()=>{history.back();delete S.learned[l.n];save();undo&&undo(i)};lb.append(un)}
   const tabs=el('div','tabs');[['Diagram','-fig'],['Key points','-pts'],['At work','-work'],['Remember','-take']].forEach(([t,sf],j)=>{const bt=el('button',j?'':'on',t);bt.onclick=()=>{[...tabs.children].forEach(z=>z.classList.remove('on'));bt.classList.add('on');const tg=document.getElementById(id+sf);if(tg)glide(sh,tg.offsetTop-tabs.offsetHeight-10)};tabs.append(bt)});
   sh.append(el('div','grab'),x,rc,tabs,lb);wrap.append(scrim,sh);document.body.append(wrap);document.body.style.overflow='hidden';
   history.pushState({s:1},'');stack.push({sh:wrap,prev});x.onclick=scrim.onclick=()=>history.back();x.focus();
@@ -248,7 +249,12 @@ function tickets(b){
     const fire=el('div','fire');fire.append(el('span',null,l.module.toUpperCase()),el('span',null,'FIRE →'));
     pa.append(r1,r2,el('div','rn',ROMAN[i]||String(i+1)),el('hr','dash'),el('h3',null,l.title),el('p',null,l.outcome),gl,fire);
     t.append(pa,el('div','stamp','SERVED'));car.append(t);tks.push(t);pager.append(el('i',i?'':'on'));
-    t.onclick=()=>openLesson(b,i,served)});
+    t.onclick=()=>openLesson(b,i,served,unserve)});
+  /* send a served ticket back: lift it off the rail and put it back in the carousel */
+  async function unserve(i){await waitMs(380);const h=pass.querySelector('.hung[data-i="'+i+'"]'),c=pass.querySelector('.clip[data-i="'+i+'"]');
+    if(h){await anim(h,[{transform:'rotate(0)',opacity:1},{transform:'translateY(-14px) rotate(-6deg)',opacity:0}],{duration:420});h.remove()}if(c)c.remove();
+    slots[i].style.visibility='';tks[i].classList.remove('done');pager.children[i].classList.remove('ok');
+    const nx=mark();if(nx>=0)car.scrollTo({left:tks[nx].offsetLeft-(car.clientWidth-tks[nx].offsetWidth)/2,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
   async function served(i){await waitMs(380);const t=tks[i];t.classList.add('done');pager.children[i].classList.add('ok');
     const tr=t.getBoundingClientRect(),pr=pass.getBoundingClientRect();
     if(pr.bottom<0||pr.top>innerHeight)pass.scrollIntoView({block:'center',behavior:'smooth'}),await waitMs(450);
