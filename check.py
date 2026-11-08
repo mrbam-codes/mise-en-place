@@ -135,6 +135,27 @@ def privacy(b):
                                 "the owner or the new concept")
 
 
+# Colour palette (Champagne, tuned, 8 Nov 2026): main, tint and deep for each area,
+# plus the frame colours. Any strong colour in a diagram must come from here;
+# soft neutrals (greys, ivories, browns with little colour) are always allowed.
+PALETTE = {"#ea5f36", "#fce9e3", "#ac4627", "#865d00", "#eee8db", "#009b37", "#dbf1e3", "#00792b",
+           "#258fec", "#e0effc", "#1b68ad", "#b31e65", "#f4dfe9", "#7647cd", "#ece5f8",
+           "#b48a3c", "#e4cf9c", "#857353", "#2b2417", "#fffdf8", "#fcf9f2", "#ffffff", "#000000"}
+NAMED_OK = {"none", "white", "black", "transparent", "currentcolor"}
+
+
+def colour_ok(v):
+    v = v.strip().lower()
+    if v in NAMED_OK or v.startswith("url(#"):
+        return True
+    if re.fullmatch(r"#[0-9a-f]{3}", v):
+        v = "#" + "".join(c * 2 for c in v[1:])
+    if not re.fullmatch(r"#[0-9a-f]{6}", v):
+        return False
+    rgb = [int(v[i:i + 2], 16) for i in (1, 3, 5)]
+    return v in PALETTE or max(rgb) - min(rgb) <= 40
+
+
 def svg(where, s):
     if not isinstance(s, str) or not s.strip().startswith("<svg"):
         problems.append(f"{where}: svg must be one inline <svg> element")
@@ -173,6 +194,8 @@ def svg(where, s):
                 problems.append(f"{where}: svg attribute {name!r} on <{tag}> is not allowed")
             if "url(" in v.replace(" ", "") and not re.fullmatch(r"\s*url\(#[A-Za-z0-9_-]+\)\s*", v):
                 problems.append(f"{where}: svg attribute {name!r} may only point inside the drawing, url(#id)")
+            if name in ("fill", "stroke", "stop-color") and not colour_ok(v):
+                problems.append(f"{where}: colour {v!r} on <{tag}> is not in the palette (BRIEF.md, Colours): use an area's main, tint or deep, the frame colours, or a soft neutral")
             if name == "font-size":
                 m = re.match(r"^(\d+(\.\d+)?)(px)?$", v.strip())
                 need(m is not None and float(m.group(1)) >= 11, f"{where}: font-size {v!r} is below 11 and unreadable on a phone")
@@ -282,7 +305,9 @@ def check(date):
         text(f"{w} headline", s.get("headline"), 90)
         if "read" in s:
             news_v2(w, s)
-        else:  # older format, accepted until the new one is required
+        elif date >= "2026-11-09":
+            problems.append(f"{w}: use the news format in BRIEF-news.md (gist, big, read, and photo or drawing where they help)")
+        else:  # older format, only for editions before 9 November 2026
             text(f"{w} summary", s.get("summary"), 260)
             text(f"{w} why", s.get("why"), 220)
         src = s.get("source") or {}
