@@ -238,6 +238,38 @@ function tickets(b){
   const upd=()=>{const w=tks[0].offsetWidth+14,idx=Math.max(0,Math.min(tks.length-1,Math.round(car.scrollLeft/w)));[...pager.children].forEach((d,i)=>d.classList.toggle('on',i===idx));tks.forEach((t,i)=>t.classList.toggle('off',i!==idx))};
   car.addEventListener('scroll',()=>requestAnimationFrame(upd));requestAnimationFrame(()=>{placeSlots();const nx=tks.findIndex((t,i)=>!isDone(i));if(nx>0)car.scrollLeft=tks[nx].offsetLeft-(car.clientWidth-tks[nx].offsetWidth)/2;upd()});addEventListener('resize',placeSlots);
   sec.append(pass,car,pager);mark();return sec}
+/* ---------- news: The Pass Gazette lead plus Dispatch slips ---------- */
+const NAREA={industry:['UK industry','#4f6d8f'],trends:['Food and drink trends','#5e8f3a'],finedining:['Fine dining and chefs','#a3456b'],openings:['London openings','#c4562a']};
+const nv=x=>({gist:x.gist||x.summary||'',big:x.big||null,read:x.read||{what:x.summary||'',soWhat:x.why||'',take:''}});
+function photoEl(b,k,ph,cls){if(!ph)return null;const f=el('figure',cls||'nphoto'),im=el('img');im.src='briefs/img/'+b.date+'-'+k+'.jpg';im.alt=ph.alt||'';im.loading='lazy';im.decoding='async';im.onerror=()=>f.remove();
+  const cap=el('figcaption');const a=link('Photo: '+ph.credit+', '+ph.licence+' ↗',ph.page);cap.append(a);f.append(im,cap);return f}
+function openStory(b,k){const x=b.news[k],v=nv(x),ar=NAREA[x.area]||['','#b48a3c'],prev=document.activeElement;
+  const wrap=el('div','lwrap'),scrim=el('div','lscrim'),sh=el('div','lsheet nsheet');sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-label',x.headline);sh.style.setProperty('--c',ar[1]);
+  const xb=el('button','x','✕');xb.setAttribute('aria-label','Close story');const body=el('div','nb');
+  const ph=photoEl(b,k,x.photo,'nhero');if(ph)body.append(ph);
+  const m=el('div','nmeta');m.append(el('span','nk',ar[0]),el('span',null,(x.source.name+' · '+x.source.date).toUpperCase()));body.append(m,el('h2',null,x.headline));
+  if(v.big){const f=el('div','nfig');f.append(el('b',null,v.big.value),el('span',null,v.big.label));body.append(f)}
+  if(x.drawing){const d=el('div','ndraw'),g=drawSvg(x.drawing);if(g){d.dataset.ok='1';d.append(g);build(g)}if(x.drawingAlt)d.append(el('div','alt',x.drawingAlt));body.append(d)}
+  const sec=(h,t,c)=>{if(!t)return;const d=el('div','nsec'+(c?' '+c:''));d.append(el('h4',null,h),el('p',null,t));body.append(d)};
+  sec('What happened',v.read.what);sec('How it works',v.read.how);sec('So what for you',v.read.soWhat,'so');sec('Key insight',v.read.take,'ins');
+  const a=link('',x.source.url);a.className='orig';a.append(el('span',null,'Read the original at '+x.source.name),el('span',null,'↗'));body.append(a);
+  sh.append(el('div','grab'),xb,body);wrap.append(scrim,sh);document.body.append(wrap);document.body.style.overflow='hidden';
+  history.pushState({s:1},'');stack.push({sh:wrap,prev});xb.onclick=scrim.onclick=()=>history.back();xb.focus()}
+function newsSection(b){
+  const sec=el('section','news');sec.id='news';const items=b.news||[];
+  const mast=el('div','gmast');mast.append(el('h2',null,'The Pass Gazette'),el('span',null,nice(b.date)));sec.append(mast);
+  if(!items.length){sec.append(el('p','note','No news today.'));return sec}
+  const lead=items[0],lv=nv(lead),la=NAREA[lead.area]||['','#b48a3c'];const L=el('button','glead');L.style.setProperty('--c',la[1]);L.setAttribute('aria-label','Lead story: '+lead.headline);
+  const lp=photoEl(b,0,lead.photo,'gphoto');if(lp){const fc=lp.querySelector('figcaption');fc.textContent='Photo: '+lead.photo.credit+', '+lead.photo.licence;L.append(lp)}
+  L.append(el('span','nk',la[0]));if(lv.big){L.append(el('div','gbig',lv.big.value),el('div','gbl',lv.big.label))}
+  L.append(el('h3',null,lead.headline),el('p',null,lv.gist),el('span','grd','Read the story →'));L.onclick=()=>openStory(b,0);sec.append(L);
+  const list=el('div','slips');items.slice(1).forEach((x,j)=>{const k=j+1,v=nv(x),ar=NAREA[x.area]||['','#b48a3c'];const sl=el('button','slip');sl.style.setProperty('--c',ar[1]);sl.setAttribute('aria-label',x.headline);
+    const pp=el('div','pp'),dl=el('div','dl');dl.append(el('span','t',ar[0].toUpperCase()),el('span',null,x.source.date.toUpperCase()));pp.append(dl);
+    const row=el('div','srow'),tx=el('div','stx');tx.append(el('h4',null,x.headline),el('p',null,v.gist));row.append(tx);
+    if(x.photo){const th=el('div','sthumb'),im=el('img');im.src='briefs/img/'+b.date+'-'+k+'.jpg';im.alt='';im.loading='lazy';im.onerror=()=>th.remove();th.append(im);row.append(th)}
+    else if(v.big){const t=el('div','tot');t.append(el('b',null,v.big.value),el('span',null,v.big.label));row.append(t)}
+    pp.append(row,el('span','more','READ THE STORY →'));if(x.photo)pp.append(el('span','pcred','Photo: '+x.photo.credit+', '+x.photo.licence));sl.append(pp);sl.onclick=()=>openStory(b,k);list.append(sl)});
+  sec.append(list);if(b.newsNote)sec.append(el('p','note',b.newsNote));return sec}
 function render(b,list){
   const app=document.getElementById('app');app.textContent='';
   const isToday=b.date===todayStr(),sk=streak(),heroSk=sk+(isToday&&!S.days[b.date]?1:0);
@@ -260,10 +292,7 @@ function render(b,list){
     rv.textContent='';const due=S.review.filter(x=>x.due<=todayStr()).length;
     rv.hidden=!due;if(due){rv.append(el('div','prog','Review'),el('h2',null,due+' question'+(due>1?'s':'')+' to revise'),el('p',null,'Questions you missed before. Get each right a few times, days apart, and it leaves the list.'));const rb=el('button','btn alt','Start review');rb.onclick=()=>startReview(draw);rv.append(rb)}};
   app.append(rule('Quiz'),qc,rv);draw();
-  const nw=el('section','news');nw.id='news';nw.append(rule('In the news'));
-  NEWS.forEach(([k,label])=>{const its=(b.news||[]).filter(x=>x.area===k);if(!its.length)return;const g=el('div','ng');g.append(el('div','nh',label));
-    its.forEach(x=>{const it=el('div','item');const so=el('p','so');so.append(el('b',null,'For you: '),x.why);it.append(el('h3',null,x.headline),el('p',null,x.summary),so,link(x.source.name+', '+x.source.date+' ↗',x.source.url));g.append(it)});nw.append(g)});
-  if(b.newsNote)nw.append(el('p','note',b.newsNote));app.append(nw);
+  app.append(newsSection(b));
   const wd=el('section','words');wd.id='words';wd.append(rule('Today’s words'));const dl=el('dl');(b.terms||[]).forEach(x=>dl.append(el('dt',null,x.term),el('dd',null,x.def)));wd.append(dl);
   if((b.toolkit||[]).length){wd.append(rule('Added to your toolkit'));b.toolkit.forEach(x=>wd.append(toolCard(x)))}app.append(wd);
   const more=el('div','chips');more.style.marginTop='34px';[['Glossary',()=>openGlossary(list)],['Toolkit',()=>openToolkit(list)],['Progress',openProgress],['Past days',()=>openArchive(list)]].forEach(([t,f])=>{const x=el('button',null,t);x.onclick=f;more.append(x)});app.append(more);

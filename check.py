@@ -184,6 +184,37 @@ def svg(where, s):
     need(shapes >= 3, f"{where}: the diagram needs at least 3 drawn shapes")
 
 
+PHOTO_SRC = re.compile(r"^https://(upload|thumb)\.wikimedia\.org/wikipedia/commons/[^\s?#\"'<>]+\.jpe?g$|^https://images\.unsplash\.com/photo-[A-Za-z0-9-]+\?[^\s#\"'<>]*fm=jpg[^\s#\"'<>]*$", re.I)
+PHOTO_PAGE = re.compile(r"^https://commons\.wikimedia\.org/wiki/File:[^\s\"'<>]+$|^https://unsplash\.com/photos/[^\s\"'<>]+$")
+LICENCES = {"CC0", "Public domain", "CC BY 2.0", "CC BY 2.5", "CC BY 3.0", "CC BY 4.0",
+            "CC BY-SA 2.0", "CC BY-SA 2.5", "CC BY-SA 3.0", "CC BY-SA 4.0", "Unsplash Licence"}
+
+
+def news_v2(w, s):
+    text(f"{w} gist", s.get("gist"), 200)
+    big = s.get("big") or {}
+    text(f"{w} big value", big.get("value"), 10)
+    text(f"{w} big label", big.get("label"), 30)
+    r = s.get("read") or {}
+    text(f"{w} read.what", r.get("what"), 600)
+    text(f"{w} read.how", r.get("how", ""), 600, empty_ok=True)
+    text(f"{w} read.soWhat", r.get("soWhat"), 360)
+    text(f"{w} read.take", r.get("take"), 280)
+    ph = s.get("photo")
+    if ph is not None:
+        src, page, lic = str(ph.get("src", "")), str(ph.get("page", "")), ph.get("licence")
+        need(PHOTO_SRC.match(src) is not None, f"{w} photo: src must be a .jpg on upload.wikimedia.org or thumb.wikimedia.org, or an images.unsplash.com photo with fm=jpg")
+        need(PHOTO_PAGE.match(page) is not None, f"{w} photo: page must be the photo's own Wikimedia Commons file page or unsplash.com/photos page")
+        need(lic in LICENCES, f"{w} photo: licence must be one of {sorted(LICENCES)}")
+        unsplash = "unsplash.com" in src
+        need(unsplash == (lic == "Unsplash Licence") == ("unsplash.com" in page), f"{w} photo: Unsplash photos use the Unsplash Licence and an unsplash.com page; Commons photos use their Commons licence and file page")
+        text(f"{w} photo credit", ph.get("credit"), 80)
+        text(f"{w} photo alt", ph.get("alt"), 200)
+    if s.get("drawing") is not None:
+        svg(f"{w} drawing", s.get("drawing"))
+        text(f"{w} drawingAlt", s.get("drawingAlt"), 200)
+
+
 def course_day(date):
     c = json.loads((ROOT / "course.json").read_text(encoding="utf-8"))
     d = (date - START).days + 1
@@ -249,8 +280,11 @@ def check(date):
         w = f"news {i + 1}"
         need(s.get("area") in NEWS_AREAS, f"{w}: area must be one of {sorted(NEWS_AREAS)}")
         text(f"{w} headline", s.get("headline"), 90)
-        text(f"{w} summary", s.get("summary"), 260)
-        text(f"{w} why", s.get("why"), 220)
+        if "read" in s:
+            news_v2(w, s)
+        else:  # older format, accepted until the new one is required
+            text(f"{w} summary", s.get("summary"), 260)
+            text(f"{w} why", s.get("why"), 220)
         src = s.get("source") or {}
         text(f"{w} source name", src.get("name"), 60)
         text(f"{w} source date", src.get("date"), 12)
@@ -304,8 +338,11 @@ def check(date):
             text(f"tool {i + 1} item {j + 1}", s, 180)
         need(x.get("lesson") in range(1, len(ls) + 1), f"tool {i + 1}: lesson must be 1 to {len(ls)}")
 
-    blob = json.dumps(b)
-    need(not re.search(r"<img|\.png|\.jpe?g|\.gif|\.webp|\.avif", blob, re.I), "no outside images: the edition mentions an image file or <img>")
+    bare = json.loads(json.dumps(b))
+    for s in bare.get("news") or []:
+        s.pop("photo", None)
+    blob = json.dumps(bare)
+    need(not re.search(r"<img|\.png|\.jpe?g|\.gif|\.webp|\.avif", blob, re.I), "no outside images: the edition mentions an image file or <img> outside a news photo")
 
 
 def render(date):
