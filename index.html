@@ -264,6 +264,7 @@ textarea{min-height:90px}
 .scorebadge .ring::after{content:'';position:absolute;right:-2px;top:-3px;width:14px;height:17px;background:radial-gradient(circle at 50% 70%,#f7c56b 0 35%,#e0763a 36% 60%,transparent 61%);border-radius:50% 50% 45% 45%/60% 60% 40% 40%}
 .scorebadge .pill{font:600 10px var(--ui);padding:2px 7px;border-radius:99px;background:var(--card);color:var(--goldd);border:1px solid var(--goldl);white-space:nowrap}
 .scorebadge:focus-visible .ring{outline:2px solid var(--goldd);outline-offset:3px}
+@media (max-width:420px){.scorebadge .pill{display:none}.scorebadge .ring{width:42px;height:42px;font-size:18px}}
 .sc-hero{display:flex;align-items:center;gap:16px;margin:8px 0 12px}
 .ring.big{width:96px;height:96px;flex:none;border-radius:50%;display:grid;place-items:center;position:relative;isolation:isolate;background:conic-gradient(var(--gold) 0 var(--p,0%),var(--goldl) 0)}
 .ring.big::before{content:'';position:absolute;inset:7px;border-radius:50%;background:var(--card);z-index:-1}
