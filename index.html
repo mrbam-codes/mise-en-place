@@ -120,7 +120,7 @@ textarea{min-height:90px}
 .paper::before{content:'';position:absolute;inset:0 0 auto;height:6px;background:var(--c)}
 .rows{display:flex;justify-content:space-between;gap:8px;font:700 12px 'Courier Prime',ui-monospace,monospace;letter-spacing:.08em;color:#4a453c;margin-top:6px}
 .rows.lt{font-weight:400}
-.rows .ar{color:#fff;background:var(--c);padding:2px 8px;white-space:nowrap}
+.rows .ar{color:#fff;background:var(--cd,var(--c));padding:2px 8px;white-space:nowrap}
 .rn{font:400 92px/.8 var(--disp);color:var(--c);margin-top:14px}
 .dash{border:0;border-top:2px dashed #d8d2c4;margin:14px 0 0}
 .tk h3{font:400 27px/1.1 var(--disp);margin:12px 0 8px;color:#1f1c16;text-wrap:balance}
@@ -193,7 +193,7 @@ textarea{min-height:90px}
 .gmast{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-top:40px;padding-bottom:10px;border-bottom:3px double var(--ink)}
 .gmast h2{font:400 30px/1 var(--disp);margin:0}
 .gmast span{font:600 11px var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-.nk{font:700 11px var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--c)}
+.nk{font:700 11px var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--cd,var(--c))}
 .glead{display:block;width:100%;border:0;background:none;text-align:left;padding:18px 0 22px;border-bottom:1px solid #ece6d8}
 .gphoto{margin:0 0 14px;}.gphoto img{border-radius:18px;aspect-ratio:3/2;box-shadow:0 4px 6px #3a2e1814,0 18px 26px -12px #3a2e1840}.gphoto-x{background:#efe9dc;box-shadow:0 4px 6px #3a2e1814,0 18px 26px -12px #3a2e1840}
 .gphoto img{display:block;width:100%;height:100%;object-fit:cover}
@@ -201,20 +201,20 @@ textarea{min-height:90px}
 .gbl{font:600 13px var(--ui);color:var(--mute)}
 .glead h3{font:400 29px/1.08 var(--disp);margin:14px 0 8px;text-wrap:balance}
 .glead p{margin:0;font-size:16px;line-height:1.5;color:#3c372e}
-.grd{display:inline-block;margin-top:12px;font:700 13px var(--ui);color:var(--c)}
+.grd{display:inline-block;margin-top:12px;font:700 13px var(--ui);color:var(--cd,var(--c))}
 .slips{display:grid;gap:16px;padding:18px 0 4px}
 .slip{position:relative;border:0;text-align:left;padding:0 0 10px;background:none;filter:drop-shadow(0 4px 6px #3a2e1814) drop-shadow(0 16px 18px #3a2e1824);transition:transform .3s}
 .slip:active{transform:translateY(-3px)}
 .slip .pp{background:#fff;padding:14px 16px 20px;border-top:5px solid var(--c);clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),95% 100%,90% calc(100% - 8px),85% 100%,80% calc(100% - 8px),75% 100%,70% calc(100% - 8px),65% 100%,60% calc(100% - 8px),55% 100%,50% calc(100% - 8px),45% 100%,40% calc(100% - 8px),35% 100%,30% calc(100% - 8px),25% 100%,20% calc(100% - 8px),15% 100%,10% calc(100% - 8px),5% 100%,0 calc(100% - 8px))}
 .slip .dl{display:flex;justify-content:space-between;font:700 11px 'Courier Prime',ui-monospace,monospace;letter-spacing:.08em;color:#4a453c}
-.slip .dl .t{color:#fff;background:var(--c);padding:1px 7px}
+.slip .dl .t{color:#fff;background:var(--cd,var(--c));padding:1px 7px}
 .srow{display:flex;gap:14px;align-items:flex-start;margin-top:10px}
 .stx{flex:1;min-width:0}
 .slip h4{font:400 21px/1.15 var(--disp);margin:0 0 6px;text-wrap:balance}
 .slip p{margin:0;font-size:14.5px;line-height:1.45;color:#4a453c}
 .sthumb{flex:0 0 92px;height:92px;border-radius:12px;overflow:hidden;background:#efe9dc}
 .sthumb img{display:block;width:100%;height:100%;object-fit:cover}
-.tot{flex:0 0 auto;text-align:right}.tot b{display:block;font:400 26px/1 var(--disp);color:var(--c)}.tot span{font:700 9px 'Courier Prime',ui-monospace,monospace;letter-spacing:.06em;color:var(--mute);text-transform:uppercase}
+.tot{flex:0 0 auto;text-align:right}.tot b{display:block;font:400 26px/1 var(--disp);color:var(--cd,var(--c))}.tot span{font:700 9px 'Courier Prime',ui-monospace,monospace;letter-spacing:.06em;color:var(--mute);text-transform:uppercase}
 .slip .pcred{display:block;margin-top:6px;font-size:11px;color:#8a8272;line-height:1.3}
 .slip .more{display:block;margin-top:10px;font:700 12px 'Courier Prime',ui-monospace,monospace;letter-spacing:.1em;color:#23201a}
 .nsheet .nb{padding:14px 22px calc(40px + env(safe-area-inset-bottom))}

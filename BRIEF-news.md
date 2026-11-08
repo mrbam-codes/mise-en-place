@@ -41,4 +41,4 @@ You cannot download images in this session and must not try. The publishing step
 
 ## Drawings
 
-Add a `drawing` when a number or comparison is the point of the story: a price that jumped, a rise against a fall, a date to remember, a map of where something opens. Same rules as lesson diagrams in BRIEF.md (inline SVG, viewBox width 280 to 360, font-size 11 or more, at least 3 labels and 3 shapes, bright background, area colour). Every number in the drawing must match the story. `drawingAlt` up to 200 says what it shows. Skip the drawing when the photo already says it.
+Add a `drawing` when a number or comparison is the point of the story: a price that jumped, a rise against a fall, a date to remember, a map of where something opens. Same rules as lesson diagrams in BRIEF.md (inline SVG, viewBox width 280 to 360, font-size 11 or more, at least 3 labels and 3 shapes, bright background, the borrowed colour family from Colours in BRIEF.md). Every number in the drawing must match the story. `drawingAlt` up to 200 says what it shows. Skip the drawing when the photo already says it.
