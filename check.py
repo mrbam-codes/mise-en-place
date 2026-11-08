@@ -282,7 +282,9 @@ def check(date):
         text(f"{w} headline", s.get("headline"), 90)
         if "read" in s:
             news_v2(w, s)
-        else:  # older format, accepted until the new one is required
+        elif date >= "2026-11-09":
+            problems.append(f"{w}: use the news format in BRIEF-news.md (gist, big, read, and photo or drawing where they help)")
+        else:  # older format, only for editions before 9 November 2026
             text(f"{w} summary", s.get("summary"), 260)
             text(f"{w} why", s.get("why"), 220)
         src = s.get("source") or {}
