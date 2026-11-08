@@ -27,9 +27,10 @@ A real photo makes a story land, but only a free-licence one. Never use the arti
 
 1. When you open the article, note what its main photo shows (a chef, a dish, a building, a street).
 2. Search for a free-licence photo of the same subject, for example `"Pimlico Road" site:commons.wikimedia.org` or `turbot unsplash`. Prefer the exact place, person or dish; otherwise the closest honest subject (the street, the ingredient, the type of venue). Never pass off a different place or person as the one in the story.
-3. Open the photo's own page (the Wikimedia Commons `File:` page, or the `unsplash.com/photos/` page) from your search results and confirm the licence there.
+3. Open the photo's own page (the Wikimedia Commons `File:` page, or the `unsplash.com/photos/` page) and confirm the licence there. Only open a `File:` or `unsplash.com/photos/` address that your own search returned: never guess a file name, it will not exist. Commons `Category:` pages and Unsplash `/s/photos/` pages are listing pages: to open a file you saw there, search for its exact file name first.
+   Good Commons searches: `"Michelin Building" Fulham Road site:commons.wikimedia.org File`, `Veeraswamy restaurant London site:commons.wikimedia.org File`.
 4. Fill in `photo`:
-   - `src`: the image file address. For Commons, a `.jpg` on `upload.wikimedia.org` or `thumb.wikimedia.org`, ideally the 960px version (`.../960px-Name.jpg`). For Unsplash, the `images.unsplash.com/photo-...` address with `?w=960&q=70&fm=jpg`.
+   - `src`: the image file address. For Commons, a `.jpg` on `upload.wikimedia.org` or `thumb.wikimedia.org`. Use the 960px version: from the original `https://upload.wikimedia.org/wikipedia/commons/a/ab/Name.jpg`, build `https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Name.jpg/960px-Name.jpg` (originals over 1.5MB are skipped). For Unsplash, the `images.unsplash.com/photo-...` address with `?w=960&q=70&fm=jpg`.
    - `page`: the photo's own page address.
    - `credit`: the author as the page gives it, then `, Wikimedia Commons` or `, Unsplash`. Up to 80 characters.
    - `licence`: exactly one of `CC0`, `Public domain`, `CC BY 2.0`, `CC BY 2.5`, `CC BY 3.0`, `CC BY 4.0`, `CC BY-SA 2.0`, `CC BY-SA 2.5`, `CC BY-SA 3.0`, `CC BY-SA 4.0`, `Unsplash Licence`.
