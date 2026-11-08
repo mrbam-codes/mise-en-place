@@ -17,7 +17,7 @@ const ORD=['First','Second','Third'];
 
 /* ---------- saved progress (this phone only) ---------- */
 const KEY='mep-v1',DAYRE=/^\d{4}-\d{2}-\d{2}$/;
-const fresh=()=>({days:{},areas:{},lessons:{},points:0,badges:{},review:[],prog:{}});
+const fresh=()=>({days:{},areas:{},lessons:{},points:0,badges:{},review:[],prog:{},learned:{},sound:false});
 let S=(()=>{try{const s=JSON.parse(localStorage.getItem(KEY));return s&&s.days?Object.assign(fresh(),s):fresh()}catch(e){return fresh()}})();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 const LEVELS=[[0,'Commis'],[100,'Demi chef'],[300,'Chef de partie'],[600,'Sous chef'],[1000,'Head chef'],[1600,'Chef patron'],[2500,'Restaurateur']];
@@ -154,9 +154,9 @@ async function openProgress(){
   g.append(stat(streak()+(streak()===1?' day':' days'),'Current streak'),stat(days.length+(days.length===1?' day':' days'),'Quizzes finished'),stat(S.review.length+'','Questions in review'),stat(tt?Math.round(100*tc/tt)+'%':'None yet','Right answers ('+tc+' of '+tt+')'));bd.append(g);
   bd.append(el('h3',null,'By area'));
   Object.keys(AREA).forEach(k=>{const[c,n]=S.areas[k]||[0,0],p=n?Math.round(100*c/n):0;const row=el('div');row.style.margin='10px 0';const r2=el('div','row'),lab=el('span'),d=el('i','dot');d.style.background=AREA[k][1];lab.append(d,AREA[k][0]);r2.append(lab,el('span',null,n?c+' of '+n+' right':'No answers yet'));const br=el('div','bar');br.style.maxWidth='none';br.append(el('i'));br.firstChild.style.width=p+'%';br.firstChild.style.background=AREA[k][1];row.append(r2,br);bd.append(row)});
-  bd.append(el('h3',null,'The 661-lesson map'));const gr=el('div','grid');bd.append(gr,el('p','meta','One square per lesson, coloured by area. Squares light up once you have taken that day’s quiz.'));
+  bd.append(el('h3',null,'The 661-lesson map'));const gr=el('div','grid');bd.append(gr,el('p','meta','One square per lesson, coloured by area. A square lights up when you serve that lesson or take that day’s quiz.'));
   try{const c=await fetch('course.json',{cache:'force-cache'}).then(r=>r.json());const seen=new Set(days.map(courseDay));
-    c.lessons.forEach(l=>{const i=el('i',seen.has(l.day)?'d':'');i.style.background=AREA[l.area][1];i.title='Day '+l.day+': '+l.title;gr.append(i)})}catch(e){gr.append(el('p','meta','The map could not load.'))}
+    c.lessons.forEach(l=>{const i=el('i',seen.has(l.day)||(S.learned&&S.learned[l.n])?'d':'');i.style.background=AREA[l.area][1];i.title='Day '+l.day+': '+l.title;gr.append(i)})}catch(e){gr.append(el('p','meta','The map could not load.'))}
   bd.append(el('h3',null,'Badges'));const bg=el('div','badges');BADGES.forEach(([id,n,d])=>{const c=el('div','bd'+(S.badges[id]?'':' lock'));c.append(el('b',null,n),S.badges[id]?'Earned '+S.badges[id]:d);bg.append(c)});bd.append(bg);
   bd.append(el('h3',null,'Back up your progress'),el('p','meta','Your streak and answers live only on this phone. Copy a backup code to keep them safe or move them to a new phone.'));
   const ex=el('button','btn','Copy backup code'),ta=el('textarea');ta.placeholder='Paste a backup code here to restore';ta.setAttribute('aria-label','Backup code');
@@ -167,16 +167,109 @@ async function openProgress(){
 
 /* ---------- the page ---------- */
 function rule(t,id){const r=el('div','rule',t);if(id)r.id=id;return r}
-function lessonEl(l,i){
-  const s=el('section','lesson'),a=AREA[l.area]||['',''];s.id='lesson-'+(i+1);
-  const r=rule(ORD[i]+' · '+a[0]);const d=el('i','dot');d.style.background=a[1];r.insertBefore(d,r.childNodes[0]);s.append(r);
-  s.append(el('div','mod','Lesson '+l.n+' · '+l.module),el('h2','t',l.title),el('p','outcome',l.outcome));
-  const f=el('div','fig'),g=drawSvg(l.svg);if(g){f.dataset.ok='1';f.append(g)}else f.append(el('p','note','The diagram could not be drawn.'));f.append(el('div','alt',l.alt));s.append(f);
-  s.append(el('p',null,l.intro));(l.points||[]).forEach(p=>s.append(el('h3',null,p.h),el('p',null,p.p)));
-  const w=el('div','atwork');w.append(el('b',null,'At work'),el('p',null,l.atWork));s.append(w,el('p','take',l.takeaway));
-  const sr=el('div','src');sr.append('Source · ');(l.sources||[]).forEach((x,j)=>{if(j)sr.append(' · ');sr.append(link(x.name+' ↗',x.url))});s.append(sr);
-  if(l.checked)s.append(el('div','checked','Figures re-checked: '+l.checked));
-  return s}
+const mins=l=>Math.max(2,Math.round([l.intro,l.atWork,l.takeaway].concat((l.points||[]).map(p=>p.p)).join(' ').split(/\s+/).length/110))+' min';
+const pad3=n=>String(n).padStart(3,'0');
+const ROMAN=['I','II','III'];
+function glimpse(src){const g=drawSvg(src);if(!g)return null;const vb=(g.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
+  if(vb.length===4&&vb.every(isFinite)){const cw=vb[2]*.6,ch=vb[3]*.42;g.setAttribute('viewBox',(vb[0]+(vb[2]-cw)/2)+' '+(vb[1]+vb[3]*.2)+' '+cw+' '+ch);g.setAttribute('preserveAspectRatio','xMidYMid slice')}
+  g.setAttribute('aria-hidden','true');return g}
+/* pass sounds, made live (off until she turns them on) */
+let AC=null;const ac=()=>{try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();return AC}catch(e){return null}};
+function bell(t0){const c=ac();if(!c)return;const t=c.currentTime+t0;[[1568,.45,1.6],[1568*2.76,.2,.9],[1568*5.4,.08,.45],[1568*1.003,.28,1.5]].forEach(([f,v,d])=>{const o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.004);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g).connect(c.destination);o.start(t);o.stop(t+d+.1)})}
+function whoosh(){const c=ac();if(!c)return;const t=c.currentTime,d=.4,b=c.createBuffer(1,Math.ceil(c.sampleRate*d),c.sampleRate),x=b.getChannelData(0);for(let i=0;i<x.length;i++)x[i]=Math.random()*2-1;const n=c.createBufferSource();n.buffer=b;const f=c.createBiquadFilter(),g=c.createGain();f.type='bandpass';f.Q.value=.6;f.frequency.setValueAtTime(400,t);f.frequency.exponentialRampToValueAtTime(2500,t+d);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.15);g.gain.exponentialRampToValueAtTime(.0001,t+d);n.connect(f).connect(g).connect(c.destination);n.start(t)}
+const orderUpSound=()=>{if(!S.sound)return;whoosh();setTimeout(()=>{bell(0);bell(.2)},450)};
+const waitMs=ms=>new Promise(r=>setTimeout(r,ms));
+const anim=(n,k,o)=>{const a=n.animate(k,Object.assign({fill:'forwards',easing:'cubic-bezier(.2,.9,.2,1)'},o));if(matchMedia('(prefers-reduced-motion: reduce)').matches){a.finish();return Promise.resolve()}return Promise.race([a.finished,waitMs((o.duration||300)+120)]).catch(()=>{})};
+function glide(box,to){const from=box.scrollTop,d=to-from,t0=performance.now(),T=matchMedia('(prefers-reduced-motion: reduce)').matches?0:420;if(!T){box.scrollTop=to;return}setTimeout(()=>{box.scrollTop=to},T+80);(function f(t){const k=Math.min(1,(t-t0)/T),e=1-Math.pow(1-k,3);box.scrollTop=from+d*e;if(k<1)requestAnimationFrame(f)})(t0)}
+function build(svg){svg.classList.add('building');[...svg.children].forEach((c,i)=>c.style.animationDelay=(i*28)+'ms')}
+function enlarge(l){const prev=document.activeElement,bg=el('div','big');bg.setAttribute('role','dialog');bg.setAttribute('aria-modal','true');bg.setAttribute('aria-label','Diagram: '+l.title);
+  const br=el('div','bar2');br.append(el('span',null,l.title));const cb=el('button',null,'Done');cb.onclick=()=>history.back();br.append(cb);
+  const pan=el('div','pan'),g=drawSvg(l.svg);if(g)pan.append(g);bg.append(br,pan,el('div','hint2','Drag to move around the diagram'));document.body.append(bg);
+  history.pushState({s:1},'');stack.push({sh:bg,prev});cb.focus()}
+function openLesson(b,i,after){
+  const l=b.lessons[i],a=AREA[l.area]||['','#b48a3c'],prev=document.activeElement,id='L'+i;
+  const wrap=el('div','lwrap'),scrim=el('div','lscrim'),sh=el('div','lsheet');sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-label','Lesson '+l.n+': '+l.title);
+  const x=el('button','x','✕');x.setAttribute('aria-label','Close lesson');
+  const rc=el('div','rcpt');rc.append(el('span',null,'LESSON '+pad3(l.n)+' · '+a[0].toUpperCase()),el('span',null,mins(l).toUpperCase()));
+  const lb=el('div','lb');lb.append(el('h2',null,l.title),el('p','out',l.outcome));
+  const f=el('div','fig');f.id=id+'-fig';const g=drawSvg(l.svg);if(g){f.dataset.ok='1';f.append(g);build(g)}else f.append(el('p','note','The diagram could not be drawn.'));
+  f.append(el('div','alt',l.alt));const zb=el('button','zoom','Enlarge diagram ⤢');zb.onclick=()=>enlarge(l);if(g)f.append(zb);lb.append(f,el('p',null,l.intro));
+  (l.points||[]).forEach((pt,k)=>{const h=el('h4',null,pt.h);if(!k)h.id=id+'-pts';lb.append(h,el('p',null,pt.p))});
+  const w=el('div','work');w.id=id+'-work';w.append(el('b',null,'At work'),el('p',null,l.atWork));const tk=el('p','take',l.takeaway);tk.id=id+'-take';lb.append(w,tk);
+  const sr=el('div','src');sr.append('Source · ');(l.sources||[]).forEach((s2,j)=>{if(j)sr.append(' · ');sr.append(link(s2.name+' ↗',s2.url))});lb.append(sr);
+  if(l.checked)lb.append(el('div','checked','Figures re-checked: '+l.checked));
+  const was=!!(S.learned&&S.learned[l.n]);const sv=el('button','served'+(was?' was':''),was?'Served ✓ · close':'Mark as served');lb.append(sv);
+  const tabs=el('div','tabs');[['Diagram','-fig'],['Key points','-pts'],['At work','-work'],['Remember','-take']].forEach(([t,sf],j)=>{const bt=el('button',j?'':'on',t);bt.onclick=()=>{[...tabs.children].forEach(z=>z.classList.remove('on'));bt.classList.add('on');const tg=document.getElementById(id+sf);if(tg)glide(sh,tg.offsetTop-tabs.offsetHeight-10)};tabs.append(bt)});
+  sh.append(el('div','grab'),x,rc,tabs,lb);wrap.append(scrim,sh);document.body.append(wrap);document.body.style.overflow='hidden';
+  history.pushState({s:1},'');stack.push({sh:wrap,prev});x.onclick=scrim.onclick=()=>history.back();x.focus();
+  sv.onclick=()=>{history.back();if(!was){S.learned=S.learned||{};S.learned[l.n]=b.date;save();after&&after(i)}}}
+function tickets(b){
+  const sec=el('section');sec.id='lessons';const hd=el('div','lhead');hd.append(el('h2',null,'Today’s tickets'));
+  const r=el('div','r'),b1=el('b');b1.append(el('span','bell'),'THE PASS');const cnt=el('span');r.append(b1,cnt);hd.append(r);
+  const n=b.lessons.length;const sub=el('p','lsub');sub.append(el('span',null,n+' tickets on the pass. Swipe, then tap to fire.'));sec.append(hd,sub);
+  const pass=el('div','pass'),lamp=el('div','lamp'),rail=el('div','rail'),ou=el('div','orderup','Order up!'),full=el('div','full','SERVICE COMPLETE · SEE YOU TOMORROW');
+  const snd=el('button','snd');const sndTxt=()=>snd.textContent=S.sound?'SOUND ON':'SOUND OFF';sndTxt();snd.setAttribute('aria-label','Turn pass sounds on or off');snd.onclick=()=>{S.sound=!S.sound;save();sndTxt();if(S.sound)bell(0)};
+  pass.append(lamp,rail,ou,full);sub.append(snd);const slotX=i=>{const w=pass.clientWidth||360,gap=(w-n*76)/(n+1);return Math.round(gap+i*(76+gap))};
+  const slots=b.lessons.map((l,i)=>{const s2=el('div','slot',String(i+1));pass.append(s2);return s2});
+  const placeSlots=()=>slots.forEach((s2,i)=>{s2.style.left=slotX(i)+'px';const h=pass.querySelector('.hung[data-i="'+i+'"]');if(h)h.style.left=slotX(i)+'px';const c=pass.querySelector('.clip[data-i="'+i+'"]');if(c)c.style.left=(slotX(i)+29)+'px'});
+  const hang=(i,swing)=>{const l=b.lessons[i],a=AREA[l.area]||['','#b48a3c'];if(pass.querySelector('.hung[data-i="'+i+'"]'))return;slots[i].style.visibility='hidden';
+    const h=el('div','hung');h.dataset.i=i;h.style.setProperty('--c',a[1]);h.append(el('span',null,l.title),el('i',null,'SERVED'));const c=el('div','clip');c.dataset.i=i;pass.append(h,c);placeSlots();
+    if(swing)h.animate([{transform:'rotate(14deg)'},{transform:'rotate(-9deg)'},{transform:'rotate(5deg)'},{transform:'rotate(-2deg)'},{transform:'rotate(0)'}],{duration:1100,easing:'ease-out'})};
+  const car=el('div','car'),pager=el('div','pager'),tks=[];
+  const isDone=i=>!!(S.learned&&S.learned[b.lessons[i].n]);
+  const mark=()=>{let c=0,nx=-1;tks.forEach((t,i)=>{const on=isDone(i);t.classList.toggle('done',on);pager.children[i].classList.toggle('ok',on);if(on){c++;hang(i,false)}else if(nx<0)nx=i});
+    tks.forEach((t,i)=>t.classList.toggle('next',i===nx&&c>0));cnt.textContent=c+'/'+n+' SERVED';full.classList.toggle('on',c===n);return nx};
+  b.lessons.forEach((l,i)=>{const a=AREA[l.area]||['','#b48a3c'];const t=el('button','tk');t.style.setProperty('--c',a[1]);t.setAttribute('aria-label','Ticket '+(i+1)+' of '+n+': lesson '+l.n+', '+l.title+', '+mins(l));
+    const pa=el('div','paper'),r1=el('div','rows');r1.append(el('span',null,'LESSON '+pad3(l.n)),el('span','ar',a[0].toUpperCase()));
+    const r2=el('div','rows lt');r2.append(el('span',null,'COVERS '+mins(l).toUpperCase()),el('span',null,'TICKET '+(i+1)+'/'+n));
+    const gl=el('div','glimpse'),gs=glimpse(l.svg);if(gs){gl.dataset.ok='1';gl.append(gs)}
+    const fire=el('div','fire');fire.append(el('span',null,l.module.toUpperCase()),el('span',null,'FIRE →'));
+    pa.append(r1,r2,el('div','rn',ROMAN[i]||String(i+1)),el('hr','dash'),el('h3',null,l.title),el('p',null,l.outcome),gl,fire);
+    t.append(pa,el('div','stamp','SERVED'));car.append(t);tks.push(t);pager.append(el('i',i?'':'on'));
+    t.onclick=()=>openLesson(b,i,served)});
+  async function served(i){await waitMs(380);const t=tks[i];t.classList.add('done');pager.children[i].classList.add('ok');
+    const tr=t.getBoundingClientRect(),pr=pass.getBoundingClientRect();
+    if(pr.bottom<0||pr.top>innerHeight)pass.scrollIntoView({block:'center',behavior:'smooth'}),await waitMs(450);
+    const pr2=pass.getBoundingClientRect(),tr2=t.getBoundingClientRect(),fl=t.cloneNode(true);fl.className='tk flyer';fl.style.cssText+=';left:'+tr2.left+'px;top:'+tr2.top+'px;width:'+tr2.width+'px;margin:0';document.body.append(fl);
+    const s=76/tr2.width,dx=pr2.left+slotX(i)-tr2.left,dy=pr2.top+24-tr2.top;orderUpSound();
+    await anim(fl,[{transform:'translate(0,0) scale(1)'},{transform:'translate('+dx*.55+'px,'+(dy-40)+'px) scale('+(s*1.6)+') rotate(-6deg)',offset:.6},{transform:'translate('+dx+'px,'+dy+'px) scale('+s+')'}],{duration:700,easing:'cubic-bezier(.4,0,.2,1)'});
+    fl.remove();hang(i,true);lamp.classList.add('on');ou.animate([{opacity:0,transform:'scale(.6)'},{opacity:1,transform:'scale(1.08)'},{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(1)'}],{duration:1200});
+    setTimeout(()=>lamp.classList.remove('on'),1300);const nx=mark();if(nx>=0)setTimeout(()=>car.scrollTo({left:tks[nx].offsetLeft-(car.clientWidth-tks[nx].offsetWidth)/2,behavior:'smooth'}),900)}
+  const upd=()=>{const w=tks[0].offsetWidth+14,idx=Math.max(0,Math.min(tks.length-1,Math.round(car.scrollLeft/w)));[...pager.children].forEach((d,i)=>d.classList.toggle('on',i===idx));tks.forEach((t,i)=>t.classList.toggle('off',i!==idx))};
+  car.addEventListener('scroll',()=>requestAnimationFrame(upd));requestAnimationFrame(()=>{placeSlots();const nx=tks.findIndex((t,i)=>!isDone(i));if(nx>0)car.scrollLeft=tks[nx].offsetLeft-(car.clientWidth-tks[nx].offsetWidth)/2;upd()});addEventListener('resize',placeSlots);
+  sec.append(pass,car,pager);mark();return sec}
+/* ---------- news: The Pass Gazette lead plus Dispatch slips ---------- */
+const NAREA={industry:['UK industry','#4f6d8f'],trends:['Food and drink trends','#5e8f3a'],finedining:['Fine dining and chefs','#a3456b'],openings:['London openings','#c4562a']};
+const nv=x=>({gist:x.gist||x.summary||'',big:x.big||null,read:x.read||{what:x.summary||'',soWhat:x.why||'',take:''}});
+function photoEl(b,k,ph,cls){if(!ph)return null;const f=el('figure',cls||'nphoto'),im=el('img');im.src='briefs/img/'+b.date+'-'+k+'.jpg';im.alt=ph.alt||'';im.loading='lazy';im.decoding='async';im.onerror=()=>f.remove();
+  const cap=el('figcaption');const a=link('Photo: '+ph.credit+', '+ph.licence+' ↗',ph.page);cap.append(a);f.append(im,cap);return f}
+function openStory(b,k){const x=b.news[k],v=nv(x),ar=NAREA[x.area]||['','#b48a3c'],prev=document.activeElement;
+  const wrap=el('div','lwrap'),scrim=el('div','lscrim'),sh=el('div','lsheet nsheet');sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-label',x.headline);sh.style.setProperty('--c',ar[1]);
+  const xb=el('button','x','✕');xb.setAttribute('aria-label','Close story');const body=el('div','nb');
+  const ph=photoEl(b,k,x.photo,'nhero');if(ph)body.append(ph);
+  const m=el('div','nmeta');m.append(el('span','nk',ar[0]),el('span',null,(x.source.name+' · '+x.source.date).toUpperCase()));body.append(m,el('h2',null,x.headline));
+  if(v.big){const f=el('div','nfig');f.append(el('b',null,v.big.value),el('span',null,v.big.label));body.append(f)}
+  if(x.drawing){const d=el('div','ndraw'),g=drawSvg(x.drawing);if(g){d.dataset.ok='1';d.append(g);build(g)}if(x.drawingAlt)d.append(el('div','alt',x.drawingAlt));body.append(d)}
+  const sec=(h,t,c)=>{if(!t)return;const d=el('div','nsec'+(c?' '+c:''));d.append(el('h4',null,h),el('p',null,t));body.append(d)};
+  sec('What happened',v.read.what);sec('How it works',v.read.how);sec('So what for you',v.read.soWhat,'so');sec('Key insight',v.read.take,'ins');
+  const a=link('',x.source.url);a.className='orig';a.append(el('span',null,'Read the original at '+x.source.name),el('span',null,'↗'));body.append(a);
+  sh.append(el('div','grab'),xb,body);wrap.append(scrim,sh);document.body.append(wrap);document.body.style.overflow='hidden';
+  history.pushState({s:1},'');stack.push({sh:wrap,prev});xb.onclick=scrim.onclick=()=>history.back();xb.focus()}
+function newsSection(b){
+  const sec=el('section','news');sec.id='news';const items=b.news||[];
+  const mast=el('div','gmast');mast.append(el('h2',null,'The Pass Gazette'),el('span',null,nice(b.date)));sec.append(mast);
+  if(!items.length){sec.append(el('p','note','No news today.'));return sec}
+  const lead=items[0],lv=nv(lead),la=NAREA[lead.area]||['','#b48a3c'];const L=el('button','glead');L.style.setProperty('--c',la[1]);L.setAttribute('aria-label','Lead story: '+lead.headline);
+  const lp=photoEl(b,0,lead.photo,'gphoto');if(lp){const fc=lp.querySelector('figcaption');fc.textContent='Photo: '+lead.photo.credit+', '+lead.photo.licence;L.append(lp)}
+  L.append(el('span','nk',la[0]));if(lv.big){L.append(el('div','gbig',lv.big.value),el('div','gbl',lv.big.label))}
+  L.append(el('h3',null,lead.headline),el('p',null,lv.gist),el('span','grd','Read the story →'));L.onclick=()=>openStory(b,0);sec.append(L);
+  const list=el('div','slips');items.slice(1).forEach((x,j)=>{const k=j+1,v=nv(x),ar=NAREA[x.area]||['','#b48a3c'];const sl=el('button','slip');sl.style.setProperty('--c',ar[1]);sl.setAttribute('aria-label',x.headline);
+    const pp=el('div','pp'),dl=el('div','dl');dl.append(el('span','t',ar[0].toUpperCase()),el('span',null,x.source.date.toUpperCase()));pp.append(dl);
+    const row=el('div','srow'),tx=el('div','stx');tx.append(el('h4',null,x.headline),el('p',null,v.gist));row.append(tx);
+    if(x.photo){const th=el('div','sthumb'),im=el('img');im.src='briefs/img/'+b.date+'-'+k+'.jpg';im.alt='';im.loading='lazy';im.onerror=()=>th.remove();th.append(im);row.append(th)}
+    else if(v.big){const t=el('div','tot');t.append(el('b',null,v.big.value),el('span',null,v.big.label));row.append(t)}
+    pp.append(row,el('span','more','READ THE STORY →'));if(x.photo)pp.append(el('span','pcred','Photo: '+x.photo.credit+', '+x.photo.licence));sl.append(pp);sl.onclick=()=>openStory(b,k);list.append(sl)});
+  sec.append(list);if(b.newsNote)sec.append(el('p','note',b.newsNote));return sec}
 function render(b,list){
   const app=document.getElementById('app');app.textContent='';
   const isToday=b.date===todayStr(),sk=streak(),heroSk=sk+(isToday&&!S.days[b.date]?1:0);
@@ -188,8 +281,8 @@ function render(b,list){
   if(!isToday){const n=el('p','note','You are reading an earlier day. ');const a=el('a',null,'Go to today');a.href='./';n.append(a);app.append(n)}
   app.append(el('p','welcome',b.welcome));
   const pg=el('div','prog','Day '+b.day+' of '+TOTAL+' · Phase '+b.phase+' of 5'),bar=el('div','bar');bar.append(el('i'));bar.firstChild.style.width=Math.round(100*b.day/TOTAL)+'%';pg.append(bar);app.append(pg);
-  const ch=el('div','chips');[['Lessons','#lesson-1'],['Quiz','#quiz'],['News','#news'],['Words','#words']].forEach(([t,hr])=>{const a=el('a',null,t);a.href=hr;ch.append(a)});app.append(ch);
-  b.lessons.forEach((l,i)=>app.append(lessonEl(l,i)));
+  const ch=el('div','chips');[['Lessons','#lessons'],['Quiz','#quiz'],['News','#news'],['Words','#words']].forEach(([t,hr])=>{const a=el('a',null,t);a.href=hr;ch.append(a)});app.append(ch);
+  app.append(tickets(b));
   const t=el('section','tryit');t.append(rule('Try this at work'),el('h2',null,b.try.title));const ol=el('ol');b.try.steps.forEach(s=>ol.append(el('li',null,s)));t.append(ol,el('p','why',b.try.why));app.append(t);
   const items=dayItems(b),qc=el('section','quizcard');qc.id='quiz';
   const rv=el('section','reviewcard');
@@ -199,15 +292,13 @@ function render(b,list){
     rv.textContent='';const due=S.review.filter(x=>x.due<=todayStr()).length;
     rv.hidden=!due;if(due){rv.append(el('div','prog','Review'),el('h2',null,due+' question'+(due>1?'s':'')+' to revise'),el('p',null,'Questions you missed before. Get each right a few times, days apart, and it leaves the list.'));const rb=el('button','btn alt','Start review');rb.onclick=()=>startReview(draw);rv.append(rb)}};
   app.append(rule('Quiz'),qc,rv);draw();
-  const nw=el('section','news');nw.id='news';nw.append(rule('In the news'));
-  NEWS.forEach(([k,label])=>{const its=(b.news||[]).filter(x=>x.area===k);if(!its.length)return;const g=el('div','ng');g.append(el('div','nh',label));
-    its.forEach(x=>{const it=el('div','item');const so=el('p','so');so.append(el('b',null,'For you: '),x.why);it.append(el('h3',null,x.headline),el('p',null,x.summary),so,link(x.source.name+', '+x.source.date+' ↗',x.source.url));g.append(it)});nw.append(g)});
-  if(b.newsNote)nw.append(el('p','note',b.newsNote));app.append(nw);
+  app.append(newsSection(b));
   const wd=el('section','words');wd.id='words';wd.append(rule('Today’s words'));const dl=el('dl');(b.terms||[]).forEach(x=>dl.append(el('dt',null,x.term),el('dd',null,x.def)));wd.append(dl);
   if((b.toolkit||[]).length){wd.append(rule('Added to your toolkit'));b.toolkit.forEach(x=>wd.append(toolCard(x)))}app.append(wd);
   const more=el('div','chips');more.style.marginTop='34px';[['Glossary',()=>openGlossary(list)],['Toolkit',()=>openToolkit(list)],['Progress',openProgress],['Past days',()=>openArchive(list)]].forEach(([t,f])=>{const x=el('button',null,t);x.onclick=f;more.append(x)});app.append(more);
   app.append(el('footer',null,'Mise en Place · a daily course for running and opening a restaurant. Your streak and answers are saved only on this phone. News links go to the original reporting; lessons are a study guide, so check the official source before acting on anything legal.'));
-  if(location.hash){const tgt=document.getElementById(location.hash.slice(1));tgt&&tgt.scrollIntoView()}}
+  if(location.hash){const tgt=document.getElementById(location.hash.slice(1));tgt&&tgt.scrollIntoView()}
+  const op=+new URLSearchParams(location.search).get('open');if(op>=1&&op<=b.lessons.length)openLesson(b,op-1)}
 async function boot(){
   const app=document.getElementById('app');
   try{const list=await fetch('briefs/index.json',{cache:'no-cache'}).then(r=>r.json());

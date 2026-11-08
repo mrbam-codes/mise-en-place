@@ -46,9 +46,9 @@ One inline `<svg>` element, drawn fresh. The checker refuses anything else.
 
 - `xmlns="http://www.w3.org/2000/svg"`, `viewBox="0 0 W H"` with W 280 to 360 (use 340) and H 80 to 520, `role="img"` and an `aria-label`.
 - Allowed elements: svg, g, rect, circle, ellipse, line, polyline, polygon, path, text, tspan, title, desc, defs, linearGradient, radialGradient, stop, marker, clipPath. No images, links, scripts, style elements, `use` or `foreignObject`. No `href`, no web addresses, `url(#id)` only.
-- At least 3 text labels and 3 shapes. Every `font-size` 9 or more (10 to 12 for labels, 14 to 16 for titles). Font: `font-family="Figtree, sans-serif"`.
+- At least 3 text labels and 3 shapes. Every `font-size` 11 or more (11 to 13 for labels, 15 to 17 for titles). Bigger type means fewer, shorter labels: wrap with `tspan` or give the drawing more height rather than shrinking text. Font: `font-family="Figtree, sans-serif"`.
 - Bright and calm, on a transparent or ivory background (`#fffdf8`), never dark. No line textures or hatching. Ink `#2b2417`, muted `#857353`, gold `#b48a3c`, pale gold `#e4cf9c`. Area colours: Kitchen `#c4562a`, Drinks `#b48a3c`, Money `#5e8f3a`, Opening and legal `#4f6d8f`, Brand `#a3456b`, Guests `#7a5aa8`; soft tints of them for fills.
-- Lay out for a phone: the drawing is shown about 350 pixels wide. Keep labels short, inside the viewBox, and never overlapping. Wrap long labels with `tspan`. Numbers in the diagram must match the text.
+- Lay out for a phone: the drawing is shown edge to edge, about 390 pixels wide, and the card shows a full-size close-up of its middle, so put the most important labels near the centre. Keep labels short, inside the viewBox, and never overlapping. Wrap long labels with `tspan`. Numbers in the diagram must match the text.
 - Kinds that work: wheel, timeline, flow with arrows, waterfall or bar chart, comparison grid, floor plan, cross-section, org chart, matrix, ladder.
 
 ## News
@@ -63,7 +63,7 @@ One inline `<svg>` element, drawn fresh. The checker refuses anything else.
 
 `{ "q", "options": [4], "answer", "why", "from" }`
 
-- Exactly 5. At least one on each lesson; `from` is the lesson number, or `"news"`. Question up to 180, options up to 100, `why` up to 280.
+- Exactly 5. At least one on each lesson; `from` is the lesson's position in today's edition (1, 2 or 3, not its course number `n`), or `"news"`. Question up to 180, options up to 100, `why` up to 280.
 - `answer` is 0 to 3: vary its position. Wrong options must be plausible. Test understanding and application, not trivia. Every answer must be supported by today's lesson text.
 
 ## Order of work

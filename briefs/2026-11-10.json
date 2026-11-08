@@ -1,0 +1,411 @@
+{
+ "date": "2026-11-10",
+ "dayLabel": "Tuesday 10 November 2026",
+ "day": 3,
+ "phase": 1,
+ "welcome": "Today: how a vineyard site shapes a wine, who really decides a licence, and how to pick the right social platform for your concept.",
+ "lessons": [
+  {
+   "n": 7,
+   "area": "drinks",
+   "module": "Wine foundations",
+   "title": "Climate, site and soil",
+   "outcome": "You will be able to explain how latitude, altitude, slope, water and soil shape a wine",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 440\" role=\"img\" aria-label=\"Cross-section of a vineyard slope: sun striking the slope, cold air draining downhill to a frost pocket by the river, vines mid-slope, and three soil layers\"><defs><marker id=\"ar\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"#4f6d8f\"/></marker><marker id=\"sa\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"#b48a3c\"/></marker></defs><rect x=\"0\" y=\"0\" width=\"340\" height=\"440\" fill=\"#fffdf8\"/><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">A vineyard slope in cross-section</text><circle cx=\"300\" cy=\"62\" r=\"18\" fill=\"#e4cf9c\" stroke=\"#b48a3c\" stroke-width=\"2\"/><line x1=\"282\" y1=\"76\" x2=\"200\" y2=\"138\" stroke=\"#b48a3c\" stroke-width=\"2\" marker-end=\"url(#sa)\"/><line x1=\"286\" y1=\"82\" x2=\"230\" y2=\"170\" stroke=\"#b48a3c\" stroke-width=\"2\" marker-end=\"url(#sa)\"/><text x=\"300\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\"><tspan x=\"300\" dy=\"0\">Sun hits a</tspan><tspan x=\"300\" dy=\"13\">facing slope</tspan><tspan x=\"300\" dy=\"13\">square on</tspan></text><polygon points=\"0,90 40,88 120,130 220,190 290,236 340,240 340,330 0,330\" fill=\"#efe2c4\"/><polyline points=\"0,90 40,88 120,130 220,190 290,236 340,240\" fill=\"none\" stroke=\"#5e8f3a\" stroke-width=\"3\"/><line x1=\"110\" y1=\"125\" x2=\"110\" y2=\"111\" stroke=\"#5e8f3a\" stroke-width=\"2\"/><circle cx=\"110\" cy=\"109\" r=\"5\" fill=\"#a3456b\"/><line x1=\"140\" y1=\"142\" x2=\"140\" y2=\"128\" stroke=\"#5e8f3a\" stroke-width=\"2\"/><circle cx=\"140\" cy=\"126\" r=\"5\" fill=\"#a3456b\"/><line x1=\"170\" y1=\"160\" x2=\"170\" y2=\"146\" stroke=\"#5e8f3a\" stroke-width=\"2\"/><circle cx=\"170\" cy=\"144\" r=\"5\" fill=\"#a3456b\"/><line x1=\"200\" y1=\"178\" x2=\"200\" y2=\"164\" stroke=\"#5e8f3a\" stroke-width=\"2\"/><circle cx=\"200\" cy=\"162\" r=\"5\" fill=\"#a3456b\"/><text x=\"165\" y=\"62\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"165\" dy=\"0\">Mid-slope vines:</tspan><tspan x=\"165\" dy=\"14\">frost drains away</tspan></text><path d=\"M60 112 C 130 160, 190 205, 262 238\" fill=\"none\" stroke=\"#4f6d8f\" stroke-width=\"2.5\" stroke-dasharray=\"6 4\" marker-end=\"url(#ar)\"/><text x=\"66\" y=\"150\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#4f6d8f\" font-family=\"Figtree, sans-serif\"><tspan x=\"66\" dy=\"0\">Cold air</tspan><tspan x=\"66\" dy=\"13\">flows down</tspan></text><rect x=\"270\" y=\"236\" width=\"70\" height=\"12\" fill=\"#a9c1d9\"/><text x=\"304\" y=\"268\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#4f6d8f\" font-family=\"Figtree, sans-serif\"><tspan x=\"304\" dy=\"0\">River: reflects</tspan><tspan x=\"304\" dy=\"13\">light, holds</tspan><tspan x=\"304\" dy=\"13\">warmth</tspan></text><text x=\"230\" y=\"262\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#4f6d8f\" font-family=\"Figtree, sans-serif\">Frost pocket</text><rect x=\"0\" y=\"330\" width=\"340\" height=\"36\" fill=\"#d9c09a\"/><rect x=\"0\" y=\"366\" width=\"340\" height=\"36\" fill=\"#c9ab80\"/><rect x=\"0\" y=\"402\" width=\"340\" height=\"38\" fill=\"#b0936b\"/><text x=\"170\" y=\"353\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Topsoil: stones and slate store heat</text><text x=\"170\" y=\"389\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Subsoil: drains water, roots go deep</text><text x=\"170\" y=\"426\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#fffdf8\" font-family=\"Figtree, sans-serif\">Bedrock</text><text x=\"8\" y=\"44\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\"><tspan x=\"8\" dy=\"0\">Higher:</tspan><tspan x=\"8\" dy=\"13\">0.6°C cooler</tspan><tspan x=\"8\" dy=\"13\">per 100m</tspan></text></svg>",
+   "alt": "A vineyard slope in cross-section. The sun strikes the slope, cold air drains downhill into a frost pocket by the river, vines sit mid-slope, and three soil layers lie beneath.",
+   "intro": "A guest asks why the German Riesling on your list tastes so sharp and light while the Argentine Malbec next to it is ripe and full. The answer is mostly place. Grapes need warmth and sun to ripen, and every feature of a vineyard either adds heat or takes it away. If you can read a site the way a grower does, you can explain any bottle on your list in two sentences.",
+   "points": [
+    {
+     "h": "Latitude and altitude set the base temperature",
+     "p": "The best conditions for wine grapes are generally found between 30 and 50 degrees of latitude, north and south of the equator. Nearer the equator, growers need something to cool the vines, such as sea breezes or mountain air. Altitude does that job: air cools about 0.6°C for every 100m you climb. That is why Mendoza in Argentina grows vines above 1,000m. In the Uco Valley, at 900m to 1,500m, the gap between day and night can reach 15°C, which keeps freshness in the grapes."
+    },
+    {
+     "h": "Slope and aspect decide how much sun lands",
+     "p": "Most vineyards sit on at least a gentle slope. A slope that faces the equator catches more sun and warmth. Côte Rôtie, the 'roasted slope', faces south, so Syrah ripens there at about 45 degrees north. Slopes also drain cold air. Cold air is heavier than warm air, so on still nights it flows downhill and pools in the valley. Mid-slope vines escape that frost pocket. In hot regions growers do the reverse and pick cooler, north-facing slopes to keep acidity."
+    },
+    {
+     "h": "Water and soil fine-tune the heat",
+     "p": "Water moderates temperature. The Mosel sits at 49 to 50 degrees north, at the cold edge of the wine belt, and the river reflects light onto the vines and gives back stored warmth on cold nights. A cold ocean nearby cools a warm region, and sea fog can shade vines in the morning. Soil matters for heat and water: the Mosel's dark slate soaks up heat by day and releases it at night. Slopes and free-draining soils shed water, and mild water stress concentrates flavour."
+    }
+   ],
+   "atWork": "Pick three wines on your list this week: one cool, one warm, one in between. For each, find one site fact (altitude, slope, river or soil) and turn it into a one-line table story your team can learn at pre-shift.",
+   "takeaway": "Every site feature adds heat or takes it away. More heat means riper, fuller wine; less heat means fresher, sharper wine.",
+   "sources": [
+    {
+     "name": "WSET: How does geography affect a wine's style?",
+     "url": "https://www.wsetglobal.com/knowledge-centre/blog/2021/august/24/how-does-geography-affect-a-wine-s-style"
+    },
+    {
+     "name": "Wine with Seth: Elevation, slope and aspect",
+     "url": "https://www.winewithseth.com/winewiki/elevation-slope-aspect-geography/"
+    },
+    {
+     "name": "NC State Extension: Vineyard site selection",
+     "url": "https://content.ces.ncsu.edu/north-carolina-winegrape-growers-guide/chapter-4-vineyard-site-selection"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "area": "opening",
+   "module": "Licensing",
+   "title": "Who decides: the licensing authority",
+   "outcome": "You will be able to map applicant, responsible authorities, residents and committee",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 484\" role=\"img\" aria-label=\"Responsibility map: the applicant advertises for 28 days; responsible authorities and other persons send representations, which flow to a three-member licensing sub-committee; with none, the licence must be granted\"><defs><marker id=\"a2\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"#4f6d8f\"/></marker></defs><text x=\"170\" y=\"20\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Who decides a premises licence</text><rect x=\"95\" y=\"34\" width=\"150\" height=\"44\" rx=\"10\" fill=\"#fffdf8\" stroke=\"#4f6d8f\" stroke-width=\"1.5\"/><text x=\"170\" y=\"52\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"170\" dy=\"0\">Applicant</tspan><tspan x=\"170\" dy=\"14\">blue notice 28 days</tspan></text><line x1=\"170\" y1=\"78\" x2=\"170\" y2=\"106\" stroke=\"#4f6d8f\" stroke-width=\"2\" marker-end=\"url(#a2)\"/><rect x=\"70\" y=\"108\" width=\"200\" height=\"40\" rx=\"10\" fill=\"#dfe7f0\" stroke=\"#4f6d8f\" stroke-width=\"1.5\"/><text x=\"170\" y=\"124\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">28 days for representations</text><text x=\"170\" y=\"140\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">must be about the 4 objectives</text><rect x=\"6\" y=\"166\" width=\"156\" height=\"142\" rx=\"10\" fill=\"#fffdf8\" stroke=\"#4f6d8f\" stroke-width=\"1.5\"/><text x=\"84\" y=\"184\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#4f6d8f\" font-family=\"Figtree, sans-serif\">Responsible authorities</text><text x=\"16\" y=\"202\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Police</text><text x=\"16\" y=\"218\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Fire and rescue</text><text x=\"16\" y=\"234\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Environmental health</text><text x=\"16\" y=\"250\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Planning, health and safety</text><text x=\"16\" y=\"266\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"16\" dy=\"0\">Child protection, public</tspan><tspan x=\"16\" dy=\"13\">health, licensing authority</tspan></text><text x=\"16\" y=\"292\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">GLA in London</text><rect x=\"178\" y=\"166\" width=\"156\" height=\"142\" rx=\"10\" fill=\"#fffdf8\" stroke=\"#7a5aa8\" stroke-width=\"1.5\"/><text x=\"256\" y=\"184\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#7a5aa8\" font-family=\"Figtree, sans-serif\">Other persons</text><text x=\"256\" y=\"206\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"256\" dy=\"0\">Residents, local</tspan><tspan x=\"256\" dy=\"13\">businesses, anyone</tspan></text><text x=\"256\" y=\"244\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\"><tspan x=\"256\" dy=\"0\">Council first checks:</tspan><tspan x=\"256\" dy=\"13\">frivolous or vexatious?</tspan></text><line x1=\"84\" y1=\"308\" x2=\"150\" y2=\"344\" stroke=\"#4f6d8f\" stroke-width=\"2\" marker-end=\"url(#a2)\"/><line x1=\"256\" y1=\"308\" x2=\"190\" y2=\"344\" stroke=\"#7a5aa8\" stroke-width=\"2\" marker-end=\"url(#a2)\"/><rect x=\"60\" y=\"346\" width=\"220\" height=\"56\" rx=\"12\" fill=\"#4f6d8f\"/><text x=\"170\" y=\"368\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#fffdf8\" font-family=\"Figtree, sans-serif\">Licensing sub-committee</text><text x=\"170\" y=\"388\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#fffdf8\" font-family=\"Figtree, sans-serif\">3 councillors hold a hearing</text><rect x=\"6\" y=\"418\" width=\"156\" height=\"58\" rx=\"10\" fill=\"#e8f0df\" stroke=\"#5e8f3a\" stroke-width=\"1.5\"/><text x=\"84\" y=\"438\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#5e8f3a\" font-family=\"Figtree, sans-serif\">No representations</text><text x=\"84\" y=\"456\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"84\" dy=\"0\">Must grant, officers</tspan><tspan x=\"84\" dy=\"13\">can sign it off</tspan></text><rect x=\"178\" y=\"418\" width=\"156\" height=\"58\" rx=\"10\" fill=\"#fffdf8\" stroke=\"#4f6d8f\" stroke-width=\"1.5\"/><text x=\"256\" y=\"438\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#4f6d8f\" font-family=\"Figtree, sans-serif\">Possible outcomes</text><text x=\"256\" y=\"456\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"256\" dy=\"0\">Grant, add conditions,</tspan><tspan x=\"256\" dy=\"13\">cut activities, reject</tspan></text></svg>",
+   "alt": "Responsibility map. The applicant advertises for 28 days. Responsible authorities and other persons send representations to a three-member licensing sub-committee. With no representations, the licence must be granted.",
+   "intro": "When a new venue applies for a premises licence, the decision is not one person's. It is a process with set roles and set clocks. If you know who can object, on what grounds and in what time, you can plan an opening date, talk to the right people early and avoid a hearing you did not need.",
+   "points": [
+    {
+     "h": "The clock: 28 days, in public",
+     "p": "The representation period is 28 consecutive days, starting the day after the application reaches the licensing authority. For the same 28 days the applicant must show a pale blue notice, at least A4, printed in black at 16 point or larger, where it can be read from outside. A notice must also appear in a local newspaper at least once within 10 working days."
+    },
+    {
+     "h": "Who can object, and on what",
+     "p": "The Act lists the responsible authorities: the licensing authority itself, the police, fire and rescue, the health and safety enforcer, planning, the pollution team (environmental health), the public health team, a body that protects children from harm, and in London the Greater London Authority. Anyone else is an 'other person', such as a neighbour or a nearby business. A representation only counts if it is about the likely effect on the four licensing objectives. For other persons, the council must also ask if it is frivolous or vexatious, and give reasons if so."
+    },
+    {
+     "h": "Who decides",
+     "p": "Each council has a licensing committee of 10 to 15 councillors, which works through sub-committees of three. If there are no relevant representations, the council must grant the licence as applied for, and an officer can sign it off. Officers cannot decide once representations are made. Then there is a hearing, unless everyone agrees one is not needed. The sub-committee can grant, add or change conditions, exclude activities, refuse the proposed supervisor, or reject the application."
+    }
+   ],
+   "atWork": "Before any new application or variation, list which responsible authorities are likely to care and call the police licensing officer and environmental health first. Agreeing conditions before the 28 days start is the cheapest way to avoid a hearing.",
+   "takeaway": "No relevant representations means the licence must be granted. Your job is to answer every likely objection before the 28 days begin.",
+   "sources": [
+    {
+     "name": "Licensing Act 2003, Part 3 (sections 13 and 18), legislation.gov.uk",
+     "url": "https://www.legislation.gov.uk/ukpga/2003/17/part/3"
+    },
+    {
+     "name": "Licensing Act 2003 (Premises licences) Regulations 2005, legislation.gov.uk",
+     "url": "https://www.legislation.gov.uk/uksi/2005/42"
+    },
+    {
+     "name": "Licensing Act 2003 explanatory notes: licensing committees",
+     "url": "https://www.legislation.gov.uk/ukpga/2003/17/notes/division/4/2?view=plain"
+    },
+    {
+     "name": "Home Office: Revised guidance under section 182, GOV.UK",
+     "url": "https://www.gov.uk/government/publications/explanatory-memorandum-revised-guidance-issued-under-s-182-of-licensing-act-2003/revised-guidance-issued-under-section-182-of-the-licensing-act-2003-december-2023-accessible-version"
+    }
+   ],
+   "checked": "Sections 13 and 18 and regulations 22 and 25 checked on legislation.gov.uk; section 182 guidance (last updated 3 November 2026) checked on GOV.UK, 10 November 2026."
+  },
+  {
+   "n": 9,
+   "area": "brand",
+   "module": "Social media and content",
+   "title": "Choosing platforms for your concept",
+   "outcome": "You will be able to choose one or two platforms based on where your guests are",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 380\" role=\"img\" aria-label=\"Platform fit matrix rating Instagram, TikTok and Facebook on audience share, effort, format and booking pull, with Instagram recommended\"><text x=\"170\" y=\"20\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Platform fit for a new restaurant</text><text x=\"132\" y=\"44\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Audience</text><text x=\"184\" y=\"44\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Effort</text><text x=\"236\" y=\"44\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Format</text><text x=\"292\" y=\"44\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#857353\" font-family=\"Figtree, sans-serif\"><tspan x=\"292\" dy=\"0\">Booking</tspan><tspan x=\"292\" dy=\"13\">pull</tspan></text><rect x=\"6\" y=\"70\" width=\"328\" height=\"66\" rx=\"10\" fill=\"#f3e3ea\" stroke=\"#a3456b\" stroke-width=\"2\"/><text x=\"16\" y=\"100\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Instagram</text><text x=\"16\" y=\"118\" text-anchor=\"start\" font-size=\"11\" font-weight=\"700\" fill=\"#a3456b\" font-family=\"Figtree, sans-serif\">Recommended</text><text x=\"132\" y=\"108\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#a3456b\" font-family=\"Figtree, sans-serif\">44%</text><text x=\"184\" y=\"108\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Med</text><text x=\"236\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"236\" dy=\"0\">Photo,</tspan><tspan x=\"236\" dy=\"13\">reels</tspan></text><text x=\"292\" y=\"108\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Med</text><rect x=\"6\" y=\"146\" width=\"328\" height=\"66\" rx=\"10\" fill=\"#fffdf8\" stroke=\"#e4cf9c\" stroke-width=\"1.5\"/><text x=\"16\" y=\"176\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">TikTok</text><text x=\"132\" y=\"184\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#a3456b\" font-family=\"Figtree, sans-serif\">25%</text><text x=\"184\" y=\"184\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">High</text><text x=\"236\" y=\"184\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Video</text><text x=\"292\" y=\"184\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Low</text><rect x=\"6\" y=\"222\" width=\"328\" height=\"66\" rx=\"10\" fill=\"#fffdf8\" stroke=\"#e4cf9c\" stroke-width=\"1.5\"/><text x=\"16\" y=\"252\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Facebook</text><text x=\"132\" y=\"260\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#a3456b\" font-family=\"Figtree, sans-serif\">13%</text><text x=\"184\" y=\"260\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Low</text><text x=\"236\" y=\"252\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"236\" dy=\"0\">Posts,</tspan><tspan x=\"236\" dy=\"13\">events</tspan></text><text x=\"292\" y=\"260\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Low</text><rect x=\"6\" y=\"302\" width=\"328\" height=\"70\" rx=\"10\" fill=\"#fffdf8\" stroke=\"#a3456b\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><text x=\"170\" y=\"324\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Audience = share of UK guests who use</text><text x=\"170\" y=\"340\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">social media to choose a venue</text><text x=\"170\" y=\"360\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#a3456b\" font-family=\"Figtree, sans-serif\">Add TikTok only if under-25s are your core</text></svg>",
+   "alt": "Platform fit matrix. Instagram, TikTok and Facebook are rated on audience share, effort, format and booking pull. Instagram is recommended, with TikTok added only if under-25s are the core guest.",
+   "intro": "Every new opening feels it must be everywhere. But the average in-house social team in UK hospitality is 1.3 people, and for a single site it is often you. Spreading that time across five platforms gives you five weak accounts. The better move is to pick one or two, based on where your guests already look.",
+   "points": [
+    {
+     "h": "Start with where your guests are",
+     "p": "In 125 Data and Insights' 2026 study of 29,190 UK guests, those who use social media to choose a venue named Instagram as most influential (44%), then TikTok (25%) and Facebook (13%). Age changes the picture: 54% of UK 18 to 24s are TikTok-led for discovery. OpenTable UK found 77% of Gen Z and 71% of Millennials say a restaurant's Instagram or TikTok appeal matters when they choose."
+    },
+    {
+     "h": "Be honest about what social does",
+     "p": "The same study found 75% of venue choices come from trust: past experience (42%) and personal recommendation (33%). Social media was the named driver for only 4%. KAM found 18% of UK adults turn to social when researching a venue, and 26% follow a venue. So social works best as proof and reminder, not as the main booking engine. Judge a platform on how easily it sends people to your booking page."
+    },
+    {
+     "h": "Match effort to format",
+     "p": "Each platform asks for a different kind of work. Instagram takes photos and short reels, which a strong pass and good light can supply. TikTok wants frequent, personality-led video, the highest effort. Facebook suits events and local groups for little effort. Score each on audience, effort, format and booking pull, as in the matrix, and choose the best fit for your guests. For most fine dining or neighbourhood concepts that is Instagram, with TikTok only if under-25s are your core."
+    }
+   ],
+   "atWork": "Ask ten guests this week how they first heard of you and where they looked before booking. Tally the answers by platform. That small survey tells you more about your own guests than any national figure.",
+   "takeaway": "Choose one platform you can do well, two at most. Pick it from where your guests look, not where the noise is.",
+   "sources": [
+    {
+     "name": "Joli: Social media statistics for restaurants and hospitality brands (2026)",
+     "url": "https://joliapp.com/resources/hospitality-social-media-stats/"
+    }
+   ]
+  }
+ ],
+ "news": [
+  {
+   "area": "industry",
+   "headline": "London's mayor can now decide big licensing applications",
+   "gist": "Since 3 November, Sadiq Khan can review and make final decisions on licence applications judged strategically important to London.",
+   "big": {
+    "value": "3 Nov",
+    "label": "mayor's powers in force"
+   },
+   "read": {
+    "what": "New powers let the Mayor of London review and decide licensing applications that matter to London's economy and nightlife, such as large venues, live music, extended hours, festivals and big events. Borough councils still handle routine decisions. The mayor can step in after a council's first ruling. Boroughs must consult City Hall when they revise licensing policies, and the Greater London Authority can make formal representations.",
+    "how": "The mayor plans a London-wide Strategic Licensing Policy, with a final version expected later this year after consultation. UKHospitality's Kate Nicholls welcomed the move. Westminster's deputy leader Tim Barnes says it shifts power away from councils, and London Councils is worried about how broad 'strategically important' is.",
+    "soWhat": "In London, City Hall now has a formal voice and can be the final decision-maker. A late-night or large-capacity application may face City Hall as well as the borough.",
+    "take": "For any London application with late hours or live music, check whether it could be called strategically important, and talk to both the borough and the GLA early."
+   },
+   "source": {
+    "name": "The Morning Advertiser",
+    "date": "5 Nov",
+    "url": "https://www.morningadvertiser.co.uk/Article/2026/11/05/sadiq-khan-gains-new-powers-over-london-pub-licensing/"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 234\" role=\"img\" aria-label=\"Flow: borough council decides first; strategically important applications can then be reviewed and decided by the Mayor of London\"><defs><marker id=\"a3\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"#4f6d8f\"/></marker></defs><text x=\"170\" y=\"20\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">London licensing from 3 November</text><rect x=\"20\" y=\"36\" width=\"300\" height=\"44\" rx=\"10\" fill=\"#dfe7f0\" stroke=\"#4f6d8f\" stroke-width=\"1.5\"/><text x=\"170\" y=\"54\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Borough council decides first</text><text x=\"170\" y=\"71\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">routine applications stay here</text><line x1=\"170\" y1=\"80\" x2=\"170\" y2=\"106\" stroke=\"#4f6d8f\" stroke-width=\"2\" marker-end=\"url(#a3)\"/><rect x=\"20\" y=\"108\" width=\"300\" height=\"44\" rx=\"10\" fill=\"#fffdf8\" stroke=\"#4f6d8f\" stroke-width=\"1.5\"/><text x=\"170\" y=\"126\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Strategically important?</text><text x=\"170\" y=\"143\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">large venues, late hours, live music</text><line x1=\"170\" y1=\"152\" x2=\"170\" y2=\"178\" stroke=\"#4f6d8f\" stroke-width=\"2\" marker-end=\"url(#a3)\"/><rect x=\"20\" y=\"180\" width=\"300\" height=\"44\" rx=\"10\" fill=\"#4f6d8f\"/><text x=\"170\" y=\"198\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#fffdf8\" font-family=\"Figtree, sans-serif\">Mayor can review and decide</text><text x=\"170\" y=\"215\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#fffdf8\" font-family=\"Figtree, sans-serif\">after the borough's ruling</text></svg>",
+   "drawingAlt": "Flow chart: the borough council decides first; strategically important applications can then be reviewed and decided by the Mayor of London."
+  },
+  {
+   "area": "industry",
+   "headline": "Veeraswamy goes to court to keep its home of 100 years",
+   "gist": "Britain's oldest Indian restaurant is fighting the Crown Estate, which will not renew its lease and has offered £500,000 to help it move.",
+   "big": {
+    "value": "£500k",
+    "label": "landlord's compensation offer"
+   },
+   "read": {
+    "what": "Michelin-starred Veeraswamy has traded at Victory House near Piccadilly Circus for 100 years. Its £205,000-a-year lease ran out last summer and the Crown Estate declined to renew it. The case reached Central London County Court on 5 November after a five-day hearing set for 29 June was postponed. Owner MW Eat says a move would cost about £5m.",
+    "how": "The Crown Estate says it needs the building empty to refurbish it and to widen the office reception into the restaurant's entrance. MW Eat says the works can go ahead while it trades, and has offered to share the entrance and match the expected office rent. A petition of more than 20,000 signatures went to Buckingham Palace in February.",
+    "soWhat": "Even a famous restaurant can lose its site when a lease ends. When you sign your own lease, the renewal terms matter as much as the rent.",
+    "take": "When you look at a site, ask early whether the lease gives you a right to renew, and get legal advice on it before you sign."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "5 Nov",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/05/veeraswamy-heads-to-court-in-fight-to-stay-on-regent-street/"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 250\" role=\"img\" aria-label=\"Bar chart: old lease £205,000 a year, Crown Estate offer £500,000, and the owner's £5m estimate of what a move would cost\"><text x=\"170\" y=\"20\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">What the move would cost</text><line x1=\"30\" y1=\"200\" x2=\"310\" y2=\"200\" stroke=\"#e4cf9c\" stroke-width=\"2\"/><rect x=\"28\" y=\"193.85\" width=\"64\" height=\"6.15\" rx=\"6\" fill=\"#d9c7b0\"/><text x=\"60\" y=\"185.85\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">£205k</text><text x=\"60\" y=\"218\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\"><tspan x=\"60\" dy=\"0\">Old lease</tspan><tspan x=\"60\" dy=\"13\">a year</tspan></text><rect x=\"128\" y=\"185.0\" width=\"64\" height=\"15.0\" rx=\"6\" fill=\"#e4cf9c\"/><text x=\"160\" y=\"177.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">£500k</text><text x=\"160\" y=\"218\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\"><tspan x=\"160\" dy=\"0\">Crown Estate</tspan><tspan x=\"160\" dy=\"13\">offer</tspan></text><rect x=\"228\" y=\"50.0\" width=\"64\" height=\"150.0\" rx=\"6\" fill=\"#c4562a\"/><text x=\"260\" y=\"42.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">£5m</text><text x=\"260\" y=\"218\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\"><tspan x=\"260\" dy=\"0\">Owner's cost</tspan><tspan x=\"260\" dy=\"13\">estimate</tspan></text></svg>",
+   "drawingAlt": "Bar chart: the old lease was £205,000 a year, the Crown Estate offers £500,000, and the owner estimates a move would cost £5m."
+  },
+  {
+   "area": "trends",
+   "headline": "OpenTable: diners plan more meals out in 2027",
+   "gist": "OpenTable's 2027 report says Brits plan to eat out 5 times a month, Gen Z 9 times, and group bookings of six or more rose 18%.",
+   "big": {
+    "value": "22 min",
+    "label": "most guests will queue"
+   },
+   "read": {
+    "what": "Dining at UK restaurants on OpenTable rose 10% year on year in 2026, and 65% of Brits expect to eat out as often or more in 2027. Willingness to queue fell from 29 minutes in 2025 to 22 minutes, and 67% would rather go elsewhere than queue. 62% were more interested in a restaurant whose reservations felt exclusive.",
+    "how": "Small reasons drive visits: reunions (30%), treating themselves (25%) and good news (20%). 36% of Gen Z want to become a regular in 2027, against 21% of all Brits. Convenience (26%), supporting local (23%) and perks (22%) make people regulars.",
+    "soWhat": "Guests are coming out for small moments and want to be known. Groups and regulars are where the growth is.",
+    "take": "Make a plan for regulars: remember names and orders, and give a small perk on the third visit. Track group bookings of six or more separately."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "4 Nov",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/04/more-meals-out-more-micro-occasions-opentable-reveals-its-dining-trends-for-2027/"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1778694277039-5cbf0b9a1fcf?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/people-enjoying-a-candlelit-dinner-at-a-dimly-lit-restaurant-UEjjO-aJtZ8",
+    "credit": "Romain Gal, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "A group of friends at a candlelit dinner around a long wooden table in a warmly lit restaurant"
+   }
+  },
+  {
+   "area": "finedining",
+   "headline": "Claude Bosi to close Brooklands and return to Michelin House",
+   "gist": "Brooklands by Claude Bosi at The Peninsula London closes in January 2027, and Bosi will open a new venture in the Bibendum building.",
+   "big": {
+    "value": "Jan 2027",
+    "label": "Brooklands closes"
+   },
+   "read": {
+    "what": "Brooklands, on the top floor of the five-star Peninsula London, will close in January 2027 after three years. Bosi and his wife and business partner Lucy will open a new venture at Michelin House in Chelsea, home of Claude Bosi at Bibendum, which held two Michelin stars from 2018 until it closed in August 2025. No opening date is given.",
+    "how": "The couple will focus on the new project and their Josephine restaurants in Chelsea and Marylebone. Bosi says the next chapter is about building on Josephine and bringing Michelin House to life.",
+    "soWhat": "Top chefs are moving out of hotel deals and back to sites they control. Owning the room, not renting a brand, is the long game.",
+    "take": "Watch what Bosi opens: a famous building with a neighbourhood sister brand is a model for a chef-owner group."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "4 Nov",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/04/claude-bosi-to-return-to-michelin-house-as-he-announces-closure-of-his-the-peninsula-london-restaurant/"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 170\" role=\"img\" aria-label=\"Timeline: Claude Bosi opens at Bibendum in 2017, two Michelin stars from 2018, closes August 2025, Brooklands closes January 2027, then a return to Michelin House\"><text x=\"170\" y=\"20\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Claude Bosi and Michelin House</text><line x1=\"30\" y1=\"80\" x2=\"310\" y2=\"80\" stroke=\"#e4cf9c\" stroke-width=\"3\"/><circle cx=\"40\" cy=\"80\" r=\"8\" fill=\"#c4562a\"/><text x=\"40\" y=\"58\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">2017</text><text x=\"40\" y=\"106\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\"><tspan x=\"40\" dy=\"0\">Opens at</tspan><tspan x=\"40\" dy=\"13\">Bibendum</tspan></text><circle cx=\"120\" cy=\"80\" r=\"8\" fill=\"#c4562a\"/><text x=\"120\" y=\"58\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">2018</text><text x=\"120\" y=\"106\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\"><tspan x=\"120\" dy=\"0\">Two</tspan><tspan x=\"120\" dy=\"13\">stars</tspan></text><circle cx=\"210\" cy=\"80\" r=\"8\" fill=\"#c4562a\"/><text x=\"210\" y=\"58\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Aug 2025</text><text x=\"210\" y=\"106\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\"><tspan x=\"210\" dy=\"0\">Bibendum</tspan><tspan x=\"210\" dy=\"13\">closes</tspan></text><circle cx=\"300\" cy=\"80\" r=\"8\" fill=\"#c4562a\"/><text x=\"300\" y=\"58\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Jan 2027</text><text x=\"300\" y=\"106\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\"><tspan x=\"300\" dy=\"0\">Brooklands</tspan><tspan x=\"300\" dy=\"13\">closes</tspan></text><text x=\"170\" y=\"156\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#c4562a\" font-family=\"Figtree, sans-serif\">Next: a new venture back at Michelin House</text></svg>",
+   "drawingAlt": "Timeline: Bosi opens at Bibendum in 2017, two Michelin stars from 2018, Bibendum closes August 2025, Brooklands closes January 2027, then a return to Michelin House."
+  },
+  {
+   "area": "openings",
+   "headline": "Florence Knight opens Lunette on the 11th floor of St Clement",
+   "gist": "Florence Knight's first solo restaurant is open at the St Clement hotel in Temple, with a £70 four-course lunch and a £110 six-course dinner.",
+   "big": {
+    "value": "£110",
+    "label": "six-course dinner"
+   },
+   "read": {
+    "what": "Lunette, French for 'little moon', sits on the 11th floor of the St Clement hotel, launched this summer by Soho House founder Nick Jones. Lunch is a set four courses at £70 and dinner six courses at £110. Dishes change with the seasons and draw on art and nature, with Sauternes jelly and a lemon vanilla tart on the current menu.",
+    "how": "Knight opened Polpetto in Soho in 2010, which won a Bib Gourmand in its first year, and was head chef at Sessions Arts Club from 2021 until 2024.",
+    "soWhat": "A set lunch well below the dinner price is a classic way to fill a high-cost room by day and let new guests try it.",
+    "take": "Compare lunch and dinner prices at three restaurants you admire. Note the gap and what each course count tells you about their cost model."
+   },
+   "source": {
+    "name": "The Caterer",
+    "date": "2 Nov",
+    "url": "https://www.thecaterer.com/news/first-look-chef-florence-knight-opens-lunette-at-the-st-clement-hotel"
+   }
+  },
+  {
+   "area": "openings",
+   "headline": "Berryman's: a standing-only martini and oyster bar for Dalston",
+   "gist": "The Three Sheets team opens Berryman's on Kingsland Road on 13 November, a standing-only bar for martinis, oysters and wine.",
+   "big": {
+    "value": "13 Nov",
+    "label": "opening day"
+   },
+   "read": {
+    "what": "Berryman's opens at 508 Kingsland Road, E8, on 13 November. It comes from the team behind Three Sheets and is standing-only, built around martinis, oysters and wine, with Cornish produce and Spanish-style bar influences.",
+    "how": "",
+    "soWhat": "Standing-only cuts the seat count to zero and turns the room fast. A short, tight offer of three things is easy to staff and easy to explain.",
+    "take": "Think about whether a small standing bar with a three-item offer could be a low-cost first step before a full restaurant."
+   },
+   "source": {
+    "name": "Hot Dinners",
+    "date": "29 Oct",
+    "url": "https://www.hot-dinners.com/Features/Hot-Dinners-recommends/new-london-restaurants-opening-in-november-2026"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1712025853693-d16e904d0662?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/a-martini-glass-with-an-olive-in-it-ZiKUcncapXI",
+    "credit": "Eduard Pretsi, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "A martini with an olive, the drink at the centre of Berryman's offer"
+   }
+  }
+ ],
+ "newsNote": "Food and drink trends were thin this week, so there is one trends story.",
+ "try": {
+  "title": "Map the objectors before your next licence change",
+  "steps": [
+   "Pick one change you might want: later hours, live music or a terrace.",
+   "List which responsible authorities would care, from police and environmental health to the GLA in London.",
+   "Write the one objection each might raise and the condition that would answer it.",
+   "Share the map with your licence holder and ask who to call first."
+  ],
+  "why": "A relevant representation means a hearing. Answering objections before the 28 days start is how operators get licences granted without one."
+ },
+ "quiz": [
+  {
+   "q": "Two vineyards sit at the same latitude in Mendoza, one at 600m and one at 1,300m. Roughly how much cooler is the higher one?",
+   "options": [
+    "About 0.7°C",
+    "About 4°C",
+    "About 10°C",
+    "No difference"
+   ],
+   "answer": 1,
+   "why": "Air cools about 0.6°C per 100m. 700m higher is about 4.2°C cooler, which slows ripening and keeps freshness.",
+   "from": 1
+  },
+  {
+   "q": "Why do growers in cool regions avoid planting at the very bottom of a valley?",
+   "options": [
+    "The soil is too rich",
+    "Cold air drains downhill and pools there, so frost hits hardest",
+    "The sun never reaches it",
+    "Rivers flood every year"
+   ],
+   "answer": 1,
+   "why": "Cold air is heavier than warm air. On still nights it flows down the slope and settles in the valley, making a frost pocket. Mid-slope vines escape it.",
+   "from": 1
+  },
+  {
+   "q": "A licence application gets no relevant representations in the 28 days. What must the council do?",
+   "options": [
+    "Hold a hearing anyway",
+    "Refer it to the police",
+    "Ask residents again",
+    "Grant it as applied for"
+   ],
+   "answer": 3,
+   "why": "With no relevant representations, the licensing authority must grant the licence as applied for, subject only to conditions consistent with the operating schedule and the mandatory conditions.",
+   "from": 2
+  },
+  {
+   "q": "A neighbour objects that a new bar will lower house prices. How should the council treat it?",
+   "options": [
+    "It is not relevant: it does not relate to the licensing objectives",
+    "It triggers an automatic refusal",
+    "It must go to a full council vote",
+    "It counts as a responsible authority objection"
+   ],
+   "answer": 0,
+   "why": "A representation only counts if it is about the likely effect on the four licensing objectives. House prices are not one of them.",
+   "from": 2
+  },
+  {
+   "q": "Your new neighbourhood restaurant has one person for social. Guests are mostly 35 to 55. What is the best first move?",
+   "options": [
+    "Open accounts on every platform",
+    "Go all in on TikTok",
+    "Focus on Instagram and make booking easy from it",
+    "Skip social entirely"
+   ],
+   "answer": 2,
+   "why": "Instagram is the most influential platform for UK guests who use social to choose (44%). TikTok mainly leads for under-25s, and one person cannot run every platform well.",
+   "from": 3
+  }
+ ],
+ "terms": [
+  {
+   "term": "Aspect",
+   "lesson": 1,
+   "def": "The direction a vineyard slope faces. A slope facing the equator gets more sun and warmth."
+  },
+  {
+   "term": "Frost pocket",
+   "lesson": 1,
+   "def": "A low spot where cold air settles on still nights, so frost damage is worst there."
+  },
+  {
+   "term": "Responsible authority",
+   "lesson": 2,
+   "def": "A public body named in the Licensing Act, such as the police or environmental health, that can comment on any licence application."
+  },
+  {
+   "term": "Relevant representation",
+   "lesson": 2,
+   "def": "A comment on a licence application, made in time, about its likely effect on the four licensing objectives."
+  },
+  {
+   "term": "Frivolous or vexatious",
+   "lesson": 2,
+   "def": "A test the council applies to objections from other persons: trivial, or made to annoy. If it fails, the objection is set aside with reasons."
+  },
+  {
+   "term": "Booking pull",
+   "lesson": 3,
+   "def": "How well a platform turns a viewer into a reservation, for example with a booking link close to the content."
+  }
+ ],
+ "toolkit": [
+  {
+   "name": "Wine site story in three lines",
+   "kind": "template",
+   "items": [
+    "Where: latitude, and whether it is cool, moderate or warm.",
+    "Site: one fact on altitude, slope, aspect, water or soil.",
+    "So: what that does to the taste, fresher and sharper or riper and fuller."
+   ],
+   "lesson": 1
+  },
+  {
+   "name": "Licence objection map",
+   "kind": "checklist",
+   "items": [
+    "Police: crime and disorder, door and CCTV.",
+    "Environmental health: noise and smell.",
+    "Fire and rescue: capacity and exits.",
+    "Planning: hours and use of the building.",
+    "Child protection and public health: under-18s and harm.",
+    "GLA, in London: strategically important applications.",
+    "Neighbours and businesses: noise, smokers, dispersal."
+   ],
+   "lesson": 2
+  },
+  {
+   "name": "Platform fit score",
+   "kind": "framework",
+   "items": [
+    "Audience: what share of your guests use it to choose a venue?",
+    "Effort: how many hours a week can you really give it?",
+    "Format: can your team make that content well?",
+    "Booking pull: how many taps from post to booking?",
+    "Pick the top scorer, add a second only if you have time."
+   ],
+   "lesson": 3
+  }
+ ]
+}
