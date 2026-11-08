@@ -30,7 +30,7 @@ var ScoreCore = (function () {
     var c = 0, last = null, total = 0, perfects = 0, right = 0, asked = 0, out = {};
     keys.forEach(function (k) {
       var d = days[k], a = advance(c, last, k, mode); c = a.c; last = a.last;
-      var mult = multFor(c), base = (d.score | 0) * 10, perfect = d.total >= 5 && d.score === d.total, bonus = perfect ? 20 : 0;
+      var mult = multFor(c), base = (d.score | 0) * 10, perfect = d.total >= 3 && d.score === d.total, bonus = perfect ? 20 : 0;
       var pts = Math.round((base + bonus) * mult);
       out[k] = { points: pts, mult: mult, base: base, bonus: bonus, perfect: perfect, dropped: a.dropped, counter: c };
       total += pts; if (perfect) perfects++; right += d.score | 0; asked += d.total | 0;
