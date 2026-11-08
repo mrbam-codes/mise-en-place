@@ -63,7 +63,7 @@ One inline `<svg>` element, drawn fresh. The checker refuses anything else.
 
 `{ "q", "options": [4], "answer", "why", "from" }`
 
-- Exactly 5. At least one on each lesson; `from` is the lesson number, or `"news"`. Question up to 180, options up to 100, `why` up to 280.
+- Exactly 5. At least one on each lesson; `from` is the lesson's position in today's edition (1, 2 or 3, not its course number `n`), or `"news"`. Question up to 180, options up to 100, `why` up to 280.
 - `answer` is 0 to 3: vary its position. Wrong options must be plausible. Test understanding and application, not trivia. Every answer must be supported by today's lesson text.
 
 ## Order of work
