@@ -256,9 +256,44 @@ textarea{min-height:90px}
 .kov b{font:400 34px/1 var(--disp);color:var(--ink)}
 .kov span{font:500 14px/1.35 var(--ui);color:#4a3f2c;max-width:58%}
 @media (prefers-reduced-motion:reduce){.kpeek{transition:none}}
+/* score badge, My scores and the Kimchi postcard */
+.scorebadge{position:fixed;z-index:15;top:calc(env(safe-area-inset-top,0px) + 10px);right:max(12px,env(safe-area-inset-right,0px));display:grid;justify-items:center;gap:3px;background:none;border:0;padding:0;cursor:pointer}
+.scorebadge .ring{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;position:relative;font:400 20px var(--disp);color:var(--ink);background:conic-gradient(var(--gold) 0 var(--p,0%),var(--goldl) 0);box-shadow:0 6px 16px -6px #2b241766}
+.scorebadge .ring::before{content:'';position:absolute;inset:4px;border-radius:50%;background:var(--card)}
+.scorebadge .ring{isolation:isolate}.scorebadge .ring::before{z-index:-1}
+.scorebadge .ring::after{content:'';position:absolute;right:-2px;top:-3px;width:14px;height:17px;background:radial-gradient(circle at 50% 70%,#f7c56b 0 35%,#e0763a 36% 60%,transparent 61%);border-radius:50% 50% 45% 45%/60% 60% 40% 40%}
+.scorebadge .pill{font:600 10px var(--ui);padding:2px 7px;border-radius:99px;background:var(--card);color:var(--goldd);border:1px solid var(--goldl);white-space:nowrap}
+.scorebadge:focus-visible .ring{outline:2px solid var(--goldd);outline-offset:3px}
+.sc-hero{display:flex;align-items:center;gap:16px;margin:8px 0 12px}
+.ring.big{width:96px;height:96px;flex:none;border-radius:50%;display:grid;place-items:center;position:relative;isolation:isolate;background:conic-gradient(var(--gold) 0 var(--p,0%),var(--goldl) 0)}
+.ring.big::before{content:'';position:absolute;inset:7px;border-radius:50%;background:var(--card);z-index:-1}
+.ring.big b{font:400 14px/1.1 var(--disp);text-align:center;padding:0 10px}
+.sc-tot{font:400 46px/1 var(--disp)}.sc-hero small{display:block;color:var(--mute);font-size:13px}
+.sc-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px}
+.sc-stats div{background:var(--card);border:1px solid var(--goldl);border-radius:12px;padding:10px;display:grid;gap:2px;text-align:center}
+.sc-stats b{font:400 24px/1.1 var(--disp)}.sc-stats span{font:500 10px var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.sc-strip{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.sc-strip i{aspect-ratio:1;border-radius:6px;background:#efe6d2;display:block}
+.sc-strip i.d{background:var(--goldl)}.sc-strip i.p{background:var(--gold)}.sc-strip i.m{background:transparent;border:1.5px dashed #d9c9a6}.sc-strip i.t{outline:2px solid var(--ink);outline-offset:1px}
+.sc-key{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;font-size:12px;color:var(--mute)}
+.sc-key i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px;background:#efe6d2}
+.sc-key i.d{background:var(--goldl)}.sc-key i.p{background:var(--gold)}.sc-key i.m{background:transparent;border:1.5px dashed #d9c9a6}.sc-key i.t{outline:2px solid var(--ink)}
+.sc-name{display:grid;gap:6px;font-size:13px;color:var(--mute);margin:8px 0 14px}
+.sc-name input{font:500 16px var(--ui);padding:11px 12px;border-radius:12px;border:1px solid var(--goldl);background:#fff;color:var(--ink)}
+.pcard{position:relative;width:100%;max-width:380px;margin:0 auto;aspect-ratio:9/16;border-radius:22px;overflow:hidden;isolation:isolate;container-type:inline-size;background:linear-gradient(#fcf9f2,#f2e9d6);display:flex;flex-direction:column;box-shadow:0 20px 50px -28px #2b241788,0 0 0 1px var(--goldl)}
+.pc-scene{position:relative;width:100%;aspect-ratio:420/360;overflow:hidden;flex:none}.pc-scene .khost,.pc-scene .khost>.khero{position:absolute;inset:0}
+.pc-say{position:absolute;left:52%;top:4%;background:#fff;border-radius:3cqw;padding:2cqw 3cqw;font:600 3.6cqw var(--ui);color:var(--ink);box-shadow:0 3px 10px #2b241722;z-index:3}
+.pc-body{flex:1;padding:5% 7% 6%;display:flex;flex-direction:column;gap:2.6cqw;min-width:0}
+.pc-tag{font:400 3.4cqw var(--caps);letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.pc-lv{font:400 9.4cqw/1 var(--disp);color:var(--ink)}
+.pc-pts{display:flex;align-items:baseline;gap:2cqw}.pc-pts b{font:800 14cqw/1 var(--ui);color:var(--ink);letter-spacing:-.03em}.pc-pts span{font:600 3.8cqw var(--ui);color:var(--mute)}
+.pc-chips{display:flex;flex-wrap:wrap;gap:1.6cqw}.pc-chips span{font:600 3.3cqw var(--ui);padding:1.4cqw 2.8cqw;border-radius:99px;background:#fff;border:.3cqw solid var(--goldl);color:var(--goldd)}.pc-chips span.p{background:var(--gold);color:#fff;border-color:var(--gold)}
+.pc-bar{height:1.6cqw;border-radius:99px;background:var(--goldl);overflow:hidden}.pc-bar i{display:block;height:100%;background:var(--gold)}
+.pc-foot{margin-top:auto;font:500 3.4cqw var(--ui);color:var(--mute)}
 </style>
 <script src="heroes.js" defer></script>
 <script src="kimchi.js" defer></script>
+<script src="scorecore.js" defer></script>
 <script src="app.js" defer></script>
 </head>
 <body>
