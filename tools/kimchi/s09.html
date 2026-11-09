@@ -1,0 +1,164 @@
+<style>
+#s09{overflow:hidden;background:#f8eae0}
+#s09 svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+</style>
+<div class="hero" id="s09">
+<svg viewBox="0 0 420 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<filter id="s09_clay" filterUnits="userSpaceOnUse" x="-200" y="-200" width="800" height="700" color-interpolation-filters="sRGB">
+ <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="h1"/>
+ <feGaussianBlur in="SourceAlpha" stdDeviation="9" result="h2"/>
+ <feComposite in="h1" in2="h2" operator="arithmetic" k2=".5" k3=".5" result="h"/>
+ <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" seed="5" result="n"/>
+ <feComposite in="h" in2="n" operator="arithmetic" k2="1" k3=".06" k4="-.03" result="hb"/>
+ <feDiffuseLighting in="hb" surfaceScale="5" diffuseConstant="1" lighting-color="#fffaf3" result="diff"><feDistantLight azimuth="225" elevation="50"/></feDiffuseLighting>
+ <feComposite in="diff" in2="SourceGraphic" operator="arithmetic" k1=".7" k3=".45" result="lit"/>
+ <feSpecularLighting in="hb" surfaceScale="5" specularConstant=".08" specularExponent="12" lighting-color="#fff6ea" result="sp"><feDistantLight azimuth="225" elevation="50"/></feSpecularLighting>
+ <feComposite in="sp" in2="SourceAlpha" operator="in" result="sp2"/>
+ <feComposite in="lit" in2="sp2" operator="arithmetic" k2="1" k3=".6"/>
+</filter>
+<radialGradient id="s09_vol" cx="36%" cy="30%" r="78%"><stop offset="0" stop-color="#fcf6ec"/><stop offset=".55" stop-color="#f1e3cf"/><stop offset="1" stop-color="#dcc4a6"/></radialGradient>
+<radialGradient id="s09_hv" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#fcf5ea"/><stop offset=".6" stop-color="#f1e2cc"/><stop offset="1" stop-color="#dcc3a3"/></radialGradient>
+<filter id="s09_blur" filterUnits="userSpaceOnUse" x="-200" y="-200" width="800" height="700"><feGaussianBlur stdDeviation="6"/></filter>
+<filter id="s09_blur2" filterUnits="userSpaceOnUse" x="-200" y="-200" width="800" height="700"><feGaussianBlur stdDeviation="2"/></filter>
+<filter id="s09_grain" x="0" y="0" width="100%" height="100%">
+ <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="2"/>
+ <feColorMatrix values="0 0 0 0 .55 0 0 0 0 .45 0 0 0 0 .38 0 0 0 .07 0"/>
+</filter>
+<linearGradient id="s09_wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fcf3ec"/><stop offset=".62" stop-color="#f7e3d8"/><stop offset=".74" stop-color="#f4ead9"/><stop offset="1" stop-color="#efe2ca"/></linearGradient>
+<radialGradient id="s09_spot" cx="72%" cy="48%" r="45%"><stop offset="0" stop-color="#fffaf3" stop-opacity=".95"/><stop offset="1" stop-color="#fffaf3" stop-opacity="0"/></radialGradient>
+<radialGradient id="s09_mask" cx="50%" cy="62%" r="50%"><stop offset="0" stop-color="#5a3f32"/><stop offset=".5" stop-color="#76574a" stop-opacity=".92"/><stop offset=".78" stop-color="#a88670" stop-opacity=".45"/><stop offset="1" stop-color="#c9ab92" stop-opacity="0"/></radialGradient>
+<radialGradient id="s09_eye" cx="45%" cy="40%" r="60%"><stop offset="0" stop-color="#7fb2f0"/><stop offset=".55" stop-color="#3f74c9"/><stop offset="1" stop-color="#1f3f86"/></radialGradient>
+<linearGradient id="s09_back" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9d3b8"/><stop offset=".5" stop-color="#f4e8d8"/><stop offset="1" stop-color="#f8efe4"/></linearGradient>
+<radialGradient id="s09_dent" cx="60%" cy="65%" r="60%"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#7a5a45" stop-opacity=".18"/></radialGradient>
+</defs>
+
+<!-- the set: seamless paper sweep, pastel, softly lit -->
+<rect width="420" height="360" fill="url(#s09_wall)"/>
+<rect width="420" height="360" fill="url(#s09_spot)"/>
+<path d="M-10,262 C120,250 300,248 430,256 L430,370 L-10,370Z" fill="#f2e7d4" opacity=".55" filter="url(#s09_blur)"/>
+<rect width="420" height="360" filter="url(#s09_grain)"/>
+<!-- a clay sun stuck on the wall, and a felt cloud -->
+<g filter="url(#s09_clay)"><circle cx="384" cy="62" r="20" fill="#f6d79a"/></g>
+<g filter="url(#s09_clay)"><path d="M150,96 a11,11 0 0 1 18,-8 a14,14 0 0 1 26,2 a10,10 0 0 1 4,18 h-46 a8,8 0 0 1 -2,-12Z" fill="#fbf6ef"/></g>
+<!-- yarn ball prop -->
+<g filter="url(#s09_clay)"><circle cx="402" cy="314" r="20" fill="#bcd9d6"/></g>
+<g fill="none" stroke="#a3c7c3" stroke-width="2.4" stroke-linecap="round" opacity=".9"><path d="M386,304 q14,8 30,0"/><path d="M384,316 q16,10 34,2"/><path d="M392,296 q-4,14 6,32"/><path d="M382,320 q-30,10 -60,4"/></g>
+
+<!-- contact shadow -->
+<ellipse id="s09_sh" cx="330" cy="302" rx="62" ry="8" fill="#8c7262" opacity=".38" filter="url(#s09_blur2)"/>
+<ellipse id="s09_sh2" cx="330" cy="302" rx="40" ry="4" fill="#5d473b" opacity=".35" filter="url(#s09_blur2)"/>
+
+<g id="s09_cat">
+ <!-- tail -->
+ <g filter="url(#s09_clay)"><path id="s09_tail" fill="none" stroke="#7a5a48" stroke-width="24" stroke-linecap="round"/></g>
+ <!-- far front leg -->
+ <g filter="url(#s09_clay)"><line id="s09_lf" stroke="#8a6a57" stroke-width="15" stroke-linecap="round"/><ellipse id="s09_pf" rx="11" ry="6.5" fill="#fffaf3"/></g>
+ <!-- body: haunch + torso, one lump of clay -->
+ <g filter="url(#s09_clay)">
+  <ellipse id="s09_hn" fill="url(#s09_vol)"/>
+  <ellipse id="s09_ts" fill="url(#s09_vol)"/>
+  <ellipse id="s09_md" fill="url(#s09_vol)"/>
+  <ellipse id="s09_hp" rx="13" ry="6.5" fill="#fffaf3"/>
+ </g>
+ <!-- thumbprint dents on the haunch -->
+ <ellipse id="s09_d1" rx="7" ry="5" fill="url(#s09_dent)"/>
+ <!-- ivory ruff, a separate pressed-on piece -->
+ <g filter="url(#s09_clay)"><path id="s09_rf" fill="#fdf7ee"/><g id="s09_rg" fill="none" stroke="#ecdfcc" stroke-width="1.6" stroke-linecap="round"><path d="M-12,-14 l5,7 l5,-7 M2,-12 l5,7 l5,-7 M-16,0 l5,8 l5,-8 M-4,2 l5,8 l5,-8 M8,0 l5,7 l4,-7 M-12,16 l5,7 l5,-7 M2,16 l5,7 l5,-7"/></g></g>
+ <!-- near front leg -->
+ <g filter="url(#s09_clay)"><line id="s09_ln" stroke="#8a6a57" stroke-width="16" stroke-linecap="round"/><ellipse id="s09_pn" rx="12" ry="7" fill="#fffaf3"/></g>
+ <!-- head -->
+ <g id="s09_head">
+  <g filter="url(#s09_clay)">
+   <path d="M-38,-12 L-31,-48 L-6,-34Z" fill="#6c4f3f" stroke="#6c4f3f" stroke-width="9" stroke-linejoin="round"/>
+   <path d="M38,-12 L31,-48 L6,-34Z" fill="#6c4f3f" stroke="#6c4f3f" stroke-width="9" stroke-linejoin="round"/>
+  </g>
+  <path d="M-31,-20 L-29,-40 L-14,-32Z" fill="#d79f97" opacity=".7"/>
+  <path d="M31,-20 L29,-40 L14,-32Z" fill="#d79f97" opacity=".7"/>
+  <g filter="url(#s09_clay)">
+   <path d="M-40,4 C-42,-26 -20,-40 0,-40 C20,-40 42,-26 40,4 L50,12 L42,16 L48,24 L38,26 C30,36 16,40 0,40 C-16,40 -30,36 -38,26 L-48,24 L-42,16 L-50,12 Z" fill="url(#s09_hv)"/>
+   <ellipse cx="0" cy="9" rx="38" ry="33" fill="url(#s09_mask)"/><ellipse cx="0" cy="13" rx="19" ry="17" fill="#5e4234" opacity=".7"/><path d="M-22,-6 C-10,-2 10,-2 22,-6 C14,6 -14,6 -22,-6Z" fill="#7a5a49" opacity=".35"/>
+   <path d="M-4,-36 C-2,-20 2,-20 4,-36Z" fill="#8f6f5c" opacity=".55"/>
+  </g>
+  <!-- glossy bead eyes -->
+  <g id="s09_eyes">
+   <g id="s09_eL" transform="translate(-15,0)"><ellipse rx="10" ry="10.5" fill="#3b2a22"/><ellipse rx="8.6" ry="9.2" fill="url(#s09_eye)"/><ellipse rx="3.4" ry="6.4" fill="#141018"/><circle cx="-3" cy="-4" r="2.4" fill="#fff"/><circle cx="3" cy="4" r=".9" fill="#fff" opacity=".7"/></g>
+   <g id="s09_eR" transform="translate(15,0)"><ellipse rx="10" ry="10.5" fill="#3b2a22"/><ellipse rx="8.6" ry="9.2" fill="url(#s09_eye)"/><ellipse rx="3.4" ry="6.4" fill="#141018"/><circle cx="-3" cy="-4" r="2.4" fill="#fff"/><circle cx="3" cy="4" r=".9" fill="#fff" opacity=".7"/></g>
+  </g>
+  <g id="s09_lids" fill="none" stroke="#3b2a22" stroke-width="2.4" stroke-linecap="round" opacity="0"><path d="M-25,2 q10,6 20,0"/><path d="M5,2 q10,6 20,0"/></g>
+  <!-- Roman nose: a soft bridge, then the nose leather -->
+  <path d="M-3,6 C-2,10 2,10 3,6" fill="none" stroke="#a0806c" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+  <path d="M-6,13 Q0,10 6,13 Q2,19 0,20 Q-2,19 -6,13Z" fill="#4a3029"/>
+  <path id="s09_mc" d="M0,20 v3 M0,23 q-4,4 -8,1 M0,23 q4,4 8,1" fill="none" stroke="#4a3029" stroke-width="1.4" stroke-linecap="round"/>
+  <g id="s09_mouth" transform="translate(0,26) scale(1,0)">
+   <ellipse rx="9" ry="10" fill="#9a3f4c"/><ellipse cy="5" rx="6" ry="4" fill="#ea8e9b"/>
+   <path d="M-6,-8 l1.5,5 l1.5,-5Z M6,-8 l-1.5,5 l-1.5,-5Z" fill="#fff"/>
+  </g>
+  <g stroke="#fffaf3" stroke-width="1.1" stroke-linecap="round" opacity=".9"><path d="M-12,20 L-40,16"/><path d="M-12,23 L-38,26"/><path d="M12,20 L40,16"/><path d="M12,23 L38,26"/></g>
+  <ellipse cx="-27" cy="16" rx="5" ry="3" fill="#f0a9a0" opacity=".35"/><ellipse cx="27" cy="16" rx="5" ry="3" fill="#f0a9a0" opacity=".35"/>
+ </g>
+</g>
+</svg>
+<script>
+(function(){
+ var root=document.getElementById('s09');if(!root)return;
+ function $(i){return root.querySelector('#s09_'+i)}
+ var E={tail:$('tail'),lf:$('lf'),pf:$('pf'),hn:$('hn'),ts:$('ts'),hp:$('hp'),md:$('md'),rf:$('rf'),rg:$('rg'),ln:$('ln'),pn:$('pn'),head:$('head'),eL:$('eL'),eR:$('eR'),lids:$('lids'),mouth:$('mouth'),mc:$('mc'),cat:$('cat'),sh:$('sh'),sh2:$('sh2'),d1:$('d1')};
+ // two key poses: A = sitting, B = big stretch (play bow). Numbers lerp between them.
+ var A={hn:[342,262,44,38,-8],ts:[304,234,31,52,-12],hp:[322,296],rf:[284,236,24,36],
+  lf:[306,250,302,296],ln:[290,252,286,298],head:[286,176,0],
+  tail:[378,284,400,300,360,310,300,306]};
+ var B={hn:[360,234,44,36,16],ts:[302,258,58,30,12],hp:[362,296],rf:[268,264,20,24],
+  lf:[282,268,246,298],ln:[272,272,232,300],head:[272,204,-14],
+  tail:[384,228,408,196,404,160,392,128]};
+ function L(a,b,t){return a+(b-a)*t}
+ function V(a,b,t){var r=[];for(var i=0;i<a.length;i++)r.push(L(a[i],b[i],t));return r}
+ function E3(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+ function seg(t,a,b){return Math.max(0,Math.min(1,(t-a)/(b-a)))}
+ function bell(t,a,b){var u=seg(t,a,b);return Math.sin(u*Math.PI)}
+ function ell(el,v){el.setAttribute('cx',v[0]);el.setAttribute('cy',v[1]);el.setAttribute('rx',v[2]);el.setAttribute('ry',v[3]);el.setAttribute('transform','rotate('+v[4]+' '+v[0]+' '+v[1]+')')}
+ function line(el,v){el.setAttribute('x1',v[0]);el.setAttribute('y1',v[1]);el.setAttribute('x2',v[2]);el.setAttribute('y2',v[3])}
+ var T=7;
+ function pose(t,still){
+  // timeline: sit, anticipate, stretch, yawn, sit back with squash, settle, blink
+  var s=E3(seg(t,1.5,2.4))-E3(seg(t,3.7,4.4));
+  var sq=0.07*bell(t,1.0,1.6)-0.06*bell(t,1.6,2.6)+0.09*bell(t,4.2,4.8)-0.035*bell(t,4.8,5.3)+0.015*bell(t,5.3,5.7);
+  var yawn=bell(t,2.5,3.6);yawn=Math.min(1,yawn*1.4);
+  var bl=Math.max(bell(t,.55,.8),bell(t,5.9,6.15),bell(t,6.35,6.6),yawn>.15?1:0);
+  if(still){s=0;sq=0;yawn=0;bl=0}
+  var hn=V(A.hn,B.hn,s),ts=V(A.ts,B.ts,s),rf=V(A.rf,B.rf,s),lf=V(A.lf,B.lf,s),ln=V(A.ln,B.ln,s),hd=V(A.head,B.head,s),tl=V(A.tail,B.tail,s),hp=V(A.hp,B.hp,s);
+  ell(E.hn,hn);ell(E.ts,ts);ell(E.md,[(hn[0]+ts[0])/2,(hn[1]+ts[1])/2+2,36,26+8*(1-s),(hn[4]+ts[4])/2]);
+  E.hp.setAttribute('cx',hp[0]);E.hp.setAttribute('cy',hp[1]);
+  E.d1.setAttribute('cx',hn[0]+14);E.d1.setAttribute('cy',hn[1]-12);
+  E.rf.setAttribute('d','M'+(rf[0]-rf[2])+','+(rf[1]-rf[3]*.5)+' C'+(rf[0]-rf[2]*1.1)+','+(rf[1]+rf[3]*.6)+' '+(rf[0]-rf[2]*.3)+','+(rf[1]+rf[3])+' '+(rf[0]+rf[2]*.2)+','+(rf[1]+rf[3]*.9)+' l-4,-6 l6,1 l-3,-7 l7,2 C'+(rf[0]+rf[2]*1.1)+','+(rf[1])+' '+(rf[0]+rf[2]*.6)+','+(rf[1]-rf[3])+' '+(rf[0])+','+(rf[1]-rf[3])+' C'+(rf[0]-rf[2]*.6)+','+(rf[1]-rf[3])+' '+(rf[0]-rf[2])+','+(rf[1]-rf[3]*.8)+' '+(rf[0]-rf[2])+','+(rf[1]-rf[3]*.5)+'Z');
+  E.rg.setAttribute('transform','translate('+rf[0]+','+rf[1]+') scale('+(rf[2]/24)+','+(rf[3]/36)+')');
+  line(E.lf,lf);line(E.ln,ln);
+  E.pf.setAttribute('cx',lf[2]-3);E.pf.setAttribute('cy',lf[3]+1);E.pn.setAttribute('cx',ln[2]-3);E.pn.setAttribute('cy',ln[3]+1);
+  E.tail.setAttribute('d','M'+tl[0]+','+tl[1]+' C'+tl[2]+','+tl[3]+' '+tl[4]+','+tl[5]+' '+tl[6]+','+tl[7]);
+  var hy=hd[1]-yawn*6,hr=hd[2]-yawn*14;
+  E.head.setAttribute('transform','translate('+hd[0]+','+hy+') rotate('+hr+') scale('+(1+sq*.4)+','+(1-sq*.4+yawn*.05)+')');
+  var eo=bl>.95?.04:1-bl*.9;
+  E.eL.setAttribute('transform','translate(-15,0) scale(1,'+eo+')');E.eR.setAttribute('transform','translate(15,0) scale(1,'+eo+')');
+  E.lids.setAttribute('opacity',bl>.6?1:0);
+  E.mouth.setAttribute('transform','translate(0,'+(24+yawn*2)+') scale('+(0.6+yawn*.4)+','+yawn+')');
+  E.mc.setAttribute('opacity',yawn>.1?0:1);
+  // squash and stretch about the floor; tiny stop-motion "boil"
+  var f=Math.floor(t*12),j1=(Math.sin(f*12.9898)*43758.5)%1,j2=(Math.sin(f*78.233)*12543.1)%1;
+  if(still){j1=0;j2=0}
+  var gx=320,gy=300;
+  E.cat.setAttribute('transform','translate('+(gx+j1*.5)+','+(gy+j2*.4)+') scale('+(1+sq)+','+(1-sq)+') translate('+(-gx)+','+(-gy)+')');
+  var w=1+s*.35;E.sh.setAttribute('rx',62*w*(1+sq));E.sh.setAttribute('cx',330-s*30);E.sh2.setAttribute('rx',40*w*(1+sq));E.sh2.setAttribute('cx',330-s*30);
+ }
+ var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(rm){pose(0,true);return}
+ var t0=performance.now()-400,last=-1;
+ pose(0.4,false);
+function tick(){
+  var now=performance.now(),t=((now-t0)/1000)%T,f=Math.floor(t*12);
+  if(f!==last){last=f;pose(f/12,false)}
+  setTimeout(tick,1000/12);
+ }
+ setTimeout(tick,1000/12);
+})();
+</script>
+</div>
