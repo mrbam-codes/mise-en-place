@@ -8,7 +8,7 @@ matches the copy already published on the live site, or passes main's
 check.py. If the newest brief fails, the build fails, so nothing deploys and
 the morning run reports it. Older failures are skipped with a warning.
 """
-import json, os, re, shutil, subprocess, sys, tempfile, urllib.request
+import hashlib, json, os, re, shutil, subprocess, sys, tempfile, urllib.request
 
 SRC, OUT = sys.argv[1], sys.argv[2]
 SITE = "https://mrbam-codes.github.io/mise-en-place/"
@@ -102,7 +102,9 @@ def photo_jobs(out_dir, keep_days=120):
 
 def fetch_photo(out_dir, job):
     date, k, src = job
-    name = f"briefs/img/{date}-{k}.jpg"
+    # Keyed on the photo's source address, not its position, so a reordered
+    # or re-run edition can never show one story's photo on another.
+    name = "briefs/img/" + hashlib.sha256(src.encode()).hexdigest()[:16] + ".jpg"
     site_host = urllib.parse.urlparse(SITE).hostname
     for url, hosts in ((SITE + name, {site_host}), (src, PHOTO_HOSTS)):
         try:

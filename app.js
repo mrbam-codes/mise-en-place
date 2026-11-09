@@ -230,7 +230,8 @@ const mins=l=>Math.max(2,Math.round([l.intro,l.atWork,l.takeaway].concat((l.poin
 const pad3=n=>String(n).padStart(3,'0');
 const ROMAN=['I','II','III'];
 function glimpse(src){const g=drawSvg(src);if(!g)return null;const vb=(g.getAttribute('viewBox')||'').split(/[ ,]+/).map(Number);
-  if(vb.length===4&&vb.every(isFinite)){const cw=vb[2]*.6,ch=vb[3]*.42;g.setAttribute('viewBox',(vb[0]+(vb[2]-cw)/2)+' '+(vb[1]+vb[3]*.2)+' '+cw+' '+ch);g.setAttribute('preserveAspectRatio','xMidYMid slice')}
+  /* full width, so no label is cut mid-word; the top of the drawing, fading out below */
+  if(vb.length===4&&vb.every(isFinite)){g.setAttribute('viewBox',vb[0]+' '+vb[1]+' '+vb[2]+' '+Math.min(vb[3],vb[2]/1.6));g.setAttribute('preserveAspectRatio','xMidYMin meet')}
   g.setAttribute('aria-hidden','true');return g}
 /* pass sounds, made live (off until she turns them on) */
 let AC=null;const ac=()=>{try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();return AC}catch(e){return null}};
@@ -308,7 +309,9 @@ function tickets(b){
 /* ---------- news: The Pass Gazette lead plus Dispatch slips ---------- */
 const NAREA={industry:['UK industry',AREA.opening[1],AREA.opening[2],AREA.opening[3]],trends:['Food and drink trends',AREA.drinks[1],AREA.drinks[2],AREA.drinks[3]],finedining:['Fine dining and chefs',AREA.kitchen[1],AREA.kitchen[2],AREA.kitchen[3]],openings:['London openings',AREA.brand[1],AREA.brand[2],AREA.brand[3]]};
 const nv=x=>({gist:x.gist||x.summary||'',big:x.big||null,read:x.read||{what:x.summary||'',soWhat:x.why||'',take:''}});
-function photoEl(b,k,ph,cls){if(!ph)return null;const f=el('figure',cls||'nphoto'),im=el('img');im.src='briefs/img/'+b.date+'-'+k+'.jpg';im.alt=ph.alt||'';im.loading='lazy';im.decoding='async';im.onerror=()=>f.remove();
+/* Photos are saved by the publisher under a fingerprint of their source address, so a reordered story never shows another story's photo */
+function photoName(src){return crypto.subtle.digest('SHA-256',new TextEncoder().encode(String(src))).then(h=>'briefs/img/'+[...new Uint8Array(h)].slice(0,8).map(x=>x.toString(16).padStart(2,'0')).join('')+'.jpg')}
+function photoEl(b,k,ph,cls){if(!ph)return null;const f=el('figure',cls||'nphoto'),im=el('img');photoName(ph.src).then(n=>{im.src=n},()=>f.remove());im.alt=ph.alt||'';im.loading='lazy';im.decoding='async';im.onerror=()=>f.remove();
   const cap=el('figcaption');const a=link('Photo: '+ph.credit+', '+ph.licence+' ↗',ph.page);cap.append(a);f.append(im,cap);return f}
 function openStory(b,k){const x=b.news[k],v=nv(x),ar=NAREA[x.area]||['','#b48a3c'],prev=document.activeElement;
   const wrap=el('div','lwrap'),scrim=el('div','lscrim'),sh=el('div','lsheet nsheet');sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-label',x.headline);sh.style.setProperty('--c',ar[1]);sh.style.setProperty('--cd',ar[3]||ar[1]);
@@ -333,7 +336,7 @@ function newsSection(b){
   const list=el('div','slips');items.slice(1).forEach((x,j)=>{const k=j+1,v=nv(x),ar=NAREA[x.area]||['','#b48a3c'];const sl=el('button','slip');sl.style.setProperty('--c',ar[1]);sl.style.setProperty('--cd',ar[3]||ar[1]);sl.setAttribute('aria-label',x.headline);
     const pp=el('div','pp'),dl=el('div','dl');dl.append(el('span','t',ar[0].toUpperCase()),el('span',null,x.source.date.toUpperCase()));pp.append(dl);
     const row=el('div','srow'),tx=el('div','stx');tx.append(el('h4',null,x.headline),el('p',null,v.gist));row.append(tx);
-    if(x.photo){const th=el('div','sthumb'),im=el('img');im.src='briefs/img/'+b.date+'-'+k+'.jpg';im.alt='';im.loading='lazy';im.onerror=()=>th.remove();th.append(im);row.append(th)}
+    if(x.photo){const th=el('div','sthumb'),im=el('img');photoName(x.photo.src).then(n=>{im.src=n},()=>th.remove());im.alt='';im.loading='lazy';im.onerror=()=>th.remove();th.append(im);row.append(th)}
     else if(v.big){const t=el('div','tot');t.append(el('b',null,v.big.value),el('span',null,v.big.label));row.append(t)}
     pp.append(row,el('span','more','READ THE STORY →'));if(x.photo)pp.append(el('span','pcred','Photo: '+x.photo.credit+', '+x.photo.licence));sl.append(pp);sl.onclick=()=>openStory(b,k);list.append(sl)});
   sec.append(list);if(b.newsNote)sec.append(el('p','note',b.newsNote));return sec}

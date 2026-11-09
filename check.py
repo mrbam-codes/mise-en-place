@@ -18,6 +18,7 @@ import shutil
 import subprocess
 import sys
 import threading
+import unicodedata
 import xml.etree.ElementTree as ET
 
 ROOT = pathlib.Path(__file__).parent.resolve()
@@ -29,8 +30,10 @@ EM_DASH = "—"
 
 # Privacy guard. Blocked words are stored only as salted sha256 fingerprints
 # of the lower-case word. The salt is secret (MEP_SALT), so the short words
-# cannot be recovered by hashing a dictionary. Matching is case-insensitive
-# and on whole words: text is split on anything that is not a letter or digit.
+# cannot be recovered by hashing a dictionary. Before matching, text is
+# normalised (accents, invisible characters, look-alike letters and digits
+# removed) and checked as words, words joined in pairs and threes, spaced-out
+# letters, plurals and digit suffixes. See privacy() below.
 BLOCKED = {
     "1be9d25b50a533e7b6785f79c11743637152c42a6bda725fcad76ab4351ec7b9",
     "1dd899b8b8a6d9517930394c0cd4198fe74dc5ae704e64ff4f60bc3327c7ee18",
@@ -122,17 +125,91 @@ def paths(o, at="edition"):
             yield from paths(v, f"{at}[{i}]")
 
 
+# Words of 5 letters or more are also searched for inside longer runs of
+# letters (hashtags, web addresses, words run together). These fingerprints
+# use the prefix "sub:" so they cannot be compared with BLOCKED.
+BLOCKED_INSIDE = {
+    "14d0cafd83793c8d63516bfb77bf1a4c73c0abd7074b4f288cd649117aa3cf13",
+    "3238cef6756826b9b1e2d259a01b7c50834495a665ded927426732e5408f6f5c",
+    "7af33760642333b253ab4def9c53816fd6217d7cefae7e100d1f46e49a25a402",
+    "968ac20d9a2972eab673c26950b371b8243033561ed25a7f26dede85b2ef59e9",
+    "f29574f5fa7c147499c83ab99529f095b265d8e765212f0b9c8b745a221045ba",
+}
+# Letters from other alphabets that look like plain a to z (Cyrillic, Greek and
+# a few others). Accents and full-width letters are handled by NFKD below.
+LOOKALIKE = str.maketrans("аеорсухіјѕԁԛԝһкмтвнпгαεοριυνκτχβηιμςſı", "aeopcyxijsdqwhkmtbhnrae" "opiuvktxbnimssi")
+DIGIT_AS_LETTER = str.maketrans("0134578@$", "oieastba" "s")
+DIGIT_AS_LETTER_NO8 = str.maketrans("013457@$", "oieast" "as")
+SPLIT = re.compile(r"[a-z0-9]+")
+JOINERS = re.compile(r"[a-z0-9]+(?:[-._/'’][a-z0-9]+)+")
+
+
+def plain(s):
+    """Lower-case, drop accents and invisible characters, map look-alike letters."""
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(c for c in s if unicodedata.category(c) not in ("Mn", "Me", "Cf") and c not in "\u00ad\u034f")
+    return s.lower().translate(LOOKALIKE)
+
+
+def candidates(s):
+    """Every form of the text that a blocked word could hide in."""
+    base = plain(s)
+    out = set()
+    # Digits inside a word are read as letters (0 as o, 3 as e...), but not a
+    # digit that starts a word, so "5am" stays a time. One form leaves 8 as
+    # a digit.
+    leet = [re.sub(r"(?<=[a-z0-9])[0-9@$]", lambda m, t=t: m.group().translate(t), base) for t in (DIGIT_AS_LETTER, DIGIT_AS_LETTER_NO8)]
+    for form in [base, *leet, re.sub(r"(?<=[a-z0-9])1", "l", base)]:
+        toks = SPLIT.findall(form)
+        out.update(toks)
+        out.update(re.sub(r"[-._/'’]", "", m) for m in JOINERS.findall(form))   # split-up words, possessives
+        for i in range(len(toks) - 1):                                              # pairs and triples
+            out.add(toks[i] + toks[i + 1])
+            if i + 2 < len(toks):
+                out.add(toks[i] + toks[i + 1] + toks[i + 2])
+        run = []                                                                    # s p a c e d letters
+        for t in toks + [""]:
+            if len(t) == 1:
+                run.append(t)
+                continue
+            if len(run) >= 3:
+                j = "".join(run)
+                out.update(j[a:b] for a in range(len(j)) for b in range(a + 3, len(j) + 1))
+            run = []
+        # A hashtag may start or end with a short blocked word (#namelondon).
+        out.update("#" + t for t in re.findall(r"#([a-z0-9]+)", form))
+    more = set()
+    for t in out:
+        more.add(re.sub(r"[0-9]+$", "", t))
+        if t.endswith("s"):
+            more.add(t[:-1])
+    return out | more
+
+
 def privacy(b):
     salt = os.environ.get("MEP_SALT", "")
     if hashlib.sha256(("check:" + salt).encode()).hexdigest() != SALT_CHECK:
         problems.append("privacy guard: MEP_SALT is missing or wrong, so the edition cannot be checked (fails closed)")
         return
+    whole = functools.lru_cache(maxsize=None)(lambda w: hashlib.sha256((salt + ":" + w).encode()).hexdigest() in BLOCKED)
+    inside = functools.lru_cache(maxsize=None)(lambda w: hashlib.sha256((salt + ":sub:" + w).encode()).hexdigest() in BLOCKED_INSIDE)
+
+    def blocked(t):
+        if t.startswith("#"):
+            t = t[1:]
+            return any(whole(t[:i]) or whole(t[i:]) for i in range(1, len(t))) or blocked(t)
+        if whole(t):
+            return True
+        for i in range(1, len(t)):                       # two blocked words run together
+            if whole(t[:i]) and (whole(t[i:]) or whole(t[i:].rstrip("s"))):
+                return True
+        return any(inside(t[a:a + n]) for n in range(5, 15) for a in range(len(t) - n + 1))
+
     for at, s in paths(b):
-        for w in set(re.findall(r"[a-z0-9]+", s.lower())):
-            if hashlib.sha256((salt + ":" + w).encode()).hexdigest() in BLOCKED:
-                # Never print the word itself: check output can end up in public logs.
-                problems.append(f"privacy guard: a blocked name appears in {at}. Remove it; never name the workplaces, "
-                                "the owner or the new concept")
+        if any(blocked(t) for t in candidates(s)):
+            # Never print the word itself: check output can end up in public logs.
+            problems.append(f"privacy guard: a blocked name appears in {at}. Remove it; never name the workplaces, "
+                            "the owner or the new concept")
 
 
 # Colour palette (Champagne, tuned, 8 Nov 2026): main, tint and deep for each area,
@@ -244,6 +321,14 @@ def news_v2(w, s):
         text(f"{w} drawingAlt", s.get("drawingAlt"), 200)
 
 
+def today_uk():
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.datetime.now(ZoneInfo("Europe/London")).date()
+    except Exception:  # no time zone data: UTC+1 is never earlier than UK time
+        return (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=1)).date()
+
+
 def course_day(date):
     c = json.loads((ROOT / "course.json").read_text(encoding="utf-8"))
     d = (date - START).days + 1
@@ -254,6 +339,7 @@ def check(date):
     b = json.loads((ROOT / "briefs" / f"{date}.json").read_text(encoding="utf-8"))
     day = datetime.date.fromisoformat(date)
     need(b.get("date") == date, "date does not match the filename")
+    need(day <= today_uk(), f"{date} is later than today in the UK: never publish an edition ahead of its day")
     need("sample" not in b, "remove the sample flag")
     need(b.get("dayLabel") == f"{day:%A} {day.day} {day:%B %Y}", "dayLabel does not match the date")
     n, todays, course = course_day(day)
@@ -263,9 +349,10 @@ def check(date):
         need(b.get("phase") == todays[0]["phase"], f"phase must be {todays[0]['phase']} on day {n}")
     text("welcome", b.get("welcome"), 160)
 
-    for s in strings(b):
+    for at, s in paths(b):
         if EM_DASH in s:
-            problems.append("the edition contains an em dash: " + s[max(0, s.find(EM_DASH) - 30):s.find(EM_DASH) + 10])
+            # Report only where: check output is copied into the public Actions log.
+            problems.append(f"the edition contains an em dash in {at}")
             break
     privacy(b)
 
