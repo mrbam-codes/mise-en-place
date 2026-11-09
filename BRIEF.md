@@ -47,9 +47,31 @@ One inline `<svg>` element, drawn fresh. The checker refuses anything else.
 - `xmlns="http://www.w3.org/2000/svg"`, `viewBox="0 0 W H"` with W 280 to 360 (use 340) and H 80 to 520, `role="img"` and an `aria-label`.
 - Allowed elements: svg, g, rect, circle, ellipse, line, polyline, polygon, path, text, tspan, title, desc, defs, linearGradient, radialGradient, stop, marker, clipPath. No images, links, scripts, style elements, `use` or `foreignObject`. No `href`, no web addresses, `url(#id)` only.
 - At least 3 text labels and 3 shapes. Every `font-size` 11 or more (11 to 13 for labels, 15 to 17 for titles). Bigger type means fewer, shorter labels: wrap with `tspan` or give the drawing more height rather than shrinking text. Font: `font-family="Figtree, sans-serif"`.
-- Bright and calm, on a transparent or ivory background (`#fffdf8`), never dark. No line textures or hatching. Ink `#2b2417`, muted `#857353`, gold `#b48a3c`, pale gold `#e4cf9c`. Area colours: Kitchen `#c4562a`, Drinks `#b48a3c`, Money `#5e8f3a`, Opening and legal `#4f6d8f`, Brand `#a3456b`, Guests `#7a5aa8`; soft tints of them for fills.
+- Bright and calm, on a transparent or ivory background (`#fffdf8`), never dark. No line textures or hatching. Use only the colours in **Colours** below; the checker refuses any other strong colour.
 - Lay out for a phone: the drawing is shown edge to edge, about 390 pixels wide, and the card shows a full-size close-up of its middle, so put the most important labels near the centre. Keep labels short, inside the viewBox, and never overlapping. Wrap long labels with `tspan`. Numbers in the diagram must match the text.
 - Kinds that work: wheel, timeline, flow with arrows, waterfall or bar chart, comparison grid, floor plan, cross-section, org chart, matrix, ladder.
+
+## Colours
+
+Each area owns a family: **main** for shapes, strips and the one thing to look at; **tint** for fills and boxes; **deep** for text and fine lines.
+
+| Area | Main | Tint | Deep |
+|---|---|---|---|
+| Kitchen | `#ea5f36` | `#fce9e3` | `#ac4627` |
+| Drinks | `#865d00` | `#eee8db` | `#865d00` |
+| Money | `#009b37` | `#dbf1e3` | `#00792b` |
+| Opening and legal | `#258fec` | `#e0effc` | `#1b68ad` |
+| Brand | `#b31e65` | `#f4dfe9` | `#b31e65` |
+| Guests | `#7647cd` | `#ece5f8` | `#7647cd` |
+
+Frame and neutrals: ink `#2b2417`, muted `#857353`, gold `#b48a3c`, pale gold `#e4cf9c`, ivory `#fffdf8`, white. Soft greys and browns are allowed for lines and labels.
+
+Rules:
+1. A lesson diagram uses its own area's family. Use a second family only to compare two things (before and after, us and them).
+2. One star per diagram: the single most important element is solid main; everything else is tint, outline or neutral.
+3. Text is ink, muted or a deep shade, never a main or tint colour (main colours are too light for small text). White text only on a deep shade or on Drinks, Brand or Guests main.
+4. Never colour alone: every coloured mark has a label, number or symbol next to it. Never ask the reader to tell red from green; for up and down or good and bad, use ▲ ▼ ✓ ✗ with ink or the area's deep shade.
+5. News drawings borrow a family: UK industry uses Opening and legal, food and drink trends uses Drinks, fine dining and chefs uses Kitchen, London openings uses Brand.
 
 ## News
 

@@ -8,7 +8,7 @@
 const el=(t,c,x)=>{const n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n};
 const safe=u=>/^https:\/\/[^\s"'<>]+$/.test(u||'')?u:'#';
 const link=(label,u)=>{const a=el('a',null,label);a.href=safe(u);a.target='_blank';a.rel='noopener noreferrer';return a};
-const AREA={kitchen:['Kitchen','#c4562a'],drinks:['Drinks','#b48a3c'],money:['Money','#5e8f3a'],opening:['Opening and legal','#4f6d8f'],brand:['Brand','#a3456b'],guests:['Guests and growth','#7a5aa8']};
+const AREA={kitchen:['Kitchen','#ea5f36','#fce9e3','#ac4627'],drinks:['Drinks','#865d00','#eee8db','#865d00'],money:['Money','#009b37','#dbf1e3','#00792b'],opening:['Opening and legal','#258fec','#e0effc','#1b68ad'],brand:['Brand','#b31e65','#f4dfe9','#b31e65'],guests:['Guests and growth','#7647cd','#ece5f8','#7647cd']};
 const NEWS=[['industry','UK industry'],['trends','Food and drink trends'],['finedining','Fine dining and chefs'],['openings','London openings']];
 const PHASES=["Run today's floor better",'Master the craft','Design your own restaurant','Open, launch and grow','Capstones: your restaurant on paper'];
 const HERO_INK={plate:['#20242a','#6b7280'],pour:['#2b2417','#7a6646'],macaron:['#2d2226','#8a6f78'],tower:['#2b2417','#7a6646'],pancake:['#1f2a33','#677585'],gelato:['#2d241f','#8a7262'],redwine:['#2a1f22','#806a6e'],tea:['#1f2a24','#5f6f66'],matcha:['#1f2a20','#667060'],benny:['#2a2318','#7d6f5a']};
@@ -17,10 +17,14 @@ const ORD=['First','Second','Third'];
 
 /* ---------- saved progress (this phone only) ---------- */
 const KEY='mep-v1',DAYRE=/^\d{4}-\d{2}-\d{2}$/;
-const fresh=()=>({days:{},areas:{},lessons:{},points:0,badges:{},review:[],prog:{},learned:{},sound:false});
+const fresh=()=>({days:{},areas:{},lessons:{},points:0,badges:{},review:[],prog:{},learned:{},sound:false,kimchi:{}});
 let S=(()=>{try{const s=JSON.parse(localStorage.getItem(KEY));return s&&s.days?Object.assign(fresh(),s):fresh()}catch(e){return fresh()}})();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
-const LEVELS=[[0,'Commis'],[100,'Demi chef'],[300,'Chef de partie'],[600,'Sous chef'],[1000,'Head chef'],[1600,'Chef patron'],[2500,'Restaurateur']];
+const LEVELS=[[0,'Commis'],[500,'Demi chef'],[2000,'Chef de partie'],[5000,'Sous chef'],[9000,'Head chef'],[14000,'Chef patron'],[20000,'Restaurateur']];
+/* scoring: shared rules in scorecore.js, re-scored from the saved history every time */
+const MODE='all',RANKS=LEVELS.map(l=>[l[1],l[0]]);
+function rescoreAll(){if(!window.ScoreCore)return null;const R=ScoreCore.rescore(S.days,MODE);Object.keys(R.day).forEach(k=>{S.days[k].points=R.day[k].points});S.points=R.total+(S.bonus||0);return R}
+if(!S.v2){S.v2=1;S.bonus=0;if(Object.keys(S.days).length)S.rescored=1}rescoreAll();save();
 const level=p=>{let i=0;LEVELS.forEach((l,j)=>{if(p>=l[0])i=j});const nx=LEVELS[i+1];return{name:LEVELS[i][1],i,from:LEVELS[i][0],next:nx?nx[0]:null}};
 const ds=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 const parse=s=>{const[y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
@@ -41,6 +45,59 @@ const BADGES=[
  ['back','Comeback','Clear a question you once got wrong',()=>!!S.cleared],
  ['p1','Floor ready','Finish the quizzes to day 73',()=>doneDays().some(d=>courseDay(d)>=73)]];
 function award(){const got=[];BADGES.forEach(([id,n,d,t])=>{if(!S.badges[id]&&t()){S.badges[id]=todayStr();got.push(n)}});return got}
+
+/* ---------- Kimchi (the kitten): a quiz reward and a daily hide-and-seek in one lesson ---------- */
+const K=()=>window.KIMCHI||null;
+/* which lesson he hides in: seeded by the date, never the first ticket, same all day */
+function kimchiAt(b){const n=(b.lessons||[]).length;if(n<2||!K())return -1;let h=2166136261;for(const c of b.date){h^=c.charCodeAt(0);h=Math.imul(h,16777619)>>>0}return 1+h%(n-1)}
+const kimchiFound=b=>!!(S.kimchi&&S.kimchi[b.date]);
+function kimchiHint(b){const t=el('span','khint');t.id='khint';t.textContent=kimchiFound(b)?'You found Kimchi today. He moves to a new hiding place tomorrow.':'Kimchi is hiding in one of today’s lessons. Can you find him?';return t}
+function kimchiCameo(b,i){
+  const box=el('div','kcam'),win=el('div','kwin'),lip=el('div','klip'),tx=el('div','ktx');box.setAttribute('aria-live','polite');
+  const say=()=>{tx.textContent='';if(kimchiFound(b))tx.append(el('b',null,'You found Kimchi!'),el('span',null,'He was hiding in lesson '+(i+1)+'. Tomorrow he’ll pick a new spot.'));else tx.append(el('b',null,'Psst…'),el('span',null,'someone is reading along with you.'))};
+  say();win.append(lip);box.append(win,tx);let host=null;
+  const io=new IntersectionObserver(es=>{if(!es.some(e=>e.isIntersecting))return;io.disconnect();box.classList.add('up');
+    if(!host){host=el('div','kpeek');win.prepend(host);K().cameo(host,K().cameoFor(b.day),112)}
+    if(!kimchiFound(b)){S.kimchi=S.kimchi||{};S.kimchi[b.date]=Date.now();save();say();fizz(24);const h=document.getElementById('khint');if(h)h.replaceWith(kimchiHint(b))}},{threshold:.6});
+  setTimeout(()=>io.observe(box),300);return box}
+function kimchiReward(bd,b){
+  if(!K())return;const sk=streak(),r=el('div','kreward'),stage=el('div','kstage'),ov=el('div','kov');
+  ov.append(el('b',null,sk>1?sk+'-day streak':'Day '+b.day+' done'),el('span',null,sk>1?'Kimchi is proud of you. Same time tomorrow?':'Kimchi approves. Come back tomorrow to start a streak.'));
+  r.append(stage,ov);bd.append(r);K().mount(stage,K().forDay(b.day))}
+
+/* ---------- score badge (top right), My scores, and the Kimchi postcard to share ---------- */
+let CURB=null;
+function myStats(){const t=todayStr(),R=rescoreAll()||{day:{},perfects:0,right:0,asked:0},L=level(S.points),pv=window.ScoreCore?ScoreCore.preview(S.days,t,MODE):{mult:1,dropped:0};
+  return{t,R,L,pv,run:window.ScoreCore?ScoreCore.run(S.days,t,MODE):streak(),best:window.ScoreCore?ScoreCore.best(S.days,MODE):streak(),td:S.days[t]?R.day[t]:null,toTop:Math.min(1,S.points/LEVELS[LEVELS.length-1][0])}}
+function paintBadge(bump){let bg=document.getElementById('scorebadge');if(!bg){bg=el('button','scorebadge');bg.id='scorebadge';bg.type='button';bg.append(el('span','ring'),el('span','pill'));bg.onclick=openScores;document.body.append(bg)}
+  const m=myStats();bg.querySelector('.ring').style.setProperty('--p',Math.round(m.toTop*100)+'%');bg.querySelector('.ring').textContent=m.run;bg.querySelector('.pill').textContent=m.L.name;
+  bg.setAttribute('aria-label','My scores: '+S.points+' points, '+m.L.name+', '+m.run+'-day streak');if(bump&&!matchMedia('(prefers-reduced-motion: reduce)').matches)bg.animate([{transform:'scale(1)'},{transform:'scale(1.15)'},{transform:'scale(1)'}],{duration:600})}
+function openScores(){
+  const{bd}=sheet('My scores'),m=myStats(),L=m.L,w=L.next?Math.round(100*(S.points-L.from)/(L.next-L.from)):100;
+  const hero=el('div','sc-hero'),rg=el('div','ring big');rg.style.setProperty('--p',Math.round(m.toTop*100)+'%');rg.append(el('b',null,L.name));
+  const tx=el('div');tx.append(el('div','sc-tot',S.points.toLocaleString('en-GB')),el('small',null,'points · level '+(L.i+1)+' of '+LEVELS.length),el('small',null,L.next?(L.next-S.points).toLocaleString('en-GB')+' to '+LEVELS[L.i+1][1]:'Top level reached'));hero.append(rg,tx);
+  const br=el('div','bar');br.style.maxWidth='none';br.append(el('i'));br.firstChild.style.width=w+'%';bd.append(hero,br);
+  if(S.rescored){bd.append(el('p','note','Scores now use the new rules: 10 a right answer, 20 for a perfect day, and a streak multiplier. Every day you have finished still counts.'));delete S.rescored;save()}
+  const g=el('div','sc-stats'),st=(v,l)=>{const c=el('div');c.append(el('b',null,v),el('span',null,l));g.append(c)};
+  st(m.run+' 🔥','Day streak');st('×'+m.pv.mult,m.td?'Multiplier':'Today’s ×');st(m.best+'','Best streak');st(m.R.perfects+'','Perfect days');st(m.R.asked?Math.round(100*m.R.right/m.R.asked)+'%':'–','Correct');st(Object.keys(m.R.day).length+'','Quizzes');bd.append(g);
+  if(m.pv.dropped&&!m.td)bd.append(el('p','note','You missed a day, so today’s multiplier is one step lower. Finish today’s quiz to climb back.'));
+  bd.append(el('h3',null,'The last four weeks'));const strip=el('div','sc-strip');const first=doneDays()[0]||m.t;for(let i=27;i>=0;i--){const d=addDays(m.t,-i),x=S.days[d],c=el('i',x?(m.R.day[d]&&m.R.day[d].perfect?'p':'d'):(i&&d>first?'m':''));if(!i)c.classList.add('t');c.title=nice(d)+(x?': '+x.score+'/'+x.total+', '+m.R.day[d].points+' points':'');strip.append(c)}bd.append(strip);
+  const key=el('div','sc-key');[['d','done'],['p','perfect'],['m','missed'],['t','today']].forEach(([c,t])=>{const k=el('span');k.append(el('i',c),t);key.append(k)});bd.append(key);
+  const sh=el('button','btn','Show my share card');sh.onclick=()=>{history.back();setTimeout(openShare,350)};const pr=el('button','btn alt','Full progress and badges');pr.onclick=()=>{history.back();setTimeout(openProgress,350)};bd.append(sh,pr)}
+function openShare(){
+  const{bd}=sheet('Share card');const lab=el('label','sc-name');const inp=el('input');inp.maxLength=16;inp.autocomplete='given-name';inp.placeholder='Your first name';inp.value=S.name||'';lab.append('First name on the card (kept on this phone only)',inp);
+  const host=el('div');bd.append(lab,host,el('p','meta','Take a screenshot to share it. It shows your first name, level, score and streak, and nothing about where you work.'));
+  const draw=()=>{host.textContent='';host.append(postcard())};inp.oninput=()=>{S.name=inp.value.trim().slice(0,16);save();const n=host.querySelector('.pc-name');if(n)n.textContent=S.name||'Mise en Place'};draw()}
+function postcard(){
+  const m=myStats(),b=CURB,day=b?b.day:courseDay(m.t),td=m.td,c=el('div','pcard'),scene=el('div','pc-scene'),body=el('div','pc-body');
+  const say=td&&td.perfect?'Perfect plate!':m.run>=7?'On fire, chef!':td?'Proud of you!':'Quiz time?';
+  c.append(scene,el('div','pc-say',say),body);
+  body.append(el('div','pc-tag','Mise en Place · Day '+day),el('div','pc-lv',m.L.name));const pts=el('div','pc-pts');pts.append(el('b',null,td?String(td.points):'0'),el('span',null,td?'points today':'no quiz yet today'));body.append(pts);
+  const ch=el('div','pc-chips');if(td)ch.append(el('span',td.perfect?'p':'',td.perfect?'Perfect 5/5':S.days[m.t].score+'/'+S.days[m.t].total+' right'));ch.append(el('span',null,'×'+m.pv.mult+' streak'),el('span',null,m.run+(m.run===1?' day':' days')));body.append(ch);
+  const L=m.L,w=L.next?Math.round(100*(S.points-L.from)/(L.next-L.from)):100,br=el('div','pc-bar');br.append(el('i'));br.firstChild.style.width=w+'%';body.append(br);
+  const ft=el('div','pc-foot');ft.append(S.points.toLocaleString('en-GB')+' points · '+(L.next?(L.next-S.points).toLocaleString('en-GB')+' to '+LEVELS[L.i+1][1]:'top level')+' · ');ft.append(el('span','pc-name',S.name||'Mise en Place'));body.append(ft);
+  if(K()){const k=el('div','khost');scene.append(k);setTimeout(()=>K().mount(k,K().forDay(day)),0)}
+  return c}
 
 /* ---------- gold bubbles on a right answer ---------- */
 function fizz(n,big){const c=document.getElementById('fx');if(!c||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const d=Math.min(devicePixelRatio||1,2);c.width=innerWidth*d;c.height=innerHeight*d;const x=c.getContext('2d'),col=['#b48a3c','#e4cf9c','#f7dc8e','#d6a548'];
@@ -70,12 +127,12 @@ function drawSvg(src){
     return document.importNode(root,true)}catch(e){return null}}
 
 /* ---------- quiz engine (from the morning brief) ---------- */
-const pointsFor=run=>10+Math.min(run-1,4)*2;
-const maxPoints=n=>{let t=0;for(let i=1;i<=n;i++)t+=pointsFor(i);return t+(n>=5?20:0)};
+const todayMult=()=>window.ScoreCore?ScoreCore.preview(S.days,todayStr(),MODE).mult:1;
+const maxPoints=n=>Math.round((n*10+(n>=5?20:0))*todayMult());
 function play(items,o){
   const{bd}=sheet(o.title);let i=0,run=0,gained=0,right=0,picks=[],missed=[];
   const resume=(o.resume||[]).slice(0,items.length);
-  resume.forEach((k,j)=>{const it=items[j];picks[j]=k;if(k===it.answer){run++;right++;gained+=o.review?5:pointsFor(run)}else{run=0;missed.push(it)}});i=resume.length;
+  resume.forEach((k,j)=>{const it=items[j];picks[j]=k;if(k===it.answer){run++;right++;gained+=o.review?5:10}else{run=0;missed.push(it)}});i=resume.length;
   const q=()=>{
     bd.textContent='';if(i>=items.length)return finish();
     const it=items[i],dots=el('div','dots');
@@ -86,15 +143,16 @@ function play(items,o){
     btns.forEach((b,k)=>b.onclick=()=>{
       btns.forEach(x=>x.disabled=true);const ok=k===it.answer;picks[i]=k;
       btns[it.answer].classList.add('ok');if(!ok){b.classList.add('no');missed.push(it)}btns.forEach((x,j)=>{if(j!==it.answer&&j!==k)x.classList.add('dim')});
-      let p=0;if(ok){run++;right++;p=o.review?5:(o.practice?0:pointsFor(run));gained+=p;fizz(30)}else run=0;
+      let p=0;if(ok){run++;right++;p=o.review?5:(o.practice?0:10);gained+=p;fizz(30)}else run=0;
       o.each&&o.each(it,ok,i,picks);
       fb.append(el('div','why',(ok?'Correct'+(p?', +'+p+' points':'')+'. ':'Not quite. ')+it.why));
       const nx=el('button','btn',i+1<items.length?'Next question':'See my score');nx.onclick=()=>{i++;q()};fb.append(nx);nx.scrollIntoView({block:'nearest',behavior:'smooth'})})};
   const finish=()=>{
     const perfect=right===items.length&&items.length>=5&&!o.review&&!o.practice;if(perfect)gained+=20;
-    const res=o.done?o.done({right,total:items.length,gained,missed,picks,perfect}):{badges:[]};
+    const res=o.done?o.done({right,total:items.length,gained,missed,picks,perfect}):{badges:[]};if(res.gained!=null)gained=res.gained;
     if(perfect)fizz(120,true);
-    bd.append(el('div','meta',o.title+' complete'),el('div','score',right+'/'+items.length),el('div','pts',o.practice?'Practice run: not scored':'+'+gained+' points'+(perfect?' (includes the perfect bonus)':'')));
+    if(o.reward)try{o.reward(bd)}catch(e){}
+    bd.append(el('div','meta',o.title+' complete'),el('div','score',right+'/'+items.length),el('div','pts',o.practice?'Practice run: not scored':res.math?res.math:'+'+gained+' points'+(perfect?' (includes the perfect bonus)':'')));
     const L=level(S.points),w=L.next?Math.round(100*(S.points-L.from)/(L.next-L.from)):100;
     const bx=el('div','quizcard');const br=el('div','bar');br.append(el('i'));br.firstChild.style.width=w+'%';
     const sk=streak();bx.append(el('div','prog','Level '+(L.i+1)+' · '+L.name),br,el('p',null,S.points+' points. '+(L.next?(L.next-S.points)+' to the next level. ':'Top level. ')+(sk?'Streak: '+sk+' day'+(sk>1?'s':'')+' in a row.':'Come back tomorrow to start a streak.')));bd.append(bx);
@@ -102,26 +160,27 @@ function play(items,o){
     if(res.lvUp)bd.append(el('p','pts','Promoted to '+res.lvUp+'!'));
     if(missed.length){bd.append(el('h3',null,'To revise'));missed.forEach(m=>{const g=el('div','why');g.append(el('b',null,m.q),el('br'),'Answer: '+m.options[m.answer]+'. '+m.why);bd.append(g)});if(!o.practice)bd.append(el('p','meta','Questions you missed come back in Review over the next days, until you get them right.'))}
     const dn=el('button','btn','Done');dn.onclick=()=>history.back();bd.append(dn);
-    o.after&&o.after()};
+    o.after&&o.after();paintBadge(!o.practice)};
   q()}
 function dayItems(b){return(b.quiz||[]).map((it,i)=>{const L=typeof it.from==='number'?b.lessons[it.from-1]:null;
   return Object.assign({},it,{id:b.date+'-'+i,date:b.date,n:L?L.n:null,area:L?L.area:'news',tag:L?AREA[L.area][0]:'News'})})}
 function finishDay(b,items,r){
-  const key=b.date;S.days[key]={score:r.right,total:r.total,points:r.gained,at:Date.now()};
+  const key=b.date;S.days[key]={score:r.right,total:r.total,points:0,at:Date.now()};
   items.forEach((it,i)=>{const ok=r.picks[i]===it.answer;const a=S.areas[it.area]=S.areas[it.area]||[0,0];a[1]++;if(ok)a[0]++;
     if(it.n){const L=S.lessons[it.n]=S.lessons[it.n]||[0,0];L[1]++;if(ok)L[0]++}
     if(!ok&&!S.review.some(x=>x.id===it.id))S.review.push(Object.assign({},it,{box:0,due:addDays(todayStr(),1)}))});
-  const before=level(S.points);S.points+=r.gained;const after=level(S.points);delete S.prog[key];save();
-  const badges=award();save();return{badges,lvUp:after.i>before.i?after.name:null}}
+  const before=level(S.points);const R=rescoreAll();const after=level(S.points);delete S.prog[key];save();
+  const dd=R?R.day[key]:{points:r.gained,base:r.right*10,bonus:0,mult:1};
+  const badges=award();save();return{badges,lvUp:after.i>before.i?after.name:null,gained:dd.points,math:r.right+' right × 10'+(dd.bonus?' + 20 perfect':'')+(dd.mult>1?', × '+dd.mult+' streak':'')+' = +'+dd.points+' points'}}
 function startQuiz(b,items,redraw){
   if(S.days[b.date])return play(items,{title:'Practice',practice:true});
   const prog=(S.prog[b.date]||[]).filter(k=>Number.isInteger(k)&&k>=0&&k<4);
-  play(items,{title:'Today’s quiz',resume:prog,each:(it,ok,i,picks)=>{S.prog[b.date]=picks.slice();save()},done:r=>finishDay(b,items,r),after:redraw})}
+  play(items,{title:'Today’s quiz',resume:prog,each:(it,ok,i,picks)=>{S.prog[b.date]=picks.slice();save()},done:r=>finishDay(b,items,r),reward:bd=>kimchiReward(bd,b),after:redraw})}
 function startReview(redraw){
   const t=todayStr(),due=S.review.filter(x=>x.due<=t).slice(0,5);if(!due.length)return;const steps=[1,3,7,14,30];
   play(due,{title:'Review',review:true,each:(it,ok)=>{const r=S.review.find(x=>x.id===it.id);if(!r)return;
       if(ok){r.box++;if(r.box>=steps.length){S.review=S.review.filter(x=>x!==r);S.cleared=true}else r.due=addDays(t,steps[r.box])}else{r.box=0;r.due=addDays(t,1)}save()},
-    done:r=>{S.points+=r.gained;const badges=award();save();return{badges}},after:redraw})}
+    done:r=>{S.bonus=(S.bonus||0)+r.gained;rescoreAll();const badges=award();save();return{badges}},after:redraw})}
 
 /* ---------- glossary, toolkit, archive, progress ---------- */
 let ALL=null;
@@ -186,7 +245,7 @@ function enlarge(l){const prev=document.activeElement,bg=el('div','big');bg.setA
   const br=el('div','bar2');br.append(el('span',null,l.title));const cb=el('button',null,'Done');cb.onclick=()=>history.back();br.append(cb);
   const pan=el('div','pan'),g=drawSvg(l.svg);if(g)pan.append(g);bg.append(br,pan,el('div','hint2','Drag to move around the diagram'));document.body.append(bg);
   history.pushState({s:1},'');stack.push({sh:bg,prev});cb.focus()}
-function openLesson(b,i,after){
+function openLesson(b,i,after,undo){
   const l=b.lessons[i],a=AREA[l.area]||['','#b48a3c'],prev=document.activeElement,id='L'+i;
   const wrap=el('div','lwrap'),scrim=el('div','lscrim'),sh=el('div','lsheet');sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-label','Lesson '+l.n+': '+l.title);
   const x=el('button','x','✕');x.setAttribute('aria-label','Close lesson');
@@ -195,10 +254,12 @@ function openLesson(b,i,after){
   const f=el('div','fig');f.id=id+'-fig';const g=drawSvg(l.svg);if(g){f.dataset.ok='1';f.append(g);build(g)}else f.append(el('p','note','The diagram could not be drawn.'));
   f.append(el('div','alt',l.alt));const zb=el('button','zoom','Enlarge diagram ⤢');zb.onclick=()=>enlarge(l);if(g)f.append(zb);lb.append(f,el('p',null,l.intro));
   (l.points||[]).forEach((pt,k)=>{const h=el('h4',null,pt.h);if(!k)h.id=id+'-pts';lb.append(h,el('p',null,pt.p))});
+  if(i===kimchiAt(b))try{lb.append(kimchiCameo(b,i))}catch(e){}
   const w=el('div','work');w.id=id+'-work';w.append(el('b',null,'At work'),el('p',null,l.atWork));const tk=el('p','take',l.takeaway);tk.id=id+'-take';lb.append(w,tk);
   const sr=el('div','src');sr.append('Source · ');(l.sources||[]).forEach((s2,j)=>{if(j)sr.append(' · ');sr.append(link(s2.name+' ↗',s2.url))});lb.append(sr);
   if(l.checked)lb.append(el('div','checked','Figures re-checked: '+l.checked));
   const was=!!(S.learned&&S.learned[l.n]);const sv=el('button','served'+(was?' was':''),was?'Served ✓ · close':'Mark as served');lb.append(sv);
+  if(was){const un=el('button','unserve','Not finished? Take it off the pass');un.onclick=()=>{history.back();delete S.learned[l.n];save();undo&&undo(i)};lb.append(un)}
   const tabs=el('div','tabs');[['Diagram','-fig'],['Key points','-pts'],['At work','-work'],['Remember','-take']].forEach(([t,sf],j)=>{const bt=el('button',j?'':'on',t);bt.onclick=()=>{[...tabs.children].forEach(z=>z.classList.remove('on'));bt.classList.add('on');const tg=document.getElementById(id+sf);if(tg)glide(sh,tg.offsetTop-tabs.offsetHeight-10)};tabs.append(bt)});
   sh.append(el('div','grab'),x,rc,tabs,lb);wrap.append(scrim,sh);document.body.append(wrap);document.body.style.overflow='hidden';
   history.pushState({s:1},'');stack.push({sh:wrap,prev});x.onclick=scrim.onclick=()=>history.back();x.focus();
@@ -207,26 +268,32 @@ function tickets(b){
   const sec=el('section');sec.id='lessons';const hd=el('div','lhead');hd.append(el('h2',null,'Today’s tickets'));
   const r=el('div','r'),b1=el('b');b1.append(el('span','bell'),'THE PASS');const cnt=el('span');r.append(b1,cnt);hd.append(r);
   const n=b.lessons.length;const sub=el('p','lsub');sub.append(el('span',null,n+' tickets on the pass. Swipe, then tap to fire.'));sec.append(hd,sub);
+  if(kimchiAt(b)>0)sec.append(kimchiHint(b));
   const pass=el('div','pass'),lamp=el('div','lamp'),rail=el('div','rail'),ou=el('div','orderup','Order up!'),full=el('div','full','SERVICE COMPLETE · SEE YOU TOMORROW');
   const snd=el('button','snd');const sndTxt=()=>snd.textContent=S.sound?'SOUND ON':'SOUND OFF';sndTxt();snd.setAttribute('aria-label','Turn pass sounds on or off');snd.onclick=()=>{S.sound=!S.sound;save();sndTxt();if(S.sound)bell(0)};
   pass.append(lamp,rail,ou,full);sub.append(snd);const slotX=i=>{const w=pass.clientWidth||360,gap=(w-n*76)/(n+1);return Math.round(gap+i*(76+gap))};
   const slots=b.lessons.map((l,i)=>{const s2=el('div','slot',String(i+1));pass.append(s2);return s2});
   const placeSlots=()=>slots.forEach((s2,i)=>{s2.style.left=slotX(i)+'px';const h=pass.querySelector('.hung[data-i="'+i+'"]');if(h)h.style.left=slotX(i)+'px';const c=pass.querySelector('.clip[data-i="'+i+'"]');if(c)c.style.left=(slotX(i)+29)+'px'});
   const hang=(i,swing)=>{const l=b.lessons[i],a=AREA[l.area]||['','#b48a3c'];if(pass.querySelector('.hung[data-i="'+i+'"]'))return;slots[i].style.visibility='hidden';
-    const h=el('div','hung');h.dataset.i=i;h.style.setProperty('--c',a[1]);h.append(el('span',null,l.title),el('i',null,'SERVED'));const c=el('div','clip');c.dataset.i=i;pass.append(h,c);placeSlots();
+    const h=el('div','hung');h.dataset.i=i;h.style.setProperty('--c',a[1]);h.style.setProperty('--cd',a[3]||a[1]);h.append(el('span',null,l.title),el('i',null,'SERVED'));const c=el('div','clip');c.dataset.i=i;pass.append(h,c);placeSlots();
     if(swing)h.animate([{transform:'rotate(14deg)'},{transform:'rotate(-9deg)'},{transform:'rotate(5deg)'},{transform:'rotate(-2deg)'},{transform:'rotate(0)'}],{duration:1100,easing:'ease-out'})};
   const car=el('div','car'),pager=el('div','pager'),tks=[];
   const isDone=i=>!!(S.learned&&S.learned[b.lessons[i].n]);
   const mark=()=>{let c=0,nx=-1;tks.forEach((t,i)=>{const on=isDone(i);t.classList.toggle('done',on);pager.children[i].classList.toggle('ok',on);if(on){c++;hang(i,false)}else if(nx<0)nx=i});
     tks.forEach((t,i)=>t.classList.toggle('next',i===nx&&c>0));cnt.textContent=c+'/'+n+' SERVED';full.classList.toggle('on',c===n);return nx};
-  b.lessons.forEach((l,i)=>{const a=AREA[l.area]||['','#b48a3c'];const t=el('button','tk');t.style.setProperty('--c',a[1]);t.setAttribute('aria-label','Ticket '+(i+1)+' of '+n+': lesson '+l.n+', '+l.title+', '+mins(l));
+  b.lessons.forEach((l,i)=>{const a=AREA[l.area]||['','#b48a3c'];const t=el('button','tk');t.style.setProperty('--c',a[1]);t.style.setProperty('--cd',a[3]||a[1]);t.setAttribute('aria-label','Ticket '+(i+1)+' of '+n+': lesson '+l.n+', '+l.title+', '+mins(l));
     const pa=el('div','paper'),r1=el('div','rows');r1.append(el('span',null,'LESSON '+pad3(l.n)),el('span','ar',a[0].toUpperCase()));
     const r2=el('div','rows lt');r2.append(el('span',null,'COVERS '+mins(l).toUpperCase()),el('span',null,'TICKET '+(i+1)+'/'+n));
     const gl=el('div','glimpse'),gs=glimpse(l.svg);if(gs){gl.dataset.ok='1';gl.append(gs)}
     const fire=el('div','fire');fire.append(el('span',null,l.module.toUpperCase()),el('span',null,'FIRE →'));
     pa.append(r1,r2,el('div','rn',ROMAN[i]||String(i+1)),el('hr','dash'),el('h3',null,l.title),el('p',null,l.outcome),gl,fire);
     t.append(pa,el('div','stamp','SERVED'));car.append(t);tks.push(t);pager.append(el('i',i?'':'on'));
-    t.onclick=()=>openLesson(b,i,served)});
+    t.onclick=()=>openLesson(b,i,served,unserve)});
+  /* send a served ticket back: lift it off the rail and put it back in the carousel */
+  async function unserve(i){await waitMs(380);const h=pass.querySelector('.hung[data-i="'+i+'"]'),c=pass.querySelector('.clip[data-i="'+i+'"]');
+    if(h){await anim(h,[{transform:'rotate(0)',opacity:1},{transform:'translateY(-14px) rotate(-6deg)',opacity:0}],{duration:420});h.remove()}if(c)c.remove();
+    slots[i].style.visibility='';tks[i].classList.remove('done');pager.children[i].classList.remove('ok');
+    const nx=mark();if(nx>=0)car.scrollTo({left:tks[nx].offsetLeft-(car.clientWidth-tks[nx].offsetWidth)/2,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
   async function served(i){await waitMs(380);const t=tks[i];t.classList.add('done');pager.children[i].classList.add('ok');
     const tr=t.getBoundingClientRect(),pr=pass.getBoundingClientRect();
     if(pr.bottom<0||pr.top>innerHeight)pass.scrollIntoView({block:'center',behavior:'smooth'}),await waitMs(450);
@@ -239,12 +306,12 @@ function tickets(b){
   car.addEventListener('scroll',()=>requestAnimationFrame(upd));requestAnimationFrame(()=>{placeSlots();const nx=tks.findIndex((t,i)=>!isDone(i));if(nx>0)car.scrollLeft=tks[nx].offsetLeft-(car.clientWidth-tks[nx].offsetWidth)/2;upd()});addEventListener('resize',placeSlots);
   sec.append(pass,car,pager);mark();return sec}
 /* ---------- news: The Pass Gazette lead plus Dispatch slips ---------- */
-const NAREA={industry:['UK industry','#4f6d8f'],trends:['Food and drink trends','#5e8f3a'],finedining:['Fine dining and chefs','#a3456b'],openings:['London openings','#c4562a']};
+const NAREA={industry:['UK industry',AREA.opening[1],AREA.opening[2],AREA.opening[3]],trends:['Food and drink trends',AREA.drinks[1],AREA.drinks[2],AREA.drinks[3]],finedining:['Fine dining and chefs',AREA.kitchen[1],AREA.kitchen[2],AREA.kitchen[3]],openings:['London openings',AREA.brand[1],AREA.brand[2],AREA.brand[3]]};
 const nv=x=>({gist:x.gist||x.summary||'',big:x.big||null,read:x.read||{what:x.summary||'',soWhat:x.why||'',take:''}});
 function photoEl(b,k,ph,cls){if(!ph)return null;const f=el('figure',cls||'nphoto'),im=el('img');im.src='briefs/img/'+b.date+'-'+k+'.jpg';im.alt=ph.alt||'';im.loading='lazy';im.decoding='async';im.onerror=()=>f.remove();
   const cap=el('figcaption');const a=link('Photo: '+ph.credit+', '+ph.licence+' ↗',ph.page);cap.append(a);f.append(im,cap);return f}
 function openStory(b,k){const x=b.news[k],v=nv(x),ar=NAREA[x.area]||['','#b48a3c'],prev=document.activeElement;
-  const wrap=el('div','lwrap'),scrim=el('div','lscrim'),sh=el('div','lsheet nsheet');sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-label',x.headline);sh.style.setProperty('--c',ar[1]);
+  const wrap=el('div','lwrap'),scrim=el('div','lscrim'),sh=el('div','lsheet nsheet');sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-label',x.headline);sh.style.setProperty('--c',ar[1]);sh.style.setProperty('--cd',ar[3]||ar[1]);
   const xb=el('button','x','✕');xb.setAttribute('aria-label','Close story');const body=el('div','nb');
   const ph=photoEl(b,k,x.photo,'nhero');if(ph)body.append(ph);
   const m=el('div','nmeta');m.append(el('span','nk',ar[0]),el('span',null,(x.source.name+' · '+x.source.date).toUpperCase()));body.append(m,el('h2',null,x.headline));
@@ -259,11 +326,11 @@ function newsSection(b){
   const sec=el('section','news');sec.id='news';const items=b.news||[];
   const mast=el('div','gmast');mast.append(el('h2',null,'The Pass Gazette'),el('span',null,nice(b.date)));sec.append(mast);
   if(!items.length){sec.append(el('p','note','No news today.'));return sec}
-  const lead=items[0],lv=nv(lead),la=NAREA[lead.area]||['','#b48a3c'];const L=el('button','glead');L.style.setProperty('--c',la[1]);L.setAttribute('aria-label','Lead story: '+lead.headline);
+  const lead=items[0],lv=nv(lead),la=NAREA[lead.area]||['','#b48a3c'];const L=el('button','glead');L.style.setProperty('--c',la[1]);L.style.setProperty('--cd',la[3]||la[1]);L.setAttribute('aria-label','Lead story: '+lead.headline);
   const lp=photoEl(b,0,lead.photo,'gphoto');if(lp){const fc=lp.querySelector('figcaption');fc.textContent='Photo: '+lead.photo.credit+', '+lead.photo.licence;L.append(lp)}
   L.append(el('span','nk',la[0]));if(lv.big){L.append(el('div','gbig',lv.big.value),el('div','gbl',lv.big.label))}
   L.append(el('h3',null,lead.headline),el('p',null,lv.gist),el('span','grd','Read the story →'));L.onclick=()=>openStory(b,0);sec.append(L);
-  const list=el('div','slips');items.slice(1).forEach((x,j)=>{const k=j+1,v=nv(x),ar=NAREA[x.area]||['','#b48a3c'];const sl=el('button','slip');sl.style.setProperty('--c',ar[1]);sl.setAttribute('aria-label',x.headline);
+  const list=el('div','slips');items.slice(1).forEach((x,j)=>{const k=j+1,v=nv(x),ar=NAREA[x.area]||['','#b48a3c'];const sl=el('button','slip');sl.style.setProperty('--c',ar[1]);sl.style.setProperty('--cd',ar[3]||ar[1]);sl.setAttribute('aria-label',x.headline);
     const pp=el('div','pp'),dl=el('div','dl');dl.append(el('span','t',ar[0].toUpperCase()),el('span',null,x.source.date.toUpperCase()));pp.append(dl);
     const row=el('div','srow'),tx=el('div','stx');tx.append(el('h4',null,x.headline),el('p',null,v.gist));row.append(tx);
     if(x.photo){const th=el('div','sthumb'),im=el('img');im.src='briefs/img/'+b.date+'-'+k+'.jpg';im.alt='';im.loading='lazy';im.onerror=()=>th.remove();th.append(im);row.append(th)}
@@ -271,7 +338,7 @@ function newsSection(b){
     pp.append(row,el('span','more','READ THE STORY →'));if(x.photo)pp.append(el('span','pcred','Photo: '+x.photo.credit+', '+x.photo.licence));sl.append(pp);sl.onclick=()=>openStory(b,k);list.append(sl)});
   sec.append(list);if(b.newsNote)sec.append(el('p','note',b.newsNote));return sec}
 function render(b,list){
-  const app=document.getElementById('app');app.textContent='';
+  const app=document.getElementById('app');app.textContent='';CURB=b;paintBadge();
   const isToday=b.date===todayStr(),sk=streak(),heroSk=sk+(isToday&&!S.days[b.date]?1:0);
   const hid=new URLSearchParams(location.search).get('hero'),hero=(window.HEROES&&HEROES.ORDER.includes(hid))?hid:(window.HEROES?HEROES.forDay(b.day):'plate');
   app.append(el('div','mast','Mise en Place'));
