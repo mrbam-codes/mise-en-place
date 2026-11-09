@@ -29,7 +29,9 @@ start = datetime.date(2026, 11, 8)
 days = sorted({l["day"] for l in lessons})
 for p in phases:
     ds = [l["day"] for l in lessons if l["phase"] == p["n"]]; p["days"] = [min(ds), max(ds)]
-out = {"start": start.isoformat(), "areas": {"kitchen": "Kitchen", "drinks": "Drinks", "money": "Money", "opening": "Opening and legal", "brand": "Brand", "guests": "Guests and growth"},
+# repeats: a date that re-teaches an earlier course day; every later date moves back one day.
+# 2026-11-10 re-teaches day 1, missed on 8 Nov (agreed 9 Nov 2026).
+out = {"start": start.isoformat(), "repeats": {"2026-11-10": 1}, "areas": {"kitchen": "Kitchen", "drinks": "Drinks", "money": "Money", "opening": "Opening and legal", "brand": "Brand", "guests": "Guests and growth"},
        "phases": phases, "lessons": lessons}
 json.dump(out, open("course.json", "w", encoding="utf-8"), ensure_ascii=False, indent=0)
 print(len(lessons), "lessons,", len(days), "days,", len(phases), "phases")

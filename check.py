@@ -331,7 +331,9 @@ def today_uk():
 
 def course_day(date):
     c = json.loads((ROOT / "course.json").read_text(encoding="utf-8"))
-    d = (date - START).days + 1
+    reps = c.get("repeats", {})   # a repeat date re-teaches an earlier day; later dates move back one
+    k = date.isoformat()
+    d = reps.get(k) or (date - START).days + 1 - sum(r < k for r in reps)
     return d, [l for l in c["lessons"] if l["day"] == d], c
 
 
@@ -343,7 +345,9 @@ def check(date):
     need("sample" not in b, "remove the sample flag")
     need(b.get("dayLabel") == f"{day:%A} {day.day} {day:%B %Y}", "dayLabel does not match the date")
     n, todays, course = course_day(day)
-    need(1 <= n <= 221, f"{date} is course day {n}: the course runs from day 1 (8 November 2026) to day 221")
+    m = re.search(r"const REPEATS=(\{[^}]*\})", (ROOT / "app.js").read_text(encoding="utf-8"))
+    need(bool(m) and json.loads(m.group(1).replace("'", '"')) == course.get("repeats", {}), "app.js REPEATS must match course.json repeats")
+    need(1 <= n <= 221, f"{date} is course day {n}: the course runs from day 1 (8 November 2026) to day 221 (17 June 2027)")
     need(b.get("day") == n, f"day must be {n} for {date}")
     if todays:
         need(b.get("phase") == todays[0]["phase"], f"phase must be {todays[0]['phase']} on day {n}")

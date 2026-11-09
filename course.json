@@ -1,5 +1,8 @@
 {
 "start": "2026-11-08",
+"repeats": {
+"2026-11-10": 1
+},
 "areas": {
 "kitchen": "Kitchen",
 "drinks": "Drinks",

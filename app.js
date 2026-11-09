@@ -30,7 +30,8 @@ const ds=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+Strin
 const parse=s=>{const[y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
 const addDays=(s,n)=>{const d=parse(s);d.setDate(d.getDate()+n);return ds(d)};
 const todayStr=()=>ds(new Date());
-const courseDay=s=>Math.round((parse(s)-START)/864e5)+1;
+const REPEATS={'2026-11-10':1};/* must match course.json repeats; check.py asserts it */
+const courseDay=s=>REPEATS[s]||Math.round((parse(s)-START)/864e5)+1-Object.keys(REPEATS).filter(r=>r<s).length;
 const nice=s=>parse(s).toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
 const doneDays=()=>Object.keys(S.days).filter(k=>DAYRE.test(k)).sort();
 function streak(){const set=new Set(doneDays());let d=todayStr();if(!set.has(d))d=addDays(d,-1);let n=0;while(set.has(d)){n++;d=addDays(d,-1)}return n}

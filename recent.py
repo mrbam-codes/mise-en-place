@@ -11,9 +11,10 @@ import datetime
 day = sys.argv[1]
 here = os.path.dirname(os.path.abspath(__file__))
 course = json.load(open(os.path.join(here, "course.json"), encoding="utf-8"))
-n = (datetime.date.fromisoformat(day) - datetime.date.fromisoformat(course["start"])).days + 1
+reps = course.get("repeats", {})   # a repeat date re-teaches an earlier day; later dates move back one
+n = reps.get(day) or (datetime.date.fromisoformat(day) - datetime.date.fromisoformat(course["start"])).days + 1 - sum(r < day for r in reps)
 todays = [l for l in course["lessons"] if l["day"] == n]
-print("TODAY " + day + " is course day " + str(n) + " of 221" + (", phase " + str(todays[0]["phase"]) if todays else ": NOT IN THE COURSE, write nothing"))
+print("TODAY " + day + " is course day " + str(n) + " of 221" + (" (a repeat: she missed this day, so teach it afresh)" if day in reps else "") + (", phase " + str(todays[0]["phase"]) if todays else ": NOT IN THE COURSE, write nothing"))
 for i, l in enumerate(todays):
     print("Lesson " + str(i + 1) + ": n=" + str(l["n"]) + " | area=" + l["area"] + " | module=" + l["module"] + " | title=" + l["title"])
     print("  outcome: " + l["outcome"])

@@ -8,7 +8,7 @@ The page is public. Never name or hint at where she works, who she works for, or
 
 ## Today's lessons come from the course, never from you
 
-`python3 recent.py YYYY-MM-DD` prints today's course day and its lessons from `course.json` (day 1 is 8 November 2026, the course ends on day 221). Teach exactly those lessons, in that order. Copy `n`, `area`, `module`, `title` and `outcome` exactly. Most days have 3 lessons; days 218 and 221 have 2.
+`python3 recent.py YYYY-MM-DD` prints today's course day and its lessons from `course.json` (day 1 is 8 November 2026, the course ends on day 221 on 17 June 2027; a date listed under `repeats` in `course.json` re-teaches an earlier day she missed, and recent.py already allows for it). Teach exactly those lessons, in that order. Copy `n`, `area`, `module`, `title` and `outcome` exactly. Most days have 3 lessons; days 218 and 221 have 2.
 
 ## Fields
 
