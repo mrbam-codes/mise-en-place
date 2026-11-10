@@ -17,7 +17,7 @@ const ORD=['First','Second','Third'];
 
 /* ---------- saved progress (this phone only) ---------- */
 const KEY='mep-v1',DAYRE=/^\d{4}-\d{2}-\d{2}$/;
-const fresh=()=>({days:{},areas:{},lessons:{},points:0,badges:{},review:[],prog:{},learned:{},sound:false,kimchi:{}});
+const fresh=()=>({days:{},areas:{},lessons:{},points:0,badges:{},review:[],prog:{},learned:{},sound:false,kimchi:{},charlee:{}});
 let S=(()=>{try{const s=JSON.parse(localStorage.getItem(KEY));return s&&s.days?Object.assign(fresh(),s):fresh()}catch(e){return fresh()}})();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 const LEVELS=[[0,'Commis'],[500,'Demi chef'],[2000,'Chef de partie'],[5000,'Sous chef'],[9000,'Head chef'],[14000,'Chef patron'],[20000,'Restaurateur']];
@@ -50,21 +50,37 @@ function award(){const got=[];BADGES.forEach(([id,n,d,t])=>{if(!S.badges[id]&&t(
 /* ---------- Kimchi (the kitten): a quiz reward and a daily hide-and-seek in one lesson ---------- */
 const K=()=>window.KIMCHI||null;
 /* which lesson he hides in: seeded by the date, never the first ticket, same all day */
-function kimchiAt(b){const n=(b.lessons||[]).length;if(n<2||!K())return -1;let h=2166136261;for(const c of b.date){h^=c.charCodeAt(0);h=Math.imul(h,16777619)>>>0}return 1+h%(n-1)}
-const kimchiFound=b=>!!(S.kimchi&&S.kimchi[b.date]);
-function kimchiHint(b){const t=el('span','khint');t.id='khint';t.textContent=kimchiFound(b)?'You found Kimchi today. He moves to a new hiding place tomorrow.':'Kimchi is hiding in one of today’s lessons. Can you find him?';return t}
-function kimchiCameo(b,i){
+/* Two cats hide each day: Kimchi in one lesson, Charlee in another. Any lesson can be a hiding place.
+   With an older kimchi.js (no Charlee art) the page falls back to Kimchi alone. */
+const CATS={kimchi:{name:'Kimchi',he:'He',key:'kimchi'},charlee:{name:'Charlee',he:'She',key:'charlee'}};
+function palArt(b){const k=K();return k&&k.pal?k.pal(k.cameoFor(b.day)):null}
+function hideAt(b){const n=(b.lessons||[]).length;if(n<2||!K())return null;let h=2166136261;for(const c of b.date){h^=c.charCodeAt(0);h=Math.imul(h,16777619)>>>0}
+  if(!palArt(b))return{kimchi:1+h%(n-1),charlee:-1,pair:false};
+  const k=h%n;return{kimchi:k,charlee:(k+1+(h>>>9)%(n-1))%n,pair:true}}
+const catFound=(b,who)=>!!(S[who]&&S[who][b.date]);
+const kimchiFound=b=>catFound(b,'kimchi');
+function kimchiHint(b){const t=el('span','khint'),hs=hideAt(b),k=kimchiFound(b),c=catFound(b,'charlee');t.id='khint';
+  t.textContent=!(hs&&hs.pair)?(k?'You found Kimchi today. He moves to a new hiding place tomorrow.':'Kimchi is hiding in one of today’s lessons. Can you find him?')
+    :k&&c?'You found them both today. They pick new hiding places tomorrow.'
+    :k?'You found Kimchi. Charlee is still hiding in another lesson.'
+    :c?'You found Charlee. Kimchi is still hiding in another lesson.'
+    :'Kimchi and Charlee are hiding in two of today’s lessons. Can you find them both?';return t}
+function kimchiCameo(b,i,who){
+  const cat=CATS[who||'kimchi'],other=CATS[cat.key==='kimchi'?'charlee':'kimchi'],hs=hideAt(b)||{};
   const box=el('div','kcam'),win=el('div','kwin'),lip=el('div','klip'),tx=el('div','ktx');box.setAttribute('aria-live','polite');
-  const say=()=>{tx.textContent='';if(kimchiFound(b))tx.append(el('b',null,'You found Kimchi!'),el('span',null,'He was hiding in lesson '+(i+1)+'. Tomorrow he’ll pick a new spot.'));else tx.append(el('b',null,'Psst…'),el('span',null,'someone is reading along with you.'))};
+  const say=()=>{tx.textContent='';if(catFound(b,cat.key))tx.append(el('b',null,'You found '+cat.name+'!'),el('span',null,cat.he+' was hiding in lesson '+(i+1)+'. '+(!hs.pair?'Tomorrow he’ll pick a new spot.':catFound(b,other.key)?'That’s both of them today.':other.name+' is still hiding.')));else tx.append(el('b',null,'Psst…'),el('span',null,'someone is reading along with you.'))};
   say();win.append(lip);box.append(win,tx);let host=null;
   const io=new IntersectionObserver(es=>{if(!es.some(e=>e.isIntersecting))return;io.disconnect();box.classList.add('up');
-    if(!host){host=el('div','kpeek');win.prepend(host);K().cameo(host,K().cameoFor(b.day),112)}
-    if(!kimchiFound(b)){S.kimchi=S.kimchi||{};S.kimchi[b.date]=Date.now();save();say();fizz(24);const h=document.getElementById('khint');if(h)h.replaceWith(kimchiHint(b))}},{threshold:.6});
+    if(!host){host=el('div','kpeek');win.prepend(host);K().cameo(host,cat.key==='charlee'?palArt(b):K().cameoFor(b.day),112)}
+    if(!catFound(b,cat.key)){S[cat.key]=S[cat.key]||{};S[cat.key][b.date]=Date.now();save();say();fizz(24);const h=document.getElementById('khint');if(h)h.replaceWith(kimchiHint(b))}},{threshold:.6});
   setTimeout(()=>io.observe(box),300);return box}
 function kimchiReward(bd,b){
   if(!K())return;const sk=streak(),r=el('div','kreward'),stage=el('div','kstage'),ov=el('div','kov');
-  ov.append(el('b',null,sk>1?sk+'-day streak':'Day '+b.day+' done'),el('span',null,sk>1?'Kimchi is proud of you. Same time tomorrow?':'Kimchi approves. Come back tomorrow to start a streak.'));
-  r.append(stage,ov);bd.append(r);K().mount(stage,K().forDay(b.day))}
+  const hs=hideAt(b),both=!!(hs&&hs.pair&&kimchiFound(b)&&catFound(b,'charlee')),who=both?'Kimchi and Charlee':'Kimchi';
+  ov.append(el('b',null,sk>1?sk+'-day streak':'Day '+b.day+' done'),el('span',null,sk>1?who+(both?' are':' is')+' proud of you. Same time tomorrow?':who+(both?' approve':' approves')+'. Come back tomorrow to start a streak.'));
+  r.append(stage,ov);bd.append(r);K().mount(stage,K().forDay(b.day));
+  /* found them both: Charlee joins Kimchi, in a small window in the corner of his scene */
+  if(both)try{const pal=el('div','kpal');stage.append(pal);K().cameo(pal,K().pal(K().forDay(b.day))||palArt(b),Math.max(84,Math.round((stage.clientWidth||340)*.27)),true)}catch(e){}}
 
 /* ---------- score badge (top right), My scores, and the Kimchi postcard to share ---------- */
 let CURB=null;
@@ -256,7 +272,7 @@ function openLesson(b,i,after,undo){
   const f=el('div','fig');f.id=id+'-fig';const g=drawSvg(l.svg);if(g){f.dataset.ok='1';f.append(g);build(g)}else f.append(el('p','note','The diagram could not be drawn.'));
   f.append(el('div','alt',l.alt));const zb=el('button','zoom','Enlarge diagram ⤢');zb.onclick=()=>enlarge(l);if(g)f.append(zb);lb.append(f,el('p',null,l.intro));
   (l.points||[]).forEach((pt,k)=>{const h=el('h4',null,pt.h);if(!k)h.id=id+'-pts';lb.append(h,el('p',null,pt.p))});
-  if(i===kimchiAt(b))try{lb.append(kimchiCameo(b,i))}catch(e){}
+  try{const hs=hideAt(b);if(hs){if(i===hs.kimchi)lb.append(kimchiCameo(b,i,'kimchi'));if(i===hs.charlee)lb.append(kimchiCameo(b,i,'charlee'))}}catch(e){}
   const w=el('div','work');w.id=id+'-work';w.append(el('b',null,'At work'),el('p',null,l.atWork));const tk=el('p','take',l.takeaway);tk.id=id+'-take';lb.append(w,tk);
   const sr=el('div','src');sr.append('Source · ');(l.sources||[]).forEach((s2,j)=>{if(j)sr.append(' · ');sr.append(link(s2.name+' ↗',s2.url))});lb.append(sr);
   if(l.checked)lb.append(el('div','checked','Figures re-checked: '+l.checked));
@@ -270,7 +286,7 @@ function tickets(b){
   const sec=el('section');sec.id='lessons';const hd=el('div','lhead');hd.append(el('h2',null,'Today’s tickets'));
   const r=el('div','r'),b1=el('b');b1.append(el('span','bell'),'THE PASS');const cnt=el('span');r.append(b1,cnt);hd.append(r);
   const n=b.lessons.length;const sub=el('p','lsub');sub.append(el('span',null,n+' tickets on the pass. Swipe, then tap to fire.'));sec.append(hd,sub);
-  if(kimchiAt(b)>0)sec.append(kimchiHint(b));
+  if(hideAt(b))sec.append(kimchiHint(b));
   const pass=el('div','pass'),lamp=el('div','lamp'),rail=el('div','rail'),ou=el('div','orderup','Order up!'),full=el('div','full','SERVICE COMPLETE · SEE YOU TOMORROW');
   const snd=el('button','snd');const sndTxt=()=>snd.textContent=S.sound?'SOUND ON':'SOUND OFF';sndTxt();snd.setAttribute('aria-label','Turn pass sounds on or off');snd.onclick=()=>{S.sound=!S.sound;save();sndTxt();if(S.sound)bell(0)};
   pass.append(lamp,rail,ou,full);sub.append(snd);const slotX=i=>{const w=pass.clientWidth||360,gap=(w-n*76)/(n+1);return Math.round(gap+i*(76+gap))};

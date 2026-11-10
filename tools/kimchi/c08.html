@@ -1,0 +1,60 @@
+<style>
+#c08{position:absolute;inset:0;overflow:hidden;background:#f7eedc}
+#c08 canvas{position:absolute;inset:0;width:100%;height:100%;display:block;image-rendering:pixelated;image-rendering:crisp-edges}
+</style>
+<div class="hero" id="c08"><canvas width="63" height="54" role="img" aria-label="Pixel-art Charlee, a long-haired brown tabby with a white bib and half-shut green eyes, at a sunny window"></canvas></div>
+<script>
+(function(){
+var root=document.getElementById('c08');if(!root)return;
+var cv=root.querySelector('canvas'),cx=cv.getContext('2d'),W=63,H=54;
+var img=cx.createImageData(W,H),D=img.data;
+var pal={s0:'#86c3ea',s1:'#a9d6f2',s2:'#cbe7f4',s3:'#e6f3ef',fr:'#fffcf4',fs:'#eadfc8',g1:'#78b565',g2:'#529852',cl:'#ffffff',
+ c:'#a8733f',C:'#c99b63',d:'#5b3a21',D:'#7d532c',w:'#fffaf0',x:'#e9dcc4',o:'#3a2616',e:'#8dba52',E:'#55802f',k:'#1c2412',h:'#ffffff',n:'#b9624f',i:'#e9bda3',l:'#8a5a30'};
+var P={};for(var q in pal){var v=pal[q];P[q]=[parseInt(v.substr(1,2),16),parseInt(v.substr(3,2),16),parseInt(v.substr(5,2),16)]}
+var BG=new Array(W*H),CAT;
+var BAY=[0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5];
+function bg(){var st=['s0','s1','s2','s3'];
+ for(var y=0;y<H;y++)for(var x=0;x<W;x++){var f=y/H*3.4,i=Math.min(3,Math.floor(f)),fr=f-i;BG[y*W+x]=(i<3&&fr*16>BAY[(y&3)*4+(x&3)]+.5)?st[i+1]:st[i]}
+ for(var x=0;x<W;x++){var h=7+Math.round(2*Math.sin(x*.5)+1.5*Math.sin(x*.17+2));for(var y=H-h;y<H;y++)BG[y*W+x]=(x+y)%5?'g1':'g2'}
+ [[6,6,9,3],[9,4,5,2],[44,10,10,3],[47,8,6,2]].forEach(function(r){for(var y=r[1];y<r[1]+r[3];y++)for(var x=r[0];x<r[0]+r[2];x++)BG[y*W+x]='cl'});
+ for(var y=0;y<H;y++){BG[y*W+30]='fr';BG[y*W+31]='fr';BG[y*W+32]='fs'}}
+function put(x,y,c){x=Math.round(x);y=Math.round(y);if(x>=0&&y>=0&&x<W&&y<H)CAT[y*W+x]=c}
+function ell(a,b,rx,ry,c){for(var y=Math.floor(b-ry);y<=b+ry;y++)for(var x=Math.floor(a-rx);x<=a+rx;x++){var u=(x-a)/rx,v=(y-b)/ry;if(u*u+v*v<=1)put(x,y,c)}}
+function tri(p,c){var x0=Math.min(p[0],p[2],p[4]),x1=Math.max(p[0],p[2],p[4]),y0=Math.min(p[1],p[3],p[5]),y1=Math.max(p[1],p[3],p[5]);
+ function s(ax,ay,bx,by,x,y){return (bx-ax)*(y-ay)-(by-ay)*(x-ax)}
+ for(var y=Math.floor(y0);y<=y1;y++)for(var x=Math.floor(x0);x<=x1;x++){var a=s(p[0],p[1],p[2],p[3],x,y),b=s(p[2],p[3],p[4],p[5],x,y),d=s(p[4],p[5],p[0],p[1],x,y);if((a>=0&&b>=0&&d>=0)||(a<=0&&b<=0&&d<=0))put(x,y,c)}}
+function line(x0,y0,x1,y1,c){var n=Math.max(Math.abs(x1-x0),Math.abs(y1-y0));for(var i=0;i<=n;i++)put(x0+(x1-x0)*i/n,y0+(y1-y0)*i/n,c)}
+function both(f){f(function(x){return x});f(function(x){return 62-x})}
+function cat(lid){CAT=new Array(W*H);
+ /* shoulders and bib */
+ ell(31,54,20,18,'c');ell(31,56,11,19,'w');
+ for(var x=22;x<=40;x+=3)put(x,38+(x%2),'w');
+ both(function(m){
+  tri([m(19),18,m(16),1,m(30),12],'D');tri([m(20),15,m(18),6,m(26),12],'i');put(m(16),0,'w');
+  tri([m(19),21,m(12),25,m(20),36],'C');put(m(12),29,'C');put(m(11),25,'C');put(m(13),33,'C')});
+ ell(31,25,15,12,'c');
+ /* tabby stripes */
+ line(31,13,31,18,'d');both(function(m){line(m(27),14,m(28),18,'d');line(m(23),16,m(25),19,'d');line(m(17),22,m(21),23,'d');line(m(17),26,m(21),26,'d')});
+ /* white blaze and muzzle */
+ line(30,19,30,26,'w');line(31,18,31,26,'w');line(32,19,32,26,'w');ell(31,31,7,5,'w');ell(31,33,5,4,'w');
+ /* eyes */
+ both(function(m){var ex=m(25);
+  for(var y=22;y<=27;y++)for(var x=-3;x<=3;x++)if(!(Math.abs(x)===3&&(y===22||y===27)))put(ex+x,y,y===22?'o':(y>=26?'E':'e'));
+  put(ex,24,'k');put(ex,25,'k');put(ex,26,'k');put(ex+1,25,'k');put(ex-2,24,'h');
+  var cover=lid?27:23;for(var y=22;y<=cover;y++)for(var x=-3;x<=3;x++)put(ex+x,y,'l');
+  for(var x=-3;x<=3;x++)put(ex+x,cover,'o')});
+ /* nose, mouth, whiskers */
+ put(30,29,'n');put(31,29,'n');put(32,29,'n');put(31,30,'n');put(31,31,'d');put(30,32,'d');put(32,32,'d');put(29,31,'x');put(33,31,'x');
+ both(function(m){line(m(26),31,m(13),29,'h');line(m(26),33,m(12),33,'h');line(m(27),34,m(14),37,'h')});
+ /* dark outline round the cat */
+ var O=CAT.slice();for(var y=0;y<H;y++)for(var x=0;x<W;x++){if(CAT[y*W+x])continue;
+  var nb=(x>0&&CAT[y*W+x-1])||(x<W-1&&CAT[y*W+x+1])||(y>0&&CAT[(y-1)*W+x])||(y<H-1&&CAT[(y+1)*W+x]);
+  if(nb&&nb!=='h')O[y*W+x]='o'}
+ CAT=O}
+function paint(lid){cat(lid);for(var i=0;i<W*H;i++){var v=P[CAT[i]||BG[i]],j=i*4;D[j]=v[0];D[j+1]=v[1];D[j+2]=v[2];D[j+3]=255}cx.putImageData(img,0,0)}
+bg();paint(false);
+if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+function blink(){paint(true);setTimeout(function(){paint(false);setTimeout(blink,4200+Math.random()*3000)},420)}
+setTimeout(blink,2600);
+})();
+</script>
