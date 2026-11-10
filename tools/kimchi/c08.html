@@ -32,20 +32,21 @@ function cat(lid){CAT=new Array(W*H);
  both(function(m){
   tri([m(19),18,m(16),4,m(30),12],'D');tri([m(20),15,m(18),8,m(26),12],'i');line(m(16),3,m(14),0,'d');put(m(15),3,'d');put(m(19),12,'w');put(m(21),11,'w');
   tri([m(19),20,m(10),25,m(20),39],'C');tri([m(19),23,m(8),30,m(19),31],'C');tri([m(19),29,m(10),37,m(20),39],'C')});
- ell(31,25,15,12,'c');
+ ell(31,26,17,13,'c');
  /* tabby stripes */
- line(31,13,31,17,'d');both(function(m){line(m(27),14,m(27),17,'d');line(m(23),16,m(23),18,'d');line(m(17),24,m(20),23,'d');line(m(17),27,m(20),27,'d')});
+ line(31,13,31,17,'d');both(function(m){line(m(27),14,m(27),17,'d');line(m(23),16,m(23),18,'d');line(m(15),24,m(18),23,'d');line(m(15),27,m(18),27,'d')});
  /* white blaze and muzzle */
- line(30,19,30,26,'w');line(31,18,31,26,'w');line(32,19,32,26,'w');ell(31,31,7,5,'w');for(var y=29;y<=35;y++)for(var x=25;x<=37;x++)if(!((x===25||x===37)&&y===35))put(x,y,'w');
+ line(30,19,30,26,'w');line(31,18,31,26,'w');line(32,19,32,26,'w');ell(31,34,6,4,'w');
  /* eyes */
- both(function(m){var ex=m(25);
-  for(var y=22;y<=27;y++)for(var x=-3;x<=3;x++)if(!(Math.abs(x)===3&&(y===22||y===27)))put(ex+x,y,y>=26?'E':'e');
-  put(ex,23,'k');put(ex,24,'k');put(ex,25,'k');put(ex,26,'k');
-  put(m(24),23,'h');
-  if(lid){for(var y=22;y<=27;y++)for(var x=-3;x<=3;x++)put(ex+x,y,'l');for(var x=-2;x<=2;x++)put(ex+x,Math.abs(x)===2?25:26,'o')}});
+ [24,38].forEach(function(ex){
+  for(var y=22;y<=29;y++)for(var x=-3;x<=3;x++)if(!(Math.abs(x)===3&&(y===22||y===29)))put(ex+x,y,y>=28?'E':'e');
+  for(var y=23;y<=28;y++)for(var x=-1;x<=1;x++)put(ex+x,y,'k');
+  put(ex-2,23,'h');put(ex-1,23,'h');put(ex-2,24,'h');put(ex-1,24,'h');put(ex+1,27,'h');
+  if(lid){for(var y=22;y<=29;y++)for(var x=-3;x<=3;x++)if(!(Math.abs(x)===3&&(y===22||y===29)))put(ex+x,y,'l');for(var x=-3;x<=3;x++)put(ex+x,Math.abs(x)<2?25:Math.abs(x)===2?26:27,'o')}});
+ both(function(m){put(m(18),32,'i');put(m(19),32,'i');put(m(20),32,'i');put(m(19),33,'i');put(m(20),33,'i')});
  /* nose, mouth, whiskers */
- put(30,29,'n');put(31,29,'n');put(32,29,'n');put(31,30,'n');put(31,31,'d');put(30,32,'d');put(32,32,'d');put(29,32,'d');put(33,32,'d');put(28,31,'d');put(34,31,'d');
- both(function(m){line(m(26),31,m(13),29,'h');line(m(26),33,m(12),33,'h');line(m(27),34,m(14),37,'h')});
+ put(30,32,'n');put(31,32,'n');put(32,32,'n');put(31,33,'n');put(31,34,'d');put(30,35,'d');put(32,35,'d');put(29,35,'d');put(33,35,'d');put(28,34,'d');put(34,34,'d');
+ both(function(m){line(m(26),34,m(12),32,'h');line(m(26),36,m(11),36,'h');line(m(27),37,m(13),40,'h')});
  /* dark outline round the cat */
  var O=CAT.slice();for(var y=0;y<H;y++)for(var x=0;x<W;x++){if(CAT[y*W+x])continue;
   var nb=(x>0&&CAT[y*W+x-1])||(x<W-1&&CAT[y*W+x+1])||(y>0&&CAT[(y-1)*W+x])||(y<H-1&&CAT[(y+1)*W+x]);

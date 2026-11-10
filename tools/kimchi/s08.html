@@ -79,9 +79,9 @@ function T(a,b,c_,col){a=[a[0]*S,(a[1]+OY)*S];b=[b[0]*S,(b[1]+OY)*S];c_=[c_[0]*S
 function px(x,y,c){gs(x*S,(y+OY)*S,c)}
 function stamp(m,ox,oy){for(var j=0;j<m.length;j++)for(var i=0;i<m[j].length;i++){var ch=m[j][i];if(ch!='.')gs(ox+i,oy+j,ch)}}
 var EYE={
- open:['.ooo.','eEEke','eEkke','eekke','.eee.'],
- look:['.ooo.','eeEEk','eeEkk','eeekk','.eee.'],
- half:['.....','ooooo','eEkke','eekke','.eee.'],
+ open:['.ooo.','ewkke','ekkke','ekkke','.eee.'],
+ look:['.ooo.','eewkk','eekkk','eekkk','.eee.'],
+ half:['.....','ooooo','ekkke','ekkke','.eee.'],
  shut:['.....','.....','.....','ooooo','.....'],
  happy:['.....','.ooo.','o...o','.....','.....']
 };
@@ -140,7 +140,7 @@ function cat(o){
  // whiskers
  [[9.6,24],[8.4,24.6],[10.8,27],[9.6,27.8]].forEach(function(w){px(w[0],w[1]+hy,'v')});
  [[39.4,24],[40.6,24.6],[38.2,27],[39.4,27.8]].forEach(function(w){px(w[0],w[1]+hy,'v')});
- if(ek=='happy'){var by=Math.floor((24.2+hy+OY)*S);gs(21,by,'p');gs(22,by,'p');gs(36,by,'p');gs(37,by,'p')}
+ {var by=Math.floor((24.2+hy+OY)*S);gs(21,by,'p');gs(22,by,'p');gs(36,by,'p');gs(37,by,'p')}
 }
 var OUT={c:'R',C:'R',w:'R',x:'R',R:'R',l:'d',m:'o',d:'o',e:'o',E:'o',k:'o',p:'d',n:'o',o:'o'};
 function blit(ox,oy,flip){
