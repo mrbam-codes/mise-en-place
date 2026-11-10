@@ -87,6 +87,7 @@ Rules:
 
 - Exactly 5. At least one on each lesson; `from` is the lesson's position in today's edition (1, 2 or 3, not its course number `n`), or `"news"`. Question up to 180, options up to 100, `why` up to 280.
 - `answer` is 0 to 3: vary its position. Wrong options must be plausible. Test understanding and application, not trivia. Every answer must be supported by today's lesson text.
+- Keep the 4 options of a question about the same length, so length gives nothing away. The right answer may be the longest option in at most 2 of the 5 questions. If it is, shorten it or write a fuller wrong option.
 
 ## Order of work
 

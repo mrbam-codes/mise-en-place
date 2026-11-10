@@ -442,6 +442,13 @@ def check(date):
         need(sum(q.get("from") == k for q in qz) >= 1, f"quiz: needs at least one question on lesson {k}")
     answers = [q.get("answer") for q in qz]
     need(len(set(answers)) >= 2, "quiz: vary the position of the right answer")
+    if date >= "2026-11-12":   # length must not give the answer away (it did in 9 of the first 15 questions)
+        def longest(q):
+            n = [len(str(o).strip()) for o in q.get("options") or []]
+            a = q.get("answer")
+            return len(n) == 4 and a in (0, 1, 2, 3) and n[a] == max(n) and n.count(n[a]) == 1
+        tell = sum(longest(q) for q in qz)
+        need(tell <= 2, f"quiz: the right answer is the longest option in {tell} of 5 questions; at most 2. Make the options similar in length")
 
     terms = b.get("terms") or []
     need(3 <= len(terms) <= 9, "terms: 3 to 9 glossary terms")
