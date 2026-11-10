@@ -79,11 +79,11 @@ function T(a,b,c_,col){a=[a[0]*S,(a[1]+OY)*S];b=[b[0]*S,(b[1]+OY)*S];c_=[c_[0]*S
 function px(x,y,c){gs(x*S,(y+OY)*S,c)}
 function stamp(m,ox,oy){for(var j=0;j<m.length;j++)for(var i=0;i<m[j].length;i++){var ch=m[j][i];if(ch!='.')gs(ox+i,oy+j,ch)}}
 var EYE={
- open:['.ooo.','ewkke','ekkke','ekkke','.eee.'],
- look:['.ooo.','eewkk','eekkk','eekkk','.eee.'],
- half:['.....','ooooo','ekkke','ekkke','.eee.'],
- shut:['.....','.....','.....','ooooo','.....'],
- happy:['.....','.ooo.','o...o','.....','.....']
+ open:['.oooo.','oEwkke','eEkkke','eekkke','eekkEe','.eeee.'],
+ look:['.oooo.','oeEwkk','eeEkkk','eeekkk','eeekkk','.eeee.'],
+ half:['......','......','oooooo','eekkke','eekkEe','.eeee.'],
+ shut:['......','......','......','oooooo','......','......'],
+ happy:['......','.oooo.','o....o','......','......','......']
 };
 function cat(o){
  for(var i=0;i<G.length;i++)G[i]=null;
@@ -129,18 +129,17 @@ function cat(o){
  E(15,24+hy,3.3,3.3,'c');E(34,24+hy,3.3,3.3,'C');E(33.6,23.6+hy,2.7,2.7,'c');
  px(12,25.5+hy,'c');px(37,25.5+hy,'C');px(13,27.4+hy,'c');px(36,27.4+hy,'C');
  // seal mask radiating from the nose (Roman nose bridge)
- E(24.5,22.4+hy,7.3,6.2,'l');E(24.5,23.8+hy,4.3,4,'m');E(24.5,24.6+hy,2.6,2.5,'d');
- for(var y=13;y<21;y+=0.8){px(24,y+hy,y<16?'l':'m');px(25,y+hy,y<16?'l':'m')}
+ E(24.5,20.6+hy,8.9,7.4,'l');E(24.5,22+hy,6.9,5.9,'m');E(24.5,24.4+hy,3.4,3,'d');
+ 
  // big sapphire eyes
- var ek=o.eye||'open',ey=Math.floor((18.6+hy+OY)*S);
- stamp(EYE[ek],Math.floor(18*S)-1,ey);stamp(EYE[ek],Math.floor(27.6*S)-1,ey);
+ var ek=o.eye||'open',ey=Math.floor((18.6+hy+OY)*S)-1;
+ stamp(EYE[ek],Math.floor(18*S)-2,ey);stamp(EYE[ek],Math.floor(27.6*S)-1,ey);
  // nose leather, mouth
  var ny=Math.floor((25.2+hy+OY)*S);gs(30,ny,'n');gs(31,ny,'n');gs(30,ny+1,'o');gs(31,ny+1,'n');
  gs(29,ny+2,'o');gs(32,ny+2,'o');
  // whiskers
  [[9.6,24],[8.4,24.6],[10.8,27],[9.6,27.8]].forEach(function(w){px(w[0],w[1]+hy,'v')});
  [[39.4,24],[40.6,24.6],[38.2,27],[39.4,27.8]].forEach(function(w){px(w[0],w[1]+hy,'v')});
- {var by=Math.floor((24.2+hy+OY)*S);gs(21,by,'p');gs(22,by,'p');gs(36,by,'p');gs(37,by,'p')}
 }
 var OUT={c:'R',C:'R',w:'R',x:'R',R:'R',l:'d',m:'o',d:'o',e:'o',E:'o',k:'o',p:'d',n:'o',o:'o'};
 function blit(ox,oy,flip){

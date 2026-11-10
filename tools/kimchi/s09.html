@@ -1,6 +1,9 @@
 <style>
 #s09{overflow:hidden;background:#f8eae0}
 #s09 svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+#s09 .s09_eye{transform-box:fill-box;transform-origin:50% 60%}
+#s09 .s09_tail{transform-box:fill-box;transform-origin:10% 100%}
+#s09 .s09_head{transform-box:fill-box;transform-origin:50% 88%}
 </style>
 <div class="hero" id="s09">
 <svg viewBox="0 0 420 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -31,6 +34,11 @@
 <radialGradient id="s09_eye" cx="45%" cy="40%" r="60%"><stop offset="0" stop-color="#7fb2f0"/><stop offset=".55" stop-color="#3f74c9"/><stop offset="1" stop-color="#1f3f86"/></radialGradient>
 <linearGradient id="s09_back" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9d3b8"/><stop offset=".5" stop-color="#f4e8d8"/><stop offset="1" stop-color="#f8efe4"/></linearGradient>
 <radialGradient id="s09_dent" cx="60%" cy="65%" r="60%"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#7a5a45" stop-opacity=".18"/></radialGradient>
+<radialGradient id="s09_coat" cx="38%" cy="28%" r="80%"><stop offset="0" stop-color="#f7f0e1"/><stop offset=".6" stop-color="#f4e9d4"/><stop offset="1" stop-color="#c5bdb8"/></radialGradient>
+<radialGradient id="s09_wh" cx="40%" cy="25%" r="85%"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e9dcc2"/></radialGradient>
+<radialGradient id="s09_tl" cx="35%" cy="25%" r="85%"><stop offset="0" stop-color="#9e9bad"/><stop offset="1" stop-color="#646275"/></radialGradient>
+<radialGradient id="s09_iris" cx="50%" cy="80%" r="80%"><stop offset="0" stop-color="#8db6f0"/><stop offset="1" stop-color="#24529f"/></radialGradient>
+<filter id="s09_csh" filterUnits="userSpaceOnUse" x="-200" y="-200" width="500" height="500" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceAlpha" stdDeviation="1.6" result="b"/><feOffset in="b" dx="1.6" dy="2.2" result="o"/><feComposite in="SourceAlpha" in2="o" operator="out" result="edge"/><feFlood flood-color="#fffaf3" flood-opacity=".65"/><feComposite in2="edge" operator="in" result="hl"/><feOffset in="b" dx="-1.6" dy="-2.2" result="o2"/><feComposite in="SourceAlpha" in2="o2" operator="out" result="edge2"/><feFlood flood-color="#4a2f18" flood-opacity=".3"/><feComposite in2="edge2" operator="in" result="sh"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="hl"/><feMergeNode in="sh"/></feMerge></filter>
 </defs>
 
 <!-- the set: seamless paper sweep, pastel, softly lit -->
@@ -46,108 +54,33 @@
 <g fill="none" stroke="#a3c7c3" stroke-width="2.4" stroke-linecap="round" opacity=".9"><path d="M386,304 q14,8 30,0"/><path d="M384,316 q16,10 34,2"/><path d="M392,296 q-4,14 6,32"/><path d="M382,320 q-30,10 -60,4"/></g>
 
 <!-- contact shadow -->
-<ellipse id="s09_sh" cx="330" cy="302" rx="62" ry="8" fill="#8c7262" opacity=".38" filter="url(#s09_blur2)"/>
-<ellipse id="s09_sh2" cx="330" cy="302" rx="40" ry="4" fill="#5d473b" opacity=".35" filter="url(#s09_blur2)"/>
+<ellipse id="s09_sh" cx="302" cy="302" rx="70" ry="8" fill="#8c7262" opacity=".38" filter="url(#s09_blur2)"/>
+<ellipse id="s09_sh2" cx="302" cy="302" rx="44" ry="4" fill="#5d473b" opacity=".35" filter="url(#s09_blur2)"/>
 
-<g id="s09_cat">
- <!-- tail -->
- <g filter="url(#s09_clay)"><path id="s09_tail" fill="none" stroke="#82859b" stroke-width="24" stroke-linecap="round"/></g>
- <!-- far front leg -->
- <g filter="url(#s09_clay)"><line id="s09_lf" stroke="#8c8fa3" stroke-width="15" stroke-linecap="round"/><ellipse id="s09_pf" rx="11" ry="6.5" fill="#fffaf3"/></g>
- <!-- body: haunch + torso, one lump of clay -->
- <g filter="url(#s09_clay)">
-  <ellipse id="s09_hn" fill="url(#s09_vol)"/>
-  <ellipse id="s09_ts" fill="url(#s09_vol)"/>
-  <ellipse id="s09_md" fill="url(#s09_vol)"/>
-  <ellipse id="s09_hp" rx="13" ry="6.5" fill="#fffaf3"/>
- </g>
- <!-- thumbprint dents on the haunch -->
- <ellipse id="s09_d1" rx="7" ry="5" fill="url(#s09_dent)"/>
- <!-- ivory ruff, a separate pressed-on piece -->
- <g filter="url(#s09_clay)"><path id="s09_rf" fill="#fdf7ee"/><g id="s09_rg" fill="none" stroke="#ecdfcc" stroke-width="1.6" stroke-linecap="round"><path d="M-12,-14 l5,7 l5,-7 M2,-12 l5,7 l5,-7 M-16,0 l5,8 l5,-8 M-4,2 l5,8 l5,-8 M8,0 l5,7 l4,-7 M-12,16 l5,7 l5,-7 M2,16 l5,7 l5,-7"/></g></g>
- <!-- near front leg -->
- <g filter="url(#s09_clay)"><line id="s09_ln" stroke="#8c8fa3" stroke-width="16" stroke-linecap="round"/><ellipse id="s09_pn" rx="12" ry="7" fill="#fffaf3"/></g>
- <!-- head -->
- <g id="s09_head">
-  <g filter="url(#s09_clay)">
-   <path d="M-38,-12 L-31,-48 L-6,-34Z" fill="#7a7e95" stroke="#7a7e95" stroke-width="9" stroke-linejoin="round"/>
-   <path d="M38,-12 L31,-48 L6,-34Z" fill="#7a7e95" stroke="#7a7e95" stroke-width="9" stroke-linejoin="round"/>
-  </g>
-  <path d="M-31,-20 L-29,-40 L-14,-32Z" fill="#d79f97" opacity=".7"/>
-  <path d="M31,-20 L29,-40 L14,-32Z" fill="#d79f97" opacity=".7"/>
-  <g filter="url(#s09_clay)">
-   <path d="M-40,4 C-42,-26 -20,-40 0,-40 C20,-40 42,-26 40,4 L50,12 L42,16 L48,24 L38,26 C30,36 16,40 0,40 C-16,40 -30,36 -38,26 L-48,24 L-42,16 L-50,12 Z" fill="url(#s09_hv)"/>
-   <ellipse cx="0" cy="9" rx="38" ry="33" fill="url(#s09_mask)"/><ellipse cx="0" cy="13" rx="19" ry="17" fill="#72768e" opacity=".7"/><path d="M-22,-6 C-10,-2 10,-2 22,-6 C14,6 -14,6 -22,-6Z" fill="#82869b" opacity=".35"/>
-   <path d="M-4,-36 C-2,-20 2,-20 4,-36Z" fill="#9093a6" opacity=".55"/>
-  </g>
-  <!-- glossy bead eyes -->
-  <g id="s09_eyes">
-   <g id="s09_eL" transform="translate(-15,0)"><ellipse rx="10" ry="10.5" fill="#4a4b5e"/><ellipse rx="8.6" ry="9.2" fill="url(#s09_eye)"/><ellipse rx="5.2" ry="7.2" fill="#141018"/><circle cx="-3.2" cy="-4" r="3" fill="#fff"/><circle cx="3.4" cy="4.2" r="1.3" fill="#fff" opacity=".8"/></g>
-   <g id="s09_eR" transform="translate(15,0)"><ellipse rx="10" ry="10.5" fill="#4a4b5e"/><ellipse rx="8.6" ry="9.2" fill="url(#s09_eye)"/><ellipse rx="5.2" ry="7.2" fill="#141018"/><circle cx="-3.2" cy="-4" r="3" fill="#fff"/><circle cx="3.4" cy="4.2" r="1.3" fill="#fff" opacity=".8"/></g>
-  </g>
-  <g id="s09_lids" fill="none" stroke="#4a4b5e" stroke-width="2.4" stroke-linecap="round" opacity="0"><path d="M-25,2 q10,6 20,0"/><path d="M5,2 q10,6 20,0"/></g>
-  <!-- Roman nose: a soft bridge, then the nose leather -->
-  <path d="M-3,6 C-2,10 2,10 3,6" fill="none" stroke="#9b9dae" stroke-width="2" stroke-linecap="round" opacity=".6"/>
-  <path d="M-6,13 Q0,10 6,13 Q2,19 0,20 Q-2,19 -6,13Z" fill="#54556a"/>
-  <path id="s09_mc" d="M0,20 v3 M0,23 q-4,4 -8,1 M0,23 q4,4 8,1" fill="none" stroke="#54556a" stroke-width="1.4" stroke-linecap="round"/>
-  <g id="s09_mouth" transform="translate(0,26) scale(1,0)">
-   <ellipse rx="9" ry="10" fill="#9a3f4c"/><ellipse cy="5" rx="6" ry="4" fill="#ea8e9b"/>
-   <path d="M-6,-8 l1.5,5 l1.5,-5Z M6,-8 l-1.5,5 l-1.5,-5Z" fill="#fff"/>
-  </g>
-  <g stroke="#fffaf3" stroke-width="1.1" stroke-linecap="round" opacity=".9"><path d="M-12,20 L-40,16"/><path d="M-12,23 L-38,26"/><path d="M12,20 L40,16"/><path d="M12,23 L38,26"/></g>
-  <ellipse cx="-27" cy="16" rx="5" ry="3" fill="#f0a9a0" opacity=".35"/><ellipse cx="27" cy="16" rx="5" ry="3" fill="#f0a9a0" opacity=".35"/>
- </g>
-</g>
+<g id="s09_cat"><g transform="translate(209 96) scale(1.45)"><g transform="translate(60 0)"><g class="s09_tail"><path filter="url(#s09_csh)" d="M18,138 C58,142 70,108 56,80 C52,72 41,76 44,85 C51,102 44,120 22,124Z" fill="url(#s09_tl)" stroke="url(#s09_tl)" stroke-width="3" stroke-linejoin="round"/></g><path filter="url(#s09_csh)" d="M-17,82 C-35,92 -39,122 -34,137 Q0,143 34,137 C39,122 35,92 17,82Z" fill="url(#s09_coat)" stroke="url(#s09_coat)" stroke-width="3" stroke-linejoin="round"/><path filter="url(#s09_csh)" d="M-18,82 Q-29,94 -19,97 Q-26,109 -12,109 Q-8,120 0,122 Q8,120 12,109 Q26,109 19,97 Q29,94 18,82Z" fill="url(#s09_wh)" stroke="url(#s09_wh)" stroke-width="3" stroke-linejoin="round"/><path d="M-8,94 Q-4,102 0,98 Q4,102 8,94" fill="none" stroke="#e9dcc2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2,112 L1.5,134 Q8.5,139 15.5,134 L14.5,112Z" fill="#97929c" stroke="#97929c" stroke-width="1.6" stroke-linejoin="round"/><path transform="scale(-1 1)" d="M2,112 L1.5,134 Q8.5,139 15.5,134 L14.5,112Z" fill="#97929c" stroke="#97929c" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5,130 C13.5,130 17,132 17,135 C17,138.6 13.5,140.4 8.5,140.4 C3.5,140.4 0,138.6 0,135 C0,132 3.5,130 8.5,130Z" fill="url(#s09_wh)" stroke="url(#s09_wh)" stroke-width="1.6" stroke-linejoin="round"/><path transform="scale(-1 1)" d="M8.5,130 C13.5,130 17,132 17,135 C17,138.6 13.5,140.4 8.5,140.4 C3.5,140.4 0,138.6 0,135 C0,132 3.5,130 8.5,130Z" fill="url(#s09_wh)" stroke="url(#s09_wh)" stroke-width="1.6" stroke-linejoin="round"/><path d="M6,134.5 L6,138.5 M11,134.5 L11,138.5" fill="none" stroke="#e9dcc2" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path transform="scale(-1 1)" d="M6,134.5 L6,138.5 M11,134.5 L11,138.5" fill="none" stroke="#e9dcc2" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><g class="s09_head"><g transform="translate(0 66) scale(0.62)"><path filter="url(#s09_csh)" d="M38,-2 Q64,6 55,17 Q69,27 54,34 Q60,48 36,46 L18,40Z" fill="#fbf4e6" stroke="#fbf4e6" stroke-width="3" stroke-linejoin="round"/><path transform="scale(-1 1)" filter="url(#s09_csh)" d="M38,-2 Q64,6 55,17 Q69,27 54,34 Q60,48 36,46 L18,40Z" fill="#fbf4e6" stroke="#fbf4e6" stroke-width="3" stroke-linejoin="round"/><path d="M36,18 Q56,26 48,34 Q54,46 34,46 L18,40Z" fill="url(#s09_wh)" stroke="url(#s09_wh)" stroke-width="1.6" stroke-linejoin="round"/><path transform="scale(-1 1)" d="M36,18 Q56,26 48,34 Q54,46 34,46 L18,40Z" fill="url(#s09_wh)" stroke="url(#s09_wh)" stroke-width="1.6" stroke-linejoin="round"/><path class="s09_ear" filter="url(#s09_csh)" d="M12,-36 Q24,-62 39,-72 Q50,-52 48,-16Z" fill="#6f6c84" stroke="#6f6c84" stroke-width="3" stroke-linejoin="round"/><path transform="scale(-1 1)" filter="url(#s09_csh)" d="M12,-36 Q24,-62 39,-72 Q50,-52 48,-16Z" fill="#6f6c84" stroke="#6f6c84" stroke-width="3" stroke-linejoin="round"/><path class="s09_ear" d="M21,-36 Q28,-54 37,-60 Q42,-46 41,-28Z" fill="#c9b3bd" stroke="#c9b3bd" stroke-width="1.6" stroke-linejoin="round"/><path transform="scale(-1 1)" d="M21,-36 Q28,-54 37,-60 Q42,-46 41,-28Z" fill="#c9b3bd" stroke="#c9b3bd" stroke-width="1.6" stroke-linejoin="round"/><path filter="url(#s09_csh)" d="M-47,-8 C-49,-34 -24,-46 0,-46 C24,-46 49,-34 47,-8 C48,12 39,27 24,35 C13,41 -13,41 -24,35 C-39,27 -48,12 -47,-8Z" fill="url(#s09_coat)" stroke="url(#s09_coat)" stroke-width="3" stroke-linejoin="round"/><path d="M0,-46 C27,-46 44,-28 42,2 C41,22 21,38 0,39 C-21,38 -41,22 -42,2 C-44,-28 -27,-46 0,-46Z" fill="#b2aaac" stroke="#b2aaac" stroke-width="1.6" stroke-linejoin="round"/><path d="M0,-35 C20,-35 35,-18 34,5 C33,23 17,36 0,37 C-17,36 -33,23 -34,5 C-35,-18 -20,-35 0,-35Z" fill="#7f7b8e" stroke="#7f7b8e" stroke-width="1.6" stroke-linejoin="round"/><path d="M-15,13 C-15,5 -5,5 0,8 C5,5 15,5 15,13 C16,23 9,31 0,32 C-9,31 -16,23 -15,13Z" fill="#a7a4b8" stroke="#a7a4b8" stroke-width="1.6" stroke-linejoin="round"/><path d="M-4.6,8 Q0,6.4 4.6,8 Q3,13 0,14.2 Q-3,13 -4.6,8Z" fill="#8b7786" stroke="#8b7786" stroke-width="1.6" stroke-linejoin="round"/><path d="M0,14 L0,18 M0,18 Q-5,23.5 -10.5,19.5 M0,18 Q5,23.5 10.5,19.5" fill="none" stroke="#3d3b4d" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(-21 -3)"><g transform="scale(-1,1)"><g class="s09_eye"><path d="M-13,3 C-9,-15 8,-18 14,-5 C12,9 -6,10 -13,3Z" fill="url(#s09_iris)" stroke="#24529f" stroke-width="1.4"/><ellipse cx="1" cy="-2.5" rx="5.4" ry="8.4" fill="#14110f"/><circle cx="-2.6" cy="-6.5" r="2.7" fill="#fff"/><circle cx="4.2" cy="2" r="1.2" fill="#fff" opacity=".85"/><path d="M-14,3.5 C-9,-16 8,-19 14.5,-5.5" fill="none" stroke="#3d3b4d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g></g></g><g transform="translate(21 -3)"><g transform="scale(1,1)"><g class="s09_eye"><path d="M-13,3 C-9,-15 8,-18 14,-5 C12,9 -6,10 -13,3Z" fill="url(#s09_iris)" stroke="#24529f" stroke-width="1.4"/><ellipse cx="1" cy="-2.5" rx="5.4" ry="8.4" fill="#14110f"/><circle cx="-2.6" cy="-6.5" r="2.7" fill="#fff"/><circle cx="4.2" cy="2" r="1.2" fill="#fff" opacity=".85"/><path d="M-14,3.5 C-9,-16 8,-19 14.5,-5.5" fill="none" stroke="#3d3b4d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g></g></g><path d="M14,14 Q40,6 66,4 M15,18 Q42,18 68,20 M14,22 Q38,28 60,36" fill="none" stroke="#94939d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path transform="scale(-1 1)" d="M14,14 Q40,6 66,4 M15,18 Q42,18 68,20 M14,22 Q38,28 60,36" fill="none" stroke="#94939d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14,14 Q40,6 66,4 M15,18 Q42,18 68,20 M14,22 Q38,28 60,36" fill="none" stroke="#fffdf6" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/><path transform="scale(-1 1)" d="M14,14 Q40,6 66,4 M15,18 Q42,18 68,20 M14,22 Q38,28 60,36" fill="none" stroke="#fffdf6" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></g></g></g></g></g>
 </svg>
 <script>
 (function(){
  var root=document.getElementById('s09');if(!root)return;
- function $(i){return root.querySelector('#s09_'+i)}
- var E={tail:$('tail'),lf:$('lf'),pf:$('pf'),hn:$('hn'),ts:$('ts'),hp:$('hp'),md:$('md'),rf:$('rf'),rg:$('rg'),ln:$('ln'),pn:$('pn'),head:$('head'),eL:$('eL'),eR:$('eR'),lids:$('lids'),mouth:$('mouth'),mc:$('mc'),cat:$('cat'),sh:$('sh'),sh2:$('sh2'),d1:$('d1')};
- // two key poses: A = sitting, B = big stretch (play bow). Numbers lerp between them.
- var A={hn:[342,262,44,38,-8],ts:[304,234,31,52,-12],hp:[322,296],rf:[284,236,24,36],
-  lf:[306,250,302,296],ln:[290,252,286,298],head:[286,176,0],
-  tail:[378,284,400,300,360,310,300,306]};
- var B={hn:[360,234,44,36,16],ts:[302,258,58,30,12],hp:[362,296],rf:[268,264,20,24],
-  lf:[282,268,246,298],ln:[272,272,232,300],head:[272,204,-14],
-  tail:[384,228,408,196,404,160,392,128]};
- function L(a,b,t){return a+(b-a)*t}
- function V(a,b,t){var r=[];for(var i=0;i<a.length;i++)r.push(L(a[i],b[i],t));return r}
- function E3(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+ var cat=root.querySelector('#s09_cat'),eyes=root.querySelectorAll('.s09_eye'),tail=root.querySelector('.s09_tail'),head=root.querySelector('.s09_head'),sh=root.querySelector('#s09_sh'),sh2=root.querySelector('#s09_sh2');
  function seg(t,a,b){return Math.max(0,Math.min(1,(t-a)/(b-a)))}
  function bell(t,a,b){var u=seg(t,a,b);return Math.sin(u*Math.PI)}
- function ell(el,v){el.setAttribute('cx',v[0]);el.setAttribute('cy',v[1]);el.setAttribute('rx',v[2]);el.setAttribute('ry',v[3]);el.setAttribute('transform','rotate('+v[4]+' '+v[0]+' '+v[1]+')')}
- function line(el,v){el.setAttribute('x1',v[0]);el.setAttribute('y1',v[1]);el.setAttribute('x2',v[2]);el.setAttribute('y2',v[3])}
  var T=7;
  function pose(t,still){
-  // timeline: sit, anticipate, stretch, yawn, sit back with squash, settle, blink
-  var s=E3(seg(t,1.5,2.4))-E3(seg(t,3.7,4.4));
-  var sq=0.07*bell(t,1.0,1.6)-0.06*bell(t,1.6,2.6)+0.09*bell(t,4.2,4.8)-0.035*bell(t,4.8,5.3)+0.015*bell(t,5.3,5.7);
-  var yawn=bell(t,2.5,3.6);yawn=Math.min(1,yawn*1.4);
-  var bl=Math.max(bell(t,.55,.8),bell(t,5.9,6.15),bell(t,6.35,6.6),yawn>.15?1:0);
-  if(still){s=0;sq=0;yawn=0;bl=0}
-  var hn=V(A.hn,B.hn,s),ts=V(A.ts,B.ts,s),rf=V(A.rf,B.rf,s),lf=V(A.lf,B.lf,s),ln=V(A.ln,B.ln,s),hd=V(A.head,B.head,s),tl=V(A.tail,B.tail,s),hp=V(A.hp,B.hp,s);
-  ell(E.hn,hn);ell(E.ts,ts);ell(E.md,[(hn[0]+ts[0])/2,(hn[1]+ts[1])/2+2,36,26+8*(1-s),(hn[4]+ts[4])/2]);
-  E.hp.setAttribute('cx',hp[0]);E.hp.setAttribute('cy',hp[1]);
-  E.d1.setAttribute('cx',hn[0]+14);E.d1.setAttribute('cy',hn[1]-12);
-  E.rf.setAttribute('d','M'+(rf[0]-rf[2])+','+(rf[1]-rf[3]*.5)+' C'+(rf[0]-rf[2]*1.1)+','+(rf[1]+rf[3]*.6)+' '+(rf[0]-rf[2]*.3)+','+(rf[1]+rf[3])+' '+(rf[0]+rf[2]*.2)+','+(rf[1]+rf[3]*.9)+' l-4,-6 l6,1 l-3,-7 l7,2 C'+(rf[0]+rf[2]*1.1)+','+(rf[1])+' '+(rf[0]+rf[2]*.6)+','+(rf[1]-rf[3])+' '+(rf[0])+','+(rf[1]-rf[3])+' C'+(rf[0]-rf[2]*.6)+','+(rf[1]-rf[3])+' '+(rf[0]-rf[2])+','+(rf[1]-rf[3]*.8)+' '+(rf[0]-rf[2])+','+(rf[1]-rf[3]*.5)+'Z');
-  E.rg.setAttribute('transform','translate('+rf[0]+','+rf[1]+') scale('+(rf[2]/24)+','+(rf[3]/36)+')');
-  line(E.lf,lf);line(E.ln,ln);
-  E.pf.setAttribute('cx',lf[2]-3);E.pf.setAttribute('cy',lf[3]+1);E.pn.setAttribute('cx',ln[2]-3);E.pn.setAttribute('cy',ln[3]+1);
-  E.tail.setAttribute('d','M'+tl[0]+','+tl[1]+' C'+tl[2]+','+tl[3]+' '+tl[4]+','+tl[5]+' '+tl[6]+','+tl[7]);
-  var hy=hd[1]-yawn*6,hr=hd[2]-yawn*14;
-  E.head.setAttribute('transform','translate('+hd[0]+','+hy+') rotate('+hr+') scale('+(1+sq*.4)+','+(1-sq*.4+yawn*.05)+')');
-  var eo=bl>.95?.04:1-bl*.9;
-  E.eL.setAttribute('transform','translate(-15,0) scale(1,'+eo+')');E.eR.setAttribute('transform','translate(15,0) scale(1,'+eo+')');
-  E.lids.setAttribute('opacity',bl>.6?1:0);
-  E.mouth.setAttribute('transform','translate(0,'+(24+yawn*2)+') scale('+(0.6+yawn*.4)+','+yawn+')');
-  E.mc.setAttribute('opacity',yawn>.1?0:1);
+  // timeline: sit tall, a proud little bounce, a slow head tilt, two blinks
+  var sq=0.05*bell(t,1.0,1.5)-0.045*bell(t,1.5,2.2)+0.025*bell(t,2.2,2.6);
+  var bl=Math.max(bell(t,.55,.8),bell(t,5.3,5.55),bell(t,5.75,6.0));
+  var tilt=5*bell(t,3.0,4.8),sw=5*Math.sin(t/T*Math.PI*4);
+  if(still){sq=0;bl=0;tilt=0;sw=0}
+  var eo=bl>.95?.06:1-bl*.9;
+  for(var i=0;i<eyes.length;i++)eyes[i].style.transform='scaleY('+eo+')';
+  tail.style.transform='rotate('+sw+'deg)';head.style.transform='rotate('+tilt+'deg)';
   // squash and stretch about the floor; tiny stop-motion "boil"
   var f=Math.floor(t*12),j1=(Math.sin(f*12.9898)*43758.5)%1,j2=(Math.sin(f*78.233)*12543.1)%1;
   if(still){j1=0;j2=0}
-  var gx=320,gy=300;
-  E.cat.setAttribute('transform','translate('+(gx+j1*.5)+','+(gy+j2*.4)+') scale('+(1+sq)+','+(1-sq)+') translate('+(-gx)+','+(-gy)+')');
-  var w=1+s*.35;E.sh.setAttribute('rx',62*w*(1+sq));E.sh.setAttribute('cx',330-s*30);E.sh2.setAttribute('rx',40*w*(1+sq));E.sh2.setAttribute('cx',330-s*30);
+  var gx=296,gy=300;
+  cat.setAttribute('transform','translate('+(gx+j1*.5)+','+(gy+j2*.4)+') scale('+(1+sq)+','+(1-sq)+') translate('+(-gx)+','+(-gy)+')');
+  sh.setAttribute('rx',70*(1+sq));sh2.setAttribute('rx',44*(1+sq));
  }
  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  if(rm){pose(0,true);return}
