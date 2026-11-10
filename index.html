@@ -197,7 +197,7 @@ textarea{min-height:90px}
 .pass .full.on{opacity:1}
 .flyer{position:fixed;z-index:40;pointer-events:none;transform-origin:0 0;filter:drop-shadow(0 10px 12px #3a2e1840) drop-shadow(0 34px 40px #3a2e1855)}
 .tk.next::after{content:'NEXT UP';position:absolute;top:-11px;left:50%;transform:translateX(-50%);z-index:3;background:var(--ink);color:#fff;font:700 10px 'Courier Prime',ui-monospace,monospace;letter-spacing:.14em;padding:3px 8px;border-radius:99px}
-/* news: The Pass Gazette lead plus Dispatch slips */
+/* news: The Pass Gazette masthead and front page (the first slide of the carousel below) */
 .gmast{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-top:40px;padding-bottom:10px;border-bottom:3px double var(--ink)}
 .gmast h2{font:400 30px/1 var(--disp);margin:0}
 .gmast span{font:600 11px var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
@@ -210,21 +210,41 @@ textarea{min-height:90px}
 .glead h3{font:400 29px/1.08 var(--disp);margin:14px 0 8px;text-wrap:balance}
 .glead p{margin:0;font-size:16px;line-height:1.5;color:#3c372e}
 .grd{display:inline-block;margin-top:12px;font:700 13px var(--ui);color:var(--cd,var(--c))}
-.slips{display:grid;gap:16px;padding:18px 0 4px}
-.slip{position:relative;border:0;text-align:left;padding:0 0 10px;background:none;filter:drop-shadow(0 4px 6px #3a2e1814) drop-shadow(0 16px 18px #3a2e1824);transition:transform .3s}
-.slip:active{transform:translateY(-3px)}
-.slip .pp{background:#fff;padding:14px 16px 20px;border-top:5px solid var(--c);clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),95% 100%,90% calc(100% - 8px),85% 100%,80% calc(100% - 8px),75% 100%,70% calc(100% - 8px),65% 100%,60% calc(100% - 8px),55% 100%,50% calc(100% - 8px),45% 100%,40% calc(100% - 8px),35% 100%,30% calc(100% - 8px),25% 100%,20% calc(100% - 8px),15% 100%,10% calc(100% - 8px),5% 100%,0 calc(100% - 8px))}
-.slip .dl{display:flex;justify-content:space-between;font:700 11px 'Courier Prime',ui-monospace,monospace;letter-spacing:.08em;color:#4a453c}
-.slip .dl .t{color:#fff;background:var(--cd,var(--c));padding:1px 7px}
-.srow{display:flex;gap:14px;align-items:flex-start;margin-top:10px}
-.stx{flex:1;min-width:0}
-.slip h4{font:400 21px/1.15 var(--disp);margin:0 0 6px;text-wrap:balance}
-.slip p{margin:0;font-size:14.5px;line-height:1.45;color:#4a453c}
-.sthumb{flex:0 0 92px;height:92px;border-radius:12px;overflow:hidden;background:#efe9dc}
-.sthumb img{display:block;width:100%;height:100%;object-fit:cover}
-.tot{flex:0 0 auto;text-align:right}.tot b{display:block;font:400 26px/1 var(--disp);color:var(--cd,var(--c))}.tot span{font:700 9px 'Courier Prime',ui-monospace,monospace;letter-spacing:.06em;color:var(--mute);text-transform:uppercase}
-.slip .pcred{display:block;margin-top:6px;font-size:11px;color:var(--mute);line-height:1.3}
-.slip .more{display:block;margin-top:10px;font:700 12px 'Courier Prime',ui-monospace,monospace;letter-spacing:.1em;color:#23201a}
+/* news carousel (plan 7): one sideways row, the front page first, the other stories beside it as receipt cards; every slide the same height */
+.gcar{position:relative;display:flex;gap:14px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:max(18px,env(safe-area-inset-left)) max(18px,env(safe-area-inset-right));padding:12px max(18px,env(safe-area-inset-right)) 18px max(18px,env(safe-area-inset-left));margin:0 calc(-1 * max(18px,env(safe-area-inset-right))) 0 calc(-1 * max(18px,env(safe-area-inset-left)));scrollbar-width:none}
+.gcar::-webkit-scrollbar{display:none}
+.gcar:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.gcar>button{flex:0 0 86%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
+.gcar.solo>button{flex-basis:100%}
+.gcar .glead{padding-top:6px}
+.gcar .glead:focus-visible,.gcard:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.gcard{position:relative;display:flex;border:0;text-align:left;padding:0 0 10px;background:none;filter:drop-shadow(0 4px 6px #3a2e1814) drop-shadow(0 16px 18px #3a2e1824)}
+.gcard .pp{flex:1;min-width:0;display:flex;flex-direction:column;background:#fff;padding:14px 16px 24px;border-top:5px solid var(--c);clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),95% 100%,90% calc(100% - 8px),85% 100%,80% calc(100% - 8px),75% 100%,70% calc(100% - 8px),65% 100%,60% calc(100% - 8px),55% 100%,50% calc(100% - 8px),45% 100%,40% calc(100% - 8px),35% 100%,30% calc(100% - 8px),25% 100%,20% calc(100% - 8px),15% 100%,10% calc(100% - 8px),5% 100%,0 calc(100% - 8px))}
+.gcard .dl{display:flex;justify-content:space-between;gap:8px;font:700 11px 'Courier Prime',ui-monospace,monospace;letter-spacing:.08em;color:#4a453c}
+.gcard .dl .t{color:#fff;background:var(--cd,var(--c));padding:1px 7px}
+.gcard .gphoto{flex:1 1 auto;display:flex;flex-direction:column;margin:12px 0 0}
+.gcard .gphoto img{flex:1 1 0;min-height:170px;height:auto;aspect-ratio:auto;border-radius:10px;background:#efe9dc;box-shadow:none}
+.gcard .gfig{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;gap:8px;min-height:150px;margin:12px 0 0;padding:16px;border-radius:10px;background:color-mix(in srgb,var(--c) 9%,#fff)}
+.gcard .gfig b{font:400 64px/.9 var(--disp);color:var(--cd,var(--c));letter-spacing:-.02em;overflow-wrap:anywhere}
+.gcard .gfig span{font:600 13px/1.35 var(--ui);color:var(--mute)}
+.gcard .gfig.sm{flex:none;min-height:0;flex-direction:row;align-items:baseline;gap:10px;padding:10px 12px}
+.gcard .gfig.sm b{font-size:34px;flex:none}
+.gcard h4{font:400 23px/1.12 var(--disp);margin:14px 0 6px;color:var(--ink);text-wrap:balance}
+.gcard p{margin:0;font-size:14.5px;line-height:1.45;color:#4a453c}
+.gcard .more{display:block;margin-top:14px;font:700 12px 'Courier Prime',ui-monospace,monospace;letter-spacing:.1em;color:#23201a}
+.gnav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.gpos{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0}
+.gpos .pager{flex-wrap:wrap}
+.gcount{font:600 12px var(--ui);letter-spacing:.14em;color:var(--mute);font-variant-numeric:tabular-nums}
+.gnb{flex:0 0 44px;width:44px;height:44px;border-radius:50%;border:1px solid var(--goldl);background:var(--card);color:var(--goldd);font:600 20px/1 var(--ui);display:grid;place-items:center;box-shadow:0 2px 6px #3a2e1818}
+.gnb:disabled{opacity:.35;cursor:default;box-shadow:none}
+.gnb:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+/* wide screens: the news breaks out of the reading column so the front page and the next card sit side by side */
+@media (min-width:760px){
+  .news{width:min(920px,calc(100vw - 48px));margin-left:calc((100% - min(920px,calc(100vw - 48px))) / 2)}
+  .gcar{margin:0;padding:12px 0 18px;scroll-padding-inline:0}
+  .gcar>button{flex-basis:calc((100% - 14px) / 2)}
+}
 .nsheet .nb{padding:14px 22px calc(40px + env(safe-area-inset-bottom))}
 .nhero{margin:0 -22px 14px}.nhero img{display:block;width:100%;max-height:300px;object-fit:cover}
 .nhero figcaption{font-size:12px;color:#6b655a;padding:6px 22px 0;line-height:1.4}.gphoto figcaption{font-size:11.5px;color:var(--mute);padding:6px 2px 0}

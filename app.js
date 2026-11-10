@@ -320,7 +320,7 @@ function tickets(b){
   const upd=()=>{const w=tks[0].offsetWidth+14,idx=Math.max(0,Math.min(tks.length-1,Math.round(car.scrollLeft/w)));[...pager.children].forEach((d,i)=>d.classList.toggle('on',i===idx));tks.forEach((t,i)=>t.classList.toggle('off',i!==idx))};
   car.addEventListener('scroll',()=>requestAnimationFrame(upd));requestAnimationFrame(()=>{placeSlots();const nx=tks.findIndex((t,i)=>!isDone(i));if(nx>0)car.scrollLeft=tks[nx].offsetLeft-(car.clientWidth-tks[nx].offsetWidth)/2;upd()});addEventListener('resize',placeSlots);
   sec.append(pass,car,pager);mark();return sec}
-/* ---------- news: The Pass Gazette lead plus Dispatch slips ---------- */
+/* ---------- news: The Pass Gazette carousel, the front page first, then the other stories ---------- */
 const NAREA={industry:['UK industry',AREA.opening[1],AREA.opening[2],AREA.opening[3]],trends:['Food and drink trends',AREA.drinks[1],AREA.drinks[2],AREA.drinks[3]],finedining:['Fine dining and chefs',AREA.kitchen[1],AREA.kitchen[2],AREA.kitchen[3]],openings:['London openings',AREA.brand[1],AREA.brand[2],AREA.brand[3]]};
 const nv=x=>({gist:x.gist||x.summary||'',big:x.big||null,read:x.read||{what:x.summary||'',soWhat:x.why||'',take:''}});
 /* Photos are saved by the publisher under a fingerprint of their source address, so a reordered story never shows another story's photo */
@@ -343,17 +343,38 @@ function newsSection(b){
   const sec=el('section','news');sec.id='news';const items=b.news||[];
   const mast=el('div','gmast');mast.append(el('h2',null,'The Pass Gazette'),el('span',null,nice(b.date)));sec.append(mast);
   if(!items.length){sec.append(el('p','note','No news today.'));return sec}
-  const lead=items[0],lv=nv(lead),la=NAREA[lead.area]||['','#b48a3c'];const L=el('button','glead');L.style.setProperty('--c',la[1]);L.style.setProperty('--cd',la[3]||la[1]);L.setAttribute('aria-label','Lead story: '+lead.headline);
+  const n=items.length,car=el('div','gcar');car.tabIndex=0;car.setAttribute('role','region');car.setAttribute('aria-label','Today’s news: swipe or use the arrow keys');
+  const lead=items[0],lv=nv(lead),la=NAREA[lead.area]||['','#b48a3c'];const L=el('button','glead');L.type='button';L.style.setProperty('--c',la[1]);L.style.setProperty('--cd',la[3]||la[1]);L.setAttribute('aria-label','Lead story, 1 of '+n+': '+lead.headline);
   const lp=photoEl(b,0,lead.photo,'gphoto');if(lp){const fc=lp.querySelector('figcaption');fc.textContent='Photo: '+lead.photo.credit+', '+lead.photo.licence;L.append(lp)}
   L.append(el('span','nk',la[0]));if(lv.big){L.append(el('div','gbig',lv.big.value),el('div','gbl',lv.big.label))}
-  L.append(el('h3',null,lead.headline),el('p',null,lv.gist),el('span','grd','Read the story →'));L.onclick=()=>openStory(b,0);sec.append(L);
-  const list=el('div','slips');items.slice(1).forEach((x,j)=>{const k=j+1,v=nv(x),ar=NAREA[x.area]||['','#b48a3c'];const sl=el('button','slip');sl.style.setProperty('--c',ar[1]);sl.style.setProperty('--cd',ar[3]||ar[1]);sl.setAttribute('aria-label',x.headline);
-    const pp=el('div','pp'),dl=el('div','dl');dl.append(el('span','t',ar[0].toUpperCase()),el('span',null,x.source.date.toUpperCase()));pp.append(dl);
-    const row=el('div','srow'),tx=el('div','stx');tx.append(el('h4',null,x.headline),el('p',null,v.gist));row.append(tx);
-    if(x.photo){const th=el('div','sthumb'),im=el('img');photoName(x.photo.src).then(n=>{im.src=n},()=>th.remove());im.alt='';im.loading='lazy';im.onerror=()=>th.remove();th.append(im);row.append(th)}
-    else if(v.big){const t=el('div','tot');t.append(el('b',null,v.big.value),el('span',null,v.big.label));row.append(t)}
-    pp.append(row,el('span','more','READ THE STORY →'));if(x.photo)pp.append(el('span','pcred','Photo: '+x.photo.credit+', '+x.photo.licence));sl.append(pp);sl.onclick=()=>openStory(b,k);list.append(sl)});
-  sec.append(list);if(b.newsNote)sec.append(el('p','note',b.newsNote));return sec}
+  L.append(el('h3',null,lead.headline),el('p',null,lv.gist),el('span','grd','Read the story →'));L.onclick=()=>openStory(b,0);car.append(L);
+  /* the other stories as full receipt cards: photo (with its credit) or the key figure on top, then headline, gist and the way in */
+  items.slice(1).forEach((x,j)=>{const k=j+1,v=nv(x),ar=NAREA[x.area]||['','#b48a3c'];const c=el('button','gcard');c.type='button';c.style.setProperty('--c',ar[1]);c.style.setProperty('--cd',ar[3]||ar[1]);c.setAttribute('aria-label','Story '+(k+1)+' of '+n+': '+x.headline);
+    const pp=el('div','pp'),dl=el('div','dl');dl.append(el('span','t',ar[0].toUpperCase()),el('span',null,String(x.source.date||'').toUpperCase()));pp.append(dl);
+    const fig=v.big?el('div','gfig'):null;if(fig)fig.append(el('b',null,v.big.value),el('span',null,v.big.label));
+    const ph=photoEl(b,k,x.photo,'gphoto');
+    if(ph){ph.querySelector('figcaption').textContent='Photo: '+x.photo.credit+', '+x.photo.licence;pp.append(ph);
+      /* a photo that fails to load is removed by photoEl; the key figure then takes its place as the panel */
+      if(fig){fig.classList.add('sm');ph.querySelector('img').addEventListener('error',()=>fig.classList.remove('sm'))}}
+    if(fig)pp.append(fig);
+    pp.append(el('h4',null,x.headline),el('p',null,v.gist),el('span','more','READ THE STORY →'));c.append(pp);c.onclick=()=>openStory(b,k);car.append(c)});
+  const slides=[...car.children],nav=el('div','gnav'),pv=el('button','gnb','‹'),nx=el('button','gnb','›'),pos=el('div','gpos'),cnt=el('span','gcount','1 / '+n),dots=el('div','pager');
+  pv.type=nx.type='button';pv.setAttribute('aria-label','Previous story');nx.setAttribute('aria-label','Next story');pv.disabled=true;cnt.setAttribute('aria-live','polite');dots.setAttribute('aria-hidden','true');
+  slides.forEach((s,i)=>dots.append(el('i',i?'':'on')));pos.append(cnt,dots);nav.append(pv,pos,nx);
+  if(n<2){car.classList.add('solo');nav.hidden=true}
+  /* which slide sits at the start of the row; at the far end the last story counts as shown */
+  const at=()=>{const x=car.scrollLeft+slides[0].offsetLeft;let best=0,d=1e9;slides.forEach((s,i)=>{const e=Math.abs(s.offsetLeft-x);if(e<d){d=e;best=i}});return best};
+  let cur=0,tm=0;
+  const upd=()=>{const max=car.scrollWidth-car.clientWidth,end=car.scrollLeft>=max-2,i=end?n-1:at();
+    if(i!==cur){cur=i;cnt.textContent=(i+1)+' / '+n;[...dots.children].forEach((d,j)=>d.classList.toggle('on',j===i))}
+    pv.disabled=car.scrollLeft<=2;nx.disabled=end};
+  /* previous and next: a smooth scroll, with a timer that finishes the move if the frames stall */
+  const go=d=>{const i=Math.max(0,Math.min(n-1,at()+d)),left=Math.min(slides[i].offsetLeft-slides[0].offsetLeft,car.scrollWidth-car.clientWidth);
+    car.scrollTo({left,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});clearTimeout(tm);tm=setTimeout(()=>{if(Math.abs(car.scrollLeft-left)>2)car.scrollLeft=left;upd()},900)};
+  pv.onclick=()=>go(-1);nx.onclick=()=>go(1);
+  ['pointerdown','touchstart','wheel'].forEach(e=>car.addEventListener(e,()=>clearTimeout(tm),{passive:true}));
+  car.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});addEventListener('resize',()=>requestAnimationFrame(upd));requestAnimationFrame(upd);
+  sec.append(car,nav);if(b.newsNote)sec.append(el('p','note',b.newsNote));return sec}
 function render(b,list){
   const app=document.getElementById('app');app.textContent='';CURB=b;paintBadge();
   const isToday=b.date===todayStr(),sk=streak(),heroSk=sk+(isToday&&!S.days[b.date]?1:0);
