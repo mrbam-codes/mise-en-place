@@ -1,0 +1,428 @@
+{
+ "date": "2026-11-10",
+ "dayLabel": "Tuesday 10 November 2026",
+ "day": 1,
+ "phase": 1,
+ "welcome": "Day 1 again: the vine's year on one wheel, the four licensing objectives in practice, and why hospitality is more than service.",
+ "lessons": [
+  {
+   "n": 1,
+   "area": "drinks",
+   "module": "Wine foundations",
+   "title": "The vine's year, bud break to harvest",
+   "outcome": "You will be able to place every vineyard task and risk (frost, flowering, rot) on the calendar",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 420\" role=\"img\" aria-label=\"Wheel of the vine's year in six stages with Northern and Southern Hemisphere months, main tasks and weather risks\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">The vine's year</text><text x=\"170\" y=\"42\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">N = Northern months, S = Southern months</text><path d=\"M95.0,106.1 A150,150 0 0 1 245.0,106.1 L192.0,197.9 A44,44 0 0 0 148.0,197.9 Z\" fill=\"#eee8db\" stroke=\"#fffdf8\" stroke-width=\"3\"/><path d=\"M245.0,106.1 A150,150 0 0 1 320.0,236.0 L214.0,236.0 A44,44 0 0 0 192.0,197.9 Z\" fill=\"#865d00\" stroke=\"#fffdf8\" stroke-width=\"3\"/><path d=\"M320.0,236.0 A150,150 0 0 1 245.0,365.9 L192.0,274.1 A44,44 0 0 0 214.0,236.0 Z\" fill=\"#eee8db\" stroke=\"#fffdf8\" stroke-width=\"3\"/><path d=\"M245.0,365.9 A150,150 0 0 1 95.0,365.9 L148.0,274.1 A44,44 0 0 0 192.0,274.1 Z\" fill=\"#eee8db\" stroke=\"#fffdf8\" stroke-width=\"3\"/><path d=\"M95.0,365.9 A150,150 0 0 1 20.0,236.0 L126.0,236.0 A44,44 0 0 0 148.0,274.1 Z\" fill=\"#eee8db\" stroke=\"#fffdf8\" stroke-width=\"3\"/><path d=\"M20.0,236.0 A150,150 0 0 1 95.0,106.1 L148.0,197.9 A44,44 0 0 0 126.0,236.0 Z\" fill=\"#eee8db\" stroke=\"#fffdf8\" stroke-width=\"3\"/><text x=\"170.0\" y=\"116.0\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Dormancy</text><text x=\"170.0\" y=\"131.0\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">N Dec–Mar</text><text x=\"170.0\" y=\"145.0\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">S Jul–Sep</text><text x=\"170.0\" y=\"160.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">✓ prune</text><text x=\"256.6\" y=\"166.0\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">Bud break</text><text x=\"256.6\" y=\"181.0\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">N Mar–Apr</text><text x=\"256.6\" y=\"195.0\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">S Sep–Oct</text><text x=\"256.6\" y=\"210.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">▲ frost</text><text x=\"256.6\" y=\"266.0\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Shoots</text><text x=\"256.6\" y=\"281.0\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">N Mar–May</text><text x=\"256.6\" y=\"295.0\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">S Sep–Nov</text><text x=\"256.6\" y=\"310.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">▲ hail</text><text x=\"170.0\" y=\"316.0\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Flowering</text><text x=\"170.0\" y=\"331.0\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">N May–Jun</text><text x=\"170.0\" y=\"345.0\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">S Nov–Dec</text><text x=\"170.0\" y=\"360.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">▲ rain</text><text x=\"83.4\" y=\"266.0\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Ripening</text><text x=\"83.4\" y=\"281.0\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">N Jul–Sep</text><text x=\"83.4\" y=\"295.0\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">S Jan–Mar</text><text x=\"83.4\" y=\"310.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">▲ rot</text><text x=\"83.4\" y=\"166.0\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Harvest</text><text x=\"83.4\" y=\"181.0\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">N Sep–Oct</text><text x=\"83.4\" y=\"195.0\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">S Mar–Apr</text><text x=\"83.4\" y=\"210.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">✓ pick</text><circle cx=\"170\" cy=\"236\" r=\"40\" fill=\"#fffdf8\" stroke=\"#e4cf9c\" stroke-width=\"2\"/><text x=\"170\" y=\"233\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Same vine,</text><text x=\"170\" y=\"247\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">6 months</text><text x=\"170\" y=\"261\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">apart</text><text x=\"170\" y=\"408\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">▲ = weather risk   ✓ = main vineyard task</text></svg>",
+   "alt": "A wheel of six stages: dormancy, bud break, shoots, flowering, ripening and harvest. Each shows Northern and Southern months, with frost marked as the big risk at bud break.",
+   "intro": "A guest asks why a wine is scarce this year, or why a Chilean 2026 is already on the list while the Burgundy 2026 is not. Both answers sit on one wheel. A vine does the same six things every year. The weather it meets at each stage decides how much wine there is, and how good it is. Learn the wheel once and every vintage story on your list makes sense.",
+   "points": [
+    {
+     "h": "Six stages, two calendars",
+     "p": "Cult Wines sets out the Northern year as dormancy December to March, bud break March to April, shoot growth March to May, flowering and fruit set May to June, veraison and ripening July to September, and harvest September to October. The Southern year runs the same wheel six months later: bud break September to October, flowering November to December, harvest March to April. So a Southern wine picked in March has a head start of about half a year on a Northern wine of the same year."
+    },
+    {
+     "h": "Bud break: the frost window",
+     "p": "Bud swell starts when soil reaches about 10°C. Once the buds open they are tender. VitiScribe notes that frost below -2.2°C for more than 30 minutes can kill the primary buds, and a single hard frost at bud break can take 50% to 80% of a crop in one night. That is why growers run wind machines, heaters and overhead sprinklers on spring nights. Cult Wines adds hail: Beaujolais growers lost all their buds in the 2016 hailstorms."
+    },
+    {
+     "h": "Flowering and ripening: rain and rot",
+     "p": "Flowering comes 6 to 9 weeks after bud break. Vines pollinate themselves, so they need calm, dry weather, not bees. Rain and cold here cause coulure, where flowers fail to set, so bunches are thin and the crop is small. Through flowering and fruit growth, disease pressure peaks, and growers spray against powdery mildew and botrytis rot. Veraison, when berries soften and change colour, falls 40 to 60 days before harvest. Most wine grapes need 180 to 230 days from bud break to harvest."
+    },
+    {
+     "h": "Tasks follow the wheel",
+     "p": "Winter is pruning, which sets the year's crop. Spring is frost protection. Early summer is shoot positioning, hedging and leaf work. Some growers thin bunches before veraison to concentrate what is left. Autumn is testing sugar and acid, then picking by hand or machine. After harvest the leaves keep feeding the vine until it stores starch and sleeps again."
+    }
+   ],
+   "atWork": "Pick three wines on your list from different hemispheres. For each, note where in the wheel the vineyard is today. In November, Northern vines are going dormant and Southern vines are near flowering. Use one weather line per wine at pre-shift, for example a spring frost that cut a crop, so the team can answer price questions.",
+   "takeaway": "One wheel, six stages, two calendars six months apart. Frost hits at bud break, rain hits at flowering, rot hits as fruit grows.",
+   "sources": [
+    {
+     "name": "Cult Wines, the lifecycle of a grapevine",
+     "url": "https://www.wineinvestment.com/us/learn/magazine/2020/08/the-lifecycle-of-a-grapevine/"
+    },
+    {
+     "name": "VitiScribe, grape growing season from bud break to harvest",
+     "url": "https://vitiscribe.com/grape-growing-season/"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "area": "opening",
+   "module": "Licensing",
+   "title": "The four licensing objectives",
+   "outcome": "You will be able to apply the four objectives to every licence decision",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 470\" role=\"img\" aria-label=\"Four boxes for the licensing objectives with real venue measures from the section 182 guidance, and a centre circle saying each is of equal importance\"><text x=\"170\" y=\"24\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Four objectives, equal weight</text><text x=\"170\" y=\"44\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Section 182 guidance, paragraph numbers</text><rect x=\"10\" y=\"58\" width=\"156\" height=\"194\" rx=\"10\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/><text x=\"88\" y=\"82\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">Crime<tspan x=\"88\" dy=\"16\">and disorder</tspan></text><text x=\"88\" y=\"118\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Door staff keep out</text><text x=\"88\" y=\"135\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">drunk or armed people</text><text x=\"88\" y=\"152\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">CCTV in and outside</text><text x=\"88\" y=\"169\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Spiking checks</text><text x=\"88\" y=\"240\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">para 2.2 to 2.7</text><rect x=\"174\" y=\"58\" width=\"156\" height=\"194\" rx=\"10\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/><text x=\"252\" y=\"82\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">Public safety</text><text x=\"252\" y=\"118\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Set a maximum</text><text x=\"252\" y=\"135\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">capacity</text><text x=\"252\" y=\"152\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">First aiders, glass</text><text x=\"252\" y=\"169\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">waste, safe exits</text><text x=\"252\" y=\"240\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">para 2.9, 2.17</text><rect x=\"10\" y=\"262\" width=\"156\" height=\"194\" rx=\"10\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/><text x=\"88\" y=\"286\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">Public nuisance</text><text x=\"88\" y=\"322\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Doors and windows</text><text x=\"88\" y=\"339\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">shut during music</text><text x=\"88\" y=\"356\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Acoustic curtains</text><text x=\"88\" y=\"373\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Quiet smoking area</text><text x=\"88\" y=\"444\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">para 2.22, 2.26</text><rect x=\"174\" y=\"262\" width=\"156\" height=\"194\" rx=\"10\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/><text x=\"252\" y=\"286\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">Children<tspan x=\"252\" dy=\"16\">from harm</tspan></text><text x=\"252\" y=\"322\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Never sell alcohol</text><text x=\"252\" y=\"339\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">to under-18s</text><text x=\"252\" y=\"356\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Age checks are</text><text x=\"252\" y=\"373\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">mandatory</text><text x=\"252\" y=\"444\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">para 2.28, 2.32</text><circle cx=\"170\" cy=\"258\" r=\"34\" fill=\"#258fec\" stroke=\"#fffdf8\" stroke-width=\"4\"/><text x=\"170\" y=\"254\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Equal</text><text x=\"170\" y=\"269\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">para 1.4</text></svg>",
+   "alt": "Four boxes: crime and disorder, public safety, public nuisance and children from harm, each with real measures and paragraph numbers from the section 182 guidance. A centre circle says each is equal.",
+   "intro": "Every licence condition you work under, from door staff to the time the terrace shuts, traces back to one of four objectives in the Licensing Act 2003. When a neighbour complains or the police ask for a meeting, the conversation is really about one of these four. Know which one is in play and you can answer with the right fix, not a defensive one.",
+   "points": [
+    {
+     "h": "The four, and why they are equal",
+     "p": "The Home Office guidance under section 182, updated on GOV.UK on 3 November 2026, lists them at paragraph 1.3: the prevention of crime and disorder, public safety, the prevention of public nuisance, and the protection of children from harm. Paragraph 1.4 says each objective is of equal importance. A great record on noise does not excuse a weak age check. Councils must have regard to this guidance when they decide applications and reviews."
+    },
+    {
+     "h": "Crime and safety in practice",
+     "p": "Paragraph 2.2 says door supervision may be right to keep out people who are drunk, dealing drugs or armed. Paragraph 2.3 says CCTV inside and just outside can deter disorder where there is good reason to expect it. Paragraph 2.7 covers spiking. For public safety, paragraph 2.9 lists fire safety, first aiders and kits, glass waste, safe departure and capacity limits, and 2.17 says capacity can be capped. Paragraph 2.8 adds that conditions should not be imposed on hygiene, which has its own law."
+    },
+    {
+     "h": "Nuisance and children in practice",
+     "p": "Nuisance covers noise, light, smells and litter (paragraph 2.20). Paragraph 2.22 suggests doors and windows shut, limits on garden use and acoustic curtains, but warns against measures that stop valuable events such as live music. Paragraph 2.26 suggests signs asking guests to be quiet and a set smoking area. For children, paragraph 2.28 says selling alcohol to under-18s is completely unacceptable, and 2.32 notes age verification is a mandatory condition, alongside options like hour limits and accompanied-only entry."
+    },
+    {
+     "h": "Who can object",
+     "p": "Responsible authorities, such as the police and the body for child protection, can make representations that shape whether a licence is granted (paragraph 1.16). From the 2026 London changes, the Greater London Authority is also a responsible authority (paragraphs 1.21 and 1.22). An opening plan that answers all four objectives up front gives them less to object to."
+    }
+   ],
+   "atWork": "Take your premises licence conditions and tag each one with its objective. Any objective with no condition or habit behind it is your gap. Brief the team on one real example per objective, using the paragraph numbers, so they know why the rule exists.",
+   "takeaway": "Crime, safety, nuisance, children: four equal objectives. Every condition answers one of them, and every complaint tests one of them.",
+   "sources": [
+    {
+     "name": "GOV.UK, revised guidance under section 182 of the Licensing Act 2003",
+     "url": "https://www.gov.uk/government/publications/explanatory-memorandum-revised-guidance-issued-under-s-182-of-licensing-act-2003/revised-guidance-issued-under-section-182-of-the-licensing-act-2003-september-2026-accessible-version"
+    }
+   ],
+   "checked": "Four objectives (para 1.3), equal importance (para 1.4), measures in paras 2.2 to 2.32 and the GLA role (paras 1.21 and 1.22) checked in the section 182 guidance on GOV.UK, updated 3 Nov 2026, on 10 November 2026."
+  },
+  {
+   "n": 3,
+   "area": "guests",
+   "module": "Hospitality and the guest experience",
+   "title": "Hospitality versus service",
+   "outcome": "You will be able to explain the difference and coach your team towards hospitality",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 430\" role=\"img\" aria-label=\"Two columns at one table: service gets the right plate to the right seat on time; hospitality notices the guests and changes the meal for them\"><text x=\"170\" y=\"24\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Same table, two jobs</text><rect x=\"10\" y=\"40\" width=\"152\" height=\"40\" rx=\"8\" fill=\"#fffdf8\" stroke=\"#857353\" stroke-width=\"1.5\"/><text x=\"86\" y=\"65\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Service</text><rect x=\"178\" y=\"40\" width=\"152\" height=\"40\" rx=\"8\" fill=\"#7647cd\"/><text x=\"254\" y=\"65\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">Hospitality</text><text x=\"86\" y=\"104\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">What we deliver</text><text x=\"254\" y=\"104\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">How they feel</text><text x=\"86\" y=\"120\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">a monologue</text><text x=\"254\" y=\"120\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">a dialogue</text><circle cx=\"86\" cy=\"190\" r=\"42\" fill=\"#fffdf8\" stroke=\"#857353\" stroke-width=\"2\"/><circle cx=\"62\" cy=\"180\" r=\"11\" fill=\"#ffffff\" stroke=\"#857353\" stroke-width=\"1.5\"/><circle cx=\"110\" cy=\"180\" r=\"11\" fill=\"#ffffff\" stroke=\"#857353\" stroke-width=\"1.5\"/><circle cx=\"86\" cy=\"210\" r=\"11\" fill=\"#ffffff\" stroke=\"#857353\" stroke-width=\"1.5\"/><circle cx=\"30\" cy=\"190\" r=\"9\" fill=\"#fffdf8\" stroke=\"#857353\" stroke-width=\"1.5\"/><circle cx=\"142\" cy=\"190\" r=\"9\" fill=\"#fffdf8\" stroke=\"#857353\" stroke-width=\"1.5\"/><circle cx=\"86\" cy=\"134\" r=\"9\" fill=\"#fffdf8\" stroke=\"#857353\" stroke-width=\"1.5\"/><circle cx=\"254\" cy=\"190\" r=\"42\" fill=\"#ece5f8\" stroke=\"#7647cd\" stroke-width=\"2\"/><circle cx=\"230\" cy=\"180\" r=\"11\" fill=\"#ffffff\" stroke=\"#7647cd\" stroke-width=\"1.5\"/><circle cx=\"278\" cy=\"180\" r=\"11\" fill=\"#ffffff\" stroke=\"#7647cd\" stroke-width=\"1.5\"/><circle cx=\"254\" cy=\"210\" r=\"11\" fill=\"#ffffff\" stroke=\"#7647cd\" stroke-width=\"1.5\"/><circle cx=\"198\" cy=\"190\" r=\"9\" fill=\"#ece5f8\" stroke=\"#7647cd\" stroke-width=\"1.5\"/><circle cx=\"310\" cy=\"190\" r=\"9\" fill=\"#ece5f8\" stroke=\"#7647cd\" stroke-width=\"1.5\"/><circle cx=\"254\" cy=\"134\" r=\"9\" fill=\"#ece5f8\" stroke=\"#7647cd\" stroke-width=\"1.5\"/><line x1=\"170\" y1=\"40\" x2=\"170\" y2=\"420\" stroke=\"#e4cf9c\" stroke-width=\"2\"/><text x=\"86\" y=\"270\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">✓ Right plate</text><text x=\"86\" y=\"290\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">✓ Right seat</text><text x=\"86\" y=\"310\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">✓ On time</text><text x=\"86\" y=\"330\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">✓ Wine topped up</text><text x=\"254\" y=\"270\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Hears: first night</text><text x=\"254\" y=\"288\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">out since the baby</text><text x=\"254\" y=\"306\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Tells the kitchen</text><text x=\"254\" y=\"324\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Paces it slower,</text><text x=\"254\" y=\"342\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">no rush at the end</text><text x=\"86\" y=\"370\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Done to the guest</text><text x=\"254\" y=\"370\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">On the guest's side</text><rect x=\"10\" y=\"388\" width=\"320\" height=\"32\" rx=\"8\" fill=\"#ece5f8\"/><text x=\"170\" y=\"409\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">You need both. Only one is remembered.</text></svg>",
+   "alt": "Two columns at one table. Service: right plate, right seat, on time, wine topped up. Hospitality: the server hears it is a first night out, tells the kitchen and slows the pace.",
+   "intro": "You have seen a table where nothing went wrong and the guests still left flat. You have also seen a table where the soup was late and the guests booked again on the way out. The difference is not skill with plates. Danny Meyer, founder of Union Square Cafe, gave the trade a clean way to say it: service and hospitality are two different jobs.",
+   "points": [
+    {
+     "h": "Service is what you deliver",
+     "p": "Meyer calls service the way you technically deliver the product. The right dish to the right seat, on time, glasses topped up, bill correct. It can be trained, timed and audited. It is also a monologue: it runs the same whatever the guest says. Get it wrong and guests notice. Get it right and they mostly do not."
+    },
+    {
+     "h": "Hospitality is how they feel",
+     "p": "Hospitality, in Meyer's words, is the way you make people feel, the sense that you were on their side. It is a dialogue: the team listens, then changes something because of what it heard. In the drawing, the server hears it is the couple's first night out since the baby, tells the kitchen, and slows the pace so nobody rushes them. Nothing on the menu changed. The night did."
+    },
+    {
+     "h": "The evidence is in the scores",
+     "p": "Meyer tells how one Zagat year ranked Union Square Cafe third overall, while its food ranked 12th, service 10th and decor 65th. Something the survey did not measure was lifting the whole. He calls the people who supply it high in hospitality quotient, or HQ, and says they tend to share six emotional skills. That is why he hires for it and trains the technical side."
+    },
+    {
+     "h": "Coaching towards it",
+     "p": "Meyer's culture rule is simple: what you celebrate, minus what you tolerate. So praise the moment a server noticed something and acted, by name, at pre-shift. Do not let a perfect but silent table pass as the standard. Service is the floor you never drop below. Hospitality is what you build on it."
+    }
+   ],
+   "atWork": "At the next pre-shift, ask each server for one thing they heard from a table yesterday and what they did with it. Praise the best one out loud. If nobody has an answer, that is your coaching target for the week.",
+   "takeaway": "Service is a monologue about the plate. Hospitality is a dialogue about the person. Train the first, celebrate the second.",
+   "sources": [
+    {
+     "name": "Eat Sleep Work Repeat, Danny Meyer on what hospitality teaches us about culture",
+     "url": "https://eatsleepworkrepeat.com/what-hospitality-teaches-us-about-culture/"
+    }
+   ]
+  }
+ ],
+ "news": [
+  {
+   "area": "industry",
+   "headline": "Pubs lift October spend while restaurants barely move",
+   "gist": "Barclays data shows hospitality and leisure card spend up 3.5% in October, the second-best month of 2026. Bars and pubs grew 4.7%; restaurants grew only 0.5%.",
+   "big": {
+    "value": "+3.5%",
+    "label": "hospitality spend, October"
+   },
+   "read": {
+    "what": "Barclays card data for October shows hospitality and leisure spend up 3.5% and transactions up 2.2% on last year, the strongest growth of 2026 after February. Bars, pubs and clubs rose 4.7% in spend and 5.7% in transactions. Takeaways and fast food rose 3.4%. Restaurants, cafés and bakeries rose just 0.5%, with transactions down 1.6%.",
+    "how": "Barclays' head of spend insights said people are being careful with their money. Entertainment, such as gigs and pub nights, had its strongest growth in two years, while restaurant visits fell.",
+    "soWhat": "Guests are still going out, but to pubs, bars and cheaper bites. A restaurant that only offers a full sit-down meal is competing for the smallest-growing slice of the spend.",
+    "take": "Look at your covers against your bar trade for October. If the bar grew and the dining room did not, test a shorter bar menu that turns a drink into a meal."
+   },
+   "source": {
+    "name": "The Caterer",
+    "date": "10 Nov 2026",
+    "url": "https://www.thecaterer.com/news/october-hospitality-spend-delivers-second-highest-growth-of-2026"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1726137569962-456daf4ec02f?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/a-person-holding-a-credit-card-at-a-table-eN_DifpOb4Q",
+    "credit": "SumUp, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "A guest holding a bank card to pay at a table"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 230\" role=\"img\" aria-label=\"Bar chart of October card spend growth: bars, pubs and clubs up 4.7%, takeaways 3.4%, all eating and drinking 2.3%, restaurants and cafés 0.5%\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">October card spend, year on year</text><text x=\"10\" y=\"56\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Bars, pubs, clubs</text><rect x=\"10\" y=\"62\" width=\"170.0\" height=\"16\" rx=\"4\" fill=\"#258fec\" stroke=\"#1b68ad\" stroke-width=\"1\"/><text x=\"188.0\" y=\"75\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">▲ 4.7%</text><text x=\"10\" y=\"100\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Takeaways</text><rect x=\"10\" y=\"106\" width=\"123.0\" height=\"16\" rx=\"4\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1\"/><text x=\"141.0\" y=\"119\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">▲ 3.4%</text><text x=\"10\" y=\"144\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">All eating out</text><rect x=\"10\" y=\"150\" width=\"83.2\" height=\"16\" rx=\"4\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1\"/><text x=\"101.2\" y=\"163\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">▲ 2.3%</text><text x=\"10\" y=\"188\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Restaurants, cafés</text><rect x=\"10\" y=\"194\" width=\"18.1\" height=\"16\" rx=\"4\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1\"/><text x=\"36.1\" y=\"207\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">▲ 0.5%</text></svg>",
+   "drawingAlt": "Bar chart of October card spend growth: bars, pubs and clubs 4.7%, takeaways 3.4%, all eating and drinking 2.3%, restaurants and cafés 0.5%."
+  },
+  {
+   "area": "industry",
+   "headline": "London's Mayor can now call in big licensing decisions",
+   "gist": "From 3 November the Mayor of London can call in licensing applications of strategic importance and decide them, a first for a UK mayor. The four objectives still apply.",
+   "big": {
+    "value": "3 Nov",
+    "label": "Mayor's call-in powers began"
+   },
+   "read": {
+    "what": "City Hall said the Mayor can now call in licensing applications of strategic importance to London after the local decision, and approve them. Examples given are large venues, live music, later hours and major events. Councils must consult the Mayor when revising their licensing policies, and City Hall receives all applications and can make representations.",
+    "how": "The Mayor must publish a London-wide Strategic Licensing Policy, consulted on earlier in 2026 and due later this year. City Hall says the four licensing objectives, residents' input and rights of appeal stay. It puts London nightlife at more than £21bn a year.",
+    "soWhat": "A London licence now has a second decision-maker for large or late venues. A site plan built on the four objectives, as in today's lesson, is what both the council and City Hall will test.",
+    "take": "If you plan a late or large London venue, read the Strategic Licensing Policy when it is published and match your operating schedule to it."
+   },
+   "source": {
+    "name": "Mayor of London, London Assembly",
+    "date": "3 Nov 2026",
+    "url": "https://www.london.gov.uk/mayor-hails-new-era-londons-nightlife-historic-licensing-powers-help-support-businesses-jobs-and"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 274\" role=\"img\" aria-label=\"Flow: the council licensing committee decides, the Mayor of London can call in applications of strategic importance, and the four objectives and appeal rights still apply\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Who decides a big licence</text><rect x=\"40\" y=\"40\" width=\"260\" height=\"50\" rx=\"10\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/><text x=\"170\" y=\"61\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Council licensing</text><text x=\"170\" y=\"78\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">committee decides</text><polygon points=\"162,94 178,94 170,106\" fill=\"#1b68ad\"/><rect x=\"40\" y=\"110\" width=\"260\" height=\"50\" rx=\"10\" fill=\"#258fec\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/><text x=\"170\" y=\"131\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Mayor can call it in</text><text x=\"170\" y=\"148\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">if of strategic importance</text><polygon points=\"162,164 178,164 170,176\" fill=\"#1b68ad\"/><rect x=\"40\" y=\"180\" width=\"260\" height=\"50\" rx=\"10\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/><text x=\"170\" y=\"201\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Four objectives and</text><text x=\"170\" y=\"218\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">rights of appeal still apply</text><text x=\"170\" y=\"262\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">In force from 3 Nov 2026</text></svg>",
+   "drawingAlt": "Flow: the council licensing committee decides, the Mayor can call in applications of strategic importance, and the four objectives and appeal rights still apply."
+  },
+  {
+   "area": "trends",
+   "headline": "Food prices to caterers climb again before Christmas",
+   "gist": "The NIQ and Prestige Purchasing index shows foodservice prices up 0.9% in September alone, after a calm summer. Potatoes, onions and fish are under pressure.",
+   "big": {
+    "value": "+0.9%",
+    "label": "foodservice prices in a month"
+   },
+   "read": {
+    "what": "Foodservice prices rose 0.9% month on month in September, after staying fairly stable over the summer. Oils, bakery and sugar rose. Fresh produce came under pressure as buyers relied more on imports after a weak harvest hit potatoes and onions. Fish stayed high because of quota cuts. Poultry and pork eased slightly.",
+    "how": "Prestige Purchasing's chief executive said inflationary momentum is steadily building into winter. NIQ said the industry's resilience is under renewed pressure.",
+    "soWhat": "Festive menus are being costed now. A dish built on fish and root vegetables in September may already be off its target margin by December.",
+    "take": "Re-cost your three biggest-selling dishes with this week's supplier prices before the festive menu is printed."
+   },
+   "source": {
+    "name": "Morning Advertiser",
+    "date": "3 Nov 2026",
+    "url": "https://www.morningadvertiser.co.uk/Article/2026/11/03/foodservice-inflation-rises-09-ahead-of-christmas/"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1573638733072-3fb6bf850eb1?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/crate-of-onions-9OPxXGEeLTM",
+    "credit": "Annie Spratt, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "A wooden crate full of onions"
+   }
+  },
+  {
+   "area": "trends",
+   "headline": "Ketchup sachets could be next on the single-use list",
+   "gist": "The government plans to consult on banning single-serve condiment sachets, as the EU has done from 2030. About 855 billion sachets are used worldwide each year.",
+   "big": {
+    "value": "855bn",
+    "label": "sachets used a year worldwide"
+   },
+   "read": {
+    "what": "Defra minister Emma Hardy confirmed in a written parliamentary answer that a consultation on UK alignment with the EU's sachet ban is being planned. The EU ban covers single-serve ketchup, mayonnaise, sugar, salt, oil and vinegar, and takes effect in 2030. It already applies in Northern Ireland under the Windsor Framework.",
+    "how": "",
+    "soWhat": "No date is set for the consultation, so nothing changes yet. But a new site fitted out now will run past 2030, and pots, pumps and table bottles need storage, washing and allergen labelling.",
+    "take": "When you plan your own place, cost table condiments as refillable from day one, so a future ban is not a refit."
+   },
+   "source": {
+    "name": "The Caterer",
+    "date": "4 Nov 2026",
+    "url": "https://www.thecaterer.com/news/government-to-consult-on-condiment-sachet-ban"
+   }
+  },
+  {
+   "area": "finedining",
+   "headline": "Mat Sherry returns to Northcote as head chef",
+   "gist": "Mat Sherry is back at Northcote in the Ribble Valley, which holds a Michelin star for the 30th year in a row, after leading Number One at the Balmoral.",
+   "big": {
+    "value": "30 yrs",
+    "label": "years starred at Northcote"
+   },
+   "read": {
+    "what": "Mat Sherry has returned to Northcote as head chef, working with chef patron Lisa Goodwin-Allen. At Number One at the Balmoral he led a kitchen that earned four AA Rosettes. Northcote also promoted Courtney Maksymow to hotel manager, is adding four guest rooms after refurbishing six, and has resubmitted plans for a fine dining restaurant in its gardens.",
+    "how": "Managing director Craig Bancroft marked Goodwin-Allen's 25 years at Northcote as a remarkable milestone.",
+    "soWhat": "Long-starred kitchens keep their standard by bringing back people who already know the house. Rehiring a trusted alumnus can be quicker and safer than a search.",
+    "take": "Keep a short list of people who left your team on good terms. When a senior role opens, call them first."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "6 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/06/mat-sherry-returns-to-northcote-as-head-chef/"
+   }
+  },
+  {
+   "area": "openings",
+   "headline": "Florence Knight's Lunette opens on the 11th floor of the St Clement",
+   "gist": "Lunette, the rooftop restaurant from the chef behind Polpetto and Sessions Arts Club, opened on 3 November at the top of the St Clement hotel in Temple.",
+   "big": {
+    "value": "Level 11",
+    "label": "180 The Thames, Temple"
+   },
+   "read": {
+    "what": "Hot Dinners lists Lunette as opened on 3 November 2026 at Level 11, 180 The Thames, Temple, WC2R 3DA. Florence Knight, known for Polpetto and Sessions Arts Club, runs the rooftop restaurant with tasting menus in her own style.",
+    "how": "",
+    "soWhat": "Hotel rooftops keep drawing chef-led restaurants with a strong personal voice. For an operator, that pairing gives the hotel a destination and the chef a ready stream of guests.",
+    "take": "Watch how Lunette handles hotel guests and outside diners in one room. It is a useful model if your own plans include a partner landlord."
+   },
+   "source": {
+    "name": "Hot Dinners",
+    "date": "8 Nov 2026",
+    "url": "https://www.hot-dinners.com/Features/Articles/new-and-recently-opened-london-restaurants"
+   }
+  },
+  {
+   "area": "openings",
+   "headline": "Bar Douro goes back to Soho for its third site",
+   "gist": "The Portuguese group opened its third London restaurant at 10 Greek Street, Soho, on 4 November, built around beef imported specially for it.",
+   "big": {
+    "value": "4 Nov",
+    "label": "Bar Douro Soho opened"
+   },
+   "read": {
+    "what": "Hot Dinners lists Bar Douro as opened on 4 November 2026 at 10 Greek Street, Soho, W1D 4DH. It is the third restaurant from the group and specialises in Portuguese beef imported specially for the restaurant.",
+    "how": "",
+    "soWhat": "A third site built on one hard-to-get product shows how a group keeps a new opening distinct from its first two.",
+    "take": "For your own concept, ask what one product only you will serve. It gives the press, the team and guests one thing to repeat."
+   },
+   "source": {
+    "name": "Hot Dinners",
+    "date": "8 Nov 2026",
+    "url": "https://www.hot-dinners.com/Features/Articles/new-and-recently-opened-london-restaurants"
+   }
+  }
+ ],
+ "newsNote": "Fine dining was thin this week, so it has one story.",
+ "try": {
+  "title": "Collect one guest moment per server",
+  "steps": [
+   "At pre-shift, ask each server to bring back one thing they hear from a table tonight.",
+   "Ask them to tell you what they did with it, even if it was small.",
+   "At close, pick the best moment and name it at tomorrow's pre-shift."
+  ],
+  "why": "Service is the floor you never drop below. Hospitality is a dialogue, and what you celebrate is what your team repeats. One named moment a day turns a habit into culture."
+ },
+ "quiz": [
+  {
+   "q": "A Chilean and a French wine are both from the 2026 harvest. Which was picked first?",
+   "options": [
+    "The French, in September to October 2026",
+    "The Chilean, in March to April 2026",
+    "Both at the same time",
+    "The Chilean, in late 2026"
+   ],
+   "answer": 1,
+   "why": "The Southern Hemisphere harvest runs March to April, about six months before the Northern harvest in September to October.",
+   "from": 1
+  },
+  {
+   "q": "A grower reports a cold, wet spell in June in Burgundy. What is the likely result?",
+   "options": [
+    "Frost damage to the buds",
+    "Coulure: flowers fail to set and bunches are thin",
+    "Early veraison",
+    "Higher sugar at harvest"
+   ],
+   "answer": 1,
+   "why": "Northern flowering is May to June. Rain and cold at flowering cause coulure, which cuts the crop.",
+   "from": 1
+  },
+  {
+   "q": "Your terrace keeps neighbours awake. Which objective is in play, and what does the guidance suggest?",
+   "options": [
+    "Public safety: lower the capacity",
+    "Crime and disorder: add CCTV",
+    "Public nuisance: limit garden use, signs asking guests to be quiet",
+    "Children: add age checks"
+   ],
+   "answer": 2,
+   "why": "Noise is public nuisance. Paragraphs 2.22 and 2.26 suggest limiting garden use, set smoking areas and signs asking guests to be quiet.",
+   "from": 2
+  },
+  {
+   "q": "A server delivers every plate perfectly but never speaks beyond the script. In Meyer's terms, what is missing?",
+   "options": [
+    "Service",
+    "Technical delivery",
+    "Hospitality: the dialogue with the guest",
+    "Timing"
+   ],
+   "answer": 2,
+   "why": "Service is the technical delivery, a monologue. Hospitality is a dialogue about how the guest feels, and that is what is missing.",
+   "from": 3
+  },
+  {
+   "q": "In Barclays' October data, which part of eating and drinking grew least?",
+   "options": [
+    "Restaurants, cafés and bakeries",
+    "Bars, pubs and clubs",
+    "Takeaways and fast food",
+    "Hospitality and leisure overall"
+   ],
+   "answer": 0,
+   "why": "Restaurants, cafés and bakeries rose just 0.5% in spend, against 4.7% for bars, pubs and clubs.",
+   "from": "news"
+  }
+ ],
+ "terms": [
+  {
+   "term": "Dormancy",
+   "def": "The winter rest when the vine has no leaves and stores starch. December to March in the North, July to September in the South. Pruning happens now.",
+   "lesson": 1
+  },
+  {
+   "term": "Coulure",
+   "def": "When flowers fail to turn into berries after cold or rain at flowering, leaving thin bunches and a smaller crop.",
+   "lesson": 1
+  },
+  {
+   "term": "Botrytis",
+   "def": "A fungus that rots grapes in damp weather. Growers spray against it through flowering and fruit growth.",
+   "lesson": 1
+  },
+  {
+   "term": "Responsible authority",
+   "def": "A public body, such as the police or the child protection body, that can make representations on a licence. In London this now includes the Greater London Authority.",
+   "lesson": 2
+  },
+  {
+   "term": "Mandatory condition",
+   "def": "A condition every alcohol licence carries by law, whatever the council adds. Age verification is one.",
+   "lesson": 2
+  },
+  {
+   "term": "Service",
+   "def": "The technical delivery of the meal: right plate, right seat, on time. In Danny Meyer's words, a monologue.",
+   "lesson": 3
+  },
+  {
+   "term": "Hospitality quotient",
+   "def": "Danny Meyer's name for how naturally someone makes others feel looked after. He hires for it and trains the technical skills.",
+   "lesson": 3
+  }
+ ],
+ "toolkit": [
+  {
+   "name": "Vintage wheel check for any wine",
+   "kind": "framework",
+   "items": [
+    "Find the hemisphere: North harvests September to October, South March to April.",
+    "Ask what the weather did at bud break: was there frost?",
+    "Ask what it did at flowering: was it cold or wet?",
+    "Ask what it did as fruit grew: was there rot or hail?",
+    "Turn the answer into one line for the team."
+   ],
+   "lesson": 1
+  },
+  {
+   "name": "Licence condition audit",
+   "kind": "template",
+   "items": [
+    "List every condition on the premises licence.",
+    "Tag each one: crime, safety, nuisance or children.",
+    "Note the habit or check that delivers it each shift.",
+    "Mark any objective with no condition or habit behind it.",
+    "Give each gap an owner and a date."
+   ],
+   "lesson": 2
+  },
+  {
+   "name": "Monologue to dialogue",
+   "kind": "script",
+   "items": [
+    "Swap 'Is everything OK?' for one specific question about their night.",
+    "Listen for one fact: an occasion, a time limit, a preference.",
+    "Tell the kitchen or bar what you heard.",
+    "Change one thing because of it, and say nothing about it."
+   ],
+   "lesson": 3
+  }
+ ]
+}
