@@ -234,12 +234,9 @@ async function openProgress(){
   try{const c=await fetch('course.json',{cache:'force-cache'}).then(r=>r.json());const seen=new Set(days.map(courseDay));
     c.lessons.forEach(l=>{const i=el('i',seen.has(l.day)||(S.learned&&S.learned[l.n])?'d':'');i.style.background=AREA[l.area][1];i.title='Day '+l.day+': '+l.title;gr.append(i)})}catch(e){gr.append(el('p','meta','The map could not load.'))}
   bd.append(el('h3',null,'Badges'));const bg=el('div','badges');BADGES.forEach(([id,n,d])=>{const c=el('div','bd'+(S.badges[id]?'':' lock'));c.append(el('b',null,n),S.badges[id]?'Earned '+S.badges[id]:d);bg.append(c)});bd.append(bg);
-  bd.append(el('h3',null,'Back up your progress'),el('p','meta','Your streak and answers live only on this phone. Copy a backup code to keep them safe or move them to a new phone.'));
-  const ex=el('button','btn','Copy backup code'),ta=el('textarea');ta.placeholder='Paste a backup code here to restore';ta.setAttribute('aria-label','Backup code');
-  ex.onclick=()=>{const code=btoa(unescape(encodeURIComponent(JSON.stringify(S))));const show=()=>{ta.value=code;ta.select();ex.textContent='Code shown below: copy it'};try{navigator.clipboard.writeText(code).then(()=>ex.textContent='Copied',show)}catch(e){show()}};
-  const im=el('button','btn alt','Restore from code');
-  im.onclick=()=>{try{const o=JSON.parse(decodeURIComponent(escape(atob(ta.value.trim()))));if(!o.days)throw 0;if(!confirm('Replace the progress on this phone with the backup?'))return;S=Object.assign(fresh(),o);save();location.reload()}catch(e){im.textContent='That code did not work'}};
-  bd.append(ex,ta,im)}
+  if(window.Keep)Keep.mount(bd,{app:'MEP',get:()=>S,valid:o=>!!(o&&o.days&&typeof o.days==='object'&&!o.tags),
+    describe:o=>{const n=Object.keys(o.days||{}).filter(k=>DAYRE.test(k)).length;return (o.points||0)+' points, '+n+(n===1?' day':' days')},
+    apply:o=>{S=Object.assign(fresh(),o);save();location.reload()}})}
 
 /* ---------- the page ---------- */
 function rule(t,id){const r=el('div','rule',t);if(id)r.id=id;return r}
@@ -382,6 +379,7 @@ function render(b,list){
   app.append(newsSection(b));
   const wd=el('section','words');wd.id='words';wd.append(rule('Today’s words'));const dl=el('dl');(b.terms||[]).forEach(x=>dl.append(el('dt',null,x.term),el('dd',null,x.def)));wd.append(dl);
   if((b.toolkit||[]).length){wd.append(rule('Added to your toolkit'));b.toolkit.forEach(x=>wd.append(toolCard(x)))}app.append(wd);
+  if(window.Evidence)Evidence.mount(app,b,{cls:'evidence'});
   const more=el('div','chips');more.style.marginTop='34px';[['Glossary',()=>openGlossary(list)],['Toolkit',()=>openToolkit(list)],['Progress',openProgress],['Past days',()=>openArchive(list)]].forEach(([t,f])=>{const x=el('button',null,t);x.onclick=f;more.append(x)});app.append(more);
   app.append(el('footer',null,'Mise en Place · a daily course for running and opening a restaurant. Your streak and answers are saved only on this phone. News links go to the original reporting; lessons are a study guide, so check the official source before acting on anything legal.'));
   if(location.hash){const tgt=document.getElementById(location.hash.slice(1));tgt&&tgt.scrollIntoView()}
@@ -394,6 +392,6 @@ async function boot(){
     const date=list.includes(want)?want:(list.find(d=>d<=t)||list[list.length-1]);
     const b=await fetch('briefs/'+date+'.json',{cache:'no-cache'}).then(r=>r.json());
     render(b,list.filter(d=>d<=t||d===date))}
-  catch(e){app.textContent='';app.append(el('p','err','Today’s edition could not load. Pull down to refresh, or try again in a minute.'))}}
+  catch(e){app.textContent='';app.append(el('p','err',(navigator.onLine===false||/fetch|network|load failed/i.test(String(e&&e.message)))?'No connection. Today’s edition needs signal: try again when you have it.':'Today’s edition could not load. Pull down to refresh, or try again in a minute.'))}}
 boot();
 })();

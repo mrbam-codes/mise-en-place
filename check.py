@@ -321,6 +321,72 @@ def news_v2(w, s):
         text(f"{w} drawingAlt", s.get("drawingAlt"), 200)
 
 
+# ---------- trust rules (plan 2): editions dated 11 Nov 2026 or later ----------
+# Older editions are already published and are never re-judged by these rules.
+TRUST_FROM = "2026-11-11"
+FRESH_DAYS = 7   # a news item's source must be at most 7 days older than the edition
+REGISTER = json.loads((ROOT / "sources.json").read_text(encoding="utf-8"))["tiers"]
+MONTHS = {m: i + 1 for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"])}
+
+
+def tier(u):
+    """original, secondary, lead or unlisted. A domain matches itself and its sub-domains; the longest match wins."""
+    h = host(u)
+    h = h[4:] if h.startswith("www.") else h
+    best, size = "unlisted", -1
+    for t in ("original", "secondary", "lead"):
+        for d in REGISTER.get(t, []):
+            if (h == d or h.endswith("." + d)) and len(d) > size:
+                best, size = t, len(d)
+    return best if h else "unlisted"
+
+
+def trusted(where, urls, date):
+    """Refuse an item whose only sources are lead only in sources.json."""
+    urls = [u for u in urls if u]
+    if date >= TRUST_FROM and urls and all(tier(u) == "lead" for u in urls):
+        need(False, f"{where}: its only source is lead only in sources.json (a social post, review site, press release or aggregator). "
+                    "Find the original report and cite that, or leave it out")
+
+
+def fresh(where, value, day):
+    """A news source date (like 10 Nov 2026) must be within FRESH_DAYS of the edition."""
+    if day.isoformat() < TRUST_FROM:
+        return
+    m = re.fullmatch(r"\s*(\d{1,2}) ([A-Za-z]{3})[a-z]*\.?(?: (\d{4}))?\s*", str(value or ""))
+    if not m or m.group(2).lower() not in MONTHS:
+        need(False, f"{where}: source date must look like 10 Nov 2026")
+        return
+    try:
+        y = int(m.group(3) or day.year)
+        d = datetime.date(y, MONTHS[m.group(2).lower()], int(m.group(1)))
+        if not m.group(3) and d > day + datetime.timedelta(days=1):
+            d = d.replace(year=y - 1)
+    except ValueError:
+        need(False, f"{where}: source date is not a real date")
+        return
+    need(-1 <= (day - d).days <= FRESH_DAYS, f"{where}: source is dated {value}, more than {FRESH_DAYS} days before this edition. Leave old news out")
+
+
+def evidence(b):
+    """Optional for now: how the morning run searched. Required once the routine prompt asks for it."""
+    ev = b.get("evidence")
+    if ev is None:
+        return
+    need(isinstance(ev, dict), "evidence: must be an object with searches, kept and rejected")
+    if not isinstance(ev, dict):
+        return
+    for k in ("searches", "kept"):
+        need(isinstance(ev.get(k), int) and 0 <= ev[k] <= 300, f"evidence {k}: a whole number from 0 to 300")
+    rj = ev.get("rejected", [])
+    need(isinstance(rj, list) and len(rj) <= 8, "evidence rejected: a list of 8 at most")
+    for i, r in enumerate(rj if isinstance(rj, list) else []):
+        text(f"evidence rejected {i + 1} what", (r or {}).get("what"), 90)
+        text(f"evidence rejected {i + 1} why", (r or {}).get("why"), 120)
+    if "note" in ev:
+        text("evidence note", ev.get("note"), 200)
+
+
 def today_uk():
     try:
         from zoneinfo import ZoneInfo
@@ -384,6 +450,7 @@ def check(date):
         for j, s in enumerate(src):
             text(f"{w} source {j + 1} name", s.get("name"), 90)
             url(f"{w} source {j + 1}", s.get("url"))
+        trusted(w, [s.get("url") for s in src], date)
         if c.get("source") and OFFICIAL_TEXT.search(c["source"]):
             need(any(official(s.get("url")) for s in src),
                  f"{w}: course names an official source ({c['source']}), so cite its current page (gov.uk, legislation.gov.uk, food.gov.uk, hse.gov.uk, acas.org.uk, ico.org.uk or asa.org.uk)")
@@ -411,11 +478,14 @@ def check(date):
         text(f"{w} source name", src.get("name"), 60)
         text(f"{w} source date", src.get("date"), 12)
         url(f"{w} source", src.get("url"))
+        fresh(w, src.get("date"), day)
+        trusted(w, [src.get("url")], date)
         heads.append(str(s.get("headline", "")).strip().lower())
     need(len(heads) == len(set(heads)), "news: two items have the same headline")
     for a in NEWS_AREAS:
         need(sum(s.get("area") == a for s in news) <= 3, f"news: 3 items at most in {a}")
     text("newsNote", b.get("newsNote", ""), 200, empty_ok=True)
+    evidence(b)
 
     t = b.get("try") or {}
     text("try title", t.get("title"), 80)
