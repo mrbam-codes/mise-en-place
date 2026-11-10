@@ -82,7 +82,7 @@ function kimchiReward(bd,b){
   /* found them both: Charlee joins Kimchi, in a small window in the corner of his scene */
   if(both)try{const pal=el('div','kpal');stage.append(pal);K().cameo(pal,K().pal(K().forDay(b.day))||palArt(b),Math.max(84,Math.round((stage.clientWidth||340)*.27)),true)}catch(e){}}
 
-/* ---------- score badge (top right), My scores, and the Kimchi postcard to share ---------- */
+/* ---------- score badge (top right), My scores, and the postcard to share (Kimchi and Charlee take turns) ---------- */
 let CURB=null;
 function myStats(){const t=todayStr(),R=rescoreAll()||{day:{},perfects:0,right:0,asked:0},L=level(S.points),pv=window.ScoreCore?ScoreCore.preview(S.days,t,MODE):{mult:1,dropped:0};
   return{t,R,L,pv,run:window.ScoreCore?ScoreCore.run(S.days,t,MODE):streak(),best:window.ScoreCore?ScoreCore.best(S.days,MODE):streak(),td:S.days[t]?R.day[t]:null,toTop:Math.min(1,S.points/LEVELS[LEVELS.length-1][0])}}
@@ -104,16 +104,20 @@ function openScores(){
 function openShare(){
   const{bd}=sheet('Share card');const lab=el('label','sc-name');const inp=el('input');inp.maxLength=16;inp.autocomplete='given-name';inp.placeholder='Your first name';inp.value=S.name||'';lab.append('First name on the card (kept on this phone only)',inp);
   const host=el('div');bd.append(lab,host,el('p','meta','Take a screenshot to share it. It shows your first name, level, score and streak, and nothing about where you work.'));
-  const draw=()=>{host.textContent='';host.append(postcard())};inp.oninput=()=>{S.name=inp.value.trim().slice(0,16);save();const n=host.querySelector('.pc-name');if(n)n.textContent=S.name||'Mise en Place'};draw()}
-function postcard(){
+  /* the cat swaps each time the card opens: Kimchi first, then Charlee, and so on (kept on this phone only) */
+  const who=S.pcCat==='kimchi'?'charlee':'kimchi';S.pcCat=who;save();
+  const draw=()=>{host.textContent='';host.append(postcard(who))};inp.oninput=()=>{S.name=inp.value.trim().slice(0,16);save();const n=host.querySelector('.pc-name');if(n)n.textContent=S.name||'Mise en Place'};draw()}
+function postcard(who){
   const m=myStats(),b=CURB,day=b?b.day:courseDay(m.t),td=m.td,c=el('div','pcard'),scene=el('div','pc-scene'),body=el('div','pc-body');
-  const say=td&&td.perfect?'Perfect plate!':m.run>=7?'On fire, chef!':td?'Proud of you!':'Quiz time?';
+  /* Charlee's art is tall, so her card gives the picture more room. No Charlee art (older kimchi.js): Kimchi's card. */
+  const art=K()?K().forDay(day):null,pal=who==='charlee'&&art&&K().pal?K().pal(art):null;if(pal)c.classList.add('pc-charlee');
+  const say=pal?(td&&td.perfect?'Majestic work!':m.run>=7?'A royal streak!':td?'I approve!':'Quiz time?'):td&&td.perfect?'Perfect plate!':m.run>=7?'On fire, chef!':td?'Proud of you!':'Quiz time?';
   c.append(scene,el('div','pc-say',say),body);
   body.append(el('div','pc-tag','Mise en Place · Day '+day),el('div','pc-lv',m.L.name));const pts=el('div','pc-pts');pts.append(el('b',null,td?String(td.points):'0'),el('span',null,td?'points today':'no quiz yet today'));body.append(pts);
   const ch=el('div','pc-chips');if(td)ch.append(el('span',td.perfect?'p':'',td.perfect?'Perfect 5/5':S.days[m.t].score+'/'+S.days[m.t].total+' right'));ch.append(el('span',null,'×'+m.pv.mult+' streak'),el('span',null,m.run+(m.run===1?' day':' days')));body.append(ch);
   const L=m.L,w=L.next?Math.round(100*(S.points-L.from)/(L.next-L.from)):100,br=el('div','pc-bar');br.append(el('i'));br.firstChild.style.width=w+'%';body.append(br);
   const ft=el('div','pc-foot');ft.append(S.points.toLocaleString('en-GB')+' points · '+(L.next?(L.next-S.points).toLocaleString('en-GB')+' to '+LEVELS[L.i+1][1]:'top level')+' · ');ft.append(el('span','pc-name',S.name||'Mise en Place'));body.append(ft);
-  if(K()){const k=el('div','khost');scene.append(k);setTimeout(()=>K().mount(k,K().forDay(day)),0)}
+  if(K()){const k=el('div','khost');scene.append(k);setTimeout(()=>K().mount(k,pal||art),0)}
   return c}
 
 /* ---------- gold bubbles on a right answer ---------- */
