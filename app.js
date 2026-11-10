@@ -365,7 +365,7 @@ function render(b,list){
   if(!isToday){const n=el('p','note','You are reading an earlier day. ');const a=el('a',null,'Go to today');a.href='./';n.append(a);app.append(n)}
   app.append(el('p','welcome',b.welcome));
   const pg=el('div','prog','Day '+b.day+' of '+TOTAL+' · Phase '+b.phase+' of 5'),bar=el('div','bar');bar.append(el('i'));bar.firstChild.style.width=Math.round(100*b.day/TOTAL)+'%';pg.append(bar);app.append(pg);
-  const ch=el('div','chips');[['Lessons','#lessons'],['Quiz','#quiz'],['News','#news'],['Words','#words']].forEach(([t,hr])=>{const a=el('a',null,t);a.href=hr;ch.append(a)});app.append(ch);
+  const ch=el('div','chips');[['Lessons','#lessons'],['News','#news'],['Words','#words'],['Quiz','#quiz']].forEach(([t,hr])=>{const a=el('a',null,t);a.href=hr;ch.append(a)});app.append(ch);
   app.append(tickets(b));
   const t=el('section','tryit');t.append(rule('Try this at work'),el('h2',null,b.try.title));const ol=el('ol');b.try.steps.forEach(s=>ol.append(el('li',null,s)));t.append(ol,el('p','why',b.try.why));app.append(t);
   const items=dayItems(b),qc=el('section','quizcard');qc.id='quiz';
@@ -375,11 +375,12 @@ function render(b,list){
     const bt=el('button','btn',dn?'Practise again':pr?'Resume quiz':'Start the quiz');bt.onclick=()=>startQuiz(b,items,draw);qc.append(bt);
     rv.textContent='';const due=S.review.filter(x=>x.due<=todayStr()).length;
     rv.hidden=!due;if(due){rv.append(el('div','prog','Review'),el('h2',null,due+' question'+(due>1?'s':'')+' to revise'),el('p',null,'Questions you missed before. Get each right a few times, days apart, and it leaves the list.'));const rb=el('button','btn alt','Start review');rb.onclick=()=>startReview(draw);rv.append(rb)}};
-  app.append(rule('Quiz'),qc,rv);draw();
   app.append(newsSection(b));
   const wd=el('section','words');wd.id='words';wd.append(rule('Today’s words'));const dl=el('dl');(b.terms||[]).forEach(x=>dl.append(el('dt',null,x.term),el('dd',null,x.def)));wd.append(dl);
   if((b.toolkit||[]).length){wd.append(rule('Added to your toolkit'));b.toolkit.forEach(x=>wd.append(toolCard(x)))}app.append(wd);
   if(window.Evidence)Evidence.mount(app,b,{cls:'evidence'});
+  /* the quiz goes last, after everything there is to read (Agnes, 10 Nov 2026) */
+  app.append(rule('Quiz'),qc,rv);draw();
   const more=el('div','chips');more.style.marginTop='34px';[['Glossary',()=>openGlossary(list)],['Toolkit',()=>openToolkit(list)],['Progress',openProgress],['Past days',()=>openArchive(list)]].forEach(([t,f])=>{const x=el('button',null,t);x.onclick=f;more.append(x)});app.append(more);
   app.append(el('footer',null,'Mise en Place · a daily course for running and opening a restaurant. Your streak and answers are saved only on this phone. News links go to the original reporting; lessons are a study guide, so check the official source before acting on anything legal.'));
   if(location.hash){const tgt=document.getElementById(location.hash.slice(1));tgt&&tgt.scrollIntoView()}
