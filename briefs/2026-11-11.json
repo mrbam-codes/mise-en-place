@@ -1,0 +1,482 @@
+{
+ "date": "2026-11-11",
+ "dayLabel": "Wednesday 11 November 2026",
+ "day": 3,
+ "phase": 1,
+ "welcome": "How a slope, a river and slate shape a wine, who really decides a licence, and how to pick the one social platform your guests use.",
+ "lessons": [
+  {
+   "n": 7,
+   "area": "drinks",
+   "module": "Wine foundations",
+   "title": "Climate, site and soil",
+   "outcome": "You will be able to explain how latitude, altitude, slope, water and soil shape a wine",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 500\" role=\"img\" aria-label=\"Cross-section of a vineyard slope facing the sun, with cold air draining to a frost pocket on the valley floor, a river below, and soil layers of topsoil, slate and deep free-draining soil\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">How a site shapes a wine</text><defs><marker id=\"ar\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#865d00\"/></marker><marker id=\"aw\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#ffffff\"/></marker></defs><circle cx=\"42\" cy=\"66\" r=\"18\" fill=\"#e4cf9c\" stroke=\"#b48a3c\" stroke-width=\"1.5\"/><text x=\"42\" y=\"70\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Sun</text><line x1=\"58\" y1=\"76\" x2=\"170\" y2=\"203\" stroke=\"#b48a3c\" stroke-width=\"1.5\"/><line x1=\"58\" y1=\"76\" x2=\"230\" y2=\"165\" stroke=\"#b48a3c\" stroke-width=\"1.5\"/><line x1=\"58\" y1=\"76\" x2=\"290\" y2=\"127\" stroke=\"#b48a3c\" stroke-width=\"1.5\"/><polygon points=\"20,300 320,110 320,300\" fill=\"#865d00\"/><circle cx=\"90\" cy=\"250\" r=\"5\" fill=\"#eee8db\" stroke=\"#865d00\" stroke-width=\"1\"/><circle cx=\"122\" cy=\"229\" r=\"5\" fill=\"#eee8db\" stroke=\"#865d00\" stroke-width=\"1\"/><circle cx=\"154\" cy=\"209\" r=\"5\" fill=\"#eee8db\" stroke=\"#865d00\" stroke-width=\"1\"/><circle cx=\"186\" cy=\"189\" r=\"5\" fill=\"#eee8db\" stroke=\"#865d00\" stroke-width=\"1\"/><circle cx=\"218\" cy=\"169\" r=\"5\" fill=\"#eee8db\" stroke=\"#865d00\" stroke-width=\"1\"/><circle cx=\"250\" cy=\"148\" r=\"5\" fill=\"#eee8db\" stroke=\"#865d00\" stroke-width=\"1\"/><circle cx=\"282\" cy=\"128\" r=\"5\" fill=\"#eee8db\" stroke=\"#865d00\" stroke-width=\"1\"/><text x=\"330\" y=\"62\" text-anchor=\"end\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Higher up: about</text><text x=\"330\" y=\"77\" text-anchor=\"end\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">0.6°C cooler per 100 m</text><text x=\"262\" y=\"272\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">Slope faces</text><text x=\"262\" y=\"288\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">the equator</text><path d=\"M300,150 L130,258\" stroke=\"#ffffff\" stroke-width=\"2\" fill=\"none\" marker-end=\"url(#aw)\"/><text x=\"262\" y=\"214\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">Cold air</text><text x=\"262\" y=\"229\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">drains down</text><ellipse cx=\"40\" cy=\"300\" rx=\"34\" ry=\"9\" fill=\"#eee8db\" stroke=\"#865d00\" stroke-width=\"1.5\"/><text x=\"8\" y=\"230\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Frost pocket</text><text x=\"8\" y=\"245\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">on valley floor</text><text x=\"40\" y=\"326\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">River: a mirror</text><rect x=\"90\" y=\"306\" width=\"230\" height=\"44\" fill=\"#eee8db\" stroke=\"#865d00\" stroke-width=\"1\"/><text x=\"205\" y=\"333\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Topsoil</text><rect x=\"10\" y=\"350\" width=\"310\" height=\"54\" fill=\"#fffdf8\" stroke=\"#865d00\" stroke-width=\"1\"/><text x=\"165\" y=\"373\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Slate and stone: drains rain,</text><text x=\"165\" y=\"390\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">holds the day's heat into the night</text><rect x=\"10\" y=\"404\" width=\"310\" height=\"54\" fill=\"#eee8db\" stroke=\"#865d00\" stroke-width=\"1\"/><text x=\"165\" y=\"427\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Roots need 30 to 40 inches</text><text x=\"165\" y=\"444\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">of free-draining soil</text><text x=\"170\" y=\"482\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">Best band: 30 to 50 degrees of latitude</text></svg>",
+   "alt": "Cross-section of a vineyard: the slope faces the sun, cold air drains down to a frost pocket by the river, and below lie topsoil, heat-holding slate and deep free-draining soil.",
+   "intro": "Two Rieslings from the same grape can taste like different drinks: one lean and sharp, one ripe and round. The grape is the same. The place is not. When a guest asks why one bottle costs twice the other, the honest answer is often the site: how far from the equator, how high, which way the slope faces, what water is near and what the roots sit in. This picture is the whole story on one slope.",
+   "points": [
+    {
+     "h": "Latitude sets the starting line",
+     "p": "WSET puts most good vineyards between 30 and 50 degrees of latitude, north or south. Nearer the equator, growers look for something to cool the vines, such as sea breezes or mountain air, or the grapes ripen too fast and lose freshness. Further from the equator, the job flips: they hunt for every bit of warmth and sun. So a cool-climate wine is not a lesser wine. It is a wine made where ripening is the hard part, which is why acidity and lightness are its strengths."
+    },
+    {
+     "h": "Altitude and slope: heat in, cold out",
+     "p": "Air cools by about 0.6°C for every 100 m you climb, so Mendoza's vineyards above 1,000 m stay fresh despite the Argentine sun. A slope facing the equator catches more sun. Just as important, cold air is heavy and flows downhill, pooling on the valley floor. North Carolina State University's grower guide calls these low spots frost pockets: on calm, clear nights the temperature can differ by 3 to 5°F (about 2 to 3°C) over 50 feet of height. That is why the best sites sit mid-slope, not at the bottom."
+    },
+    {
+     "h": "Water: a mirror and a blanket",
+     "p": "Large bodies of water even out temperature. They warm cold air in winter and cool warm air in spring, which slows bud break and cuts frost risk. A cold ocean cools a warm region, and its morning fog shields vines from strong sun. In the Mosel, Jancis Robinson notes that vines close to the river gain from it acting as a mirror, bouncing extra light onto steep slopes that can top 30 degrees."
+    },
+    {
+     "h": "Soil: drainage first, then heat",
+     "p": "Vines want water, but not wet feet. NC State asks for at least 30 to 40 inches of permeable soil so roots can go deep and find water in a dry spell. Stony soils warm up too. Mosel slate is porous: it drains surplus rain and holds the day's heat, then releases it at night. Clay, as in parts of Rioja, holds more water. The trade-off: rich, wet soils give big vines and dilute fruit; lean, free-draining ones give smaller crops with more concentration."
+    }
+   ],
+   "atWork": "Pick two wines by the glass. For each, find the region's latitude, height and soil in two minutes online, then write one line: what the site does to the taste. Give your team the line, not the map. 'High, cool slope, so it stays fresh' sells better than a soil lecture.",
+   "takeaway": "A wine's style starts with its place: latitude sets the heat, altitude and slope fine-tune it, water steadies it and soil decides how hard the vine works.",
+   "sources": [
+    {
+     "name": "WSET: How does geography affect a wine's style?",
+     "url": "https://www.wsetglobal.com/knowledge-centre/blog/2021/august/24/how-does-geography-affect-a-wine-s-style"
+    },
+    {
+     "name": "NC State Extension: Vineyard site selection",
+     "url": "https://content.ces.ncsu.edu/north-carolina-winegrape-growers-guide/chapter-4-vineyard-site-selection"
+    },
+    {
+     "name": "Jancis Robinson: Mosel wine region",
+     "url": "https://www.jancisrobinson.com/learn/wine-regions/germany/mosel"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "area": "opening",
+   "module": "Licensing",
+   "title": "Who decides: the licensing authority",
+   "outcome": "You will be able to map applicant, responsible authorities, residents and committee",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 512\" role=\"img\" aria-label=\"Responsibility map: the applicant applies to the licensing authority, responsible authorities and other persons send relevant representations, which go to a three-councillor sub-committee that decides\"><defs><marker id=\"ab\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#1b68ad\"/></marker></defs><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Who decides a licence</text><rect x=\"90\" y=\"36\" width=\"160\" height=\"42\" rx=\"10\" fill=\"#fffdf8\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/><text x=\"170\" y=\"54\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Applicant</text><text x=\"170\" y=\"70\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">operating schedule</text><line x1=\"170\" y1=\"78\" x2=\"170\" y2=\"96\" stroke=\"#1b68ad\" stroke-width=\"2\" marker-end=\"url(#ab)\"/><rect x=\"30\" y=\"100\" width=\"280\" height=\"52\" rx=\"10\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/><text x=\"170\" y=\"121\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Licensing authority (the council)</text><text x=\"170\" y=\"140\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">No objections? It must grant</text><line x1=\"100\" y1=\"152\" x2=\"100\" y2=\"172\" stroke=\"#1b68ad\" stroke-width=\"1.5\" marker-end=\"url(#ab)\"/><line x1=\"250\" y1=\"152\" x2=\"250\" y2=\"172\" stroke=\"#1b68ad\" stroke-width=\"1.5\" marker-end=\"url(#ab)\"/><text x=\"175\" y=\"168\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">consults</text><rect x=\"10\" y=\"176\" width=\"180\" height=\"168\" rx=\"10\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/><text x=\"100\" y=\"196\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">Responsible authorities</text><text x=\"100\" y=\"215\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Police</text><text x=\"100\" y=\"231\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Fire and rescue</text><text x=\"100\" y=\"247\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Environmental health</text><text x=\"100\" y=\"263\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Planning</text><text x=\"100\" y=\"279\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Health and safety</text><text x=\"100\" y=\"295\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Child protection body</text><text x=\"100\" y=\"311\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Public health, Home Office</text><text x=\"100\" y=\"327\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">GLA (London)</text><rect x=\"198\" y=\"176\" width=\"132\" height=\"168\" rx=\"10\" fill=\"#fffdf8\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/><text x=\"264\" y=\"196\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">Other persons</text><text x=\"264\" y=\"215\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Residents</text><text x=\"264\" y=\"231\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Local businesses</text><text x=\"264\" y=\"247\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Anyone affected</text><text x=\"264\" y=\"263\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Must not be</text><text x=\"264\" y=\"279\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">frivolous or</text><text x=\"264\" y=\"295\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">vexatious</text><line x1=\"60\" y1=\"344\" x2=\"90\" y2=\"388\" stroke=\"#1b68ad\" stroke-width=\"2\" marker-end=\"url(#ab)\"/><line x1=\"290\" y1=\"344\" x2=\"255\" y2=\"388\" stroke=\"#1b68ad\" stroke-width=\"2\" marker-end=\"url(#ab)\"/><text x=\"170\" y=\"362\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">Relevant</text><text x=\"170\" y=\"377\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">representations</text><rect x=\"50\" y=\"392\" width=\"240\" height=\"50\" rx=\"10\" fill=\"#258fec\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/><text x=\"170\" y=\"413\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Licensing sub-committee</text><text x=\"170\" y=\"431\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">3 councillors hold a hearing</text><line x1=\"170\" y1=\"442\" x2=\"170\" y2=\"458\" stroke=\"#1b68ad\" stroke-width=\"2\" marker-end=\"url(#ab)\"/><rect x=\"30\" y=\"462\" width=\"280\" height=\"44\" rx=\"10\" fill=\"#fffdf8\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/><text x=\"170\" y=\"480\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Grant, change conditions, cut</text><text x=\"170\" y=\"496\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">activities, refuse the DPS, or reject</text></svg>",
+   "alt": "Map: the applicant applies to the council; responsible authorities and other persons send relevant representations to a three-councillor sub-committee, which grants, changes conditions or rejects.",
+   "intro": "When a licence goes wrong, it rarely goes wrong at the council desk. It goes wrong when a neighbour, the police or environmental health object and nobody saw it coming. The Licensing Act 2003 sets out exactly who can speak and who decides. If you know the map before you apply, you can talk to the right people first and often avoid a hearing at all.",
+   "points": [
+    {
+     "h": "The council decides, through councillors",
+     "p": "The licensing authority is your local council. Under the Act it sets up a licensing committee of 10 to 15 councillors, which can split into sub-committees of three. Officers can handle routine, uncontested work. But the explanatory notes are clear: anything where representations or objections have been made goes to the committee or a sub-committee, not an officer. And if nobody objects, section 18 and the section 182 guidance (para 1.16) say the authority must grant the licence, with conditions that match your operating schedule."
+    },
+    {
+     "h": "The responsible authorities",
+     "p": "Section 13 lists the bodies that are consulted on every application: the licensing authority itself, the police, the fire and rescue authority, the health and safety enforcing authority, the planning authority, environmental health (pollution and noise), a body that protects children from harm, public health in England, and the Home Office for alcohol and late-night food. Since 29 June 2026, the Greater London Authority is also one for premises in London. Police and environmental health make most of the difference in practice."
+    },
+    {
+     "h": "Other persons and what counts",
+     "p": "Anyone else, such as a resident or a nearby business, is an 'other person'. Under section 18 a representation only counts if it is about the likely effect on the four licensing objectives and arrives within the set period. The council can reject an other person's objection as frivolous or vexatious, but must give reasons. Only the police can object to your designated premises supervisor, and only in exceptional circumstances."
+    },
+    {
+     "h": "The hearing and the outcomes",
+     "p": "If relevant representations are made, there is a hearing, unless the council, you and every objector agree it is not needed. The sub-committee can grant as asked, change or add conditions, remove one or more licensable activities, refuse your premises supervisor, or reject the application. In London, councils must now send the GLA set information before and after hearings on applications of strategic importance."
+    }
+   ],
+   "atWork": "For one of your sites, write the name of the council, its licensing officer, and a contact at the police licensing team and environmental health. Add the nearest residents' group. That list is your early-warning system for any variation or event notice.",
+   "takeaway": "No objection means a licence must be granted. Win the responsible authorities and the neighbours before you apply, and the hearing often never happens.",
+   "sources": [
+    {
+     "name": "GOV.UK: Revised guidance under section 182 of the Licensing Act 2003",
+     "url": "https://www.gov.uk/government/publications/explanatory-memorandum-revised-guidance-issued-under-s-182-of-licensing-act-2003/revised-guidance-issued-under-section-182-of-the-licensing-act-2003-september-2026-accessible-version"
+    },
+    {
+     "name": "Licensing Act 2003, section 13",
+     "url": "https://www.legislation.gov.uk/ukpga/2003/17/section/13"
+    },
+    {
+     "name": "Licensing Act 2003, section 18",
+     "url": "https://www.legislation.gov.uk/ukpga/2003/17/section/18"
+    },
+    {
+     "name": "Licensing Act 2003 explanatory notes: licensing committees",
+     "url": "https://www.legislation.gov.uk/ukpga/2003/17/notes/division/4/2?view=plain"
+    }
+   ],
+   "checked": "Responsible authority list, including the GLA from 29 June 2026, and section 18 hearing rules checked on legislation.gov.uk; section 182 guidance (updated 3 Nov 2026) on GOV.UK, 11 November 2026."
+  },
+  {
+   "n": 9,
+   "area": "brand",
+   "module": "Social media and content",
+   "title": "Choosing platforms for your concept",
+   "outcome": "You will be able to choose one or two platforms based on where your guests are",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 340\" role=\"img\" aria-label=\"Matrix comparing Instagram, TikTok and Facebook on biggest follower age group, posts a week, engagement rate and share of social-led guests who pick it, with Instagram marked start here\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Platform fit for a restaurant</text><text x=\"130\" y=\"48\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Biggest</text><text x=\"130\" y=\"62\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">followers</text><text x=\"190\" y=\"48\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Posts</text><text x=\"190\" y=\"62\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">a week</text><text x=\"245\" y=\"48\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Engage-</text><text x=\"245\" y=\"62\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">ment</text><text x=\"300\" y=\"48\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Picked</text><text x=\"300\" y=\"62\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">by</text><rect x=\"10\" y=\"74\" width=\"320\" height=\"50\" rx=\"10\" fill=\"#b31e65\" stroke=\"#b31e65\" stroke-width=\"1.5\"/><text x=\"18\" y=\"98\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">Instagram</text><text x=\"18\" y=\"114\" text-anchor=\"start\" font-size=\"11\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">★ Start here</text><text x=\"130\" y=\"104\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">35 to 44</text><text x=\"190\" y=\"104\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"400\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">4</text><text x=\"245\" y=\"104\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"400\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">0.2%</text><text x=\"300\" y=\"104\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">44%</text><rect x=\"10\" y=\"132\" width=\"320\" height=\"50\" rx=\"10\" fill=\"#f4dfe9\" stroke=\"#b31e65\" stroke-width=\"1.5\"/><text x=\"18\" y=\"156\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">TikTok</text><text x=\"130\" y=\"162\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">25 to 34</text><text x=\"190\" y=\"162\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">2</text><text x=\"245\" y=\"162\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">2.3%</text><text x=\"300\" y=\"162\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">25%</text><rect x=\"10\" y=\"190\" width=\"320\" height=\"50\" rx=\"10\" fill=\"#f4dfe9\" stroke=\"#b31e65\" stroke-width=\"1.5\"/><text x=\"18\" y=\"214\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Facebook</text><text x=\"130\" y=\"220\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">35 to 44</text><text x=\"190\" y=\"220\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">4</text><text x=\"245\" y=\"220\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">0.4%</text><text x=\"300\" y=\"220\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">13%</text><text x=\"170\" y=\"268\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#b31e65\" font-family=\"Figtree, sans-serif\">Add TikTok only if your guests</text><text x=\"170\" y=\"284\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#b31e65\" font-family=\"Figtree, sans-serif\">are under 35 and you can post twice a week</text><text x=\"170\" y=\"310\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Picked by: guests who use social to choose a venue</text><text x=\"170\" y=\"326\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Engagement: median daily rate, hospitality</text></svg>",
+   "alt": "Matrix of Instagram, TikTok and Facebook by biggest follower age group, posts a week, engagement rate and share of social-led guests who pick it. Instagram is marked start here.",
+   "intro": "Every new restaurant feels it must be everywhere: Instagram, TikTok, Facebook, the lot. Then the posting slips, the accounts go quiet, and a quiet account looks like a quiet room. The better move is to pick one platform where your guests already are, do it well, and add a second only when you can keep it up.",
+   "points": [
+    {
+     "h": "Social helps, but trust decides",
+     "p": "125 Data & Insights surveyed 29,190 UK guests in spring 2026. As summarised by Joli, 75% of venue choices came from previous experience (42%) or a personal recommendation (33%). Social media was the named driver for just 4%. The Kitch and KAM State of Social report (January 2026) found 18% of UK adults use social media to research a venue, and 13% visited somewhere unplanned after seeing friends there. So social works best as word of mouth you can see, not as an advert."
+    },
+    {
+     "h": "Where social-led guests look",
+     "p": "Among guests who do use social to choose, the same survey found Instagram most influential at 44%, then TikTok at 25% and Facebook at 13%. Age changes the picture: 54% of 18 to 24-year-olds are TikTok-led when finding venues. Kitch and KAM's follower data agrees. Hospitality brands' biggest Instagram group is 35 to 44 (35%), TikTok's is 25 to 34 (37%) with 28% under 24, and Facebook skews 35 to 54."
+    },
+    {
+     "h": "Effort and reach are not equal",
+     "p": "Kitch and KAM's benchmarks from 68 brands show the median brand posting 4 times a week on Instagram, 4 on Facebook and 2 on TikTok. Median daily engagement is 0.2% on Instagram, 2.3% on TikTok and 0.4% on Facebook, but 92% of Facebook views now come from paid posts. TikTok rewards personality and original ideas, not copied trends, so it costs more thought per post. Only 56% of brands can track bookings from paid ads, so measure covers, not likes."
+    },
+    {
+     "h": "How to choose",
+     "p": "Start from your guest, not the app. A neighbourhood bistro whose regulars are 35 to 50 lives on Instagram. A late, loud, younger concept may need TikTok as well. Score each platform on four things: does my guest use it, can we post at the median rate, does our food or room suit its format, and does it lead to a booking. Pick the top one, add a second only if you can sustain it."
+    }
+   ],
+   "atWork": "Ask ten guests tonight how they first heard of you. Tally the answers by source and age band. If social is rare, put the effort into giving people a reason to recommend you. If one platform keeps coming up, that is your first channel.",
+   "takeaway": "Be excellent on one platform your guests actually use. A dead second account does more harm than having none.",
+   "sources": [
+    {
+     "name": "Kitch x KAM: State of Social, January 2026",
+     "url": "https://cdn.prod.website-files.com/684ae95607acfac09b430ab0/69bbfc60fff51d10a5d391b7_Kitch-x-KAM-2026-State-of-Social-compressed.pdf"
+    },
+    {
+     "name": "Joli: hospitality social media statistics (125 Data & Insights figures)",
+     "url": "https://joliapp.com/resources/hospitality-social-media-stats/"
+    },
+    {
+     "name": "125 Data & Insights: State of the Nation 2026",
+     "url": "https://125insights.com/state-of-the-nation-2026/"
+    }
+   ]
+  }
+ ],
+ "news": [
+  {
+   "area": "industry",
+   "headline": "Restaurant tips have halved since 2022 as bills climb",
+   "gist": "SumUp data shows the average UK restaurant tip fell 51%, from £5.78 in 2022 to £2.84, while average bills rose 63%.",
+   "big": {
+    "value": "−51%",
+    "label": "average restaurant tip"
+   },
+   "read": {
+    "what": "Payments firm SumUp found the average UK restaurant tip dropped 51% since 2022, from £5.78 to £2.84, while average transaction values rose 63%. The share of restaurant payments that included a tip rose from 2.1% to 10.8%. Across all UK businesses, tips fell 20% since 2022, 13% in the past year. Leeds has the highest average tip at £5.22, Liverpool the lowest at £1.73.",
+    "how": "More guests now tip, but each gives less: tipping has spread from a few big tippers to many small card tips. The report notes the government withdrew its updated tipping code of practice earlier in 2026, which would have made businesses consult staff on tip policies.",
+    "soWhat": "If your team's take-home relies on tips, it may be falling even in a busy month. That matters for keeping good people, and for how you plan pay at your own place.",
+    "take": "Compare your tip total per cover this month with the same month last year. If it has fallen, tell the team the numbers and review how tips are prompted at the card machine."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "10 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/10/restaurant-tips-halve-despite-increased-customer-spending/"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1777680114872-ce9fb36d1a04?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/a-couple-paying-for-their-meal-at-a-restaurant-Tjptuv7IV8w",
+    "credit": "SpotOn, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "A couple paying for their meal at a restaurant table"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 148\" role=\"img\" aria-label=\"Bar chart: average UK restaurant tip fell from £5.78 in 2022 to £2.84 in 2026, down 51%\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Average UK restaurant tip</text><text x=\"10\" y=\"50\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">2022</text><rect x=\"10\" y=\"56\" width=\"220.0\" height=\"18\" rx=\"4\" fill=\"#258fec\" stroke=\"#1b68ad\" stroke-width=\"1\"/><text x=\"238.0\" y=\"70\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">£5.78</text><text x=\"10\" y=\"94\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">2026</text><rect x=\"10\" y=\"100\" width=\"108.1\" height=\"18\" rx=\"4\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1\"/><text x=\"126.09688581314877\" y=\"114\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">▼ £2.84, down 51%</text><line x1=\"10\" y1=\"40\" x2=\"10\" y2=\"138\" stroke=\"#1b68ad\" stroke-width=\"1.5\"/></svg>",
+   "drawingAlt": "Bar chart: the average UK restaurant tip fell from £5.78 in 2022 to £2.84 in 2026, down 51%."
+  },
+  {
+   "area": "trends",
+   "headline": "London lunches up almost 50%, and more people eat alone",
+   "gist": "The first EatClub Restaurant Index finds London weekday lunch visits up nearly 50% on last year and solo diners' share of tables up almost a fifth.",
+   "big": {
+    "value": "+50%",
+    "label": "London weekday lunch visits"
+   },
+   "read": {
+    "what": "Dining deals app EatClub's first Restaurant Index covers six UK cities. In London, weekday lunchtime dining rose nearly 50% year on year, while evenings did not rise the same way, and solo diners' share of tables grew by almost a fifth. Diners in Liverpool are 62% more likely than Londoners to eat in groups of four or more. Average booking lead time is 38 minutes in London. Since summer, London steakhouse visits rose 41%.",
+    "how": "These are bookings made through one app, so they show how its users behave, not the whole market. Short lead times point to late, spur-of-the-moment decisions.",
+    "soWhat": "Lunch and solo guests are growing in London. A good counter or bar seat and a fast lunch offer can fill hours that used to be quiet.",
+    "take": "Look at how you seat a solo guest at lunch. Give them a good seat, not the one by the kitchen door, and a menu that fits a 45-minute break."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "10 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/10/new-data-reveals-different-dining-habits-across-the-uk/"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1778694277039-5cbf0b9a1fcf?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/people-enjoying-a-candlelit-dinner-at-a-dimly-lit-restaurant-UEjjO-aJtZ8",
+    "credit": "Romain Gal, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "People eating by candlelight in a dimly lit restaurant"
+   }
+  },
+  {
+   "area": "finedining",
+   "headline": "Ikoyi is the only UK restaurant in the World's 50 Best",
+   "gist": "Asador Etxebarri in Spain is No. 1. Jeremy Chan's Ikoyi on the Strand fell from 15th to 48th and is the only UK entry in the top 50.",
+   "big": {
+    "value": "48th",
+    "label": "Ikoyi, down from 15th"
+   },
+   "read": {
+    "what": "The World's 50 Best Restaurants 2026 was announced in Lima. Asador Etxebarri, near Bilbao, is No. 1, followed by Gaggan in Bangkok, Alchemist in Copenhagen, Quintonil in Mexico City and Wing in Hong Kong. Ikoyi, Jeremy Chan's restaurant at 180 The Strand, is the only UK restaurant in the top 50, at 48, down from 15 last year. London's Kol is 70th and The Ledbury 83rd.",
+    "how": "",
+    "soWhat": "London's place at the very top has slipped. Lists like this move bookings from abroad, so watch which cities and styles rise: this year Spain and Asia lead.",
+    "take": "Ask your team which restaurants on the list they would most like to eat at, and why. It is a cheap way to talk about what makes great hospitality."
+   },
+   "source": {
+    "name": "Country and Town House",
+    "date": "5 Nov 2026",
+    "url": "https://www.countryandtownhouse.com/food-and-drink/worlds-50-best-restaurants-2026/"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 166\" role=\"img\" aria-label=\"Ikoyi fell from 15th in 2025 to 48th in 2026 on The World's 50 Best Restaurants list, the only UK restaurant in the top 50\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Ikoyi on The World's 50 Best</text><line x1=\"30\" y1=\"80\" x2=\"310\" y2=\"80\" stroke=\"#ac4627\" stroke-width=\"2\"/><text x=\"30\" y=\"120\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">No. 1</text><text x=\"310\" y=\"120\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">No. 50</text><circle cx=\"110\" cy=\"80\" r=\"16\" fill=\"#fce9e3\" stroke=\"#ac4627\" stroke-width=\"1.5\"/><text x=\"110\" y=\"85\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">15</text><circle cx=\"299\" cy=\"80\" r=\"16\" fill=\"#ea5f36\" stroke=\"#ac4627\" stroke-width=\"1.5\"/><text x=\"299\" y=\"85\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">48</text><text x=\"110\" y=\"52\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">2025</text><text x=\"299\" y=\"52\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"600\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">2026</text><text x=\"170\" y=\"136\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">▼ Down 33 places, the only UK</text><text x=\"170\" y=\"152\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">restaurant in the top 50</text></svg>",
+   "drawingAlt": "Ikoyi fell from 15th in 2025 to 48th in 2026, the only UK restaurant in the top 50."
+  },
+  {
+   "area": "finedining",
+   "headline": "Three-star Moor Hall gives hospitality staff 20% off on Sundays",
+   "gist": "Mark Birchall's Moor Hall in Lancashire now offers anyone working in hospitality 20% off Sunday bookings, with no end date.",
+   "big": {
+    "value": "20%",
+    "label": "off Sundays for the trade"
+   },
+   "read": {
+    "what": "Moor Hall, Mark Birchall's three-Michelin-star restaurant in Aughton, Lancashire, is offering 20% off every Sunday to anyone who works in hospitality. Guests add 'Industry discount' to the booking notes and the team gets in touch. The lunch menu is £155 a person and the Provenance menu £285. Wine pairings run from £165 to £325, with a soft pairing at £85. The offer runs indefinitely.",
+    "how": "",
+    "soWhat": "Industry nights fill quiet services with guests who spread the word, and they help a team learn from peers. A 20% cut on a slow day can pay back in staff, reviews and recommendations.",
+    "take": "Book a team visit to a top kitchen that offers a trade rate, and set one thing to watch: the welcome, the pace or the goodbye."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "10 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/10/moor-hall-introduces-discount-for-hospitality-workers/"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 170\" role=\"img\" aria-label=\"The £155 lunch menu at Moor Hall comes to £124 on Sundays with the 20% hospitality worker discount\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Moor Hall lunch, Sundays</text><rect x=\"20\" y=\"40\" width=\"300\" height=\"40\" rx=\"8\" fill=\"#fce9e3\" stroke=\"#ac4627\" stroke-width=\"1\"/><text x=\"170\" y=\"65\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Lunch menu: £155 a person</text><rect x=\"20\" y=\"92\" width=\"240\" height=\"40\" rx=\"8\" fill=\"#ea5f36\" stroke=\"#ac4627\" stroke-width=\"1\"/><text x=\"140\" y=\"117\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">With 20% off: £124</text><rect x=\"262\" y=\"92\" width=\"58\" height=\"40\" rx=\"8\" fill=\"#fffdf8\" stroke=\"#ac4627\" stroke-width=\"1\"/><text x=\"291\" y=\"117\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">−20%</text><text x=\"170\" y=\"156\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Note 'Industry discount' when booking</text></svg>",
+   "drawingAlt": "The £155 lunch menu at Moor Hall comes to £124 with the 20% hospitality discount on Sundays."
+  },
+  {
+   "area": "openings",
+   "headline": "Wright Brothers opens in Covent Garden on 28 November",
+   "gist": "The seafood group takes the old Margot site at 45 Great Queen Street, with fruits de mer platters and an oyster gelato. Opening is set for 28 November.",
+   "big": {
+    "value": "28 Nov",
+    "label": "opening day"
+   },
+   "read": {
+    "what": "Wright Brothers will open at 45 Great Queen Street, WC2, in the former Margot site, on 28 November. Kevin Gratton, who worked with Mark Hix, writes the menus, and Jaspal Flora, previously at 45 Jermyn Street, is head chef. Dishes include butter-grilled oysters with black winter truffle, ink-braised cuttlefish with sea aster, stacked fruits de mer platters and oyster gelato with olive oil and caviar.",
+    "how": "",
+    "soWhat": "This is a preview: the restaurant is not open yet. A big seafood room needs a strong shellfish routine on the floor: clear allergen checks and a slick platter service.",
+    "take": "If shellfish is on your menu, test your team on the allergen script for one platter this week."
+   },
+   "source": {
+    "name": "Hot Dinners",
+    "date": "5 Nov 2026",
+    "url": "https://www.hot-dinners.com/2026110415503/Gastroblog/Latest-news/wright-brothers-opening-in-covent-garden"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1633321094192-388268512e0f?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/a-plate-of-oysters-on-ice-with-lemon-wedges-XaLh3Nakkz4",
+    "credit": "Anima Visual, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "A plate of oysters on ice with lemon wedges"
+   }
+  },
+  {
+   "area": "openings",
+   "headline": "Paris lobster roll spot Homer Lobster lands in Soho on 1 December",
+   "gist": "Homer Lobster opens its first permanent London site at 5 D'Arblay Street, Soho, on 1 December, led by a lobster and crayfish roll.",
+   "big": {
+    "value": "1 Dec",
+    "label": "opening day, Soho"
+   },
+   "read": {
+    "what": "Paris favourite Homer Lobster opens on 1 December at 5 D'Arblay Street, W1, the former Happiness matcha bar. The signature is a lobster and crayfish roll. Other sandwiches include a crab roll, a tuna melt, salmon pastrami and a lobster grilled cheese, and any of them can be topped with caviar. Homer ran a two-week pop-up on the Southbank just over a year ago.",
+    "how": "",
+    "soWhat": "This is a preview. It shows a growing model: a tight menu built on one luxury ingredient, in a small site, tested first as a pop-up.",
+    "take": "Before you sign a lease, ask whether a short pop-up could test your idea first, as this brand did."
+   },
+   "source": {
+    "name": "Hot Dinners",
+    "date": "9 Nov 2026",
+    "url": "https://www.hot-dinners.com/2026062615156/Gastroblog/Latest-news/homer-lobster-opening-london-soho"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1751298467221-bb1b0d298101?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/a-delicious-lobster-roll-on-a-plate-OCLUCZ14cmA",
+    "credit": "Crunch, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "A lobster roll on a plate"
+   }
+  }
+ ],
+ "newsNote": "UK industry news was thin in the last 7 days: most Budget and policy stories were older than a week, so there is one industry item today.",
+ "evidence": {
+  "searches": 44,
+  "kept": 6,
+  "rejected": [
+   {
+    "what": "Budget has made things worse for 90% of pubs",
+    "why": "An opinion piece; the 90% figure has no survey behind it"
+   },
+   {
+    "what": "Chancellor pledges to cut £800m of business admin",
+    "why": "Dated 23 Oct 2026, older than 7 days"
+   },
+   {
+    "what": "Les 110 de Taillevent closes in Marylebone",
+    "why": "Dated 19 Oct 2026, older than 7 days"
+   },
+   {
+    "what": "Hospitality firms pledge 100,000 jobs for young people",
+    "why": "Announced in October 2026, older than 7 days"
+   },
+   {
+    "what": "Hospitality business confidence at highest level since 2024",
+    "why": "Dated 26 Oct 2026, older than 7 days"
+   },
+   {
+    "what": "MPs face fresh pub ban over VAT row",
+    "why": "Dated 3 Nov 2026, 8 days before this edition"
+   },
+   {
+    "what": "Heard opens its Covent Garden burger and dessert bar",
+    "why": "Only found on a listing page, with no dated article to check"
+   }
+  ],
+  "note": "No web page gave instructions. Wikimedia Commons file pages would not open, so all photos are from Unsplash."
+ },
+ "try": {
+  "title": "Give two wines a one-line site story",
+  "steps": [
+   "Pick two wines by the glass from different places, one cool and one warm.",
+   "For each, look up latitude, height and soil, and note which way the best slopes face.",
+   "Write one line each on what the site does to the taste, such as 'high and cool, so it stays fresh'.",
+   "Share both lines at pre-shift and ask each server to use one at a table tonight."
+  ],
+  "why": "Guests remember a place more than a grape. A short, true line about the site turns a price into a reason, and it builds your team's confidence with wine one bottle at a time."
+ },
+ "quiz": [
+  {
+   "q": "Two vineyards sit on the same hillside. Which spot is most at risk of spring frost?",
+   "options": [
+    "The top of the slope, highest up",
+    "The middle of the slope, facing the sun",
+    "The valley floor at the bottom",
+    "Any spot near stony, slate soil"
+   ],
+   "answer": 2,
+   "why": "Cold air is heavy and drains downhill, pooling on the valley floor in a frost pocket. Mid-slope sites stay warmer on calm, clear nights.",
+   "from": 1
+  },
+  {
+   "q": "A guest asks why a Mendoza Malbec grown above 1,000 m tastes fresh despite strong sun. What is the best answer?",
+   "options": [
+    "Height: air cools about 0.6°C per 100 m",
+    "The vines are planted in heavy clay",
+    "Mendoza is closer to the equator",
+    "The river reflects light onto the vines"
+   ],
+   "answer": 0,
+   "why": "WSET says air cools by about 0.6°C for every 100 m of height. Above 1,000 m that slows ripening and keeps freshness.",
+   "from": 1
+  },
+  {
+   "q": "You apply for a new premises licence and nobody makes a representation. What must the council do?",
+   "options": [
+    "Hold a hearing anyway, to be safe",
+    "Grant it, with conditions that fit your schedule",
+    "Send it to the police to approve",
+    "Pass it to a sub-committee of three"
+   ],
+   "answer": 1,
+   "why": "Section 18 and para 1.16 of the guidance say that with no relevant representations the authority must grant, with conditions consistent with the operating schedule.",
+   "from": 2
+  },
+  {
+   "q": "A neighbour objects only because they dislike the owner's other bar. What can the council do?",
+   "options": [
+    "It must hold a full hearing on the objection",
+    "It must refuse the licence until the neighbour agrees",
+    "Reject it as frivolous or vexatious, with reasons",
+    "It must refer the objection to the Home Office"
+   ],
+   "answer": 2,
+   "why": "A representation must be about the licensing objectives. The council can reject an other person's objection as frivolous or vexatious, but must give reasons.",
+   "from": 2
+  },
+  {
+   "q": "Your guests are mostly 35 to 50 and you can post about 4 times a week. Where should you start?",
+   "options": [
+    "TikTok, as engagement is highest",
+    "Instagram, where that age group follows",
+    "Every platform at once, to be seen",
+    "Facebook, as paid posts are cheap"
+   ],
+   "answer": 1,
+   "why": "Instagram's biggest hospitality follower group is 35 to 44, it is the most influential platform for social-led guests (44%), and 4 posts a week is its median.",
+   "from": 3
+  }
+ ],
+ "terms": [
+  {
+   "term": "Aspect",
+   "def": "The direction a vineyard slope faces. A slope facing the equator gets more sun and warmth.",
+   "lesson": 1
+  },
+  {
+   "term": "Frost pocket",
+   "def": "A low spot, such as a valley floor, where heavy cold air pools on still nights and frost hits vines hardest.",
+   "lesson": 1
+  },
+  {
+   "term": "Licensing sub-committee",
+   "def": "A panel of three councillors from the council's licensing committee that holds hearings and decides contested licence applications.",
+   "lesson": 2
+  },
+  {
+   "term": "Relevant representation",
+   "def": "An objection or comment that is about the four licensing objectives, made in time by a responsible authority or other person, and not frivolous or vexatious.",
+   "lesson": 2
+  },
+  {
+   "term": "Other person",
+   "def": "Anyone who is not a responsible authority, such as a resident or nearby business, who makes a representation about a licence.",
+   "lesson": 2
+  },
+  {
+   "term": "Engagement rate",
+   "def": "The share of people who react to a post, such as liking, commenting or sharing, out of those who see it or follow the account.",
+   "lesson": 3
+  }
+ ],
+ "toolkit": [
+  {
+   "name": "Five site questions for any wine",
+   "kind": "framework",
+   "items": [
+    "Latitude: is it in the 30 to 50 degree band, and nearer which end?",
+    "Height: how high are the vines? Each 100 m is about 0.6°C cooler.",
+    "Slope: which way does it face, and is it mid-slope or on the valley floor?",
+    "Water: is there a river, lake or ocean near to cool, warm or reflect light?",
+    "Soil: does it drain freely and hold heat, like slate, or hold water, like clay?"
+   ],
+   "lesson": 1
+  },
+  {
+   "name": "Who can object: licence contact list",
+   "kind": "checklist",
+   "items": [
+    "Council licensing officer and the committee clerk",
+    "Police licensing team",
+    "Environmental health (noise and pollution)",
+    "Fire and rescue, planning, and health and safety",
+    "Child protection body and public health",
+    "In London, the Greater London Authority",
+    "Nearest residents' group and neighbouring businesses"
+   ],
+   "lesson": 2
+  },
+  {
+   "name": "One-platform test",
+   "kind": "framework",
+   "items": [
+    "Guests: do most of mine use it? Ask ten guests how they found us.",
+    "Effort: can we post at the median rate (Instagram 4 a week, TikTok 2)?",
+    "Format: do our food and room suit photos, short video or both?",
+    "Booking pull: can a follower book in two taps from the profile?",
+    "Choose the top scorer. Add a second only when the first is steady."
+   ],
+   "lesson": 3
+  }
+ ]
+}
