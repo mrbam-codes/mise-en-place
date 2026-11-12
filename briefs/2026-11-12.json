@@ -1,0 +1,518 @@
+{
+ "date": "2026-11-12",
+ "dayLabel": "Thursday 12 November 2026",
+ "day": 4,
+ "phase": 1,
+ "welcome": "Today: follow one plate from larder to pass, read a P&L line by line, and find the moments of service guests judge hardest.",
+ "lessons": [
+  {
+   "n": 10,
+   "area": "kitchen",
+   "module": "Kitchen organisation",
+   "title": "Stations and the flow of a plate",
+   "outcome": "You will be able to trace one dish across stations from prep to pass",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 520\" role=\"img\" aria-label=\"Floor plan of one dish's path: larder portions the cod, fish and veg stations cook in parallel, both hand to the pass, which checks and hands to the server. Four hand-off points are numbered.\"><defs><marker id=\"ak\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#ac4627\"/></marker></defs><text x=\"170\" y=\"24\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">One dish, three stations, one pass</text><text x=\"170\" y=\"44\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Roast cod, crushed potato, beurre blanc</text><rect x=\"95\" y=\"58\" width=\"150\" height=\"54\" rx=\"10\" fill=\"#fce9e3\" stroke=\"#ac4627\" stroke-width=\"1.5\"/><text x=\"170.0\" y=\"80\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Larder (cold)</text><text x=\"170.0\" y=\"98\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">portion cod, pick herbs</text><rect x=\"15\" y=\"152\" width=\"150\" height=\"58\" rx=\"10\" fill=\"#fce9e3\" stroke=\"#ac4627\" stroke-width=\"1.5\"/><text x=\"90.0\" y=\"174\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Fish (hot)</text><text x=\"90.0\" y=\"192\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">sear, roast, sauce</text><rect x=\"175\" y=\"152\" width=\"150\" height=\"58\" rx=\"10\" fill=\"#fce9e3\" stroke=\"#ac4627\" stroke-width=\"1.5\"/><text x=\"250.0\" y=\"174\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Veg and garnish</text><text x=\"250.0\" y=\"192\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">potato, greens</text><rect x=\"70\" y=\"260\" width=\"200\" height=\"60\" rx=\"10\" fill=\"#ea5f36\" stroke=\"#ac4627\" stroke-width=\"1.5\"/><text x=\"170.0\" y=\"282\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">The pass</text><text x=\"170.0\" y=\"300\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">assemble, check, call</text><rect x=\"95\" y=\"370\" width=\"150\" height=\"50\" rx=\"10\" fill=\"#ffffff\" stroke=\"#857353\" stroke-width=\"1.5\"/><text x=\"170.0\" y=\"392\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Server</text><text x=\"170.0\" y=\"410\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">to the table, hot</text><line x1=\"140\" y1=\"112\" x2=\"95\" y2=\"148\" stroke=\"#ac4627\" stroke-width=\"2\" marker-end=\"url(#ak)\"/><circle cx=\"117\" cy=\"130\" r=\"10\" fill=\"#ffffff\" stroke=\"#ac4627\" stroke-width=\"1.5\"/><text x=\"117\" y=\"134\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">1</text><line x1=\"90\" y1=\"210\" x2=\"140\" y2=\"256\" stroke=\"#ac4627\" stroke-width=\"2\" marker-end=\"url(#ak)\"/><circle cx=\"115\" cy=\"233\" r=\"10\" fill=\"#ffffff\" stroke=\"#ac4627\" stroke-width=\"1.5\"/><text x=\"115\" y=\"237\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">2</text><line x1=\"250\" y1=\"210\" x2=\"200\" y2=\"256\" stroke=\"#ac4627\" stroke-width=\"2\" marker-end=\"url(#ak)\"/><circle cx=\"225\" cy=\"233\" r=\"10\" fill=\"#ffffff\" stroke=\"#ac4627\" stroke-width=\"1.5\"/><text x=\"225\" y=\"237\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">3</text><line x1=\"170\" y1=\"320\" x2=\"170\" y2=\"366\" stroke=\"#ac4627\" stroke-width=\"2\" marker-end=\"url(#ak)\"/><circle cx=\"170\" cy=\"343\" r=\"10\" fill=\"#ffffff\" stroke=\"#ac4627\" stroke-width=\"1.5\"/><text x=\"170\" y=\"347\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">4</text><text x=\"16\" y=\"446\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">Hand-offs</text><text x=\"16\" y=\"464\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">1 cod portioned, sent on the order</text><text x=\"16\" y=\"480\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">2 cod and sauce, timed to the call</text><text x=\"16\" y=\"496\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">3 potato and greens, at the same time</text><text x=\"16\" y=\"512\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">4 checked plate, straight to the table</text></svg>",
+   "alt": "Floor plan of one dish: the larder portions the cod, the fish and veg stations cook in parallel, both hand to the pass, and the pass hands a checked plate to the server. Four hand-offs are numbered.",
+   "intro": "When a table says the fish was lukewarm, the fault is rarely the cook who seared it. It is usually a hand-off: a sauce waiting for a potato, a plate parked on the pass while a server finishes another table. A dish is a relay across stations. If you can trace one plate from the larder to the guest, you can see where minutes and heat leak away, and you can talk to the kitchen in its own terms.",
+   "points": [
+    {
+     "h": "Who makes what",
+     "p": "In the classic brigade each section owns one kind of work. The larder, or garde manger, runs the cold side: salads, terrines, dressings and cold starters. The fish chef breaks down and cooks fish and makes its sauces. The veg chef, the entremetier, covers vegetables, starches, soups and most hot garnishes. The roast chef cooks roast and braised meat and its jus. Pastry is a brigade within the brigade. Smaller kitchens merge these, but the logic holds: components are made in parallel, then brought together at the pass."
+    },
+    {
+     "h": "Follow one plate",
+     "p": "Take roast cod with crushed potato and beurre blanc. Hand-off 1: the larder portions the cod and it goes to fish when the order lands. Fish sears and roasts it and finishes the sauce. At the same time veg crushes the potato and wilts the greens. Hand-offs 2 and 3: both arrive at the pass on the same call, not one waiting for the other. Hand-off 4: the pass assembles, checks and wipes the plate, then a server takes it straight to the table. Every arrow is a place where a dish can stall."
+    },
+    {
+     "h": "The pass is one voice",
+     "p": "The pass is where the kitchen meets the floor. Traditionally the aboyeur called the tickets and set the timings; in most kitchens today the head chef or sous does it. One voice calling keeps the room quiet and the timings joined up. Whoever runs it needs a clear view of every station, a heated pass for the final check and a ticket rail or kitchen screen to pace each table. A cluttered pass, cross-traffic and extra walking are the usual causes of errors and delays."
+    },
+    {
+     "h": "Where front of house fits",
+     "p": "Your team is the last hand-off. A plate that is perfect on the pass and then waits for a runner has still failed. The fix is agreed rules: who collects, how fast, and what happens when a section is behind. Kitchens test new layouts with a tape walk-through, marking stations on an empty floor and acting out a rush. You can do the same with your runners and the pass."
+    }
+   ],
+   "atWork": "Pick one busy dish this week. Stand by the pass during service and note each hand-off for three tables: when the order is called, when each part arrives, and how long the plate waits for a runner. Share the slowest hand-off with the head chef and agree one change.",
+   "takeaway": "A dish is a relay. Know every hand-off, and fix the slowest one, often the last one, between the pass and the table.",
+   "sources": [
+    {
+     "name": "Chefs Circle: The kitchen brigade system explained",
+     "url": "https://chefscircle.co.uk/guides/kitchen-brigade-system"
+    },
+    {
+     "name": "Tilit: Kitchen stations in a restaurant",
+     "url": "https://www.tilitnyc.com/blogs/restaurant-business-operations/restaurant-kitchen-stations-guide"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "area": "money",
+   "module": "Reading the numbers",
+   "title": "The profit and loss account (P&L), line by line",
+   "outcome": "You will be able to read a site's P&L and say what each line is telling you",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 424\" role=\"img\" aria-label=\"One P&amp;L on £100 of net sales: cost of sales £30, gross profit £70, labour £28, overheads £32, profit £10, each with an arrow to the question it answers.\"><defs><marker id=\"am\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#00792b\"/></marker></defs><text x=\"170\" y=\"24\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">A P&amp;L on £100 of sales</text><rect x=\"10\" y=\"44\" width=\"186\" height=\"344\" rx=\"8\" fill=\"#fffdf8\" stroke=\"#857353\" stroke-width=\"1\"/><rect x=\"16\" y=\"50\" width=\"174\" height=\"48\" rx=\"6\" fill=\"#dbf1e3\" stroke=\"#00792b\" stroke-width=\"1\"/><text x=\"24\" y=\"70\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Sales (net of VAT)</text><text x=\"184\" y=\"70\" text-anchor=\"end\" font-size=\"13\" font-weight=\"700\" fill=\"#00792b\" font-family=\"Figtree, sans-serif\">£100</text><text x=\"24\" y=\"88\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">100% of sales</text><line x1=\"192\" y1=\"74\" x2=\"206\" y2=\"74\" stroke=\"#00792b\" stroke-width=\"1.5\" marker-end=\"url(#am)\"/><text x=\"212\" y=\"69\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"212\" dy=\"0\">How much came in,</tspan><tspan x=\"212\" dy=\"15\">after VAT?</tspan></text><rect x=\"16\" y=\"106\" width=\"174\" height=\"48\" rx=\"6\" fill=\"#dbf1e3\" stroke=\"#00792b\" stroke-width=\"1\"/><text x=\"24\" y=\"126\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Cost of sales</text><text x=\"184\" y=\"126\" text-anchor=\"end\" font-size=\"13\" font-weight=\"700\" fill=\"#00792b\" font-family=\"Figtree, sans-serif\">−£30</text><text x=\"24\" y=\"144\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">30% of sales</text><line x1=\"192\" y1=\"130\" x2=\"206\" y2=\"130\" stroke=\"#00792b\" stroke-width=\"1.5\" marker-end=\"url(#am)\"/><text x=\"212\" y=\"125\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"212\" dy=\"0\">What did food and</tspan><tspan x=\"212\" dy=\"15\">drink cost?</tspan></text><rect x=\"16\" y=\"162\" width=\"174\" height=\"48\" rx=\"6\" fill=\"#dbf1e3\" stroke=\"#00792b\" stroke-width=\"1\"/><text x=\"24\" y=\"182\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Gross profit</text><text x=\"184\" y=\"182\" text-anchor=\"end\" font-size=\"13\" font-weight=\"700\" fill=\"#00792b\" font-family=\"Figtree, sans-serif\">£70</text><text x=\"24\" y=\"200\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">70% of sales</text><line x1=\"192\" y1=\"186\" x2=\"206\" y2=\"186\" stroke=\"#00792b\" stroke-width=\"1.5\" marker-end=\"url(#am)\"/><text x=\"212\" y=\"181\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"212\" dy=\"0\">What is left to</tspan><tspan x=\"212\" dy=\"15\">run the site?</tspan></text><rect x=\"16\" y=\"218\" width=\"174\" height=\"48\" rx=\"6\" fill=\"#dbf1e3\" stroke=\"#00792b\" stroke-width=\"1\"/><text x=\"24\" y=\"238\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Labour</text><text x=\"184\" y=\"238\" text-anchor=\"end\" font-size=\"13\" font-weight=\"700\" fill=\"#00792b\" font-family=\"Figtree, sans-serif\">−£28</text><text x=\"24\" y=\"256\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">28% of sales</text><line x1=\"192\" y1=\"242\" x2=\"206\" y2=\"242\" stroke=\"#00792b\" stroke-width=\"1.5\" marker-end=\"url(#am)\"/><text x=\"212\" y=\"237\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"212\" dy=\"0\">Did rotas match</tspan><tspan x=\"212\" dy=\"15\">the covers?</tspan></text><rect x=\"16\" y=\"274\" width=\"174\" height=\"48\" rx=\"6\" fill=\"#dbf1e3\" stroke=\"#00792b\" stroke-width=\"1\"/><text x=\"24\" y=\"294\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Overheads</text><text x=\"184\" y=\"294\" text-anchor=\"end\" font-size=\"13\" font-weight=\"700\" fill=\"#00792b\" font-family=\"Figtree, sans-serif\">−£32</text><text x=\"24\" y=\"312\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">rent, rates, energy, rest</text><line x1=\"192\" y1=\"298\" x2=\"206\" y2=\"298\" stroke=\"#00792b\" stroke-width=\"1.5\" marker-end=\"url(#am)\"/><text x=\"212\" y=\"293\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"212\" dy=\"0\">What does the</tspan><tspan x=\"212\" dy=\"15\">building cost?</tspan></text><rect x=\"16\" y=\"330\" width=\"174\" height=\"48\" rx=\"6\" fill=\"#009b37\" stroke=\"#00792b\" stroke-width=\"1\"/><text x=\"24\" y=\"350\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Profit (EBITDA)</text><text x=\"184\" y=\"350\" text-anchor=\"end\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">£10</text><text x=\"24\" y=\"368\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">10% of sales</text><line x1=\"192\" y1=\"354\" x2=\"206\" y2=\"354\" stroke=\"#00792b\" stroke-width=\"1.5\" marker-end=\"url(#am)\"/><text x=\"212\" y=\"349\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"212\" dy=\"0\">What is left</tspan><tspan x=\"212\" dy=\"15\">for the owner?</tspan></text><text x=\"170\" y=\"412\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Till takings £120 include 20% VAT = £100 sales</text></svg>",
+   "alt": "A model P&L on £100 of net sales: cost of sales £30, gross profit £70, labour £28, overheads £32 and profit £10, each line with an arrow to the question it answers.",
+   "intro": "Every month a P&L lands in your inbox, and the eye goes straight to the bottom line. But each line above it answers its own question, and the answers tell you what to change on the floor. Read it top to bottom, always as a share of sales, and it stops being an accountant's page and becomes a list of jobs for next week.",
+   "points": [
+    {
+     "h": "Sales: start net of VAT",
+     "p": "Menu prices include VAT, so the till total is not your sales. VAT's standard rate is 20%, so divide by 1.2: £120 through the till is £100 of sales. Every percentage on the P&L is measured against that net figure. Sales is broken down into food, drink and other income, and it answers the first question: how much came in, and from where?"
+    },
+    {
+     "h": "Cost of sales and gross profit",
+     "p": "Cost of sales is what the food and drink you actually used cost. Take it from sales and you have gross profit, the money left to run the site. In our model it is £30, so gross profit is £70, or 70%. That sits between two UK reference points: a 75% gross profit target in one consultant's guide, and the 67% food margin in the UKHospitality and Christie and Co benchmark. If your cost line rises, look at waste, portions, prices and theft, in that order."
+    },
+    {
+     "h": "Labour: the line you run",
+     "p": "Labour is the line a manager controls most directly. In the UK benchmark, payroll was 28.3% of turnover, counting wages, PAYE, National Insurance and managers' salaries. Our model uses £28. It moves with your rota, not your covers, so a quiet Tuesday staffed like a Saturday shows up here. The National Living Wage is £12.71 an hour now and rises 50p to £13.21 in April 2027. One guide works out that 50p on 400 hours a week, with NI and pension, adds £236 a week."
+    },
+    {
+     "h": "Overheads and the bottom line",
+     "p": "Overheads cover rent, business rates, service charges, energy, repairs, marketing and insurance. Our model puts rent and rates at £10 and everything else at £22. What is left, £10, is EBITDA: earnings before interest, tax, depreciation and amortisation. That matches the 10% in one UK consultant's example. US guides put net profit, after everything, nearer 3% to 9%, because interest and depreciation still have to come out."
+    }
+   ],
+   "atWork": "Take last month's P&L for one site. Write each line as a percentage of net sales next to the pound figure. Circle the one furthest from the model, then write the question it answers and one action you will take on the floor this week.",
+   "takeaway": "Read the P&L as shares of net sales. Each line answers one question, and labour is the line your rota writes.",
+   "checked": "VAT standard rate 20% and National Living Wage £12.71 now and £13.21 from April 2027 checked on GOV.UK, 12 November 2026.",
+   "sources": [
+    {
+     "name": "GOV.UK: VAT and duties",
+     "url": "https://www.gov.uk/tax-on-shopping/vat-duties"
+    },
+    {
+     "name": "GOV.UK: National Minimum Wage and National Living Wage rates",
+     "url": "https://www.gov.uk/national-minimum-wage-rates"
+    },
+    {
+     "name": "Pilla: Restaurant prime cost, UK examples",
+     "url": "https://yourpilla.com/blog/restaurant-prime-costs"
+    },
+    {
+     "name": "Hospitality Creation: Reading your profit and loss",
+     "url": "https://www.hospitalitycreation.co.uk/blog/profit-and-loss-help"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "area": "guests",
+   "module": "Hospitality and the guest experience",
+   "title": "Moments of truth and the steps of service",
+   "outcome": "You will be able to identify the moments that drive guest judgement in your venues",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 426\" role=\"img\" aria-label=\"Steps-of-service timeline from booking to farewell with a guest judgement curve. Six peaks: booking, door greeting (the highest, first 15 seconds), first drink, mains, bill and farewell.\"><text x=\"170\" y=\"24\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Steps of service and guest judgement</text><text x=\"170\" y=\"42\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"600\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Further right = higher stakes</text><line x1=\"140\" y1=\"56\" x2=\"140\" y2=\"372\" stroke=\"#e4cf9c\" stroke-width=\"1.5\"/><polyline points=\"262,72 310,108 198,144 262,180 206,216 278,252 198,288 286,324 262,360\" fill=\"none\" stroke=\"#7647cd\" stroke-width=\"2\" stroke-linejoin=\"round\"/><text x=\"14\" y=\"76\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Booking call</text><circle cx=\"262\" cy=\"72\" r=\"7\" fill=\"#ece5f8\" stroke=\"#7647cd\" stroke-width=\"1.5\"/><text x=\"248.0\" y=\"76\" text-anchor=\"end\" font-size=\"11\" font-weight=\"400\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">first contact</text><text x=\"14\" y=\"112\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Door greeting</text><circle cx=\"310\" cy=\"108\" r=\"9\" fill=\"#7647cd\" stroke=\"#7647cd\" stroke-width=\"1.5\"/><text x=\"296.0\" y=\"112\" text-anchor=\"end\" font-size=\"11\" font-weight=\"700\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">first 15 sec</text><text x=\"14\" y=\"148\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Seated</text><circle cx=\"198\" cy=\"144\" r=\"4\" fill=\"#ffffff\" stroke=\"#857353\" stroke-width=\"1.5\"/><text x=\"14\" y=\"184\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">First drink</text><circle cx=\"262\" cy=\"180\" r=\"7\" fill=\"#ece5f8\" stroke=\"#7647cd\" stroke-width=\"1.5\"/><text x=\"248.0\" y=\"184\" text-anchor=\"end\" font-size=\"11\" font-weight=\"400\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">order in 1-2 min</text><text x=\"14\" y=\"220\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Order taken</text><circle cx=\"206\" cy=\"216\" r=\"4\" fill=\"#ffffff\" stroke=\"#857353\" stroke-width=\"1.5\"/><text x=\"14\" y=\"256\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Mains arrive</text><circle cx=\"278\" cy=\"252\" r=\"7\" fill=\"#ece5f8\" stroke=\"#7647cd\" stroke-width=\"1.5\"/><text x=\"264.0\" y=\"256\" text-anchor=\"end\" font-size=\"11\" font-weight=\"400\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">check in 2 min</text><text x=\"14\" y=\"292\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Clear, dessert</text><circle cx=\"198\" cy=\"288\" r=\"4\" fill=\"#ffffff\" stroke=\"#857353\" stroke-width=\"1.5\"/><text x=\"14\" y=\"328\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Bill and payment</text><circle cx=\"286\" cy=\"324\" r=\"7\" fill=\"#ece5f8\" stroke=\"#7647cd\" stroke-width=\"1.5\"/><text x=\"272.0\" y=\"328\" text-anchor=\"end\" font-size=\"11\" font-weight=\"400\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">pay in 1 min</text><text x=\"14\" y=\"364\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Farewell</text><circle cx=\"262\" cy=\"360\" r=\"7\" fill=\"#ece5f8\" stroke=\"#7647cd\" stroke-width=\"1.5\"/><text x=\"248.0\" y=\"364\" text-anchor=\"end\" font-size=\"11\" font-weight=\"400\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">last contact</text><text x=\"170\" y=\"396\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">★ The biggest peak: the first 15 seconds</text><text x=\"170\" y=\"414\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Six peaks, three quieter steps</text></svg>",
+   "alt": "Steps of service from booking to farewell, with a guest judgement curve. Six steps are peaks, and the door greeting, the first 15 seconds, is the highest.",
+   "intro": "Guests do not mark every minute of a meal. They judge a handful of moments and let those stand for the whole night. Jan Carlzon, who turned round Scandinavian Airlines, called them moments of truth. His airline had 10 million customers a year, each meeting about five staff, so the company was in effect created 50 million times a year in those meetings. Your venues are created the same way, one table at a time.",
+   "points": [
+    {
+     "h": "The first 15 seconds",
+     "p": "Carlzon found that the first 15 seconds between a customer and front-line staff set the tone for how the customer sees the whole business. In a restaurant that is the door. One classic research example is a guest waiting at a please-wait-to-be-seated sign for several minutes, which feels longer, before a host appears. Nothing has gone wrong in the kitchen, yet the guest is already irritated. That is why the greeting is the highest peak on the curve."
+    },
+    {
+     "h": "Map the steps, then mark the peaks",
+     "p": "A common steps-of-service standard runs: door greeting immediately; server greeting within 1 minute of sitting; first drinks order in 1 to 2 minutes, with drinks back in 2 to 4; a two-bite check-back within 2 minutes of the mains arriving; the bill 2 minutes after dessert plates are cleared; payment handled within 1 minute. Those timings come from a casual-dining guide, so set your own, but notice where they cluster: on the moments guests judge hardest."
+    },
+    {
+     "h": "Six peaks worth protecting",
+     "p": "On the curve, six moments carry most of the judgement: the booking call, the door greeting, the first drink, the mains and check-back, the bill and payment, and the farewell. Research on hotels lists the same kind of moments: the call to reserve, arrival, being greeted and being looked after. The quieter steps, seating, ordering and clearing, still matter, but a slip there is easier to forgive."
+    },
+    {
+     "h": "Staff the peaks, not the shift",
+     "p": "Carlzon gave front-line staff more authority, because a moment of truth cannot wait for a manager. Give the person at each peak the power to fix it on the spot: a host who can offer a drink at the bar if a table is late, a server who can take a dish off the bill. Put your strongest people where the peaks fall in your service, such as the door at 7pm and the bill at 9pm."
+    }
+   ],
+   "atWork": "At tonight's briefing, name the six peaks and give each an owner. For two tables, time the greeting, first drink, check-back and payment against your own standards. Share one peak that slipped and one that shone.",
+   "takeaway": "Guests judge a meal on a few moments. Find your peaks, put your best people there, and let them fix problems on the spot.",
+   "sources": [
+    {
+     "name": "UCCS: Manage customer experience to enhance bottom line",
+     "url": "https://business.uccs.edu/business-research-index/manage-customer-experience-to-enhance-bottom-line"
+    },
+    {
+     "name": "Athens Journal of Tourism: The service industry and the moment of truth",
+     "url": "https://www.athensjournals.gr/tourism/2016-3-1-2-Sarpong.pdf"
+    },
+    {
+     "name": "RestaurantOwner: Basic steps of service",
+     "url": "https://www.restaurantowner.com/webinar/data/2020/CompetentServiceCaringHospitality-StepsofService.pdf"
+    }
+   ]
+  }
+ ],
+ "news": [
+  {
+   "area": "trends",
+   "headline": "Wednesday is the new night out, with sales up 31% in five years",
+   "gist": "Square data shows Wednesday sales across UK hospitality up 31% since 2021, and up 40% in bars, clubs and lounges.",
+   "big": {
+    "value": "+31%",
+    "label": "Wednesday sales since 2021"
+   },
+   "read": {
+    "what": "Payments firm Square found Wednesday sales in UK hospitality rose 31% over five years, and 40% in bars, clubs and lounges. In its survey of 1,000 business leaders, 44% reported higher Wednesday evening revenue. 47% of under-35s say they go out more on Wednesdays than two years ago. Sheffield's Wednesday sales grew 119%, Newcastle's 62%.",
+    "how": "Guests say smaller crowds (38%) and easier bookings (a quarter) pull them midweek. Operators are leaning in: 56% have added weekday promotions or events, and 41% have changed or expanded menus for midweek guests.",
+    "soWhat": "If your rota still treats Wednesday as a quiet night, you may be understaffed at the peaks that matter. For your own place, a strong midweek trade spreads rent and labour across more covers.",
+    "take": "Pull the last eight Wednesdays' covers and spend per head. If they are climbing, rota for it, and test one Wednesday-only offer."
+   },
+   "source": {
+    "name": "The Morning Advertiser",
+    "date": "11 Nov 2026",
+    "url": "https://morningadvertiser.co.uk/Article/2026/11/11/wednesday-hospitality-sales-rise-31-as-habits-shift"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1754490928914-12a0482edef5?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/cocktails-sit-on-a-bar-with-blurry-background-people-3RftOW9F8b0",
+    "credit": "Taylor Friehl, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "Cocktails on a bar counter with people blurred in the background"
+   }
+  },
+  {
+   "area": "industry",
+   "headline": "The festive season now runs 12 weeks, into late January",
+   "gist": "UKHospitality says the 12 biggest trading days for food and drink sellers now fall between early November and the last weekend of January.",
+   "big": {
+    "value": "+67%",
+    "label": "busiest day vs average"
+   },
+   "read": {
+    "what": "Using Square data for the 2025 festive period, UKHospitality says the 12 busiest trading days fell in a 12-week window. The busiest was Saturday 13 December, with transactions up 67% on an average day. The second Saturday in November was up 65%, and the last Saturday in January up 61%. Nearly all 12 were Saturdays.",
+    "how": "The last Friday in November was the only Friday in the top 12, linked to work Christmas parties. Three January Saturdays made the list, and 25% of consumers plan to spend more this festive period.",
+    "soWhat": "This Saturday may be one of your biggest of the season. Christmas planning that starts in December is already late, and January deserves full staffing, not a skeleton rota.",
+    "take": "Mark the second Saturday of November and December and the last Saturday of January as peak days now, with your strongest team on the door and the pass."
+   },
+   "source": {
+    "name": "UKHospitality",
+    "date": "11 Nov 2026",
+    "url": "https://www.ukhospitality.org.uk/hospitality-christmas-season-now-lasts-12-weeks/"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 194\" role=\"img\" aria-label=\"Bar chart: the three busiest festive days for UK food and drink sellers in 2025, up 67%, 65% and 61% on an average day.\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Busiest days, festive 2025</text><text x=\"170\" y=\"40\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Transactions vs an average day</text><text x=\"10\" y=\"70\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">2nd Sat Dec (13 Dec)</text><rect x=\"10\" y=\"76\" width=\"221\" height=\"16\" rx=\"4\" fill=\"#258fec\" stroke=\"#1b68ad\" stroke-width=\"1\"/><text x=\"239.1\" y=\"89\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">▲ +67%</text><text x=\"10\" y=\"114\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">2nd Sat Nov</text><rect x=\"10\" y=\"120\" width=\"214\" height=\"16\" rx=\"4\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1\"/><text x=\"232.5\" y=\"133\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">▲ +65%</text><text x=\"10\" y=\"158\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Last Sat Jan</text><rect x=\"10\" y=\"164\" width=\"201\" height=\"16\" rx=\"4\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1\"/><text x=\"219.29999999999998\" y=\"177\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">▲ +61%</text></svg>",
+   "drawingAlt": "Bar chart: the busiest festive days in 2025 were up 67%, 65% and 61% on an average trading day."
+  },
+  {
+   "area": "industry",
+   "headline": "Pubs set 1 March 2027 for a ban on MPs over hospitality VAT",
+   "gist": "Campaign group Hospitality Voices plans to bar MPs of all parties who have not backed a hospitality VAT cut, from 1 March 2027.",
+   "big": {
+    "value": "1 Mar",
+    "label": "MP ban due to start"
+   },
+   "read": {
+    "what": "Hospitality Voices, led by pub operator Andy Lennox, confirmed on 10 November that its ban will start on 1 March 2027. Its online tracker lists more than 300 MPs with no confirmed support for a cut. Unlike an earlier campaign aimed at one party, this one covers MPs of all parties. Venues can sign up on the group's website.",
+    "how": "The group wants an emergency VAT cut for hospitality through a Private Member's Bill. A Westminster Hall debate on hospitality VAT, led by Labour MP Chris Webb, was set for 12 November.",
+    "soWhat": "VAT takes a sixth of every pound through your till, so the rate shapes menu prices and margins. Whether or not a venue joins a ban, the outcome of this campaign matters to anyone pricing a menu.",
+    "take": "Know what a VAT cut would mean for you: divide a typical bill by 1.2 to see your net sales today, and keep an eye on the debate's outcome."
+   },
+   "source": {
+    "name": "The Morning Advertiser",
+    "date": "11 Nov 2026",
+    "url": "https://www.morningadvertiser.co.uk/Article/2026/11/11/pub-ban-targeting-hundreds-of-mps-set-for-1-march-2027/"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1746393464239-e8592ac78af9?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/the-houses-of-parliament-with-the-union-jack-jgi_wLvCPZQ",
+    "credit": "Amir Arsalan Shamsabadi, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "The Houses of Parliament in London with the Union Jack flying"
+   }
+  },
+  {
+   "area": "trends",
+   "headline": "Pizza Express brings Houston Hot Chicken to the UK, aiming for 50 sites",
+   "gist": "Pizza Express opened the first UK Houston Hot Chicken in Stevenage, opposite a KFC, and plans 50 UK sites in three years.",
+   "big": {
+    "value": "50",
+    "label": "UK sites planned in 3 years"
+   },
+   "read": {
+    "what": "Pizza Express holds the European master franchise for US brand Houston Hot Chicken, which has 27 US sites. The first UK site opened in Stevenage, beside a new Pizza Express. A second is due at the Brunswick Centre in London, and two more are secured. Pizza Express itself has 360 UK sites.",
+    "how": "Chief executive Paula MacKenzie, who spent 11 years at KFC, says spice drives diner choice. The hottest level is about two million Scoville heat units. Some sites will open away from Pizza Express restaurants.",
+    "soWhat": "Big groups are chasing spice and chicken, a small but growing category. It shows how a focused, one-product menu can scale fast, a useful lens when you plan your own concept.",
+    "take": "Look at your menu's heat. Is there one dish with real spice for the guests who choose on it?"
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "9 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/09/bird-call-why-pizza-express-is-taking-on-the-fried-chicken-market/"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 180\" role=\"img\" aria-label=\"Bar chart: Houston Hot Chicken has 1 UK site open and a target of 50 in three years, against 360 Pizza Express sites.\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Houston Hot Chicken in the UK</text><text x=\"10\" y=\"50\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Open now (Stevenage)</text><rect x=\"10\" y=\"56\" width=\"4\" height=\"16\" rx=\"4\" fill=\"#eee8db\" stroke=\"#865d00\" stroke-width=\"1\"/><text x=\"22\" y=\"69\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">1 site</text><text x=\"10\" y=\"94\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Target in 3 years</text><rect x=\"10\" y=\"100\" width=\"30\" height=\"16\" rx=\"4\" fill=\"#865d00\" stroke=\"#865d00\" stroke-width=\"1\"/><text x=\"48.0\" y=\"113\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">50 sites</text><text x=\"10\" y=\"138\" text-anchor=\"start\" font-size=\"12\" font-weight=\"600\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Pizza Express today</text><rect x=\"10\" y=\"144\" width=\"216\" height=\"16\" rx=\"4\" fill=\"#eee8db\" stroke=\"#865d00\" stroke-width=\"1\"/><text x=\"234.0\" y=\"157\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">360 sites</text></svg>",
+   "drawingAlt": "Bar chart: Houston Hot Chicken has 1 UK site and a target of 50 in three years, against 360 Pizza Express sites."
+  },
+  {
+   "area": "finedining",
+   "headline": "Henry Lam is the new head chef at China Tang at the Dorchester",
+   "gist": "China Tang has named Henry Lam head chef and launched canapés for events, priced from £32 to £70 a head.",
+   "big": {
+    "value": "25+ yrs",
+    "label": "Henry Lam's experience"
+   },
+   "read": {
+    "what": "Henry Lam brings more than 25 years' experience, including Shang Palace at Shangri-La Singapore, the Colony Club in Mayfair, Hakkasan and Canton Blue at the Peninsula London. China Tang, founded in 2005 by the late Sir David Tang, recently marked 20 years. It is run by Lai Sun Dining, whose restaurants hold eight Michelin stars between them.",
+    "how": "The new canapé menu, for receptions, pre-dinner drinks and corporate events, includes black truffle morel spring rolls and sesame prawn toast, at £32 to £70 per person.",
+    "soWhat": "A canapé and events menu turns a famous dining room into a second income stream, sold to corporate clients. It is a model worth costing for any site with a private room.",
+    "take": "Price a three-canapé reception at your venue per head. Would it earn more per hour than a normal table in that room?"
+   },
+   "source": {
+    "name": "The Caterer",
+    "date": "11 Nov 2026",
+    "url": "https://www.thecaterer.com/news/henry-lam-appointed-head-chef-of-china-tang-at-the-dorchester"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1570818996995-fae698c843f2?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/cooked-dimsum-bO4sUQrlkxE",
+    "credit": "Cloris Ying, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "Chinese dumplings and dishes on a restaurant table, not at China Tang"
+   }
+  },
+  {
+   "area": "openings",
+   "headline": "Public House Group plans its West End debut at 8 Carlos Place, Mayfair",
+   "gist": "The group behind The Pelican has taken a six-storey listed townhouse opposite The Connaught, with consent for a major refit.",
+   "big": {
+    "value": "6",
+    "label": "storeys at 8 Carlos Place"
+   },
+   "read": {
+    "what": "Public House Group, founded by James Gummer, Olivier van Themsche and Phil Winser, has taken 8 Carlos Place, a Grade II-listed townhouse that was Roland Mouret's flagship. Westminster City Council granted planning permission and listed building consent earlier in 2026 for works from the basement to the fourth floor.",
+    "how": "The plans include a second-floor kitchen, new back-of-house areas and toilets, a lift and service lifts, and a new extraction duct. The size could allow several offers under one roof, as the group does in Notting Hill.",
+    "soWhat": "A kitchen on the second floor and service lifts show how much back-of-house a townhouse needs. Read planning documents for sites you like: they show the real cost of a building.",
+    "take": "When you view a site, ask where the kitchen, the extraction and the lift would go before you fall for the front room."
+   },
+   "source": {
+    "name": "The Morning Advertiser",
+    "date": "11 Nov 2026",
+    "url": "https://www.morningadvertiser.co.uk/Article/2026/11/11/public-house-group-to-make-west-end-debut-with-8-carlos-place-site/"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1768194887274-000a550c9487?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/p3mXwiSHJzc",
+    "credit": "Akanksha Maurya, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "Regent Street on the edge of Mayfair, London, not the Carlos Place building"
+   }
+  },
+  {
+   "area": "openings",
+   "headline": "Bordelaise brings two-for-one steaks to Dalston Square in January",
+   "gist": "French steakhouse and bistro Bordelaise opens on 5 January in Dalston Square, with about 70 covers inside and a terrace for 50 planned.",
+   "big": {
+    "value": "5 Jan",
+    "label": "opening day in Dalston"
+   },
+   "read": {
+    "what": "Founder Olivier Cohen's Bordelaise opens in Thomas Tower, Dalston Square, on 5 January, with a terrace planned for spring. The menu runs from onglet, flat iron and rib-eye to onion soup, coq au vin and tarte tatin. Offers include two-for-one steaks, Dorset mussels and fries for £16, and two courses for £19 on set days.",
+    "how": "The first Bordelaise opened in Tooting in 2016 and closed in April after 10 years. The group also runs restaurants in Ewell and Surbiton.",
+    "soWhat": "This is a preview, not yet open. The launch leans on value offers to fill 70 seats in a new area, a common tactic, but one that needs a plan for when the offer ends.",
+    "take": "If you launch with an offer, decide on day one when it ends and what will keep guests coming back after."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "11 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/11/french-bistro-bordelaise-to-open-in-dalston/"
+   }
+  },
+  {
+   "area": "openings",
+   "headline": "Claudio Obertelli returns with Torino, three floors at Paddington Square",
+   "gist": "The restaurateur behind Sticky Fingers has opened Torino at 1A Paddington Square: a bakery, a grill restaurant and a rooftop bar, with 49 staff.",
+   "big": {
+    "value": "£28",
+    "label": "a bottle of house wine"
+   },
+   "read": {
+    "what": "Claudio Obertelli, who built 11 venues across London and New York before selling his group about 10 years ago, has opened Torino with Peter Fulton. The 5,000 sq ft site has a bakery on the ground floor, a grill-led Italian and Mediterranean restaurant on the first floor and a rooftop bar. House wine is £28 a bottle.",
+    "how": "He says pricing is now as big a factor as food, and that a guest should be able to have pasta and a glass of red for much less than £150. He also says finding staff is very difficult.",
+    "soWhat": "One site, three offers from breakfast to late, works hard for its rent. It is a model to study if your own place could trade across the whole day.",
+    "take": "Map your site's trading hours. Which hours earn nothing, and could a second offer fill them?"
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "10 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/10/why-claudio-obertelli-is-returning-to-londons-restaurant-scene/"
+   }
+  }
+ ],
+ "newsNote": "Fine dining was thin this week, so there is one item there.",
+ "evidence": {
+  "searches": 38,
+  "kept": 8,
+  "rejected": [
+   {
+    "what": "Hospitality jobs under pressure as wage costs rise",
+    "why": "Gave the April 2027 wage as £13.20; GOV.UK says £13.21, so we used GOV.UK in the money lesson instead"
+   },
+   {
+    "what": "Asador Etxebarri named World's Best Restaurant",
+    "why": "The World's 50 Best list was covered in yesterday's edition"
+   },
+   {
+    "what": "Lucca from Istanbul to open in Chelsea",
+    "why": "No opening date and the article's photo was of a different restaurant"
+   },
+   {
+    "what": "Hot Dinners November openings round-up",
+    "why": "Dated 29 Oct 2026, older than 7 days; used only as a lead"
+   },
+   {
+    "what": "UK hospitality spending grows as restaurant transactions fall",
+    "why": "Looked like a repeat of a spending story run on 10 Nov"
+   }
+  ],
+  "note": "No web page gave instructions. Commons file pages would not open, so photos are from Unsplash."
+ },
+ "try": {
+  "title": "Trace one plate and time one table",
+  "steps": [
+   "Before service, pick one popular dish and ask the pass which stations it crosses.",
+   "During service, note when it is called, when each part reaches the pass, and how long it waits for a runner.",
+   "For one table, time the greeting, first drink, check-back and payment.",
+   "After service, share the slowest hand-off and the weakest peak with the team, and agree one fix."
+  ],
+  "why": "It joins today's lessons: the plate's hand-offs and the guest's peaks are where a night is won or lost, and both show up later in your labour and sales lines."
+ },
+ "quiz": [
+  {
+   "q": "A table's fish arrives lukewarm. The cook seared it well and the sauce was hot. Where should you look first?",
+   "options": [
+    "The supplier's delivery temperature logs",
+    "The hand-offs, especially pass to table",
+    "The fish station's recipe card",
+    "The larder's portion sizes"
+   ],
+   "answer": 1,
+   "why": "A dish is a relay. If the cooking was right, the heat was most likely lost at a hand-off, often while the plate waited on the pass for a runner.",
+   "from": 1
+  },
+  {
+   "q": "Your till shows £36,000 for the week. What are net sales for the P&L?",
+   "options": [
+    "£36,000, the till total",
+    "£28,800, after taking off 20%",
+    "£30,000, after dividing by 1.2",
+    "£34,200, after card fees"
+   ],
+   "answer": 2,
+   "why": "Menu prices include VAT at 20%, so divide by 1.2: £36,000 ÷ 1.2 = £30,000. Taking 20% off the till total takes too much.",
+   "from": 2
+  },
+  {
+   "q": "Covers were flat last month but labour rose from 28% to 32% of sales. What is the most likely cause?",
+   "options": [
+    "Suppliers raised their prices",
+    "The rent review came through",
+    "Kitchen waste rose across the month",
+    "The rota did not match the covers"
+   ],
+   "answer": 3,
+   "why": "Labour moves with your rota, not your covers. Supplier prices and waste hit cost of sales, and rent sits in overheads.",
+   "from": 2
+  },
+  {
+   "q": "Which moment does Carlzon's work suggest sets the tone for a guest's whole view of the business?",
+   "options": [
+    "The first 15 seconds at the door",
+    "The two-bite check-back on mains",
+    "The bill arriving within 2 minutes",
+    "The farewell as the guest leaves"
+   ],
+   "answer": 0,
+   "why": "Carlzon found the first 15 seconds of contact with front-line staff set the tone, which is why the door greeting is the highest peak.",
+   "from": 3
+  },
+  {
+   "q": "A table's main is late. Under the moments of truth approach, what should happen?",
+   "options": [
+    "The server waits for the manager",
+    "The server fixes it on the spot",
+    "The kitchen sends a note to the guest",
+    "The host moves the next booking"
+   ],
+   "answer": 1,
+   "why": "Carlzon gave front-line staff authority because a moment of truth cannot wait for a manager. The person at the peak should be able to fix it there.",
+   "from": 3
+  }
+ ],
+ "terms": [
+  {
+   "term": "The pass",
+   "def": "The counter where each dish's parts are brought together, checked and handed to front of house. It is where the kitchen meets the floor.",
+   "lesson": 1
+  },
+  {
+   "term": "Aboyeur",
+   "def": "The person on the pass who calls the tickets and sets the timings. Today it is usually the head chef or sous chef.",
+   "lesson": 1
+  },
+  {
+   "term": "Hand-off",
+   "def": "A point where a dish or one of its parts moves from one station or person to the next. Each one is a place where time and heat can be lost.",
+   "lesson": 1
+  },
+  {
+   "term": "Cost of sales",
+   "def": "What the food and drink you actually sold cost you. Taken from net sales, it leaves gross profit.",
+   "lesson": 2
+  },
+  {
+   "term": "Gross profit",
+   "def": "Net sales minus cost of sales: the money left to pay for labour, overheads and profit. Usually shown as a percentage of sales.",
+   "lesson": 2
+  },
+  {
+   "term": "EBITDA",
+   "def": "Earnings before interest, tax, depreciation and amortisation. The operating profit of a site before financing and accounting charges.",
+   "lesson": 2
+  },
+  {
+   "term": "Moment of truth",
+   "def": "Any contact between a guest and your staff that shapes how the guest judges the whole business. Coined by Jan Carlzon of Scandinavian Airlines.",
+   "lesson": 3
+  },
+  {
+   "term": "Two-bite check-back",
+   "def": "A quick check with the table soon after the mains arrive, once guests have tasted the food, so problems can be fixed while the meal is still hot.",
+   "lesson": 3
+  }
+ ],
+ "toolkit": [
+  {
+   "name": "Dish trace sheet",
+   "kind": "template",
+   "items": [
+    "Dish name and the stations it crosses",
+    "Time the order is called",
+    "Time each part reaches the pass",
+    "Time the plate leaves the pass",
+    "Slowest hand-off and one fix agreed with the chef"
+   ],
+   "lesson": 1
+  },
+  {
+   "name": "Six questions for any P&L",
+   "kind": "checklist",
+   "items": [
+    "Sales: how much came in, net of VAT, and from food, drink or other?",
+    "Cost of sales: what did the food and drink cost, as a share of sales?",
+    "Gross profit: what is left to run the site?",
+    "Labour: did the rota match the covers?",
+    "Overheads: what do rent, rates, energy and the rest take?",
+    "Profit: what is left, and is it before or after interest and depreciation?"
+   ],
+   "lesson": 2
+  },
+  {
+   "name": "Peak owner card",
+   "kind": "framework",
+   "items": [
+    "Booking call: who answers, and how fast?",
+    "Door greeting: who is on the door at the busiest hour?",
+    "First drink: target time from sitting",
+    "Mains and check-back: who checks, and when?",
+    "Bill and payment: target time from request",
+    "Farewell: who says goodbye, every table?"
+   ],
+   "lesson": 3
+  }
+ ]
+}
