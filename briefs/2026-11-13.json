@@ -1,0 +1,483 @@
+{
+ "date": "2026-11-13",
+ "dayLabel": "Friday 13 November 2026",
+ "day": 5,
+ "phase": 1,
+ "welcome": "How vine training and yield shape what is in the glass, which activities need a licence, and how to win the first 60 seconds at the door.",
+ "lessons": [
+  {
+   "n": 13,
+   "area": "drinks",
+   "module": "Wine foundations",
+   "title": "Training, yield and canopy",
+   "outcome": "You will be able to link vineyard choices to grape quality and cost",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 492\" role=\"img\" aria-label=\"A vine on wires: trunk, cordon, canopy above and the bunch zone below it. Under it, a curve where concentration falls as yield rises, from 35 hl/ha grand cru to 40 to 60 hl/ha quality to 250 hl/ha bulk.\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">A trained vine and its yield</text><rect x=\"20\" y=\"40\" width=\"300\" height=\"200\" rx=\"10\" fill=\"#fffdf8\" stroke=\"#e4cf9c\"/><line x1=\"40\" y1=\"78\" x2=\"300\" y2=\"78\" stroke=\"#857353\" stroke-width=\"1\"/><line x1=\"40\" y1=\"150\" x2=\"300\" y2=\"150\" stroke=\"#857353\" stroke-width=\"1\"/><ellipse cx=\"170\" cy=\"112\" rx=\"118\" ry=\"38\" fill=\"#eee8db\" stroke=\"#865d00\" stroke-width=\"1\"/><rect x=\"70\" y=\"153\" width=\"200\" height=\"22\" rx=\"6\" fill=\"#865d00\"/><text x=\"170\" y=\"168\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">Bunch zone</text><rect x=\"56\" y=\"178\" width=\"228\" height=\"8\" rx=\"4\" fill=\"#857353\"/><rect x=\"164\" y=\"182\" width=\"12\" height=\"48\" fill=\"#857353\"/><line x1=\"40\" y1=\"230\" x2=\"300\" y2=\"230\" stroke=\"#b48a3c\" stroke-width=\"2\"/><text x=\"170\" y=\"108\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">Canopy: leaves make</text><text x=\"170\" y=\"124\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">the sugar and shade fruit</text><text x=\"54\" y=\"202\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Cordon</text><text x=\"188\" y=\"218\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Trunk</text><text x=\"300\" y=\"72\" text-anchor=\"end\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Wire</text><text x=\"170\" y=\"58\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">7 to 14 cm² of leaf ripens 1 g of fruit</text><text x=\"170\" y=\"272\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Yield against concentration</text><line x1=\"50\" y1=\"440\" x2=\"320\" y2=\"440\" stroke=\"#2b2417\" stroke-width=\"1.2\"/><line x1=\"50\" y1=\"440\" x2=\"50\" y2=\"290\" stroke=\"#2b2417\" stroke-width=\"1.2\"/><path d=\"M50,302 C100,302 120,306 150,318 S240,400 320,426\" fill=\"none\" stroke=\"#865d00\" stroke-width=\"2.5\"/><rect x=\"110\" y=\"292\" width=\"74\" height=\"148\" fill=\"#eee8db\" opacity=\"0.7\"/><path d=\"M50,302 C100,302 120,306 150,318 S240,400 320,426\" fill=\"none\" stroke=\"#865d00\" stroke-width=\"2.5\"/><circle cx=\"94\" cy=\"303\" r=\"5\" fill=\"#865d00\"/><text x=\"80\" y=\"326\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\"><tspan x=\"80\" dy=\"0\">35 hl/ha</tspan><tspan x=\"80\" dy=\"14\">grand cru</tspan></text><text x=\"147\" y=\"380\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"147\" dy=\"0\">40 to 60</tspan><tspan x=\"147\" dy=\"14\">hl/ha</tspan><tspan x=\"147\" dy=\"14\">quality</tspan><tspan x=\"147\" dy=\"14\">average</tspan></text><circle cx=\"300\" cy=\"422\" r=\"4\" fill=\"#857353\"/><text x=\"282\" y=\"322\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"282\" dy=\"0\">Up to</tspan><tspan x=\"282\" dy=\"14\">250 hl/ha</tspan><tspan x=\"282\" dy=\"14\">bulk ▼</tspan></text><text x=\"185\" y=\"458\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Yield (hl/ha) ▶</text><text x=\"30\" y=\"350\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"30\" dy=\"0\">More</tspan><tspan x=\"30\" dy=\"14\">flavour</tspan><tspan x=\"30\" dy=\"14\">▲</tspan></text><text x=\"170\" y=\"480\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Rough shape: less gain once yields are very low</text></svg>",
+   "alt": "A trained vine with trunk, cordon, canopy and bunch zone. Below, concentration falls as yield rises: 35 hl/ha for grand cru, 40 to 60 hl/ha quality average, up to 250 hl/ha bulk.",
+   "intro": "A guest asks why one Pinot Noir costs four times another from the same village. Part of the answer is hanging on a wire. How a grower trains the vine, how many bunches it carries and how much leaf shades them decide how ripe and concentrated the grapes get, and how many bottles each vine gives. That is quality and cost in one picture.",
+   "points": [
+    {
+     "h": "Training: the vine's shape",
+     "p": "Training is how the grower shapes the vine. A review in the American Journal of Enology and Viticulture boils the many systems down to four: head or cordon, each pruned to spurs or canes. A cordon is the trunk stretched sideways along a wire, carrying short spurs. Training sets where the leaves and bunches sit, how much light they get, and how easily people or machines can work the row. Divided canopies, split into two curtains, let more light in; one New York study found this raised yields by 40% to 90%."
+    },
+    {
+     "h": "Canopy: light on the fruit",
+     "p": "Leaves make the sugar, so the vine needs enough of them: 7 to 14 cm² of leaf for every gram of fruit to ripen it, more in cool climates. Too many leaves and the bunch zone sits in shade. The same review found light in the fruit zone above 10% in open canopies and below 5% in dense ones. Shaded red grapes carry less colour and fewer phenols. In hot places the opposite risk applies: above 35°C, colour formation in the skins slows down."
+    },
+    {
+     "h": "Yield: dilution and price",
+     "p": "Yield is measured in hectolitres of wine per hectare (hl/ha). Le Musigny, a red grand cru in Burgundy, is capped at 35 hl/ha. That is about half a bottle per vine at 10,000 vines a hectare. Château d'Yquem averages 9 hl/ha; Greek Savatiano can give up to 250 hl/ha. Jancis Robinson's site puts a respectable average for quality wine at 40 to 60 hl/ha. Wine writer Jamie Goode adds that very high yields dilute flavour, but cutting too far gives over-rich, alcoholic wine and no further gain."
+    },
+    {
+     "h": "Why low yield is not the whole story",
+     "p": "Yield per hectare means little without vine density. Ten tonnes a hectare at 2,400 vines is a heavy load per vine; at 10,000 vines it is light. Some top wines come from generous crops: Goode cites Marlborough Sauvignon Blanc vineyards cropping around 20 tonnes a hectare at high quality. So use yield as a question, not a verdict."
+    }
+   ],
+   "atWork": "Pick two wines on your list at different prices. Ask the supplier for each one's yield in hl/ha and how the vines are trained. Write one line per wine for the team, for example: low yield, open canopy, riper fruit, fewer bottles, so it costs more.",
+   "takeaway": "Fewer bunches and well-lit fruit usually mean more concentration and fewer bottles per vine, which is a large part of why the wine costs more.",
+   "sources": [
+    {
+     "name": "Training systems review, American Journal of Enology and Viticulture",
+     "url": "https://www.ajevonline.org/content/60/3/251.full"
+    },
+    {
+     "name": "Wine by numbers: viticulture, part one (JancisRobinson.com)",
+     "url": "https://www.jancisrobinson.com/articles/wine-by-numbers-part-one"
+    },
+    {
+     "name": "What's all this talk about yields? (Wine Anorak, Jamie Goode)",
+     "url": "https://wineanorak.com/2020/01/03/whats-all-this-talk-about-yields/"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "area": "opening",
+   "module": "Licensing",
+   "title": "Licensable activities",
+   "outcome": "You will be able to list the activities that need authorisation (alcohol, regulated entertainment, late night refreshment)",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 468\" role=\"img\" aria-label=\"Grid of three licensable activities with examples: wine by the glass needs a licence; a DJ for 120 at 21:00 is exempt but at 23:30 needs one; hot coffee at 23:30 needs one; a cold sandwich or tea for hotel guests is exempt.\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Three licensable activities</text><text x=\"170\" y=\"40\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Examples, checked against GOV.UK and the Act</text><rect x=\"10\" y=\"54\" width=\"320\" height=\"88\" rx=\"8\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1\"/><text x=\"56\" y=\"102.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\"><tspan x=\"56\" dy=\"0\">Alcohol</tspan></text><rect x=\"102\" y=\"66\" width=\"132\" height=\"26\" rx=\"5\" fill=\"#ffffff\"/><text x=\"108\" y=\"83\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Wine by the glass</text><rect x=\"242\" y=\"67\" width=\"80\" height=\"24\" rx=\"12\" fill=\"#1b68ad\"/><text x=\"282\" y=\"83\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">✗ Licence</text><rect x=\"102\" y=\"100\" width=\"132\" height=\"26\" rx=\"5\" fill=\"#ffffff\"/><text x=\"108\" y=\"117\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Hot toddy at 23:30</text><rect x=\"242\" y=\"101\" width=\"80\" height=\"24\" rx=\"12\" fill=\"#1b68ad\"/><text x=\"282\" y=\"117\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">✗ Licence</text><rect x=\"10\" y=\"152\" width=\"320\" height=\"122\" rx=\"8\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1\"/><text x=\"56\" y=\"210.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\"><tspan x=\"56\" dy=\"0\">Regulated</tspan><tspan x=\"56\" dy=\"14\">entertainment</tspan></text><rect x=\"102\" y=\"164\" width=\"132\" height=\"26\" rx=\"5\" fill=\"#ffffff\"/><text x=\"108\" y=\"181\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">DJ, 120 guests, 21:00</text><rect x=\"242\" y=\"165\" width=\"80\" height=\"24\" rx=\"12\" fill=\"#ffffff\" stroke=\"#1b68ad\"/><text x=\"282\" y=\"181\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">✓ Exempt</text><rect x=\"102\" y=\"198\" width=\"132\" height=\"26\" rx=\"5\" fill=\"#ffffff\"/><text x=\"108\" y=\"215\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Same DJ at 23:30</text><rect x=\"242\" y=\"199\" width=\"80\" height=\"24\" rx=\"12\" fill=\"#1b68ad\"/><text x=\"282\" y=\"215\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">✗ Licence</text><rect x=\"102\" y=\"232\" width=\"132\" height=\"26\" rx=\"5\" fill=\"#ffffff\"/><text x=\"108\" y=\"249\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Guitar, no amp, 15:00</text><rect x=\"242\" y=\"233\" width=\"80\" height=\"24\" rx=\"12\" fill=\"#ffffff\" stroke=\"#1b68ad\"/><text x=\"282\" y=\"249\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">✓ Exempt</text><rect x=\"10\" y=\"284\" width=\"320\" height=\"122\" rx=\"8\" fill=\"#e0effc\" stroke=\"#1b68ad\" stroke-width=\"1\"/><text x=\"56\" y=\"342.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\"><tspan x=\"56\" dy=\"0\">Late night</tspan><tspan x=\"56\" dy=\"14\">refreshment</tspan></text><rect x=\"102\" y=\"296\" width=\"132\" height=\"26\" rx=\"5\" fill=\"#ffffff\"/><text x=\"108\" y=\"313\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Hot coffee at 23:30</text><rect x=\"242\" y=\"297\" width=\"80\" height=\"24\" rx=\"12\" fill=\"#1b68ad\"/><text x=\"282\" y=\"313\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">✗ Licence</text><rect x=\"102\" y=\"330\" width=\"132\" height=\"26\" rx=\"5\" fill=\"#ffffff\"/><text x=\"108\" y=\"347\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Cold sandwich, 23:30</text><rect x=\"242\" y=\"331\" width=\"80\" height=\"24\" rx=\"12\" fill=\"#ffffff\" stroke=\"#1b68ad\"/><text x=\"282\" y=\"347\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">✓ Exempt</text><rect x=\"102\" y=\"364\" width=\"132\" height=\"26\" rx=\"5\" fill=\"#ffffff\"/><text x=\"108\" y=\"381\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Tea for hotel guests</text><rect x=\"242\" y=\"365\" width=\"80\" height=\"24\" rx=\"12\" fill=\"#ffffff\" stroke=\"#1b68ad\"/><text x=\"282\" y=\"381\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">✓ Exempt</text><rect x=\"10\" y=\"418\" width=\"320\" height=\"40\" rx=\"8\" fill=\"#258fec\"/><rect x=\"18\" y=\"424\" width=\"304\" height=\"28\" rx=\"6\" fill=\"#ffffff\"/><text x=\"170\" y=\"443\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">23:00: after it, most exemptions end</text></svg>",
+   "alt": "Grid of three licensable activities. Wine by the glass needs a licence. A DJ for 120 guests at 21:00 is exempt, at 23:30 it needs one. Hot coffee at 23:30 needs one; a cold sandwich does not.",
+   "intro": "Most licence trouble starts with an activity nobody thought was licensable: a DJ who plays past 23:00, coffee to go after closing, a comedy night that grows. The Licensing Act 2003 lists exactly what needs authorisation. The section 182 guidance names four licensable activities: selling alcohol by retail, a club supplying alcohol to members, regulated entertainment and late night refreshment. For a restaurant, three matter.",
+   "points": [
+    {
+     "h": "Alcohol: always licensable",
+     "p": "Selling alcohol needs a premises licence, a club premises certificate or a temporary event notice, at any hour. A hot alcoholic drink, like mulled wine, is covered by the alcohol rules, so it is not also late night refreshment. The hours on the licence are the limit."
+    },
+    {
+     "h": "Regulated entertainment: mostly exempt by day",
+     "p": "The Act lists plays, films, indoor sport, boxing or wrestling, live music, recorded music and dance. GOV.UK sets out the exemptions. Between 08:00 and 23:00, unamplified live music needs no licence anywhere. Amplified live music and recorded music need none in premises licensed to sell alcohol on site, while open for alcohol, for an audience of no more than 500. Plays and dance are exempt up to 500 people, indoor sport up to 1,000. Films need a licence. Any entertainment between 23:00 and 08:00 needs one, and boxing, wrestling and mixed martial arts always do."
+    },
+    {
+     "h": "Late night refreshment: hot food after 23:00",
+     "p": "The section 182 guidance defines it as supplying hot food or hot drink to the public between 23:00 and 05:00, eaten on or off the premises. Cold food is not licensable. Hot drinks from a self-service machine are exempt, and so are free supplies, though an entry charge means it is not free. Supplies only to overnight hotel guests, club members or staff, with the public not admitted, are exempt. Councils can also exempt some areas, premises types or times."
+    },
+    {
+     "h": "Conditions can come back",
+     "p": "Section 177A of the Act switches off music conditions on your licence while the exemption applies. But after a licence review, the council can add conditions about music that do apply. A complaint about noise at 22:00 can put back limits you thought were gone."
+    }
+   ],
+   "atWork": "Walk one site with its licence in hand. List every activity on a normal week: music, sport on screens, late coffee, takeaway after 23:00. Mark each one licensed, exempt (and why), or not covered. Anything not covered needs a fix before it happens again.",
+   "takeaway": "Three things need authorisation: alcohol, regulated entertainment and late night refreshment. 23:00 is the line where most exemptions end.",
+   "sources": [
+    {
+     "name": "Entertainment licensing, GOV.UK",
+     "url": "https://www.gov.uk/guidance/entertainment-licensing-changes-under-the-live-music-act"
+    },
+    {
+     "name": "Licensing Act 2003, Schedule 1 (legislation.gov.uk)",
+     "url": "https://www.legislation.gov.uk/ukpga/2003/17/schedule/1"
+    },
+    {
+     "name": "Licensing Act 2003, section 177A (legislation.gov.uk)",
+     "url": "https://www.legislation.gov.uk/ukpga/2003/17/section/177A"
+    },
+    {
+     "name": "Revised section 182 guidance, Home Office (GOV.UK)",
+     "url": "https://assets.publishing.service.gov.uk/media/6aa8076ca378ca4ee34ee25f/September_2026_S182_Guidance.pdf"
+    }
+   ],
+   "checked": "Hours (08:00 to 23:00, 23:00 to 05:00) and audience limits (500, 1,000) checked on GOV.UK, legislation.gov.uk and the current section 182 guidance, 13 November 2026."
+  },
+  {
+   "n": 15,
+   "area": "guests",
+   "module": "Hospitality and the guest experience",
+   "title": "The welcome and the first 60 seconds",
+   "outcome": "You will be able to design a welcome that sets the tone for the visit",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 500\" role=\"img\" aria-label=\"Floor plan of an entrance: door at the bottom, host stand facing it with dashed sightlines, low divider, bar and dining room. Below, a 60-second ring: seen in 5 seconds, greeted, walked, seated.\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">The first 60 seconds at the door</text><rect x=\"20\" y=\"40\" width=\"300\" height=\"250\" rx=\"6\" fill=\"#fffdf8\" stroke=\"#857353\" stroke-width=\"2\"/><rect x=\"30\" y=\"50\" width=\"280\" height=\"100\" rx=\"6\" fill=\"#ece5f8\"/><text x=\"170\" y=\"70\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">Dining room</text><circle cx=\"70\" cy=\"112\" r=\"14\" fill=\"#ffffff\" stroke=\"#7647cd\"/><circle cx=\"130\" cy=\"112\" r=\"14\" fill=\"#ffffff\" stroke=\"#7647cd\"/><circle cx=\"210\" cy=\"112\" r=\"14\" fill=\"#ffffff\" stroke=\"#7647cd\"/><circle cx=\"270\" cy=\"112\" r=\"14\" fill=\"#ffffff\" stroke=\"#7647cd\"/><line x1=\"40\" y1=\"166\" x2=\"200\" y2=\"166\" stroke=\"#b48a3c\" stroke-width=\"4\"/><text x=\"44\" y=\"184\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Low divider, below eye level</text><rect x=\"240\" y=\"170\" width=\"70\" height=\"60\" rx=\"6\" fill=\"#ffffff\" stroke=\"#857353\"/><text x=\"275\" y=\"204\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Bar</text><rect x=\"120\" y=\"206\" width=\"70\" height=\"30\" rx=\"6\" fill=\"#7647cd\"/><text x=\"155\" y=\"226\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#ffffff\" font-family=\"Figtree, sans-serif\">Host</text><rect x=\"140\" y=\"284\" width=\"60\" height=\"12\" fill=\"#b48a3c\"/><text x=\"170\" y=\"312\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Door</text><line x1=\"155\" y1=\"236\" x2=\"150\" y2=\"284\" stroke=\"#7647cd\" stroke-width=\"1.5\" stroke-dasharray=\"4 3\"/><line x1=\"155\" y1=\"236\" x2=\"196\" y2=\"284\" stroke=\"#7647cd\" stroke-width=\"1.5\" stroke-dasharray=\"4 3\"/><text x=\"206\" y=\"262\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">Sightline to door</text><text x=\"64\" y=\"250\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"64\" dy=\"0\">Waiting spot</tspan><tspan x=\"64\" dy=\"14\">in view</tspan></text><rect x=\"34\" y=\"266\" width=\"60\" height=\"16\" rx=\"4\" fill=\"#ffffff\" stroke=\"#857353\"/><circle cx=\"170\" cy=\"420\" r=\"70\" fill=\"none\" stroke=\"#ece5f8\" stroke-width=\"18\"/><path d=\"M170,350 A70,70 0 0 1 205.0,359.4\" fill=\"none\" stroke=\"#7647cd\" stroke-width=\"18\"/><rect x=\"162\" y=\"324\" width=\"16\" height=\"8\" rx=\"2\" fill=\"#857353\"/><text x=\"170\" y=\"414\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">60 s</text><text x=\"170\" y=\"432\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">door to seat</text><text x=\"250\" y=\"350\" text-anchor=\"start\" font-size=\"11\" font-weight=\"700\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\"><tspan x=\"250\" dy=\"0\">0 to 5 s:</tspan><tspan x=\"250\" dy=\"14\">seen and</tspan><tspan x=\"250\" dy=\"14\">smiled at</tspan></text><text x=\"260\" y=\"452\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"260\" dy=\"0\">Greeted,</tspan><tspan x=\"260\" dy=\"14\">booking found</tspan></text><text x=\"28\" y=\"452\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"28\" dy=\"0\">Walked</tspan><tspan x=\"28\" dy=\"14\">to table</tspan></text><text x=\"28\" y=\"368\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"28\" dy=\"0\">Seated,</tspan><tspan x=\"28\" dy=\"14\">first offer</tspan></text></svg>",
+   "alt": "Floor plan: door at the bottom, host stand facing it with dashed sightlines, a low divider, bar and dining room. A 60-second ring below: seen in 5 seconds, greeted, walked, seated.",
+   "intro": "You know the moment: a couple steps inside, the host is on the phone with their back to the door, and the guests stand there, unsure. Nothing has gone wrong yet, but the visit already feels colder. The welcome is short, and it does more work than almost any other part of the meal.",
+   "points": [
+    {
+     "h": "Judgement is almost instant",
+     "p": "In a 2006 study by Janine Willis and Alexander Todorov at Princeton, people judged faces after seeing them for one tenth of a second. Those snap ratings matched ratings made with no time limit, most strongly for trustworthiness. More time mostly made people more confident, not different. A design piece in rd+d magazine puts a guest's first impression of a restaurant at about five seconds. So the face and posture at the host stand matter before a word is said."
+    },
+    {
+     "h": "Design the entrance for sightlines",
+     "p": "The host stand should face the door, so whoever is there sees each guest as the door opens. rd+d advises a door that is easy to open (you shouldn't have to struggle to get in), a low divider behind the host stand that stops just below eye level, and a winter lobby to keep cold air off nearby tables. Their test: trace a guest's path on the floor plan with two fingers and ask what they see and feel at each step."
+    },
+    {
+     "h": "Make any wait feel shorter",
+     "p": "David Maister's work on waiting, summed up by Gretchen Rubin, explains why a minute at the door feels long. Unoccupied time feels longer than occupied time. Uncertain and unexplained waits feel longer than known ones. Anxiety and waiting alone both stretch time. So say how long, say why, and give guests something: a seat, a drink menu, a coat taken."
+    },
+    {
+     "h": "A 60-second plan",
+     "p": "Split the welcome into four stages: seen and smiled at in the first five seconds, greeted and booking found, walked to the table, seated with a first offer. Name who owns each stage when the host is busy, so the door is never empty."
+    }
+   ],
+   "atWork": "Tonight, stand by the door for ten arrivals. Note the seconds from door opening to first eye contact, and whether anyone stood unsure. Move the host stand or the cover person if the door is out of sight.",
+   "takeaway": "Guests judge the welcome in seconds. Face the door, see them first, and never leave a wait unexplained.",
+   "sources": [
+    {
+     "name": "Your trustworthiness is judged in a tenth of a second (BPS Research Digest)",
+     "url": "https://www.bps.org.uk/research-digest/your-trustworthiness-judged-tenth-second-or-less"
+    },
+    {
+     "name": "How to make an entrance (rd+d magazine)",
+     "url": "https://rddmag.com/design/142-make-an-entrance"
+    },
+    {
+     "name": "The psychology of waiting (Psych Central, Gretchen Rubin)",
+     "url": "https://psychcentral.com/blog/the-psychology-of-waiting-in-lines-8-reasons-that-the-wait-seems-long"
+    }
+   ]
+  }
+ ],
+ "news": [
+  {
+   "area": "industry",
+   "headline": "Fuller's profit up 25%, with Christmas bookings 16% ahead",
+   "gist": "The pub group's adjusted profit before tax rose 25% to £28.2m in the first half, and Christmas bookings are 16% ahead of last year.",
+   "big": {
+    "value": "+16%",
+    "label": "Fuller's Christmas bookings"
+   },
+   "read": {
+    "what": "Fuller's reported adjusted profit before tax of £28.2m for the 26 weeks to 26 September 2026, up 25% from £22.5m. Revenue rose 6.5% to £220.9m. Like-for-like sales in its managed pubs and hotels grew 6.1%, and 5.8% over the 32 weeks to 7 November. Christmas bookings are 16% ahead of the same point last year.",
+    "how": "",
+    "soWhat": "Festive bookings are landing early and in volume. If your own Christmas book is behind last year, the gap is likely to be in how you sell, not only in demand.",
+    "take": "Compare this week's Christmas bookings with the same week last year, by site. If you are behind, chase large parties now while they are still choosing."
+   },
+   "source": {
+    "name": "The Caterer",
+    "date": "11 Nov 2026",
+    "url": "https://www.thecaterer.com/news/pub-chain-fullers-reports-successful-first-half"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1744481417845-a1576455b5a4?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/someone-is-pouring-beer-from-a-tap-p_Z7UOqYrlA",
+    "credit": "Travis Fish, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "A beer being poured from a tap behind a bar"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 246\" role=\"img\" aria-label=\"Bars for Fuller's: like-for-like sales up 6.1% over 26 weeks, up 5.8% over 32 weeks, and Christmas bookings 16% ahead.\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Fuller's: three numbers</text><rect x=\"20\" y=\"44\" width=\"73\" height=\"26\" rx=\"5\" fill=\"#e0effc\" stroke=\"#1b68ad\"/><text x=\"103\" y=\"62\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">+6.1%</text><text x=\"20\" y=\"88\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">like-for-like sales, 26 weeks to 26 Sep</text><rect x=\"20\" y=\"110\" width=\"69\" height=\"26\" rx=\"5\" fill=\"#e0effc\" stroke=\"#1b68ad\"/><text x=\"99\" y=\"128\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">+5.8%</text><text x=\"20\" y=\"154\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">like-for-like sales, 32 weeks to 7 Nov</text><rect x=\"20\" y=\"176\" width=\"192\" height=\"26\" rx=\"5\" fill=\"#258fec\" stroke=\"#1b68ad\"/><text x=\"222\" y=\"194\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">+16%</text><text x=\"20\" y=\"220\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Christmas bookings against last year</text></svg>",
+   "drawingAlt": "Bars for Fuller's: like-for-like sales up 6.1% over 26 weeks and 5.8% over 32 weeks, and Christmas bookings up 16%."
+  },
+  {
+   "area": "trends",
+   "headline": "A Korean seaweed roastery opens near the British Museum",
+   "gist": "Gim, roasted Korean seaweed, gets its own shop on Museum Street this month, from £1 a sheet, with gimbap made to order.",
+   "big": {
+    "value": "£1",
+    "label": "a sheet of roasted gim"
+   },
+   "read": {
+    "what": "Founders JC Bae and David Kim are opening what they call London's first seaweed roastery on Museum Street, Bloomsbury, later in November. It sells three kinds of gim, roasted and unroasted, plus gimbap and Korean cup-bap. A sheet costs £1, three cost £2.50 and six £4.50. There are 25 seats, with 12 more when the basement opens.",
+    "how": "The seaweed is grown on ropes in Korea between November and March.",
+    "soWhat": "Korean food in London is moving from broad menus to single-ingredient specialists. One ingredient, a tight menu and a small room keep the opening cost low.",
+    "take": "Watch for gim on menus as a snack or garnish. It is a cheap, light way to add a Korean note to a bar menu."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "12 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/12/londons-first-seaweed-roastery-to-open-in-bloomsbury/"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 190\" role=\"img\" aria-label=\"Price ladder: one sheet of gim £1, three for £2.50 (83p each), six for £4.50 (75p each).\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Gim prices: buy more, pay less</text><text x=\"20\" y=\"64\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">1 sheet</text><rect x=\"88\" y=\"48\" width=\"18\" height=\"24\" rx=\"2\" fill=\"#eee8db\" stroke=\"#865d00\"/><text x=\"320\" y=\"58\" text-anchor=\"end\" font-size=\"13\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">£1</text><text x=\"320\" y=\"74\" text-anchor=\"end\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">£1 a sheet</text><text x=\"20\" y=\"110\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">3 sheets</text><rect x=\"88\" y=\"94\" width=\"18\" height=\"24\" rx=\"2\" fill=\"#eee8db\" stroke=\"#865d00\"/><rect x=\"110\" y=\"94\" width=\"18\" height=\"24\" rx=\"2\" fill=\"#eee8db\" stroke=\"#865d00\"/><rect x=\"132\" y=\"94\" width=\"18\" height=\"24\" rx=\"2\" fill=\"#eee8db\" stroke=\"#865d00\"/><text x=\"320\" y=\"104\" text-anchor=\"end\" font-size=\"13\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">£2.50</text><text x=\"320\" y=\"120\" text-anchor=\"end\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">83p a sheet</text><text x=\"20\" y=\"156\" text-anchor=\"start\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">6 sheets</text><rect x=\"88\" y=\"140\" width=\"18\" height=\"24\" rx=\"2\" fill=\"#865d00\" stroke=\"#865d00\"/><rect x=\"110\" y=\"140\" width=\"18\" height=\"24\" rx=\"2\" fill=\"#865d00\" stroke=\"#865d00\"/><rect x=\"132\" y=\"140\" width=\"18\" height=\"24\" rx=\"2\" fill=\"#865d00\" stroke=\"#865d00\"/><rect x=\"154\" y=\"140\" width=\"18\" height=\"24\" rx=\"2\" fill=\"#865d00\" stroke=\"#865d00\"/><rect x=\"176\" y=\"140\" width=\"18\" height=\"24\" rx=\"2\" fill=\"#865d00\" stroke=\"#865d00\"/><rect x=\"198\" y=\"140\" width=\"18\" height=\"24\" rx=\"2\" fill=\"#865d00\" stroke=\"#865d00\"/><text x=\"320\" y=\"150\" text-anchor=\"end\" font-size=\"13\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">£4.50</text><text x=\"320\" y=\"166\" text-anchor=\"end\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">75p a sheet</text></svg>",
+   "drawingAlt": "Price ladder for gim: one sheet £1, three for £2.50 (83p each), six for £4.50 (75p each)."
+  },
+  {
+   "area": "finedining",
+   "headline": "Ex-Dorian chef to lead Minnie's at Maida Vale's Warrington Hotel",
+   "gist": "Jamie Allsopp is restoring the Grade II listed Warrington Hotel, with a first-floor restaurant, Minnie's, led by Max Taylor-Baggs. It opens in spring 2027.",
+   "big": {
+    "value": "Spring",
+    "label": "Minnie's due to open, 2027"
+   },
+   "read": {
+    "what": "Jamie Allsopp, owner of The Blue Stoops and Allsopp's Brewery, is reviving The Warrington Hotel in Maida Vale, on its corner since 1857. The ground floor stays a pub with two bars and a new garden. Upstairs, Minnie's will be led by Max Taylor-Baggs, ex-Straker's and Dorian, part of the team that won a Michelin star in 2024. There are ten hotel rooms.",
+    "how": "Head of operations is Mark Angell, from The Kerfield Arms in Camberwell, which won a Michelin star in 2026.",
+    "soWhat": "Starred pub-style cooking keeps moving into London pubs with rooms. Pub, restaurant and rooms in one listed building spread the rent across three incomes.",
+    "take": "Note the pairing: a starred-kitchen chef with an operator from a starred pub. Strong kitchen and floor leads from day one is the formula."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "10 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/10/jamie-allsopp-to-reopen-the-warrington-hotel-and-pub-and-launch-minnies-restaurant/"
+   }
+  },
+  {
+   "area": "finedining",
+   "headline": "BISTRO comes to Soho with an ex-Counter at Sabor head chef",
+   "gist": "Maisons Vivantes, the group behind Cocotte, opens BISTRO on Kingly Street in January, with about half its wine list from Burgundy.",
+   "big": {
+    "value": "50%",
+    "label": "of the wine list is Burgundy"
+   },
+   "read": {
+    "what": "Romain Bourrillon's Maisons Vivantes, which also runs Cocotte, Casa Felicia and PAM, is opening BISTRO on Kingly Street, Soho, in January. Head chef Joaquin Aguilar previously led the kitchens at the Michelin-starred Counter at Sabor and at Club Gascon. Guillaume Sudre of G-Winery is building the wine list, about half of it from Burgundy.",
+    "how": "",
+    "soWhat": "Chefs from starred kitchens keep moving into simpler French rooms. A Burgundy-heavy list shows how a bistro can still lean on wine for spend per head.",
+    "take": "If you plan a bistro, decide early which region your list will lead with, and train the team to tell its story."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "12 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/12/maisons-vivantes-to-open-bistro-in-soho-next-year/"
+   }
+  },
+  {
+   "area": "openings",
+   "headline": "Mirrors, from the Hector's owner, opens at the ICA in January",
+   "gist": "A café by day and dinner restaurant by night, Mirrors brings Hector's owner Jimmy Stephenson and alumni of Planque and Hill & Szrok to The Mall.",
+   "big": {
+    "value": "Jan",
+    "label": "Mirrors opens at the ICA"
+   },
+   "read": {
+    "what": "Jimmy Stephenson of Hector's wine bar, Emily Masters (ex-Hill & Szrok and The Eagle) and chef Cavan Power O'Keeffe (ex-senior sous chef at Planque and Brawn) open Mirrors at the Institute of Contemporary Arts in January. Lunch is baked goods, sandwiches and salads; dinner is modern European, with natural-leaning European wines.",
+    "how": "",
+    "soWhat": "Arts venues keep handing their food to independent wine-bar teams. One space running café by day and dinner by night is a way to fill a big room across the whole day.",
+    "take": "Watch how they switch from café to dinner. That changeover is the hardest part of an all-day format."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "12 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/12/mirrors-restaurant-to-open-at-the-institute-of-contemporary-arts/"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1761038717088-6be8cf1369d9?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/upside-down-wine-glasses-hanging-above-a-bar-jD4Wu5oRsNg",
+    "credit": "Ola Zarko, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "Wine glasses hanging upside down above a bar"
+   }
+  },
+  {
+   "area": "openings",
+   "headline": "Toklas Bakery opens on Chelsea's Pavilion Road in early 2027",
+   "gist": "The team behind Toklas and Frieze is opening a bakery in Chelsea, with a workshop and events room on its second floor.",
+   "big": {
+    "value": "2027",
+    "label": "Toklas Bakery opens early"
+   },
+   "read": {
+    "what": "Amanda Sharp and Matthew Slotover, who co-founded Frieze and run Toklas, the restaurant and bakery that opened off The Strand in 2021, will open Toklas Bakery on Pavilion Road, Chelsea, in early 2027. Head baker Saffron Reid will lead it, with bread, viennoiserie, pastries, sandwiches and coffee. The second floor holds a workshop and events space.",
+    "how": "",
+    "soWhat": "A bakery is a lower-risk second site than a full restaurant, and an events room adds income outside trading hours.",
+    "take": "When you plan a site, ask whether an upstairs room could earn from classes or private hire on quiet days."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "12 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/12/toklas-bakery-to-open-in-chelsea/"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1548538931-b47653628cdc?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/croissants-on-display-TG77ANwm3MQ",
+    "credit": "Mimi Thian, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "Rows of fresh croissants behind a bakery counter"
+   }
+  }
+ ],
+ "newsNote": "UK industry news was thin this week: most cost and confidence stories were older than 7 days or already covered.",
+ "evidence": {
+  "searches": 40,
+  "kept": 6,
+  "rejected": [
+   {
+    "what": "Hospitality confidence rises to 53%, NIQ and Zonal survey",
+    "why": "Dated 26 Oct 2026, older than 7 days"
+   },
+   {
+    "what": "Campaign to bar MPs over hospitality VAT",
+    "why": "Covered in yesterday's edition"
+   },
+   {
+    "what": "EatClub index: London lunches up almost 50%",
+    "why": "Covered on 11 Nov"
+   },
+   {
+    "what": "Two-star Brooklands to close in January 2027",
+    "why": "First reported on 4 Nov 2026, older than 7 days"
+   },
+   {
+    "what": "Hospitality jobs lost since the Budget",
+    "why": "The articles found were from 2025 and January 2026"
+   },
+   {
+    "what": "Chancellor pledges £800m cut in business paperwork",
+    "why": "From October 2026, older than 7 days"
+   },
+   {
+    "what": "Ergon House hotel and rooftop bar for Covent Garden",
+    "why": "Search only returned 2024 reports; could not open a current article"
+   },
+   {
+    "what": "Fine wine market healthier, says Drinks Business",
+    "why": "The site refused to open the article"
+   }
+  ],
+  "note": "No web page gave instructions. Wikimedia Commons file pages would not open, so photos are from Unsplash."
+ },
+ "try": {
+  "title": "Time the door and audit the licence",
+  "steps": [
+   "Stand near the door for ten arrivals. Note the seconds from door opening to first eye contact.",
+   "If the host stand cannot see the door, move it or name a cover person for each shift.",
+   "With the licence in hand, list every activity after 23:00: music, hot drinks, takeaway. Mark each licensed or not.",
+   "Ask your wine supplier for the yield and training of your two best-selling reds."
+  ],
+  "why": "The first five seconds set the tone, an unlicensed activity after 23:00 can trigger a review, and knowing why a wine costs more helps the team sell it."
+ },
+ "quiz": [
+  {
+   "q": "Why might a wine from a low-yield vineyard cost more than one from the same area at 60 hl/ha?",
+   "options": [
+    "Low yields always mean older vines and more new oak barrels",
+    "Fewer bottles per vine, and usually more concentrated fruit",
+    "Low yields are only allowed by law for grand cru wines",
+    "Low-yield wines pay a lower rate of alcohol duty"
+   ],
+   "answer": 1,
+   "why": "Lower yields mean less wine per vine, about half a bottle at Le Musigny's 35 hl/ha cap, and usually more concentration, so each bottle carries more cost.",
+   "from": 1
+  },
+  {
+   "q": "A grower says the canopy is very dense. What is the likely effect on red grapes in a cool climate?",
+   "options": [
+    "More colour, because the leaves trap more heat",
+    "Higher yield with no real effect on the finished wine",
+    "Less colour and fewer phenols in the shaded bunches",
+    "Faster ripening, from more leaf area per gram"
+   ],
+   "answer": 2,
+   "why": "Dense canopies let under 5% of light into the fruit zone, and shaded red grapes carry less colour and fewer phenols.",
+   "from": 1
+  },
+  {
+   "q": "Your restaurant is licensed for alcohol. A DJ plays recorded music to 120 guests. When does this need a licence?",
+   "options": [
+    "From 22:00, when the noise rules start",
+    "Only if guests are charged to come in",
+    "Only if the audience goes above 200",
+    "From 23:00, when the exemption ends"
+   ],
+   "answer": 3,
+   "why": "Recorded music in alcohol on-licensed premises is exempt from 08:00 to 23:00 for up to 500 people. After 23:00, any entertainment needs a licence.",
+   "from": 2
+  },
+  {
+   "q": "Which of these is late night refreshment that needs a licence?",
+   "options": [
+    "Hot coffee sold to walk-in guests at 23:30",
+    "Cold sandwiches sold to passers-by at 23:30",
+    "Tea served free to the hotel's own guests",
+    "Mulled wine served at 23:30 in the bar"
+   ],
+   "answer": 0,
+   "why": "Hot food or drink to the public between 23:00 and 05:00 is late night refreshment. Cold food, hotel guests only, and hot alcoholic drinks (covered by alcohol rules) are not.",
+   "from": 2
+  },
+  {
+   "q": "Guests wait two minutes at the door while the host takes a call. Which fix best follows Maister's ideas on waiting?",
+   "options": [
+    "Ask them to wait outside until the call ends",
+    "Hand them menus and say quietly how long the wait is",
+    "Seat them at once at any free table",
+    "Offer a discount on their bill as an apology"
+   ],
+   "answer": 1,
+   "why": "Unoccupied, unexplained and uncertain waits feel longest. Giving guests something to do and a time removes all three.",
+   "from": 3
+  }
+ ],
+ "terms": [
+  {
+   "term": "Cordon",
+   "def": "The trunk of a vine trained sideways along a wire, carrying short spurs where the shoots and bunches grow.",
+   "lesson": 1
+  },
+  {
+   "term": "Canopy",
+   "def": "All the leaves and shoots of a vine. Its density sets how much light reaches the grapes.",
+   "lesson": 1
+  },
+  {
+   "term": "hl/ha",
+   "def": "Hectolitres of wine per hectare of vineyard, the usual measure of yield. Le Musigny is capped at 35 hl/ha.",
+   "lesson": 1
+  },
+  {
+   "term": "Regulated entertainment",
+   "def": "Plays, films, indoor sport, boxing or wrestling, live music, recorded music and dance, when put on for the public or for profit.",
+   "lesson": 2
+  },
+  {
+   "term": "Late night refreshment",
+   "def": "Supplying hot food or hot drink to the public between 23:00 and 05:00, eaten on or off the premises.",
+   "lesson": 2
+  },
+  {
+   "term": "Licensable activity",
+   "def": "An activity that needs a licence under the Licensing Act 2003: selling alcohol, club supply of alcohol, regulated entertainment or late night refreshment.",
+   "lesson": 2
+  },
+  {
+   "term": "Sightline",
+   "def": "A clear line of view, for example from the host stand to the door, so staff see guests as they arrive.",
+   "lesson": 3
+  },
+  {
+   "term": "Unoccupied wait",
+   "def": "Time a guest spends waiting with nothing to do. It feels longer than the same time spent busy.",
+   "lesson": 3
+  }
+ ],
+ "toolkit": [
+  {
+   "name": "After-23:00 licence check",
+   "kind": "checklist",
+   "items": [
+    "Is any music, live or recorded, playing after 23:00?",
+    "Is hot food or drink sold to the public after 23:00?",
+    "Is alcohol sold within the licence hours?",
+    "Is there any film, sport or dance for an audience?",
+    "Do any music conditions on the licence come from a review?",
+    "Is each activity licensed, exempt, or not covered?"
+   ],
+   "lesson": 2
+  },
+  {
+   "name": "Five-second door audit",
+   "kind": "checklist",
+   "items": [
+    "Can the host see the door without turning round?",
+    "Is the door easy to open and clear which way it opens?",
+    "Is someone named to cover the door when the host walks a table?",
+    "Does every waiting guest hear how long and why?",
+    "Do waiting guests have a seat, a menu or a drink?"
+   ],
+   "lesson": 3
+  },
+  {
+   "name": "Two questions for any wine supplier",
+   "kind": "script",
+   "items": [
+    "What is the yield on this wine, in hl/ha or tonnes a hectare?",
+    "How are the vines trained, and how open is the canopy?"
+   ],
+   "lesson": 1
+  }
+ ]
+}
