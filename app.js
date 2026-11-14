@@ -429,7 +429,9 @@ function render(b,list){
   app.append(newsSection(b));
   const wd=el('section','words');wd.id='words';wd.append(rule('Today’s words'));const dl=el('dl');(b.terms||[]).forEach(x=>dl.append(el('dt',null,x.term),el('dd',null,x.def)));wd.append(dl);
   if((b.toolkit||[]).length){wd.append(rule('Added to your toolkit'));b.toolkit.forEach(x=>wd.append(toolCard(x)))}app.append(wd);
-  if(window.Evidence)Evidence.mount(app,b,{cls:'evidence'});
+  /* "From market to pass" (made.js) draws how the brief was made; without it, or if it fails, the plain panel shows */
+  let made=false;if(window.Made)try{Made.mount(app,b,{cls:'evidence'});made=true}catch(e){}
+  if(!made&&window.Evidence)Evidence.mount(app,b,{cls:'evidence'});
   /* the quiz goes last, after everything there is to read (Agnes, 10 Nov 2026) */
   app.append(rule('Quiz'),qc,scn,rv);draw();
   const more=el('div','chips');more.style.marginTop='34px';[['Glossary',()=>openGlossary(list)],['Toolkit',()=>openToolkit(list)],['Progress',openProgress],['Past days',()=>openArchive(list)]].forEach(([t,f])=>{const x=el('button',null,t);x.onclick=f;more.append(x)});app.append(more);
