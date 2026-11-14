@@ -164,6 +164,20 @@
     return { score: sc.textContent, scene: !!top(f).querySelector('.svc'), day: state().days[CFG.real] };
   });
 
+  /* My scores: the dial, three plain tiles and a real four-week calendar */
+  await run('scores', async () => {
+    localStorage.clear();
+    const b = await edition('/new', CFG.real), f = await load('/new', CFG.real, 320);
+    start(f); await answer(f, b.quiz, [true, true, false, true, true], 'click'); await score(f);
+    f.contentWindow.history.back(); await until(() => !D(f).querySelector('.sheet'), 'the quiz to close');
+    D(f).getElementById('scorebadge').click();
+    const cal = await until(() => top(f).querySelector('.sc-cal'), 'the calendar'), s = top(f), w = f.contentWindow;
+    const small = []; s.querySelectorAll('.body *').forEach(e => { if ([...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim()) && parseFloat(w.getComputedStyle(e).fontSize) < 12) small.push(e.className || e.tagName); });
+    return { cells: cal.children.length, today: cal.querySelectorAll('.t').length, done: [...cal.querySelectorAll('.d')].map(c => c.textContent), label: cal.getAttribute('aria-label'),
+      tiles: [...s.querySelectorAll('.sc-tiles div')].map(d => d.textContent), dial: s.querySelector('.ring.big').textContent, cap: s.querySelector('.sc-cap').textContent,
+      ladder: s.querySelectorAll('.sc-ladder li').length, overflow: s.scrollWidth - s.clientWidth, small, day: +CFG.real.slice(8) };
+  });
+
   await run('layout', async () => {
     const res = {};
     for (const w of [320, 360, 390]) {

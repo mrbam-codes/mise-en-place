@@ -159,10 +159,16 @@ if v:
 fb = c.get("fallback")
 if fb:
     want(fb["score"] == "5/5" and not fb["scene"] and fb["day"]["score"] == 5, "fallback: with a broken scene the quiz still plays and scores as a plain sheet")
+sv = c.get("scores")
+if sv:
+    want(sv["cells"] == 28 and sv["today"] == 1 and sv["done"] == [str(sv["day"]) + "4/5"] and "1 quizzes done, 0 perfect" in sv["label"], f"my scores: a 28-day calendar with today marked and the finished day showing its date and 4/5 ({sv['done']})")
+    want(sv["dial"] == "Level 1Commis" and sv["ladder"] == 7 and "next is Demi chef at 500 points" in sv["cap"], "my scores: the dial names the level and the ladder shows 7 levels with the next one named")
+    want(len(sv["tiles"]) == 3 and "80%" in sv["tiles"][2] and "4 of 5" in sv["tiles"][2] and "×1.5 from 5 days in a row" in sv["tiles"][1], f"my scores: three plain tiles for streak, multiplier and answers right ({sv['tiles']})")
+    want(sv["overflow"] <= 0 and not sv["small"], f"my scores at 320: no sideways scroll, no text under 12px ({sv['small'] or 'none'})")
 lay = c.get("layout")
 if lay:
     for w, m in sorted(lay.items()):
         want(m["overflow"] <= 0 and m["minOpt"] >= 44 and m["close"] >= 44 and m["next"] >= 44, f"layout at {w}: no sideways scroll, tap targets 44 or more (options {m['minOpt']:.0f}, back {m['close']:.0f}, next {m['next']:.0f})")
-want(all(x in c for x in ("parityOld", "parityNew", "keys", "resume", "seven", "sundayBack", "sunday", "scene", "fallback", "layout")), "every case ran")
+want(all(x in c for x in ("parityOld", "parityNew", "keys", "resume", "seven", "sundayBack", "sunday", "scene", "fallback", "scores", "layout")), "every case ran")
 print("QUIZ PAGE OK" if not misses else "MISSES: " + str(len(misses)))
 sys.exit(1 if misses else 0)
