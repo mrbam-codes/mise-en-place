@@ -50,11 +50,16 @@ if day >= REVIEW_FROM:
             continue
         by_day[e.get("day")] = e   # a repeat keeps the latest teaching of that day
     picks = []
-    for back in (2, 7, 1, 3, 4, 5, 6):
-        e = by_day.get(n - back)
-        ls = (e or {}).get("lessons") or []
+    order = [n - 2, n - 7, n - 1] + list(range(n - 3, 0, -1))   # then any earlier day, nearest first
+    order = [d for i, d in enumerate(order) if d >= 1 and d not in order[:i] and by_day.get(d)]
+    for d in order:
+        ls = by_day[d].get("lessons") or []
         if ls and len(picks) < 2:
             picks.append(ls[(n + len(picks)) % len(ls)])
+    for d in order:   # only one earlier edition: take a second lesson from it
+        for l in by_day[d].get("lessons") or []:
+            if len(picks) < 2 and all(l.get("n") != p.get("n") for p in picks):
+                picks.append(l)
     print("\nREVIEW QUESTIONS: after the 5 questions on today, write one question on each of these earlier lessons (from \"review\").")
     print("Use only the lesson text printed here. Copy n, title and area exactly.")
     for l in picks:

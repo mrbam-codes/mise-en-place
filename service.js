@@ -10,7 +10,7 @@
 var Service=(function(){
 'use strict';
 const SCENE='opening';
-const W=320,FULL=190,TOP=56,SMALL=124;
+const W=320,FULL=190,TOP=76,SMALL=102;
 const PAL=['#ea5f36','#009b37','#258fec','#7647cd','#b31e65','#b48a3c'],SKIN=['#f1c9a5','#c98d5e','#8a5a3a','#e8b68c'];
 const BANNER=['FULLY BOOKED','ONE TABLE LEFT','A STEADY SERVICE','SOFT LAUNCH','FRIENDS AND FAMILY'],NAMES=['full','last','steady','soft','family'];
 const tierOf=(n,t)=>n>=t?0:n===t-1?1:n===t-2&&n>0?2:n>0?3:4;
@@ -130,7 +130,7 @@ function mount(host,o){
   }
   const safe=()=>{try{draw()}catch(e){alive=false;host.remove()}};
   const still=()=>{now=4.2;sc.evs=[];safe()};
-  function tick(ms){if(!alive||!cv.isConnected){alive=false;removeEventListener('resize',onSize);return}now=ms/1000;sc.evs=sc.evs.filter(e=>now-e.t0<e.dur);if(!document.hidden)safe();requestAnimationFrame(tick)}
+  function tick(ms){if(!alive||!cv.isConnected){alive=false;removeEventListener('resize',onSize);return}now=ms/1000;sc.evs=sc.evs.filter(e=>now-e.t0<e.dur);if(!document.hidden){const b=cv.getBoundingClientRect();if(b.bottom>0&&b.top<innerHeight)safe()}requestAnimationFrame(tick)}
   function onSize(){if(!cv.isConnected)return removeEventListener('resize',onSize);fit();if(reduce)still()}
   function fire(type,col){if(reduce)return still();sc.evs=sc.evs.filter(e=>e.type!==type);sc.evs.push({type:type,col:col,t0:performance.now()/1000,dur:type==='seat'?2.8:3.4})}
   addEventListener('resize',onSize);fit();label();
