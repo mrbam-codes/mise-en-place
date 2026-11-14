@@ -92,7 +92,7 @@
   await run('seven', async () => {
     localStorage.clear();
     const b = await edition('/new', CFG.seven), f = await load('/new', CFG.seven);
-    const card = D(f).querySelector('#quiz h2').textContent;
+    const card = D(f).querySelector('#quiz h2').textContent + ' | ' + D(f).querySelector('#quiz .prog').textContent;
     start(f); const log = await answer(f, b.quiz, b.quiz.map(() => true), 'click'); const sc = await score(f);
     const st = state();
     return { card, score: sc.textContent, day: st.days[CFG.seven], lessons: st.lessons, rev: log.map(l => l.rev) };
@@ -129,20 +129,23 @@
   await run('scene', async () => {
     localStorage.clear();
     const b = await edition('/new', CFG.real), f = await load('/new', CFG.real, 320);
+    const cc = D(f).querySelector('#quiz .svc canvas'), cardScene = !!cc && cc.getContext('2d').getImageData(cc.width >> 1, cc.height >> 1, 1, 1).data[3] > 0 && cc.getBoundingClientRect().width <= 320;
+    const cardShot = cc ? cc.toDataURL() : null;
     start(f);
     const cv = await until(() => top(f).querySelector('.svc canvas'), 'the scene');
     const box = () => cv.getBoundingClientRect(), painted = cv.getContext('2d').getImageData(cv.width >> 1, cv.height >> 1, 1, 1).data[3] > 0;
     const small = { w: box().width, h: box().height };
     const log = await answer(f, b.quiz, [true, false, true, true, true], 'click'); await score(f);
     const stg = top(f).querySelector('.svc'), W = f.contentWindow;
-    const shots = {};
+    const shots = cardShot ? { card: cardShot } : {};
     for (const [name, n, t] of [['5of5', 5, 5], ['4of5', 4, 5], ['3of5', 3, 5], ['2of5', 2, 5], ['0of5', 0, 5], ['7of7', 7, 7], ['mid', 3, 7]]) {
       const host = D(f).createElement('div'); host.style.width = '320px'; D(f).body.append(host);
       const s = W.Service.mount(host, { total: t, seats: Array(n).fill('#009b37') });
       if (name !== 'mid') s.end(n); await sleep(250);
       shots[name] = host.querySelector('canvas').toDataURL(); s.destroy(); host.remove();
     }
-    return { painted, small, seated: stg.dataset.seated, end: stg.dataset.end, endH: box().height, label: cv.getAttribute('aria-label'), fit: Math.max(...log.map(l => l.optBottom)), fitAfter: await (async () => {
+    await sleep(300); const doneCard = D(f).querySelector('#quiz h2').textContent + ' | ' + ((D(f).querySelector('#quiz .svc') || {}).dataset || {}).end;
+    return { painted, small, cardScene, doneCard, seated: stg.dataset.seated, end: stg.dataset.end, endH: box().height, label: cv.getAttribute('aria-label'), fit: Math.max(...log.map(l => l.optBottom)), fitAfter: await (async () => {
         localStorage.clear(); const g = await load('/new', CFG.real, 390); start(g); let before = 0, after = 0;
         for (let i = 0; i < b.quiz.length; i++) {
           const bt = await until(() => { const o = [...top(g).querySelectorAll('.opt')]; return o.length === 4 && !o[0].disabled && top(g).querySelector('.body h2').textContent === b.quiz[i].q ? o : null; }, 'q' + i);

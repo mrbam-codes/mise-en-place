@@ -94,6 +94,16 @@ footer{text-align:center;font-size:13px;color:var(--mute);margin-top:44px;line-h
 .opt b{font:400 14px var(--caps);color:var(--goldd);min-width:16px;white-space:nowrap}
 .opt.ok b::after{content:' ✓';color:var(--ok)}.opt.no b::after{content:' ✗';color:var(--no)}
 .svc{background:var(--ivory2);border-bottom:1px solid var(--goldl)}
+#quiz{padding:0 0 22px;overflow:hidden;border:1px solid var(--gold);border-radius:22px;background:linear-gradient(180deg,#fffdf8,#fbf1dc);box-shadow:0 14px 34px rgba(58,46,24,.16),0 0 0 4px rgba(228,207,156,.35)}
+#quiz>*:not(.svc){margin-left:18px;margin-right:18px}
+#quiz>.prog:first-child{margin-top:22px}
+#quiz .svc{margin-bottom:18px}
+#quiz .prog{color:var(--goldd)}
+#quiz h2{font:400 30px/1.12 var(--disp);color:var(--ink);margin-top:6px;text-wrap:balance}
+#quiz .btn{width:calc(100% - 36px);min-height:54px;font-size:16px;background:var(--ink);border-color:var(--ink);color:#fbe9c4;box-shadow:0 8px 18px rgba(43,36,23,.25)}
+#quiz .btn.go{animation:quizgo 2.4s ease-in-out infinite}
+@keyframes quizgo{0%,100%{box-shadow:0 8px 18px rgba(43,36,23,.25),0 0 0 0 rgba(180,138,60,.55)}50%{box-shadow:0 8px 18px rgba(43,36,23,.25),0 0 0 10px rgba(180,138,60,0)}}
+@media (prefers-reduced-motion:reduce){#quiz .btn.go{animation:none}}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .sheet h2:focus{outline:none}
 .rev{display:inline-block;margin:4px 0 2px;padding:4px 10px;border-radius:99px;background:var(--ivory2);color:var(--goldd);font-size:13px;line-height:1.4}
