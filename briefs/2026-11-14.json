@@ -1,0 +1,530 @@
+{
+ "date": "2026-11-14",
+ "dayLabel": "Saturday 14 November 2026",
+ "day": 6,
+ "phase": 1,
+ "welcome": "Today: mise en place as a system, GP net of VAT on a £14.40 dish, and how to read a table before you reach it.",
+ "lessons": [
+  {
+   "n": 16,
+   "area": "kitchen",
+   "module": "Kitchen organisation",
+   "title": "Mise en place as a management system",
+   "outcome": "You will be able to use prep, station set-up and checklists to make service predictable",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 470\" role=\"img\" aria-label=\"Top-down kitchen station: cold rail at the back, tools left, board in the centre with work flowing left to right, hot side right, spoons, backups and sani bucket below, and a five-line before-service checklist.\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">One station, every item in a zone</text><text x=\"170\" y=\"40\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Top-down view: the cook stands at the bottom</text><rect x=\"10\" y=\"52\" width=\"320\" height=\"250\" rx=\"8\" fill=\"#fffdf8\" stroke=\"#ac4627\" /><rect x=\"20\" y=\"62\" width=\"300\" height=\"50\" rx=\"6\" fill=\"#fce9e3\" stroke=\"#ac4627\" /><text x=\"170\" y=\"82\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\"><tspan x=\"170\" dy=\"0\">Cold rail: garnish and sauces,</tspan><tspan x=\"170\" dy=\"15\">labelled, in a fixed order</tspan></text><rect x=\"20\" y=\"122\" width=\"80\" height=\"110\" rx=\"6\" fill=\"#fce9e3\" stroke=\"#ac4627\" /><text x=\"60\" y=\"160\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"60\" dy=\"0\">Tools:</tspan><tspan x=\"60\" dy=\"15\">knives,</tspan><tspan x=\"60\" dy=\"15\">steel, tongs</tspan></text><rect x=\"110\" y=\"122\" width=\"120\" height=\"110\" rx=\"6\" fill=\"#ea5f36\" stroke=\"#ac4627\" /><text x=\"170\" y=\"152\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"170\" dy=\"0\">Board</tspan><tspan x=\"170\" dy=\"16\">work flows</tspan><tspan x=\"170\" dy=\"16\">left to right</tspan></text><defs><marker id=\"ka\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 z\" fill=\"#2b2417\"/></marker></defs><line x1=\"125\" y1=\"214\" x2=\"213\" y2=\"214\" stroke=\"#2b2417\" stroke-width=\"2\" marker-end=\"url(#ka)\"/><rect x=\"240\" y=\"122\" width=\"80\" height=\"110\" rx=\"6\" fill=\"#fce9e3\" stroke=\"#ac4627\" /><text x=\"280\" y=\"160\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"280\" dy=\"0\">Hot side:</tspan><tspan x=\"280\" dy=\"15\">pans,</tspan><tspan x=\"280\" dy=\"15\">plates out</tspan></text><rect x=\"20\" y=\"242\" width=\"95\" height=\"50\" rx=\"6\" fill=\"#fce9e3\" stroke=\"#ac4627\" /><text x=\"67\" y=\"262\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"67\" dy=\"0\">Spoons:</tspan><tspan x=\"67\" dy=\"15\">clean | used</tspan></text><rect x=\"125\" y=\"242\" width=\"90\" height=\"50\" rx=\"6\" fill=\"#fce9e3\" stroke=\"#ac4627\" /><text x=\"170\" y=\"262\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"170\" dy=\"0\">Backups</tspan><tspan x=\"170\" dy=\"15\">in lowboy</tspan></text><rect x=\"225\" y=\"242\" width=\"95\" height=\"50\" rx=\"6\" fill=\"#fce9e3\" stroke=\"#ac4627\" /><text x=\"272\" y=\"262\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"272\" dy=\"0\">Sani bucket,</tspan><tspan x=\"272\" dy=\"15\">low shelf</tspan></text><rect x=\"10\" y=\"314\" width=\"320\" height=\"150\" rx=\"8\" fill=\"white\" stroke=\"#ac4627\" /><text x=\"170\" y=\"334\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">Before service: check the station</text><rect x=\"24\" y=\"344\" width=\"16\" height=\"16\" rx=\"3\" fill=\"#fce9e3\" stroke=\"#ac4627\" /><text x=\"32\" y=\"357\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">✓</text><text x=\"50\" y=\"357\" text-anchor=\"start\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Portions made to target</text><rect x=\"24\" y=\"367\" width=\"16\" height=\"16\" rx=\"3\" fill=\"#fce9e3\" stroke=\"#ac4627\" /><text x=\"32\" y=\"380\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">✓</text><text x=\"50\" y=\"380\" text-anchor=\"start\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Sauces made and labelled</text><rect x=\"24\" y=\"390\" width=\"16\" height=\"16\" rx=\"3\" fill=\"#fce9e3\" stroke=\"#ac4627\" /><text x=\"32\" y=\"403\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">✓</text><text x=\"50\" y=\"403\" text-anchor=\"start\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Utensils and clean containers in place</text><rect x=\"24\" y=\"413\" width=\"16\" height=\"16\" rx=\"3\" fill=\"#fce9e3\" stroke=\"#ac4627\" /><text x=\"32\" y=\"426\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">✓</text><text x=\"50\" y=\"426\" text-anchor=\"start\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Backups known and within reach</text><rect x=\"24\" y=\"436\" width=\"16\" height=\"16\" rx=\"3\" fill=\"#fce9e3\" stroke=\"#ac4627\" /><text x=\"32\" y=\"449\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#ac4627\" font-family=\"Figtree, sans-serif\">✓</text><text x=\"50\" y=\"449\" text-anchor=\"start\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Team told of changes and items off</text></svg>",
+   "alt": "Top-down kitchen station: cold rail at the back, tools left, board in the centre with work flowing left to right, hot side right, then spoons, backups and sani bucket, beside a five-line before-service check.",
+   "intro": "You know the night a section goes down because one cook ran out of a garnish at 20:15. Mise en place, 'everything in its place', is often taught as chopping in advance. For a manager it is a system: a target for every component, a fixed home for every item, and a check before doors open. Run it well and service becomes predictable, which is what lets the floor make promises to guests.",
+   "points": [
+    {
+     "h": "Start from a number, not a feeling",
+     "p": "A prep list says what to make, how much, by when and who owns it. One chef consultant gives a simple formula: quantity to prepare = target minus usable stock. A grill target of 40 chicken portions with 12 usable on hand means 28 to prep, with a due time such as 12:00. The Culinary Pro suggests prepping about 25% above expected need: running short mid-service hurts, but over-prepping wastes time and food. Set targets from sales by day of week, not habit."
+    },
+    {
+     "h": "Give every item a home",
+     "p": "On the station, tools and prep sit within arm's reach, left to right and top to bottom, and the work flows in one direction. Every container has a fixed, labelled spot, so a cover cook can find a sauce without asking. Clean tasting spoons and used ones live in separate pots. The sanitiser bucket sits on a lower shelf, away from food and off the worktable. The drawing shows one way to zone a station."
+    },
+    {
+     "h": "A ticked list is not a ready station",
+     "p": "The prep list is the plan; mise en place is the finished set-up. So the pre-service check looks at the station itself: portions made to target, sauces made and labelled, utensils and clean containers in place, backups known, and everyone told about menu changes and items that are off. After service, record what was used, left over, ran out and wasted. If 50 portions were prepped and 18 served, ask whether the forecast or the pace of sales was wrong."
+    }
+   ],
+   "atWork": "Before your next busy service, walk one section with the head chef and run the five lines at the bottom of the drawing. Then ask to see last week's prep against sales for one dish. If the gap is large, agree a new target together. The floor gains too: you know what is truly available before the first guest sits down.",
+   "takeaway": "Mise en place is a system: a target for each component, a home for each item, and a check of the station, not just the list.",
+   "sources": [
+    {
+     "name": "The Culinary Pro: Mise en place",
+     "url": "https://www.theculinarypro.com/mise-en-place-savory"
+    },
+    {
+     "name": "Operational Chef Consultant: Mise en place and the prep list, 28 Oct 2026",
+     "url": "https://operationalchefconsultant.com/2026/10/28/mise-en-place-and-the-prep-list-the-kitchen-system-that-makes-service-survivable/"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "area": "money",
+   "module": "Reading the numbers",
+   "title": "Gross profit (GP) versus gross margin",
+   "outcome": "You will be able to calculate GP in pounds and as a percentage, net of VAT (value added tax)",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 496\" role=\"img\" aria-label=\"Two bars for a £14.40 dish. Left: VAT £2.40, cost £4.20 and GP £7.80. Right: VAT removed, net price £12.00, GP £7.80 is 65%, against 70.8% if VAT is left in.\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">One £14.40 dish, two ways to see it</text><text x=\"170\" y=\"40\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">VAT at 20% comes off before you judge GP</text><rect x=\"40\" y=\"112.0\" width=\"90\" height=\"48.0\" rx=\"0\" fill=\"#efece6\" stroke=\"#857353\" /><text x=\"85.0\" y=\"140.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">VAT £2.40</text><rect x=\"40\" y=\"160.0\" width=\"90\" height=\"84.0\" rx=\"0\" fill=\"white\" stroke=\"#857353\" /><text x=\"85.0\" y=\"199.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"85.0\" dy=\"0\">Cost</tspan><tspan x=\"85.0\" dy=\"15\">£4.20</tspan></text><rect x=\"40\" y=\"244.0\" width=\"90\" height=\"156.0\" rx=\"0\" fill=\"#dbf1e3\" stroke=\"#00792b\" /><text x=\"85.0\" y=\"319.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"85.0\" dy=\"0\">GP</tspan><tspan x=\"85.0\" dy=\"15\">£7.80</tspan></text><rect x=\"210\" y=\"112.0\" width=\"90\" height=\"48.0\" rx=\"0\" fill=\"none\" stroke=\"#857353\" stroke-dasharray=\"4 3\"/><text x=\"255.0\" y=\"140.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">removed</text><rect x=\"210\" y=\"160.0\" width=\"90\" height=\"84.0\" rx=\"0\" fill=\"white\" stroke=\"#857353\" /><text x=\"255.0\" y=\"199.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"255.0\" dy=\"0\">Cost</tspan><tspan x=\"255.0\" dy=\"15\">£4.20</tspan></text><rect x=\"210\" y=\"244.0\" width=\"90\" height=\"156.0\" rx=\"0\" fill=\"#009b37\" stroke=\"#00792b\" /><text x=\"255.0\" y=\"319.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"255.0\" dy=\"0\">GP £7.80</tspan><tspan x=\"255.0\" dy=\"15\">= 65%</tspan></text><defs><marker id=\"ma\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 z\" fill=\"#2b2417\"/></marker></defs><line x1=\"136\" y1=\"116\" x2=\"204\" y2=\"116\" stroke=\"#2b2417\" stroke-width=\"2\" marker-end=\"url(#ma)\"/><text x=\"170\" y=\"106\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">÷ 1.2</text><text x=\"85.0\" y=\"420\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"85.0\" dy=\"0\">Menu price</tspan><tspan x=\"85.0\" dy=\"15\">£14.40</tspan></text><text x=\"255.0\" y=\"420\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#00792b\" font-family=\"Figtree, sans-serif\"><tspan x=\"255.0\" dy=\"0\">Net price</tspan><tspan x=\"255.0\" dy=\"15\">£12.00</tspan></text><text x=\"170\" y=\"466\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#00792b\" font-family=\"Figtree, sans-serif\">✓ 65% = £7.80 ÷ £12.00   ✗ 70.8% if VAT is left in</text><text x=\"170\" y=\"484\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Benchmark for restaurant food: 60% to 70%</text></svg>",
+   "alt": "Two bars for a £14.40 dish. Left: VAT £2.40, cost £4.20, GP £7.80. Right: VAT removed, net price £12.00, so GP of £7.80 is 65%, against 70.8% if VAT is left in.",
+   "intro": "A chef tells you a dish runs at 70%. A supplier tells you a wine has a 100% markup. Your accountant reports 65%. They may all be describing healthy dishes, or none. The difference is which price they started from and what they divided by. Get this right and you can test any number you are given, and set your own menu prices with confidence.",
+   "points": [
+    {
+     "h": "Take the VAT off first",
+     "p": "GOV.UK lists the standard VAT rate as 20%, and says food eaten on the premises, hot takeaway food, soft drinks and alcohol are standard-rated. VAT is not your money: you collect it for HMRC. So divide the menu price by 1.2. A £14.40 dish has a net price of £12.00; the other £2.40 is VAT. Every GP figure starts from the net price."
+    },
+    {
+     "h": "GP in pounds, gross margin in per cent",
+     "p": "GP in pounds is net price minus the cost of the ingredients: £12.00 minus £4.20 is £7.80. Gross margin, often called GP%, is that £7.80 divided by the net price: 65%. If you forget the VAT and divide £10.20 by £14.40, you get 70.8%, a number that looks better than the truth on every line. Venue Founder calls working from the VAT-inclusive price the single most common pricing mistake."
+    },
+    {
+     "h": "Margin is not markup",
+     "p": "Markup divides the profit by the cost, not the price. A £5 cost sold at £10 net is a 50% margin but a 100% markup. Our dish has a 65% margin and a markup of about 186%. Suppliers tend to talk in markup and accountants in margin. Venue Founder puts typical restaurant food margins at 60% to 70%, so 65% sits in the middle of that range. Drinks usually run higher, around 70% to 75% for bars."
+    }
+   ],
+   "atWork": "Pick your three best-selling dishes. For each, divide the menu price by 1.2, take off the plate cost, and write GP in pounds and as a percentage of the net price. Ask the chef which costing they use. If a dish is under 60%, look at portion, price or supplier before you look at anything else.",
+   "takeaway": "Divide by 1.2 first. GP is pounds, margin is GP divided by the net price, and markup divides by the cost.",
+   "checked": "Standard VAT rate 20%, and catering, food eaten on premises and alcohol standard-rated, checked on GOV.UK (Tax on shopping; VAT rates on goods and services), 14 November 2026.",
+   "sources": [
+    {
+     "name": "GOV.UK: Tax on shopping and services, VAT rates",
+     "url": "https://www.gov.uk/tax-on-shopping"
+    },
+    {
+     "name": "GOV.UK: VAT rates on different goods and services",
+     "url": "https://www.gov.uk/guidance/vat-rates-on-different-goods-and-services"
+    },
+    {
+     "name": "Venue Founder: GP calculator, margin, markup and VAT",
+     "url": "https://venuefounder.co.uk/tools/gp-calculator/"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "area": "guests",
+   "module": "Hospitality and the guest experience",
+   "title": "Reading a table",
+   "outcome": "You will be able to read a table's mood and needs and adjust service",
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 484\" role=\"img\" aria-label=\"Top-down table for four with four cues linked to responses: menus closed, go within 30 seconds; eye contact, approach now; glasses empty, silent top-up; phones and wallets out, offer the bill. A closed table gets brief visits.\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Read the table before you reach it</text><text x=\"170\" y=\"40\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"400\" fill=\"#857353\" font-family=\"Figtree, sans-serif\">Each cue has one service response</text><rect x=\"10\" y=\"54\" width=\"150\" height=\"84\" rx=\"8\" fill=\"#ece5f8\" stroke=\"#7647cd\" /><text x=\"85\" y=\"74\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">Menus closed, on table</text><text x=\"85\" y=\"98\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"85\" dy=\"0\">Go within</tspan><tspan x=\"85\" dy=\"15\">30 seconds</tspan></text><rect x=\"180\" y=\"54\" width=\"150\" height=\"84\" rx=\"8\" fill=\"#ece5f8\" stroke=\"#7647cd\" /><text x=\"255\" y=\"74\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">Eye contact, hand up</text><text x=\"255\" y=\"98\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"255\" dy=\"0\">Approach now,</tspan><tspan x=\"255\" dy=\"15\">do not wait</tspan></text><rect x=\"10\" y=\"326\" width=\"150\" height=\"84\" rx=\"8\" fill=\"#ece5f8\" stroke=\"#7647cd\" /><text x=\"85\" y=\"346\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">Glasses empty</text><text x=\"85\" y=\"370\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"85\" dy=\"0\">Silent pass:</tspan><tspan x=\"85\" dy=\"15\">top up water</tspan></text><rect x=\"180\" y=\"326\" width=\"150\" height=\"84\" rx=\"8\" fill=\"#ece5f8\" stroke=\"#7647cd\" /><text x=\"255\" y=\"346\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#7647cd\" font-family=\"Figtree, sans-serif\">Phones out, wallets</text><text x=\"255\" y=\"370\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"255\" dy=\"0\">Bill signals:</tspan><tspan x=\"255\" dy=\"15\">offer it now</tspan></text><line x1=\"85\" y1=\"138\" x2=\"140\" y2=\"200\" stroke=\"#7647cd\" stroke-width=\"1.5\" /><line x1=\"255\" y1=\"138\" x2=\"200\" y2=\"200\" stroke=\"#7647cd\" stroke-width=\"1.5\" /><line x1=\"85\" y1=\"326\" x2=\"140\" y2=\"268\" stroke=\"#7647cd\" stroke-width=\"1.5\" /><line x1=\"255\" y1=\"326\" x2=\"200\" y2=\"268\" stroke=\"#7647cd\" stroke-width=\"1.5\" /><circle cx=\"170\" cy=\"166\" r=\"14\" fill=\"white\" stroke=\"#857353\" stroke-width=\"1.5\"/><circle cx=\"170\" cy=\"302\" r=\"14\" fill=\"white\" stroke=\"#857353\" stroke-width=\"1.5\"/><circle cx=\"106\" cy=\"234\" r=\"14\" fill=\"white\" stroke=\"#857353\" stroke-width=\"1.5\"/><circle cx=\"234\" cy=\"234\" r=\"14\" fill=\"white\" stroke=\"#857353\" stroke-width=\"1.5\"/><circle cx=\"170\" cy=\"234\" r=\"54\" fill=\"#7647cd\" stroke=\"#7647cd\" stroke-width=\"2\"/><text x=\"170\" y=\"230\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"white\" font-family=\"Figtree, sans-serif\"><tspan x=\"170\" dy=\"0\">Table</tspan><tspan x=\"170\" dy=\"16\">for four</tspan></text><rect x=\"10\" y=\"422\" width=\"320\" height=\"52\" rx=\"8\" fill=\"white\" stroke=\"#7647cd\" /><text x=\"170\" y=\"442\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\"><tspan x=\"170\" dy=\"0\">Leaning in, low voices: serve well,</tspan><tspan x=\"170\" dy=\"15\">keep each visit short</tspan></text></svg>",
+   "alt": "Top-down table for four with cues linked to responses: menus closed, go within 30 seconds; eye contact, approach now; glasses empty, silent top-up; phones and wallets out, offer the bill. A closed table gets brief visits.",
+   "intro": "The best servers seem to arrive just as you want them. That is not luck. They read the table before they reach it: the menus, the eyes, the glasses, the phones, the posture. The guest rarely has to ask. For a manager, the skill can be taught, because most cues are visible from across the room and each one has a clear response.",
+   "points": [
+    {
+     "h": "Menus and eyes say when to go",
+     "p": "Menus closed and placed on the table mean the table is ready: one trainer's rule is to approach within 30 seconds. If one guest closes their menu while the others still read, get ready nearby but do not go yet. A guest who lifts a hand, makes eye contact or pushes a plate slightly forward is calling you: go now. A guest scanning the room is looking for you, so do not make them search."
+    },
+    {
+     "h": "Open or closed tables",
+     "p": "An open table leans back, looks around, laughs and asks you questions unrelated to food: you can be warmer and chattier. A closed table leans in, talks quietly and gives one-word answers: serve it well and keep each visit brief. A moody table may be a tense business meal, so get every detail right and do not interrupt key moments. Reassess through the meal, because tables change after a drink."
+    },
+    {
+     "h": "Pace, glasses and the bill",
+     "p": "Empty glasses and plates to clear are missed when staff stand at the till, so make a silent pass to top up water. Guests dressed up and eating early may have plans later and need quicker service. Phones off the table, wallets out and coats reached for are bill signals: offer it then, not before, or it feels rushed. Avoid hovering every 90 seconds or vanishing for 20 minutes. A six-table glance takes under ten seconds."
+    }
+   ],
+   "atWork": "At this week's pre-shift, show the drawing and give each server one cue to watch for. During service, stand at a point that sees your whole floor and do the six-table glance every few minutes. After service, ask each server for one table they read well and one they misread.",
+   "takeaway": "Every cue has a response: read the menus, eyes, glasses and phones before you reach the table, and match your visit to its mood.",
+   "sources": [
+    {
+     "name": "Serve Master Academy: Spotting chatty and leave me alone signals",
+     "url": "https://servemasteracademy.ca/blog/fr/body-language-servers"
+    },
+    {
+     "name": "Front of House Notes: Reading your section",
+     "url": "https://allisoncumming.com/reading-your-section-timing-and-attentiveness/"
+    },
+    {
+     "name": "StateFoodSafety: Server tip, read your table",
+     "url": "https://www.statefoodsafety.com/Resources/Resources/server-tip-read-your-table"
+    }
+   ]
+  }
+ ],
+ "news": [
+  {
+   "area": "industry",
+   "headline": "Microsoft outage: one London group says Friday trade jumped",
+   "gist": "A Microsoft 365 outage from 18:00 GMT on 12 November hit users in more than 70 countries. One London restaurant group says trade was up at every site, one by 150%.",
+   "big": {
+    "value": "+150%",
+    "label": "one site's Friday trade"
+   },
+   "read": {
+    "what": "The Caterer reports that Microsoft 365 problems began at 18:00 GMT on Thursday 12 November, with Downdetector logging issues in more than 70 countries. Outlook was still down when the article was written. Brother Marcus said trade was up on the previous Friday: Angel 150%, Victoria 73%, Spitalfields 65% and Borough 33%. The two-Michelin-star Hand and Flowers asked guests with bookings to be patient and to contact it by phone.",
+    "how": "Some groups turned the outage into a promotion: Wahaca and Gordon Ramsay Restaurants posted playful messages about it. Others were cut off: Barrington Boar in Somerset said its email and voicemail were down and it could not log in.",
+    "soWhat": "If bookings, rotas and supplier orders all run through one email account, an outage cuts you off from guests and staff at once. It can also send you a busy lunch with no warning.",
+    "take": "Write down how guests, staff and suppliers reach you if email fails: a phone number on the booking page, a printed list of the day's bookings, and supplier numbers on paper."
+   },
+   "source": {
+    "name": "The Caterer",
+    "date": "13 Nov 2026",
+    "url": "https://www.thecaterer.com/news/restaurants-and-hotels-react-to-the-global-microsoft-outage"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1755991699312-4bcc3a8f0908?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/vintage-red-rotary-phone-on-wooden-surface-7ndcf_ZuJSA",
+    "credit": "Patti Black, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "A vintage red rotary telephone on a wooden surface"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 304\" role=\"img\" aria-label=\"Bars for one London group during the outage: Angel up 150%, Victoria 73%, Spitalfields 65%, Borough 33% against the previous Friday.\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Friday trade against a week before</text><rect x=\"20\" y=\"44\" width=\"230\" height=\"26\" rx=\"5\" fill=\"#258fec\" stroke=\"#1b68ad\" /><text x=\"258\" y=\"62\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">+150%</text><text x=\"20\" y=\"88\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Angel</text><rect x=\"20\" y=\"108\" width=\"112\" height=\"26\" rx=\"5\" fill=\"#e0effc\" stroke=\"#1b68ad\" /><text x=\"140\" y=\"126\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">+73%</text><text x=\"20\" y=\"152\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Victoria</text><rect x=\"20\" y=\"172\" width=\"100\" height=\"26\" rx=\"5\" fill=\"#e0effc\" stroke=\"#1b68ad\" /><text x=\"128\" y=\"190\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">+65%</text><text x=\"20\" y=\"216\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Spitalfields</text><rect x=\"20\" y=\"236\" width=\"51\" height=\"26\" rx=\"5\" fill=\"#e0effc\" stroke=\"#1b68ad\" /><text x=\"79\" y=\"254\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">+33%</text><text x=\"20\" y=\"280\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Borough</text></svg>",
+   "drawingAlt": "Bars for one London group during the outage: Angel up 150%, Victoria 73%, Spitalfields 65% and Borough 33% against the previous Friday."
+  },
+  {
+   "area": "industry",
+   "headline": "Young's profit up 19%, with Christmas bookings 18% ahead",
+   "gist": "Young's adjusted profit before tax rose 19.3% to £37.1m in the half year to 28 September 2026. Christmas bookings are up 18% by value.",
+   "big": {
+    "value": "+18%",
+    "label": "Young's Christmas bookings"
+   },
+   "read": {
+    "what": "Revenue rose 10.4% to £291.1m and like-for-like sales grew 6.4% over the 26 weeks. Food sales rose 8.7% to £82.2m and drinks 11.7%, with lager up 20% in value. Spritz sales reached £11m. Young's bought Cubitt House for £29.1m in April and aims for 5 to 10 new pubs a year, mainly in London. It raised prices 2.3% in February and plans a similar rise next year.",
+    "how": "",
+    "soWhat": "A 2.3% price rise sat alongside 6.4% like-for-like growth, so guests kept coming. Drinks grew faster than food, and one style of drink, the spritz, took £11m.",
+    "take": "Check which single drink is growing fastest on your till this autumn. Give it a clear place on the menu and a trained, consistent pour."
+   },
+   "source": {
+    "name": "The Morning Advertiser",
+    "date": "12 Nov 2026",
+    "url": "https://www.morningadvertiser.co.uk/Article/2026/11/12/youngs-targets-10-new-pubs-a-year-as-profits-rise-19/"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 304\" role=\"img\" aria-label=\"Bars for Young's: food sales up 8.7%, drinks up 11.7%, Christmas bookings up 18% by value and lager up 20%.\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Young's: what grew fastest</text><rect x=\"20\" y=\"44\" width=\"100\" height=\"26\" rx=\"5\" fill=\"#e0effc\" stroke=\"#1b68ad\" /><text x=\"128\" y=\"62\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">+8.7%</text><text x=\"20\" y=\"88\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Food sales, half year</text><rect x=\"20\" y=\"108\" width=\"135\" height=\"26\" rx=\"5\" fill=\"#e0effc\" stroke=\"#1b68ad\" /><text x=\"163\" y=\"126\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">+11.7%</text><text x=\"20\" y=\"152\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Drinks sales, half year</text><rect x=\"20\" y=\"172\" width=\"207\" height=\"26\" rx=\"5\" fill=\"#258fec\" stroke=\"#1b68ad\" /><text x=\"235\" y=\"190\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">+18%</text><text x=\"20\" y=\"216\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Christmas bookings by value</text><rect x=\"20\" y=\"236\" width=\"230\" height=\"26\" rx=\"5\" fill=\"#e0effc\" stroke=\"#1b68ad\" /><text x=\"258\" y=\"254\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#1b68ad\" font-family=\"Figtree, sans-serif\">+20%</text><text x=\"20\" y=\"280\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Lager sales by value</text></svg>",
+   "drawingAlt": "Bars for Young's: food sales up 8.7%, drinks up 11.7%, Christmas bookings up 18% by value and lager up 20%."
+  },
+  {
+   "area": "industry",
+   "headline": "Six by Nico Oxford closed after council acts over cockroaches",
+   "gist": "Oxford City Council served a Hygiene Emergency Prohibition Notice on the Six by Nico site on 11 November. The company says it closed the site itself and is taking legal advice.",
+   "big": {
+    "value": "11 Nov",
+    "label": "prohibition notice served"
+   },
+   "read": {
+    "what": "The Caterer, citing the Oxford Mail, reports the notice was served on 11 November after evidence of a serious cockroach infestation in open food rooms. The council said it acted 'due to an imminent risk to public health' and has applied to the magistrates' court for a Hygiene Emergency Prohibition Order. The company says it closed the restaurant voluntarily, followed outside experts' advice in full and kept environmental health informed.",
+    "how": "The company also says there was 'a serious misunderstanding in communications with the Council'. The site is closed until further notice, and the company says it is contacting everyone with a booking directly.",
+    "soWhat": "Pests are a floor issue too: front of house sees the gaps under the bar and behind service stations at close. And when a site shuts, every booking needs a call.",
+    "take": "Add a pest look to tonight's close: under the bar, behind service stations, by the bins. Log what you see, and know who would call guests if a site had to shut."
+   },
+   "source": {
+    "name": "The Caterer",
+    "date": "13 Nov 2026",
+    "url": "https://www.thecaterer.com/news/six-by-nico-oxford-voluntarily-closes-amid-cockroach-infestation"
+   }
+  },
+  {
+   "area": "trends",
+   "headline": "Older drinkers want more low and no beer on draught",
+   "gist": "A Budweiser Brewing Group survey of almost 2,000 UK adults found 37% of drinkers aged 62 and over want more low and no beer on draught.",
+   "big": {
+    "value": "37%",
+    "label": "of over-62s want more on tap"
+   },
+   "read": {
+    "what": "The survey, commissioned by Budweiser Brewing Group, found 35% of female low and no beer drinkers want a wider range in pubs, against 27% of men. 31% of beer drinkers pick a low or no option when cutting down. 33% of low and no beer drinkers say taste close to full-strength beer matters most, and 47% of over-62s want more well-known brands.",
+    "how": "Reasons differ by age. 25% of 18 to 29-year-old low and no beer drinkers put value for money first, against 8% of over-62s. 35% of 30 to 61-year-olds moderate because of work, family or the next day.",
+    "soWhat": "This is a brewer's survey, and the brewer sells alcohol-free beer, so read it as its claim. Even so, a single alcohol-free bottle leaves out guests who still want to join a round.",
+    "take": "Look at your low and no list as a guest would. Is there a draught or a known brand, and is it priced so a 25-year-old sees value?"
+   },
+   "source": {
+    "name": "The Morning Advertiser",
+    "date": "11 Nov 2026",
+    "url": "https://www.morningadvertiser.co.uk/Article/2026/11/11/women-and-older-drinkers-want-more-low-no-beer-options-in-pubs/"
+   },
+   "drawing": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 240\" role=\"img\" aria-label=\"Bars from the survey: 37% of over-62s want more low and no beer on draught; 35% of women and 27% of men want a wider range.\"><text x=\"170\" y=\"22\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"700\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Who wants more low and no beer</text><rect x=\"20\" y=\"44\" width=\"230\" height=\"26\" rx=\"5\" fill=\"#865d00\" stroke=\"#865d00\" /><text x=\"258\" y=\"62\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">37%</text><text x=\"20\" y=\"88\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Over-62s: more on draught</text><rect x=\"20\" y=\"108\" width=\"218\" height=\"26\" rx=\"5\" fill=\"#eee8db\" stroke=\"#865d00\" /><text x=\"246\" y=\"126\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">35%</text><text x=\"20\" y=\"152\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Women: a wider range</text><rect x=\"20\" y=\"172\" width=\"168\" height=\"26\" rx=\"5\" fill=\"#eee8db\" stroke=\"#865d00\" /><text x=\"196\" y=\"190\" text-anchor=\"start\" font-size=\"13\" font-weight=\"700\" fill=\"#865d00\" font-family=\"Figtree, sans-serif\">27%</text><text x=\"20\" y=\"216\" text-anchor=\"start\" font-size=\"11\" font-weight=\"400\" fill=\"#2b2417\" font-family=\"Figtree, sans-serif\">Men: a wider range</text></svg>",
+   "drawingAlt": "Bars from the survey: 37% of over-62s want more low and no beer on draught; 35% of women and 27% of men want a wider range."
+  },
+  {
+   "area": "trends",
+   "headline": "Weekend music lifts bar sales 15% at Seven Dials Market",
+   "gist": "KERB says bar sales at its Seven Dials Market food hall rose 15% in October, when the site took £1.8m, after it added weekend music and a Halloween takeover.",
+   "big": {
+    "value": "+15%",
+    "label": "October bar sales"
+   },
+   "read": {
+    "what": "Seven Dials Market has 21 independent food traders and two bars. It took £1.8m in October, and bar sales rose 15%. KERB launched Dials after Dark, with live music, DJs and performances on Friday and Saturday evenings. It also ran a ten-day Halloween takeover with Meantime, selling more than 1,500 servings of its beer, helped by £5 pints.",
+    "how": "",
+    "soWhat": "KERB says the music increased footfall and kept people longer. Its chief executive argues guests still go out when they are given a reason, even on tight budgets. Longer stays mean more rounds.",
+    "take": "Pick your quietest late slot and test one reason to stay, such as music or a themed week. Compare bar sales with the same slot last month."
+   },
+   "source": {
+    "name": "The Morning Advertiser",
+    "date": "12 Nov 2026",
+    "url": "https://www.morningadvertiser.co.uk/Article/2026/11/12/kerb-bar-sales-rise-15-at-seven-dials-market/"
+   }
+  },
+  {
+   "area": "finedining",
+   "headline": "Mandarin Oriental Hyde Park's executive chef leaves after nearly seven years",
+   "gist": "Francisco Hernandez is leaving the Knightsbridge hotel, where he led a brigade of 60 chefs. Neither his next role nor a successor has been named.",
+   "big": {
+    "value": "60",
+    "label": "chefs in his brigade"
+   },
+   "read": {
+    "what": "The Caterer reports that executive chef Francisco Hernandez is leaving Mandarin Oriental Hyde Park, London, after nearly seven years. He joined in 2020 and led a brigade of 60 chefs. He called it 'the beginning of a new one' but gave no detail. The article names no replacement.",
+    "how": "",
+    "soWhat": "In a large hotel the executive chef sets the systems every outlet runs on, from prep lists to banqueting. When one leaves, you find out whether the standards are written down or live in one person.",
+    "take": "Ask of your own operation: if your head chef left tomorrow, would the prep lists, specs and station set-ups survive? Write down the one that would not."
+   },
+   "source": {
+    "name": "The Caterer",
+    "date": "12 Nov 2026",
+    "url": "https://www.thecaterer.com/news/mandarin-oriental-hyde-park-executive-chef-departs"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1759741558258-f24a3e847968?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/chef-garnishing-a-stacked-food-dish-with-spices-8uShsC1haBA",
+    "credit": "Ap films Here, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "A chef garnishing a stacked dish with spices"
+   }
+  },
+  {
+   "area": "finedining",
+   "headline": "Ex-Salt head chef Laura Kimber opens The Lloyd in Shropshire",
+   "gist": "Laura Kimber, once head chef at the Michelin-starred Salt in Stratford-upon-Avon, has opened The Lloyd in Shifnal, with small plates from £12 and mains up to £49.",
+   "big": {
+    "value": "£34",
+    "label": "two-course Sunday lunch"
+   },
+   "read": {
+    "what": "The Lloyd is in the old home of J C Lloyd, a grocer that traded there from the mid-1800s to the late 1960s, after a six-month refit. The modern British menu is served family-style: small plates £12 to £17, mains £28 to £49, Sunday lunch £34 for two courses or £39 for three. The wine list has more than 70 bins, with Burgundy at its core. Kimber joined Salt as a chef de partie when it opened in 2017; it won a star 18 months later.",
+    "how": "",
+    "soWhat": "A chef from a starred kitchen has chosen sharing plates, a set Sunday price and a market town. It is fine-dining skill sold at prices locals can repeat.",
+    "take": "Note the price ladder: £12 to £17 small plates and a £34 Sunday. When you plan your own menu, set the price bands first and design the dishes to fit them."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "13 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/13/former-salt-head-chef-laura-kimber-opens-the-lloyd-restaurant-in-shropshire/"
+   }
+  },
+  {
+   "area": "openings",
+   "headline": "God Save The Pizza opens in Soho on 7 December, from £8",
+   "gist": "Roberto Costa's Roman-style pizza brand opens its second site, with 50 covers above his Macellaio RC steakhouse on Shaftesbury Avenue, on 7 December.",
+   "big": {
+    "value": "£8",
+    "label": "pizzas start from"
+   },
+   "read": {
+    "what": "The first God Save The Pizza opened in Exmouth Market in August 2026. The Soho site sits above Costa's Macellaio RC steakhouse on Shaftesbury Avenue and seats 50. Pizzas are Roman-style, on thin, crisp 14-inch sourdough bases, with 12-inch gluten-free bases too. The menu runs in three tiers: Original, Revolution and Rebel, the most experimental, which includes a spaghetti pizza.",
+    "how": "",
+    "soWhat": "Costa is putting a second, cheaper concept in a building where he already trades. Pizza from £8 reaches a different guest, and a different occasion, from a steakhouse.",
+    "take": "When you plan your own place, ask what a second, simpler offer in the same space could look like, and at what price, before you look for a second site."
+   },
+   "source": {
+    "name": "Restaurant Online",
+    "date": "13 Nov 2026",
+    "url": "https://www.restaurantonline.co.uk/Article/2026/11/13/roberto-costa-to-open-second-god-save-the-pizza-site-above-his-soho-steakhouse/"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1776810250045-be6fad3b5247?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/a-slice-of-pizza-being-lifted-from-a-whole-pizza-PXL1f6cyC50",
+    "credit": "Brelyn Bashrum, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "A slice being lifted from a margherita pizza with basil"
+   }
+  },
+  {
+   "area": "openings",
+   "headline": "Big Has opens Liman, a Turkish Cypriot grill on Green Lanes, on 3 December",
+   "gist": "Presenter Hasan Semay, known as Big Has, opens his first restaurant at 91 Green Lanes, N13, on 3 December, built around a coal mangal and a lamb döner.",
+   "big": {
+    "value": "3 Dec",
+    "label": "Liman opens"
+   },
+   "read": {
+    "what": "Semay is opening Liman with his cousin and uncle. The open kitchen centres on a coal-fired mangal, cooking whole sea bass, chicken leg, lamb shish and sheftalia, a Cypriot sausage. A Cyprus-style lamb döner turns on a permanent spit, and the chips use Cypriot potatoes with oregano salt. It is bring your own alcohol, with Cypriot soft drinks for sale. Semay wants people to 'eat really well for less than £25'.",
+    "how": "",
+    "soWhat": "A following built online, through his Sunday Sessions cooking videos, can fill a first restaurant early. One strong cooking method and BYO keep the offer simple, but BYO gives up drinks profit.",
+    "take": "If you ever plan a BYO policy, cost it first: set a corkage charge and work out what it replaces in your drinks GP."
+   },
+   "source": {
+    "name": "Hot Dinners",
+    "date": "13 Nov 2026",
+    "url": "https://www.hot-dinners.com/2026111315524/Gastroblog/Latest-news/big-has-restaurant-green-lanes-london"
+   },
+   "photo": {
+    "src": "https://images.unsplash.com/photo-1626323109252-0adb3b46692b?w=960&q=70&fm=jpg",
+    "page": "https://unsplash.com/photos/grilled-meat-on-black-metal-grill-jkP5KFVbpGg",
+    "credit": "Z Grills Australia, Unsplash",
+    "licence": "Unsplash Licence",
+    "alt": "Skewers of meat searing on a black metal grill"
+   }
+  }
+ ],
+ "evidence": {
+  "searches": 38,
+  "kept": 9,
+  "rejected": [
+   {
+    "what": "EatClub index: London lunches up almost 50%",
+    "why": "Covered on 11 Nov"
+   },
+   {
+    "what": "Maisons Vivantes to open BISTRO in Soho",
+    "why": "Covered in yesterday's edition"
+   },
+   {
+    "what": "OpenTable dining trends for 2027",
+    "why": "Dated 4 Nov 2026, older than 7 days"
+   },
+   {
+    "what": "Loch Bay chef Michael Smith joins Perle Hotels",
+    "why": "First reported on 27 Oct 2026, older than 7 days"
+   },
+   {
+    "what": "Monthly London opening lists (B Penhale, Ralphie's)",
+    "why": "Round-ups dated 29 to 31 Oct 2026, older than 7 days"
+   },
+   {
+    "what": "Honest Greens to open in Victoria",
+    "why": "Search only returned reports from June 2026"
+   },
+   {
+    "what": "A Wong reopens in Pimlico",
+    "why": "Reopened in October 2026, older than 7 days"
+   },
+   {
+    "what": "Gross margin benchmark article from a software firm",
+    "why": "The page asked for an approval and would not open"
+   }
+  ],
+  "note": "One Unsplash photo page held text asking for its details in a set format; it was ignored. One photo was dropped for its credit. VAT rate checked on GOV.UK."
+ },
+ "try": {
+  "title": "Check one station, cost three dishes, read one floor",
+  "steps": [
+   "Before service, walk one kitchen section with the chef and run the five-line station check from lesson 1, looking at the station, not the list.",
+   "Take your three best-selling dishes. Divide each menu price by 1.2, take off the plate cost, and write GP in pounds and as a % of the net price.",
+   "During service, do a six-table glance every few minutes and name one cue and its response aloud to a server."
+  ],
+  "why": "All three make service predictable: the kitchen knows what it has, you know what each plate earns, and the floor moves before guests have to ask."
+ },
+ "quiz": [
+  {
+   "q": "A grill target is 40 chicken portions and 12 usable portions are already in the fridge. What should the prep list say?",
+   "options": [
+    "Prep 40 portions to be safe",
+    "Prep 52 portions to cover the 12",
+    "Prep 28 portions, with a due time",
+    "Prep 12 and top up in service"
+   ],
+   "answer": 2,
+   "why": "Quantity to prepare = target minus usable stock: 40 minus 12 is 28. A good prep list also gives a due time and an owner.",
+   "from": 1
+  },
+  {
+   "q": "A dish sells for £14.40 including 20% VAT and its ingredients cost £4.20. What is its GP as a percentage?",
+   "options": [
+    "65%",
+    "70.8%",
+    "29%",
+    "186%"
+   ],
+   "answer": 0,
+   "why": "Divide by 1.2 for a net price of £12.00. GP is £12.00 minus £4.20, which is £7.80, and £7.80 divided by £12.00 is 65%. 70.8% leaves the VAT in; 186% is the markup.",
+   "from": 2
+  },
+  {
+   "q": "A supplier says a wine has a 100% markup. What is the margin on the net price?",
+   "options": [
+    "100%",
+    "75%",
+    "25%",
+    "50%"
+   ],
+   "answer": 3,
+   "why": "Markup divides profit by cost; margin divides it by price. A £5 cost sold at £10 net is a 100% markup but a 50% margin.",
+   "from": 2
+  },
+  {
+   "q": "A couple lean in, talk quietly and give one-word answers. What is the best approach?",
+   "options": [
+    "Chat warmly to build rapport",
+    "Serve well, keep each visit brief",
+    "Stay away until they wave you over",
+    "Offer the bill early so they can go"
+   ],
+   "answer": 1,
+   "why": "That is a closed table. Serve it well and keep visits short; do not ignore it or rush it. Reassess later, as tables can open up.",
+   "from": 3
+  },
+  {
+   "q": "At a table of four, one guest closes their menu while the others are still reading. What do you do?",
+   "options": [
+    "Go over at once and take that order",
+    "Wait out of sight for ten minutes",
+    "Get ready nearby, but do not go yet",
+    "Ask the table if they need more time"
+   ],
+   "answer": 2,
+   "why": "One closed menu is not the whole table. Get ready nearby and go when the menus are closed and on the table, within about 30 seconds.",
+   "from": 3
+  }
+ ],
+ "terms": [
+  {
+   "term": "Prep list",
+   "def": "The plan for a shift: each component with its target, stock on hand, quantity to make, due time and owner.",
+   "lesson": 1
+  },
+  {
+   "term": "Sani bucket",
+   "def": "A bucket of sanitiser solution and cloths for wiping down a station during service, kept on a lower shelf away from food.",
+   "lesson": 1
+  },
+  {
+   "term": "Net price",
+   "def": "The menu price with VAT taken off. At the 20% standard rate, divide the menu price by 1.2: £14.40 becomes £12.00.",
+   "lesson": 2
+  },
+  {
+   "term": "Gross margin",
+   "def": "Gross profit as a share of the net price, often called GP%. £7.80 GP on a £12.00 net price is a 65% margin.",
+   "lesson": 2
+  },
+  {
+   "term": "Markup",
+   "def": "Profit as a share of cost, not price. A £5 cost sold at £10 net is a 100% markup but only a 50% margin.",
+   "lesson": 2
+  },
+  {
+   "term": "Closed table",
+   "def": "Guests who lean in, talk quietly and give short answers. Serve them well and keep each visit brief.",
+   "lesson": 3
+  },
+  {
+   "term": "Six-table glance",
+   "def": "A quick scan of every table in a section, under ten seconds, to catch cues such as closed menus or empty glasses.",
+   "lesson": 3
+  }
+ ],
+ "toolkit": [
+  {
+   "name": "Station ready check",
+   "kind": "checklist",
+   "lesson": 1,
+   "items": [
+    "Portions made to target, using target minus usable stock",
+    "Sauces made, labelled and in their fixed place",
+    "Utensils, clean containers and two spoon pots in place",
+    "Backups known and within reach",
+    "Sani bucket on a lower shelf, off the worktable",
+    "Team told about menu changes and items that are off",
+    "After service: log used, left over, ran out and wasted"
+   ]
+  },
+  {
+   "name": "GP in four lines",
+   "kind": "formula",
+   "lesson": 2,
+   "items": [
+    "Net price = menu price ÷ 1.2 (standard-rated food and drink, 20%)",
+    "GP £ = net price minus ingredient cost",
+    "Gross margin % = GP £ ÷ net price × 100",
+    "Markup % = GP £ ÷ cost × 100, never mix it with margin",
+    "Check: restaurant food usually runs at 60% to 70% margin"
+   ]
+  },
+  {
+   "name": "Cue and response card",
+   "kind": "framework",
+   "lesson": 3,
+   "items": [
+    "Menus closed on the table: go within 30 seconds",
+    "Eye contact, hand up or plate pushed forward: go now",
+    "One menu closed, others reading: get ready, do not go yet",
+    "Empty glasses: silent pass to top up water",
+    "Leaning in, low voices: serve well, keep visits brief",
+    "Phones away, wallets out, coats reached for: offer the bill"
+   ]
+  }
+ ]
+}
