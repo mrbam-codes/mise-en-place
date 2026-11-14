@@ -101,6 +101,11 @@ AUDIT = r"""
   const loaded = f => { const l = D(f).querySelector('.mk-legend'); return l && !l.hidden; };
   function measure(f) {
     const d = D(f), w = f.contentWindow, sec = d.querySelector('section.mk'), vw = d.documentElement.clientWidth;
+    /* it starts closed: note that, then open it (without the fold's transition) so everything can be measured */
+    const tg = sec.querySelector('.mk-toggle'), bodyEl = sec.querySelector('#mk-body');
+    const closed = tg.getAttribute('aria-expanded') === 'true' ? null : { expanded: tg.getAttribute('aria-expanded'), bodyH: bodyEl.getBoundingClientRect().height, inert: bodyEl.inert === true, h: sec.getBoundingClientRect().height, tap: tg.getBoundingClientRect().height };
+    if (closed) { const st = d.createElement('style'); st.textContent = '.mk-fold,.mk-fold>div,.mk-in,.mk-bar i{transition:none!important;animation:none!important}'; d.head.append(st); tg.click(); }
+    const opened = { expanded: tg.getAttribute('aria-expanded'), inert: bodyEl.inert === true, label: tg.textContent };
     sec.querySelectorAll('details').forEach(x => { x.open = true; });
     const name = e => e.tagName.toLowerCase() + (e.getAttribute('class') ? '.' + e.getAttribute('class') : '');
     const wide = [], small = [], taps = [];
@@ -115,7 +120,7 @@ AUDIT = r"""
     const tiers = {}; sec.querySelectorAll('.mk-legend li').forEach(li => { tiers[li.dataset.t] = +li.dataset.n; });
     const svg = sec.querySelector('svg'), marks = [...svg.querySelectorAll('.mk-d, .mk-t, .mk-k')];
     return { vw, scrollW: d.documentElement.scrollWidth, wide: wide.slice(0, 6), small: small.slice(0, 6), taps: taps.slice(0, 6), nums, tiers,
-      mix: sec.querySelector('.mk-row p').textContent, heading: sec.querySelector('h2').textContent,
+      closed, opened, mix: sec.querySelector('.mk-row p').textContent, heading: sec.querySelector('h2').textContent,
       role: svg.getAttribute('role'), label: svg.getAttribute('aria-label'), svgText: svg.querySelectorAll('text').length,
       drawn: { d: svg.querySelectorAll('.mk-d').length, t: svg.querySelectorAll('.mk-t').length, k: svg.querySelectorAll('.mk-k').length },
       wrap: svg.parentNode.className, minOpacity: Math.min(1, ...marks.map(m => +w.getComputedStyle(m).opacity)),
@@ -152,7 +157,7 @@ AUDIT = r"""
 ERRLOG = "window.__errs=[];addEventListener('error',function(e){__errs.push(String(e.message)+' '+(e.filename||'')+':'+(e.lineno||''))});" \
          "addEventListener('unhandledrejection',function(e){__errs.push('unhandled rejection: '+String(e.reason))});\n"
 SHOT = "(function(){var q=location.search;if(!/[?&]shot\\b/.test(q))return;var n=0,t=setInterval(function(){var s=document.querySelector('section.mk');" \
-       "if(!s&&++n<200)return;clearInterval(t);if(!s)return;if(/[?&]open\\b/.test(q))s.querySelectorAll('details').forEach(function(d){d.open=true});" \
+       "if(!s&&++n<200)return;clearInterval(t);if(!s)return;if(/[?&]open\\b/.test(q)){var t2=s.querySelector('.mk-toggle');if(t2)t2.click()}if(/[?&]open\\b/.test(q))s.querySelectorAll('details').forEach(function(d){d.open=true});" \
        "[].forEach.call(s.parentNode.children,function(x){if(x!==s)x.style.display='none'});var b=document.getElementById('scorebadge');if(b)b.style.display='none';" \
        "s.style.marginTop='8px';scrollTo(0,0)},50)})();\n"
 
@@ -265,6 +270,9 @@ for w in WIDTHS:
     if not m:
         continue
     want(m["count"] == 1 and m["heading"] == "How this brief was made", f"{w}: one section, headed How this brief was made")
+    cl, op = m.get("closed"), m.get("opened")
+    want(bool(cl) and cl["expanded"] == "false" and cl["bodyH"] == 0 and cl["inert"] and cl["tap"] >= 44 and cl["h"] < 520, f"{w}: starts closed, with the detail folded away and unreachable (closed height {cl and round(cl['h'])})")
+    want(bool(op) and op["expanded"] == "true" and not op["inert"] and op["label"] == "Close", f"{w}: one tap opens it")
     want(m["nums"] == want_nums, f"{w}: the counts shown are the edition's own (shown {m['nums']})")
     want(m["mix"].startswith(plural(len(src), "source", "sources") + " behind") and m["tiers"] == want_tiers, f"{w}: sources and tiers match the register (shown {m['tiers']}: {m['mix']})")
     want(m["role"] == "img" and want_label in (m["label"] or "") and m["svgText"] == 0, f"{w}: the drawing is role=img and its label states the counts")

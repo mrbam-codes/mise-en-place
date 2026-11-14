@@ -203,6 +203,7 @@ function play(items,o){
     live.textContent=o.title+' complete. You scored '+right+' out of '+items.length+'.';dn.focus({preventScroll:true});
     o.after&&o.after();paintBadge(!o.practice)};
   q()}
+const areaCol=it=>(AREA[it.area]||[0,'#b48a3c'])[1];
 function dayItems(b){return(b.quiz||[]).map((it,i)=>{const L=typeof it.from==='number'?b.lessons[it.from-1]:null,R=it.from==='review'&&AREA[it.area]?it:null;
   return Object.assign({},it,{id:b.date+'-'+i,date:b.date,n:R?R.n:L?L.n:null,area:R?R.area:L?L.area:'news',tag:R?'Earlier lesson · '+AREA[R.area][0]:L?AREA[L.area][0]:'News'})})}
 function finishDay(b,items,r){
@@ -426,8 +427,11 @@ function render(b,list){
     if(b.scenario&&Array.isArray(b.scenario.options)){const was=S.scen&&S.scen[b.date];scn.hidden=false;scn.textContent='';scn.id='scenario';
       scn.append(el('div','prog','Sunday scenario'),el('h2',null,b.scenario.title),el('p',null,was?(was.ok?'You made the right call: +15 points. ':'Not the best call this time. ')+'Replays are practice.':'One situation built from this week’s lessons. Choose what you would do. 15 points for the right call.'));
       const sb=el('button','btn alt',was?'Try it again':'Open the scenario');sb.onclick=()=>startScenario(b,draw);scn.append(sb)}
-    qc.append(el('div','prog','Quiz · '+items.length+' questions'),el('h2',null,dn?'You scored '+dn.score+' out of '+dn.total:pr?'You are '+pr+' questions in':(items.length-nRev)+' questions on today'+(nRev?', '+nRev+' from earlier lessons':'')),el('p',null,dn?'+'+dn.points+' points. Replays are practice and do not change your score.':'Points for every right answer, a bonus for a perfect score, and a streak for every day you play. Up to '+maxPoints(items.length)+' points today.'));
-    const bt=el('button','btn',dn?'Practise again':pr?'Resume quiz':'Start the quiz');bt.onclick=()=>startQuiz(b,items,draw);qc.append(bt);
+    /* the card carries the restaurant itself: empty and waiting, part-way through service, or as she left it */
+    const mix=(items.length-nRev)+' on today'+(nRev?', '+nRev+' from earlier lessons':''),okSoFar=items.filter((it,j)=>j<pr&&S.prog[b.date][j]===it.answer).length;
+    if(window.Service){const stg=el('div','svc');try{qc.append(stg);const s=Service.mount(stg,{total:dn?dn.total:items.length,seats:items.slice(0,dn?dn.score:okSoFar).map(areaCol),full:true,banner:'OPENING DAY',wave:true});if(!s)stg.remove();else if(dn)s.end(dn.score)}catch(e){stg.remove()}}
+    qc.append(el('div','prog','Today’s quiz · '+mix),el('h2',null,dn?'You seated '+dn.score+' of '+dn.total+' tables':pr?'You are '+pr+' questions in':items.length+' tables to seat at your own place'),el('p',null,dn?'+'+dn.points+' points. Replays are practice and do not change your score.':'Every right answer seats a table for Kimchi and Charlee. A bonus for a full house, and a streak for every day you play. Up to '+maxPoints(items.length)+' points today.'));
+    const bt=el('button','btn',dn?'Practise again':pr?'Resume quiz':'Open the doors');if(!dn)bt.classList.add('go');bt.onclick=()=>startQuiz(b,items,draw);qc.append(bt);
     rv.textContent='';const due=S.review.filter(x=>x.due<=todayStr()).length;
     rv.hidden=!due;if(due){rv.append(el('div','prog','Review'),el('h2',null,due+' question'+(due>1?'s':'')+' to revise'),el('p',null,'Questions you missed before. Get each right a few times, days apart, and it leaves the list.'));const rb=el('button','btn alt','Start review');rb.onclick=()=>startReview(draw);rv.append(rb)}};
   app.append(newsSection(b));

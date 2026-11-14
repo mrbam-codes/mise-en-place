@@ -130,7 +130,7 @@ if r:
     want(r["score"] == "5/5" and r["day"]["score"] == 5 and r["seated"] == "5", "resume: finishing it scores all 5 and the scene shows all 5 tables")
 s = c.get("seven")
 if s:
-    want(s["card"] == "5 questions on today, 2 from earlier lessons", "seven: the card says 5 on today and 2 from earlier lessons")
+    want(s["card"] == "7 tables to seat at your own place | Today’s quiz · 5 on today, 2 from earlier lessons", "seven: the card says 7 tables, 5 on today and 2 from earlier lessons")
     want(s["score"] == "7/7" and s["day"]["total"] == 7 and s["day"]["points"] == 90, "seven: 7 of 7 scores 90 points (7 x 10 plus the 20 perfect bonus)")
     want(s["rev"][5].startswith("From lesson 1: ") and s["rev"][6].startswith("From lesson 2: ") and not any(s["rev"][:5]), "seven: review questions name their earlier lesson")
     want(s["lessons"].get("1") == [1, 1] and s["lessons"].get("2") == [1, 1], "seven: review answers count towards their own lessons")
@@ -147,6 +147,7 @@ v = c.get("scene")
 if v:
     want(v["painted"] and abs(v["small"]["w"] - 320) < 1 and v["small"]["h"] < 110, f"scene: drawn full width and compact during questions ({v['small']['w']:.0f} by {v['small']['h']:.0f} at 320 wide)")
     want(v["seated"] == "4" and v["end"] == "last" and v["endH"] > v["small"]["h"] and "4 of 5 tables" in v["label"], "scene: 4 right seats 4 tables, opens out for the ending and picks 'one table left'")
+    want(v["cardScene"] and v["doneCard"] == "You seated 4 of 5 tables | last", "scene: the quiz card shows the restaurant before the quiz, and her 4 tables with its ending afterwards")
     want(v["tiers"] == "012334012334", "scene: endings map to full, one left, steady, soft launch and friends and family for 5 and 7 questions")
     want(v["fit"] <= 844, f"scene: question and all four options fit a 320 by 844 screen (lowest option ends at {v['fit']:.0f})")
     fa = v["fitAfter"]
