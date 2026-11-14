@@ -160,8 +160,12 @@ function play(items,o){
   addEventListener('keydown',onKey);
   const resume=(o.resume||[]).slice(0,items.length);
   resume.forEach((k,j)=>{const it=items[j];picks[j]=k;if(k===it.answer){run++;right++;gained+=each}else{run=0;missed.push(it)}});i=resume.length;
+  /* the Opening Day scene (service.js) only draws; if it fails the quiz carries on as a plain sheet */
+  const colOf=it=>(AREA[it.area]||[0,'#b48a3c'])[1];let scene=null;
+  if(o.scene&&window.Service){const stg=el('div','svc');try{sh.insertBefore(stg,bd);scene=Service.mount(stg,{total:items.length,seats:items.filter((it,j)=>j<resume.length&&resume[j]===it.answer).map(colOf)});if(!scene)stg.remove()}catch(e){scene=null;stg.remove()}}
+  const show=f=>{if(scene)try{f(scene)}catch(e){}};
   const q=()=>{
-    bd.textContent='';pickKey=null;if(i>=items.length)return finish();
+    bd.textContent='';pickKey=null;if(scene)sh.scrollTop=0;if(i>=items.length)return finish();
     const it=items[i],dots=el('div','dots');
     items.forEach((_,j)=>dots.append(el('i',j<i?(picks[j]===items[j].answer?'ok':'no'):j===i?'on':'')));
     const hq=el('h2',null,it.q);hq.tabIndex=-1;
@@ -175,6 +179,7 @@ function play(items,o){
       btns.forEach(x=>x.disabled=true);const ok=k===it.answer;picks[i]=k;
       btns[it.answer].classList.add('ok');if(!ok){b.classList.add('no');missed.push(it)}btns.forEach((x,j)=>{if(j!==it.answer&&j!==k)x.classList.add('dim')});
       let p=0;if(ok){run++;right++;p=each;gained+=p;fizz(30)}else run=0;
+      show(s=>ok?s.seat(colOf(it)):s.miss(colOf(it)));
       live.textContent=(ok?'Correct. ':'Not quite. The answer is '+'ABCD'[it.answer]+': '+it.options[it.answer]+'. ')+it.why;
       o.each&&o.each(it,ok,i,picks);
       fb.append(el('div','why',(ok?'Correct'+(p?', +'+p+' points':'')+'. ':'Not quite. ')+it.why));
@@ -183,6 +188,7 @@ function play(items,o){
     const perfect=right===items.length&&items.length>=5&&!o.review&&!o.practice;if(perfect)gained+=20;
     const res=o.done?o.done({right,total:items.length,gained,missed,picks,perfect}):{badges:[]};if(res.gained!=null)gained=res.gained;
     if(perfect)fizz(120,true);
+    show(s=>s.end(right));
     if(o.reward)try{o.reward(bd)}catch(e){}
     bd.append(el('div','meta',o.title+' complete'),el('div','score',right+'/'+items.length),el('div','pts',o.practice?(o.again&&right===items.length?'All put right. Practice runs are not scored.':'Practice run: not scored'):res.math?res.math:'+'+gained+' points'+(perfect?' (includes the perfect bonus)':'')));
     const L=level(S.points),w=L.next?Math.round(100*(S.points-L.from)/(L.next-L.from)):100;
@@ -206,9 +212,9 @@ function finishDay(b,items,r){
   const dd=R?R.day[key]:{points:r.gained,base:r.right*10,bonus:0,mult:1};
   const badges=award();save();return{badges,lvUp:after.i>before.i?after.name:null,gained:dd.points,math:r.right+' right × 10'+(dd.bonus?' + 20 perfect':'')+(dd.mult>1?', × '+dd.mult+' streak':'')+' = +'+dd.points+' points'}}
 function startQuiz(b,items,redraw){
-  if(S.days[b.date])return play(items,{title:'Practice',practice:true});
+  if(S.days[b.date])return play(items,{title:'Practice',practice:true,scene:true});
   const prog=(S.prog[b.date]||[]).filter(k=>Number.isInteger(k)&&k>=0&&k<4);
-  play(items,{title:'Today’s quiz',resume:prog,each:(it,ok,i,picks)=>{S.prog[b.date]=picks.slice();save()},done:r=>finishDay(b,items,r),reward:bd=>kimchiReward(bd,b),after:redraw})}
+  play(items,{title:'Today’s quiz',scene:true,resume:prog,each:(it,ok,i,picks)=>{S.prog[b.date]=picks.slice();save()},done:r=>finishDay(b,items,r),reward:bd=>kimchiReward(bd,b),after:redraw})}
 /* the Sunday scenario: one judgement call on the week's lessons, 15 points the first time */
 function startScenario(b,redraw){
   const was=S.scen&&S.scen[b.date],it=Object.assign({},b.scenario,{id:b.date+'-s',tag:'Scenario'});

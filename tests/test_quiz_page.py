@@ -12,11 +12,13 @@ origin/briefs. One headless Chrome then plays the quiz in each (tests/quiz-audit
 - resume: a half-finished quiz picks up where it stopped;
 - seven: a 7-question edition (5 on today, 2 on earlier lessons);
 - sunday: the Sunday scenario scores 15 once, then is practice;
+- scene: the Opening Day scene is drawn, counts the tables and picks the right
+  ending, and a broken scene leaves a working plain quiz;
 - layout: no sideways scroll and 44 pixel tap targets at 320, 360 and 390 wide.
 
 Run one Chrome job at a time on the Mac. Prints QUIZ PAGE OK or the misses.
 """
-import copy, functools, http.server, io, json, pathlib, shutil, subprocess, sys, tarfile, tempfile, threading
+import base64, copy, functools, http.server, io, json, os, pathlib, shutil, subprocess, sys, tarfile, tempfile, threading
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CHROME = next(filter(None, map(shutil.which, ["google-chrome", "chromium", "chromium-browser"])), None) \
@@ -137,10 +139,22 @@ if u:
     want(f["title"] == "Sunday scenario" and f["setup"].startswith("It is 5pm"), "sunday: the scenario opens with its situation")
     want(f["bonus"] == 15 and f["points"] == 15 and f["scen"] and f["scen"]["ok"] is True, "sunday: the right call scores 15 points once")
     want(u["card"].startswith("You made the right call") and u["again"]["title"] == "Practice" and u["again"]["bonus"] == 15 and u["again"]["points"] == 15, "sunday: a second go is practice and adds nothing")
+v = c.get("scene")
+if v:
+    want(v["painted"] and abs(v["small"]["w"] - 320) < 1 and v["small"]["h"] < 130, f"scene: drawn full width and compact during questions ({v['small']['w']:.0f} by {v['small']['h']:.0f} at 320 wide)")
+    want(v["seated"] == "4" and v["end"] == "last" and v["endH"] > v["small"]["h"] and "4 of 5 tables" in v["label"], "scene: 4 right seats 4 tables, opens out for the ending and picks 'one table left'")
+    want(v["tiers"] == "012334012334", "scene: endings map to full, one left, steady, soft launch and friends and family for 5 and 7 questions")
+    want(v["fit"] <= 844, f"scene: question and all four options fit a 320 by 844 screen (lowest option ends at {v['fit']:.0f})")
+    if os.environ.get("QUIZ_SHOTS"):
+        for name, url in v["shots"].items():
+            pathlib.Path(os.environ["QUIZ_SHOTS"], f"scene-{name}.png").write_bytes(base64.b64decode(url.split(",", 1)[1]))
+fb = c.get("fallback")
+if fb:
+    want(fb["score"] == "5/5" and not fb["scene"] and fb["day"]["score"] == 5, "fallback: with a broken scene the quiz still plays and scores as a plain sheet")
 lay = c.get("layout")
 if lay:
     for w, m in sorted(lay.items()):
         want(m["overflow"] <= 0 and m["minOpt"] >= 44 and m["close"] >= 44 and m["next"] >= 44, f"layout at {w}: no sideways scroll, tap targets 44 or more (options {m['minOpt']:.0f}, back {m['close']:.0f}, next {m['next']:.0f})")
-want(all(x in c for x in ("parityOld", "parityNew", "keys", "resume", "seven", "sunday", "layout")), "every case ran")
+want(all(x in c for x in ("parityOld", "parityNew", "keys", "resume", "seven", "sunday", "scene", "fallback", "layout")), "every case ran")
 print("QUIZ PAGE OK" if not misses else "MISSES: " + str(len(misses)))
 sys.exit(1 if misses else 0)
