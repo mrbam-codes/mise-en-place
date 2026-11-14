@@ -20,6 +20,7 @@ for i, l in enumerate(todays):
     print("  outcome: " + l["outcome"])
     print("  visual: " + l["visual"])
     print("  official source to cite: " + (l["source"] or "none named"))
+REVIEW_FROM = "2026-11-16"   # must match check.py; tests/test_quiz_rules.py checks it
 print()
 dates = json.load(open(os.path.join(here, "briefs", "index.json")))
 earlier = sorted(d for d in dates if d < day)
@@ -39,4 +40,33 @@ for d in earlier:
         for t in b.get("toolkit", []):
             print("- tool: " + t.get("name", ""))
         print("- try: " + (b.get("try") or {}).get("title", ""))
+if day >= REVIEW_FROM:
+    # Two earlier lessons for the review questions: one from 2 course days ago, one from 7 (or the nearest earlier day).
+    by_day = {}
+    for d in earlier:
+        try:
+            e = json.load(open(os.path.join(here, "briefs", d + ".json"), encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        by_day[e.get("day")] = e   # a repeat keeps the latest teaching of that day
+    picks = []
+    for back in (2, 7, 1, 3, 4, 5, 6):
+        e = by_day.get(n - back)
+        ls = (e or {}).get("lessons") or []
+        if ls and len(picks) < 2:
+            picks.append(ls[(n + len(picks)) % len(ls)])
+    print("\nREVIEW QUESTIONS: after the 5 questions on today, write one question on each of these earlier lessons (from \"review\").")
+    print("Use only the lesson text printed here. Copy n, title and area exactly.")
+    for l in picks:
+        print("- n=" + str(l.get("n")) + " | area=" + str(l.get("area")) + " | title=" + str(l.get("title")))
+        print("  takeaway: " + str(l.get("takeaway")))
+        for p in l.get("points") or []:
+            print("  " + str(p.get("h")) + ": " + str(p.get("p")))
+    if not picks:
+        print("- none available: no earlier edition was found")
+    if datetime.date.fromisoformat(day).weekday() == 6:
+        print("\nSUNDAY SCENARIO: write the scenario field. It may draw on these lessons from the last 7 course days:")
+        for l in course["lessons"]:
+            if n - 7 < l["day"] <= n:
+                print("- n=" + str(l["n"]) + " | day " + str(l["day"]) + " | " + l["title"])
 print("\nGlossary terms already used (do not repeat): " + ", ".join(sorted(t for t in terms if t)))

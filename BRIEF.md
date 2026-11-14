@@ -19,7 +19,8 @@ The page is public. Never name or hint at where she works, who she works for, or
 - `lessons`: see below.
 - `news`: 3 to 10 items, see below. `newsNote` (optional, up to 200): say so when a news area was thin.
 - `try`: `{ "title", "steps": [2 to 4], "why" }`. One concrete action she can do on her next shift, built from today's lessons. Title up to 80, each step up to 180, why up to 260.
-- `quiz`: exactly 5 questions, see below.
+- `quiz`: 5 questions on today, then 2 review questions on earlier lessons (from 16 November 2026), see below.
+- `scenario`: Sunday editions only, from 16 November 2026, see below.
 - `terms`: 3 to 9 glossary terms from today's lessons, `{ "term", "def", "lesson" }`, term up to 40, definition up to 240 in plain English, `lesson` 1 to 3. Do not repeat a term `recent.py` lists as already used.
 - `toolkit`: 1 to 3 tools she can reuse, `{ "name", "kind", "items": [2 to 8], "lesson" }`. `kind` is `checklist`, `formula`, `framework`, `script` or `template`. Name up to 60, items up to 180.
 
@@ -87,7 +88,25 @@ Rules:
 
 - Exactly 5. At least one on each lesson; `from` is the lesson's position in today's edition (1, 2 or 3, not its course number `n`), or `"news"`. Question up to 180, options up to 100, `why` up to 280.
 - `answer` is 0 to 3: vary its position. Wrong options must be plausible. Test understanding and application, not trivia. Every answer must be supported by today's lesson text.
-- Keep the 4 options of a question about the same length, so length gives nothing away. The right answer may be the longest option in at most 2 of the 5 questions. If it is, shorten it or write a fuller wrong option.
+- Keep the 4 options of a question about the same length, so length gives nothing away. The right answer may be the longest option in at most 2 of the day's questions. If it is, shorten it or write a fuller wrong option.
+
+### Review questions (editions dated 16 November 2026 or later)
+
+`{ "q", "options": [4], "answer", "why", "from": "review", "n", "title", "area" }`
+
+- After the 5 questions on today, add exactly 2 review questions, one on each of the two earlier lessons that `recent.py` prints under REVIEW QUESTIONS. They come last, so the quiz has 7 questions.
+- `from` is `"review"`. Copy `n` (the lesson's course number), `title` and `area` exactly as printed.
+- Write each from the lesson text `recent.py` prints, and nothing else. Do not reuse that lesson's original quiz wording: ask the same idea from a new angle, ideally as a situation at work.
+- The same length limits and option rules apply.
+
+## Sunday scenario (Sunday editions dated 16 November 2026 or later)
+
+`"scenario": { "title", "setup", "q", "options": [4], "answer", "why", "lessons": [1 to 3] }`
+
+- One realistic situation on a restaurant floor or in planning her own place, where the right call needs this week's lessons used together. It tests judgement, not recall.
+- `title` up to 80. `setup` up to 500: the situation, with the numbers she needs. `q` up to 180: what should she do. Options up to 140 each, all sensible things a manager might do, about the same length. `why` up to 400: why the best option wins and what is wrong with the most tempting other one.
+- `lessons`: the course numbers `n` of the 1 to 3 lessons it draws on, from the list `recent.py` prints under SUNDAY SCENARIO.
+- Never put a scenario in an edition on any other day.
 
 ## Order of work
 

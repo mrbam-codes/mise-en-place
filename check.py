@@ -324,6 +324,7 @@ def news_v2(w, s):
 # ---------- trust rules (plan 2): editions dated 11 Nov 2026 or later ----------
 # Older editions are already published and are never re-judged by these rules.
 TRUST_FROM = "2026-11-11"
+REVIEW_FROM = "2026-11-16"   # the quiz gains 2 questions on earlier lessons, and Sundays gain a scenario
 FRESH_DAYS = 7   # a news item's source must be at most 7 days older than the edition
 REGISTER = json.loads((ROOT / "sources.json").read_text(encoding="utf-8"))["tiers"]
 MONTHS = {m: i + 1 for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"])}
@@ -496,7 +497,17 @@ def check(date):
     text("try why", t.get("why"), 260)
 
     qz = b.get("quiz") or []
-    need(len(qz) == 5, "quiz: exactly 5 questions")
+    rev_on = date >= REVIEW_FROM   # 5 questions on today, then questions on earlier lessons; a scenario on Sundays
+    earlier = {l["n"]: l for l in course["lessons"] if l["day"] < n}
+    revs = [q for q in qz if q.get("from") == "review"]
+    want_rev = min(2, len(earlier)) if rev_on else 0
+    if rev_on:
+        need(len(qz) - len(revs) == 5, "quiz: exactly 5 questions on today (lessons or news)")
+        need(len(revs) == want_rev, f"quiz: exactly {want_rev} review questions on earlier lessons (from \"review\"), after the 5 on today")
+        need(all(q.get("from") != "review" for q in qz[:5]), "quiz: the review questions come last")
+        need(len({q.get("n") for q in revs}) == len(revs), "quiz: the review questions must be on different lessons")
+    else:
+        need(len(qz) == 5, "quiz: exactly 5 questions")
     for i, q in enumerate(qz):
         w = f"quiz {i + 1}"
         text(f"{w} question", q.get("q"), 180)
@@ -507,18 +518,46 @@ def check(date):
         need(len({str(o).strip().lower() for o in ops}) == len(ops), f"{w}: two options are the same")
         need(q.get("answer") in (0, 1, 2, 3), f"{w}: answer must be 0, 1, 2 or 3")
         text(f"{w} why", q.get("why"), 280)
-        need(q.get("from") in list(range(1, len(ls) + 1)) + ["news"], f"{w}: from must be a lesson number 1 to {len(ls)} or \"news\"")
+        if rev_on and q.get("from") == "review":
+            c = earlier.get(q.get("n"))
+            need(c is not None, f"{w}: a review question's n must be the course number of a lesson taught before day {n}")
+            if c:
+                need(q.get("title") == c["title"], f"{w}: title must be lesson {c['n']}'s exact course title")
+                need(q.get("area") == c["area"], f"{w}: area must be {c['area']}")
+        else:
+            need(q.get("from") in list(range(1, len(ls) + 1)) + ["news"], f"{w}: from must be a lesson number 1 to {len(ls)} or \"news\"")
     for k in range(1, len(ls) + 1):
         need(sum(q.get("from") == k for q in qz) >= 1, f"quiz: needs at least one question on lesson {k}")
     answers = [q.get("answer") for q in qz]
     need(len(set(answers)) >= 2, "quiz: vary the position of the right answer")
     if date >= "2026-11-12":   # length must not give the answer away (it did in 9 of the first 15 questions)
         def longest(q):
-            n = [len(str(o).strip()) for o in q.get("options") or []]
+            m = [len(str(o).strip()) for o in q.get("options") or []]
             a = q.get("answer")
-            return len(n) == 4 and a in (0, 1, 2, 3) and n[a] == max(n) and n.count(n[a]) == 1
+            return len(m) == 4 and a in (0, 1, 2, 3) and m[a] == max(m) and m.count(m[a]) == 1
         tell = sum(longest(q) for q in qz)
-        need(tell <= 2, f"quiz: the right answer is the longest option in {tell} of 5 questions; at most 2. Make the options similar in length")
+        need(tell <= 2, f"quiz: the right answer is the longest option in {tell} of {len(qz)} questions; at most 2. Make the options similar in length")
+
+    sc = b.get("scenario")
+    sunday = day.weekday() == 6
+    if rev_on and sunday:
+        need(isinstance(sc, dict), "scenario: a Sunday edition needs the week's scenario")
+    if sc is not None:
+        need(rev_on and sunday and isinstance(sc, dict), f"scenario: only in a Sunday edition, from {REVIEW_FROM}")
+    if isinstance(sc, dict):
+        text("scenario title", sc.get("title"), 80)
+        text("scenario setup", sc.get("setup"), 500)
+        text("scenario question", sc.get("q"), 180)
+        ops = sc.get("options") or []
+        need(len(ops) == 4, "scenario: exactly 4 options")
+        for j, o in enumerate(ops):
+            text(f"scenario option {j + 1}", o, 140)
+        need(len({str(o).strip().lower() for o in ops}) == len(ops), "scenario: two options are the same")
+        need(sc.get("answer") in (0, 1, 2, 3), "scenario: answer must be 0, 1, 2 or 3")
+        text("scenario why", sc.get("why"), 400)
+        week = {l["n"] for l in course["lessons"] if n - 7 < l["day"] <= n}
+        sl = sc.get("lessons")
+        need(isinstance(sl, list) and 1 <= len(sl) <= 3 and all(x in week for x in sl), "scenario: lessons must list 1 to 3 course numbers of lessons taught in the last 7 course days")
 
     terms = b.get("terms") or []
     need(3 <= len(terms) <= 9, "terms: 3 to 9 glossary terms")
