@@ -9,7 +9,7 @@
    - The cache name includes this page's own address, because several briefs
      share one web origin and must not delete each other's caches.
    Change VERSION when FIXED changes. tests/test_keep.py checks FIXED. */
-const APP='mise-en-place',VERSION='4';
+const APP='mise-en-place',VERSION='5';
 const FIXED=[
   'index.html',
   'manifest.webmanifest',
@@ -18,6 +18,7 @@ const FIXED=[
   'icons/apple-touch-icon.png',
   'keep.js',
   'evidence.js',
+  'made.js',
   'sources.json',
   'heroes.js',
   'kimchi.js',
