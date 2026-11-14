@@ -90,16 +90,33 @@ function paintBadge(bump){let bg=document.getElementById('scorebadge');if(!bg){b
   const m=myStats();bg.querySelector('.ring').style.setProperty('--p',Math.round(m.toTop*100)+'%');bg.querySelector('.ring').textContent=m.run;bg.querySelector('.pill').textContent=m.L.name;
   bg.setAttribute('aria-label','My scores: '+S.points+' points, '+m.L.name+', '+m.run+'-day streak');if(bump&&!matchMedia('(prefers-reduced-motion: reduce)').matches)bg.animate([{transform:'scale(1)'},{transform:'scale(1.15)'},{transform:'scale(1)'}],{duration:600})}
 function openScores(){
-  const{bd}=sheet('My scores'),m=myStats(),L=m.L,w=L.next?Math.round(100*(S.points-L.from)/(L.next-L.from)):100;
-  const hero=el('div','sc-hero'),rg=el('div','ring big');rg.style.setProperty('--p',Math.round(m.toTop*100)+'%');rg.append(el('b',null,L.name));
-  const tx=el('div');tx.append(el('div','sc-tot',S.points.toLocaleString('en-GB')),el('small',null,'points · level '+(L.i+1)+' of '+LEVELS.length),el('small',null,L.next?(L.next-S.points).toLocaleString('en-GB')+' to '+LEVELS[L.i+1][1]:'Top level reached'));hero.append(rg,tx);
-  const br=el('div','bar');br.style.maxWidth='none';br.append(el('i'));br.firstChild.style.width=w+'%';bd.append(hero,br);
+  const{bd}=sheet('My scores'),m=myStats(),L=m.L,w=L.next?Math.round(100*(S.points-L.from)/(L.next-L.from)):100,num=n=>n.toLocaleString('en-GB');
+  /* the level: a dial that fills towards the next level, the points, and the seven levels as a ladder */
+  const hero=el('div','sc-hero'),rg=el('div','ring big');rg.style.setProperty('--p',w+'%');rg.append(el('small',null,'Level '+(L.i+1)),el('b',null,L.name));
+  const tx=el('div');tx.append(el('div','sc-tot',num(S.points)),el('small',null,S.points===1?'point':'points'),el('small','sc-next',L.next?num(L.next-S.points)+' more to reach '+LEVELS[L.i+1][1]:'Top level reached'));hero.append(rg,tx);
+  const lad=el('ol','sc-ladder');LEVELS.forEach((l,i)=>{const li=el('li',i<L.i?'was':i===L.i?'now':'');li.append(el('i'));li.title=l[1]+': '+num(l[0])+' points';lad.append(li)});
+  lad.setAttribute('aria-label','Level '+(L.i+1)+' of '+LEVELS.length+': '+L.name);
+  bd.append(hero,lad,el('p','sc-cap','Level '+(L.i+1)+' of '+LEVELS.length+(L.next?' · next is '+LEVELS[L.i+1][1]+' at '+num(L.next)+' points':' · the top of the ladder')));
   if(S.rescored){bd.append(el('p','note','Scores now use the new rules: 10 a right answer, 20 for a perfect day, and a streak multiplier. Every day you have finished still counts.'));delete S.rescored;save()}
-  const g=el('div','sc-stats'),st=(v,l)=>{const c=el('div');c.append(el('b',null,v),el('span',null,l));g.append(c)};
-  st(m.run+' 🔥','Day streak');st('×'+m.pv.mult,m.td?'Multiplier':'Today’s ×');st(m.best+'','Best streak');st(m.R.perfects+'','Perfect days');st(m.R.asked?Math.round(100*m.R.right/m.R.asked)+'%':'–','Correct');st(Object.keys(m.R.day).length+'','Quizzes');bd.append(g);
+  /* three things that matter, each with a plain line saying what it means */
+  const g=el('div','sc-tiles'),tile=(v,l,sub,flame)=>{const c=el('div'),b=el('b',null,v);if(flame)b.append(el('i','sc-flame'));c.append(b,el('span',null,l),el('small',null,sub));g.append(c)};
+  tile(String(m.run),m.run===1?'Day streak':'Days in a row','Best so far: '+m.best,m.run>0);
+  tile('×'+m.pv.mult,'Points multiplier',m.pv.mult>=2?'The top multiplier':m.pv.mult>1?'×2 from 10 days in a row':'×1.5 from 5 days in a row');
+  tile(m.R.asked?Math.round(100*m.R.right/m.R.asked)+'%':'–','Answers right',m.R.asked?m.R.right+' of '+m.R.asked:'No quiz yet');bd.append(g);
+  const more=el('p','sc-more'),bit=(v,l)=>{const x=el('span');x.append(el('b',null,String(v)),l);more.append(x)};
+  bit(Object.keys(m.R.day).length,Object.keys(m.R.day).length===1?'quiz finished':'quizzes finished');bit(m.R.perfects,m.R.perfects===1?'perfect day':'perfect days');bd.append(more);
   if(m.pv.dropped&&!m.td)bd.append(el('p','note','You missed a day, so today’s multiplier is one step lower. Finish today’s quiz to climb back.'));
-  bd.append(el('h3',null,'The last four weeks'));const strip=el('div','sc-strip');const first=doneDays()[0]||m.t;for(let i=27;i>=0;i--){const d=addDays(m.t,-i),x=S.days[d],c=el('i',x?(m.R.day[d]&&m.R.day[d].perfect?'p':'d'):(i&&d>first?'m':''));if(!i)c.classList.add('t');c.title=nice(d)+(x?': '+x.score+'/'+x.total+', '+m.R.day[d].points+' points':'');strip.append(c)}bd.append(strip);
-  const key=el('div','sc-key');[['d','done'],['p','perfect'],['m','missed'],['t','today']].forEach(([c,t])=>{const k=el('span');k.append(el('i',c),t);key.append(k)});bd.append(key);
+  /* the last four weeks as a real calendar: Monday to Sunday, each day with its date and, once done, its score */
+  const today=parse(m.t),mon=addDays(m.t,-((today.getDay()+6)%7)),from=addDays(mon,-21),first=doneDays()[0]||m.t;
+  const head=el('div','sc-calhead'),mo=d=>parse(d).toLocaleDateString('en-GB',{day:'numeric',month:'short'});head.append(el('h3',null,'The last four weeks'),el('span',null,mo(from)+' to '+mo(addDays(from,27))));bd.append(head);
+  const wd=el('div','sc-wd');wd.setAttribute('aria-hidden','true');['M','T','W','T','F','S','S'].forEach(x=>wd.append(el('span',null,x)));
+  const cal=el('div','sc-cal');let nd=0,np=0,nm=0;
+  for(let k=0;k<28;k++){const d=addDays(from,k),x=S.days[d],r=m.R.day[d],c=el('i',null,String(parse(d).getDate()));
+    if(x){const pf=r&&r.perfect;c.className=pf?'p':'d';c.append(el('small',null,x.score+'/'+x.total));pf?np++:nd++}
+    else if(d>m.t)c.className='f';else if(d<m.t&&d>first){c.className='m';nm++}
+    if(d===m.t)c.classList.add('t');c.title=nice(d)+(x?': '+x.score+' of '+x.total+', '+(r?r.points:0)+' points':d>m.t?'':d===m.t?': today, not done yet':d>first?': missed':'');cal.append(c)}
+  cal.setAttribute('role','img');cal.setAttribute('aria-label','The last four weeks: '+(nd+np)+' quizzes done, '+np+' perfect, '+nm+' missed');bd.append(wd,cal);
+  const key=el('div','sc-key');[['d','done, with your score'],['p','perfect'],['m','missed'],['t','today']].forEach(([c,t])=>{const k=el('span');k.append(el('i',c),t);key.append(k)});bd.append(key);
   const sh=el('button','btn','Show my share card');sh.onclick=()=>{history.back();setTimeout(openShare,350)};const pr=el('button','btn alt','Full progress and badges');pr.onclick=()=>{history.back();setTimeout(openProgress,350)};bd.append(sh,pr)}
 function openShare(){
   const{bd}=sheet('Share card');const lab=el('label','sc-name');const inp=el('input');inp.maxLength=16;inp.autocomplete='given-name';inp.placeholder='Your first name';inp.value=S.name||'';lab.append('First name on the card (kept on this phone only)',inp);
