@@ -126,13 +126,17 @@ if k:
     want(k["hasPractise"] and k["practice"] and k["practice"]["unchanged"] and "put right" in k["practice"]["pts"], "practise the missed one: offered, playable, and it changes nothing saved")
 r = c.get("resume")
 if r:
-    want(r["h2"] == "You are 2 questions in" and r["btn"] == "Resume quiz", "resume: a half-finished quiz picks up at question 3")
+    want(r["h2"] == "You are 2 questions in" and r["btn"] == "Resume quiz" and r["q3"], "resume: a half-finished quiz picks up at question 3")
+    want(r["score"] == "5/5" and r["day"]["score"] == 5 and r["seated"] == "5", "resume: finishing it scores all 5 and the scene shows all 5 tables")
 s = c.get("seven")
 if s:
     want(s["card"] == "5 questions on today, 2 from earlier lessons", "seven: the card says 5 on today and 2 from earlier lessons")
     want(s["score"] == "7/7" and s["day"]["total"] == 7 and s["day"]["points"] == 90, "seven: 7 of 7 scores 90 points (7 x 10 plus the 20 perfect bonus)")
     want(s["rev"][5].startswith("From lesson 1: ") and s["rev"][6].startswith("From lesson 2: ") and not any(s["rev"][:5]), "seven: review questions name their earlier lesson")
     want(s["lessons"].get("1") == [1, 1] and s["lessons"].get("2") == [1, 1], "seven: review answers count towards their own lessons")
+ub = c.get("sundayBack")
+if ub:
+    want(ub["title"] == "Practice" and ub["bonus"] == 0 and ub["points"] == 0 and ub["ok"] is False and not ub["note"], "sunday: a wrong call then Back is saved as answered, so a second go earns nothing")
 u = c.get("sunday")
 if u:
     f = u["first"]
@@ -141,10 +145,13 @@ if u:
     want(u["card"].startswith("You made the right call") and u["again"]["title"] == "Practice" and u["again"]["bonus"] == 15 and u["again"]["points"] == 15, "sunday: a second go is practice and adds nothing")
 v = c.get("scene")
 if v:
-    want(v["painted"] and abs(v["small"]["w"] - 320) < 1 and v["small"]["h"] < 130, f"scene: drawn full width and compact during questions ({v['small']['w']:.0f} by {v['small']['h']:.0f} at 320 wide)")
+    want(v["painted"] and abs(v["small"]["w"] - 320) < 1 and v["small"]["h"] < 110, f"scene: drawn full width and compact during questions ({v['small']['w']:.0f} by {v['small']['h']:.0f} at 320 wide)")
     want(v["seated"] == "4" and v["end"] == "last" and v["endH"] > v["small"]["h"] and "4 of 5 tables" in v["label"], "scene: 4 right seats 4 tables, opens out for the ending and picks 'one table left'")
     want(v["tiers"] == "012334012334", "scene: endings map to full, one left, steady, soft launch and friends and family for 5 and 7 questions")
     want(v["fit"] <= 844, f"scene: question and all four options fit a 320 by 844 screen (lowest option ends at {v['fit']:.0f})")
+    fa = v["fitAfter"]
+    want(fa["after"] <= 664, f"scene at 390 wide: after answering, the scene, answer, reason and next button fit 664 pixels, a phone with its browser bars showing (ends at {fa['after']:.0f})")
+    print(f"      before answering, the lowest option ends at {fa['before']:.0f} of 664 at 390 wide: {'fits' if fa['before'] <= 664 else 'the last option needs a short scroll on the longest question'}")
     if os.environ.get("QUIZ_SHOTS"):
         for name, url in v["shots"].items():
             pathlib.Path(os.environ["QUIZ_SHOTS"], f"scene-{name}.png").write_bytes(base64.b64decode(url.split(",", 1)[1]))
@@ -155,6 +162,6 @@ lay = c.get("layout")
 if lay:
     for w, m in sorted(lay.items()):
         want(m["overflow"] <= 0 and m["minOpt"] >= 44 and m["close"] >= 44 and m["next"] >= 44, f"layout at {w}: no sideways scroll, tap targets 44 or more (options {m['minOpt']:.0f}, back {m['close']:.0f}, next {m['next']:.0f})")
-want(all(x in c for x in ("parityOld", "parityNew", "keys", "resume", "seven", "sunday", "scene", "fallback", "layout")), "every case ran")
+want(all(x in c for x in ("parityOld", "parityNew", "keys", "resume", "seven", "sundayBack", "sunday", "scene", "fallback", "layout")), "every case ran")
 print("QUIZ PAGE OK" if not misses else "MISSES: " + str(len(misses)))
 sys.exit(1 if misses else 0)

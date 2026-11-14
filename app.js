@@ -38,7 +38,7 @@ function streak(){const set=new Set(doneDays());let d=todayStr();if(!set.has(d))
 const totalCorrect=()=>Object.values(S.areas).reduce((a,t)=>a+t[0],0);
 const BADGES=[
  ['first','First service','Finish your first quiz',()=>doneDays().length>=1],
- ['perfect','Perfect plate','Score 5 out of 5',()=>Object.values(S.days).some(d=>d.total>=5&&d.score===d.total)],
+ ['perfect','Perfect plate','Get every question right in a day',()=>Object.values(S.days).some(d=>d.total>=5&&d.score===d.total)],
  ['s3','3-day streak','Quiz three days running',()=>streak()>=3],
  ['s7','7-day streak','Quiz seven days running',()=>streak()>=7],
  ['s30','30-day streak','Quiz thirty days running',()=>streak()>=30],
@@ -114,7 +114,7 @@ function postcard(who){
   const say=pal?(td&&td.perfect?'Majestic work!':m.run>=7?'A royal streak!':td?'I approve!':'Quiz time?'):td&&td.perfect?'Perfect plate!':m.run>=7?'On fire, chef!':td?'Proud of you!':'Quiz time?';
   c.append(scene,el('div','pc-say',say),body);
   body.append(el('div','pc-tag','Mise en Place · Day '+day),el('div','pc-lv',m.L.name));const pts=el('div','pc-pts');pts.append(el('b',null,td?String(td.points):'0'),el('span',null,td?'points today':'no quiz yet today'));body.append(pts);
-  const ch=el('div','pc-chips');if(td)ch.append(el('span',td.perfect?'p':'',td.perfect?'Perfect 5/5':S.days[m.t].score+'/'+S.days[m.t].total+' right'));ch.append(el('span',null,'×'+m.pv.mult+' streak'),el('span',null,m.run+(m.run===1?' day':' days')));body.append(ch);
+  const ch=el('div','pc-chips');if(td)ch.append(el('span',td.perfect?'p':'',(td.perfect?'Perfect ':'')+S.days[m.t].score+'/'+S.days[m.t].total+(td.perfect?'':' right')));ch.append(el('span',null,'×'+m.pv.mult+' streak'),el('span',null,m.run+(m.run===1?' day':' days')));body.append(ch);
   const L=m.L,w=L.next?Math.round(100*(S.points-L.from)/(L.next-L.from)):100,br=el('div','pc-bar');br.append(el('i'));br.firstChild.style.width=w+'%';body.append(br);
   const ft=el('div','pc-foot');ft.append(S.points.toLocaleString('en-GB')+' points · '+(L.next?(L.next-S.points).toLocaleString('en-GB')+' to '+LEVELS[L.i+1][1]:'top level')+' · ');ft.append(el('span','pc-name',S.name||'Mise en Place'));body.append(ft);
   if(K()){const k=el('div','khost');scene.append(k);setTimeout(()=>K().mount(k,pal||art),0)}
@@ -127,7 +127,7 @@ function fizz(n,big){const c=document.getElementById('fx');if(!c||matchMedia('(p
 
 /* ---------- sheets (full-screen panels with a working Back button) ---------- */
 const stack=[];
-addEventListener('popstate',()=>{const t=stack.pop();if(t){t.sh.remove();t.prev&&t.prev.focus&&t.prev.focus();if(!stack.length)document.body.style.overflow=''}});
+addEventListener('popstate',()=>{const t=stack.pop();if(t){t.off&&t.off();t.sh.remove();t.prev&&t.prev.focus&&t.prev.focus();if(!stack.length)document.body.style.overflow=''}});
 addEventListener('keydown',e=>{if(e.key==='Escape'&&stack.length)history.back()});
 function sheet(label){
   const prev=document.activeElement,sh=el('div','sheet');sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-label',label);
@@ -155,9 +155,9 @@ function play(items,o){
   const each=o.practice?0:o.points!=null?o.points:o.review?5:10;
   /* a screen reader hears each result; A to D or 1 to 4 choose an answer */
   const live=el('div','sr');live.setAttribute('aria-live','polite');sh.append(live);
-  const onKey=e=>{if(!sh.isConnected){removeEventListener('keydown',onKey);return}if(!stack.length||stack[stack.length-1].sh!==sh||e.metaKey||e.ctrlKey||e.altKey||!pickKey)return;
+  const onKey=e=>{if(!sh.isConnected){removeEventListener('keydown',onKey);return}if(!stack.length||stack[stack.length-1].sh!==sh||e.metaKey||e.ctrlKey||e.altKey||!pickKey||String(e.key).length!==1)return;
     const a='abcd'.indexOf(String(e.key).toLowerCase()),k=a>=0?a:'1234'.indexOf(e.key);if(k>=0){e.preventDefault();pickKey(k)}};
-  addEventListener('keydown',onKey);
+  addEventListener('keydown',onKey);stack[stack.length-1].off=()=>removeEventListener('keydown',onKey);
   const resume=(o.resume||[]).slice(0,items.length);
   resume.forEach((k,j)=>{const it=items[j];picks[j]=k;if(k===it.answer){run++;right++;gained+=each}else{run=0;missed.push(it)}});i=resume.length;
   /* the Opening Day scene (service.js) only draws; if it fails the quiz carries on as a plain sheet */
@@ -183,7 +183,8 @@ function play(items,o){
       live.textContent=(ok?'Correct. ':'Not quite. The answer is '+'ABCD'[it.answer]+': '+it.options[it.answer]+'. ')+it.why;
       o.each&&o.each(it,ok,i,picks);
       fb.append(el('div','why',(ok?'Correct'+(p?', +'+p+' points':'')+'. ':'Not quite. ')+it.why));
-      const nx=el('button','btn',i+1<items.length?'Next question':'See my score');nx.onclick=()=>{i++;q()};fb.append(nx);nx.focus({preventScroll:true});nx.scrollIntoView({block:'nearest',behavior:'smooth'})})};
+      const nx=el('button','btn',i+1<items.length?'Next question':'See my score');nx.onclick=()=>{i++;q()};fb.append(nx);nx.focus({preventScroll:true});
+      if(scene){btns.forEach(x=>{if(x.classList.contains('dim'))x.hidden=true});sh.scrollTop=0}else nx.scrollIntoView({block:'nearest',behavior:'smooth'})})};
   const finish=()=>{
     const perfect=right===items.length&&items.length>=5&&!o.review&&!o.practice;if(perfect)gained+=20;
     const res=o.done?o.done({right,total:items.length,gained,missed,picks,perfect}):{badges:[]};if(res.gained!=null)gained=res.gained;
@@ -196,9 +197,10 @@ function play(items,o){
     const sk=streak();bx.append(el('div','prog','Level '+(L.i+1)+' · '+L.name),br,el('p',null,S.points+' points. '+(L.next?(L.next-S.points)+' to the next level. ':'Top level. ')+(sk?'Streak: '+sk+' day'+(sk>1?'s':'')+' in a row.':'Come back tomorrow to start a streak.')));bd.append(bx);
     (res.badges||[]).forEach(n=>{const g=el('div','bd new');g.append(el('b',null,'New badge: '+n));bd.append(g)});
     if(res.lvUp)bd.append(el('p','pts','Promoted to '+res.lvUp+'!'));
-    if(missed.length){bd.append(el('h3',null,'To revise'));missed.forEach(m=>{const g=el('div','why');g.append(el('b',null,m.q),el('br'),'Answer: '+m.options[m.answer]+'. '+m.why);bd.append(g)});if(!o.practice)bd.append(el('p','meta','Questions you missed come back in Review over the next days, until you get them right.'))}
+    if(missed.length){bd.append(el('h3',null,'To revise'));missed.forEach(m=>{const g=el('div','why');g.append(el('b',null,m.q),el('br'),'Answer: '+m.options[m.answer]+'. '+m.why);bd.append(g)});if(!o.practice&&!o.solo)bd.append(el('p','meta','Questions you missed come back in Review over the next days, until you get them right.'))}
     if(missed.length&&!o.review&&!o.solo){const again=missed.slice(),pm=el('button','btn alt','Practise the '+again.length+' you missed');pm.onclick=()=>play(again,{title:'Practice',practice:true,again:true});bd.append(pm)}
     const dn=el('button','btn','Done');dn.onclick=()=>history.back();bd.append(dn);
+    live.textContent=o.title+' complete. You scored '+right+' out of '+items.length+'.';dn.focus({preventScroll:true});
     o.after&&o.after();paintBadge(!o.practice)};
   q()}
 function dayItems(b){return(b.quiz||[]).map((it,i)=>{const L=typeof it.from==='number'?b.lessons[it.from-1]:null,R=it.from==='review'&&AREA[it.area]?it:null;
@@ -218,8 +220,10 @@ function startQuiz(b,items,redraw){
 /* the Sunday scenario: one judgement call on the week's lessons, 15 points the first time */
 function startScenario(b,redraw){
   const was=S.scen&&S.scen[b.date],it=Object.assign({},b.scenario,{id:b.date+'-s',tag:'Scenario'});
+  /* saved the moment she answers, and once only: backing out or a second go cannot change it */
   play([it],{title:was?'Practice':'Sunday scenario',practice:!!was,solo:true,points:15,after:redraw,
-    done:was?null:r=>{S.scen=S.scen||{};S.scen[b.date]={ok:r.right===1,at:Date.now()};S.bonus=(S.bonus||0)+r.gained;rescoreAll();const badges=award();save();return{badges}}})}
+    each:was?null:(x,ok)=>{S.scen=S.scen||{};if(S.scen[b.date])return;S.scen[b.date]={ok:ok,at:Date.now()};if(ok)S.bonus=(S.bonus||0)+15;rescoreAll();save()},
+    done:was?null:()=>{const badges=award();save();return{badges}}})}
 function startReview(redraw){
   const t=todayStr(),due=S.review.filter(x=>x.due<=t).slice(0,5);if(!due.length)return;const steps=[1,3,7,14,30];
   play(due,{title:'Review',review:true,each:(it,ok)=>{const r=S.review.find(x=>x.id===it.id);if(!r)return;

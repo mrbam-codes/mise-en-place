@@ -82,7 +82,11 @@
     const b = await edition('/new', CFG.real); let f = await load('/new', CFG.real);
     start(f); await answer(f, b.quiz, [true, true], 'click');
     f = await load('/new', CFG.real);
-    return { h2: D(f).querySelector('#quiz h2').textContent, btn: D(f).querySelector('#quiz .btn').textContent };
+    const card = { h2: D(f).querySelector('#quiz h2').textContent, btn: D(f).querySelector('#quiz .btn').textContent };
+    start(f);
+    const q3 = (await until(() => { const h = top(f).querySelector('.body h2'); return h && h.textContent === b.quiz[2].q ? h : null; }, 'question 3 after Resume')).textContent;
+    const rest = b.quiz.slice(2); await answer(f, rest, rest.map(() => true), 'click'); const sc = await score(f);
+    return Object.assign(card, { q3: q3 === b.quiz[2].q, score: sc.textContent, day: state().days[CFG.real], seated: top(f).querySelector('.svc').dataset.seated });
   });
 
   await run('seven', async () => {
@@ -92,6 +96,20 @@
     start(f); const log = await answer(f, b.quiz, b.quiz.map(() => true), 'click'); const sc = await score(f);
     const st = state();
     return { card, score: sc.textContent, day: st.days[CFG.seven], lessons: st.lessons, rev: log.map(l => l.rev) };
+  });
+
+  /* a wrong call, then Back before the score screen: it is saved as answered, so a second go cannot earn the 15 */
+  await run('sundayBack', async () => {
+    localStorage.clear();
+    const b = await edition('/new', CFG.sunday); let f = await load('/new', CFG.sunday);
+    (await until(() => D(f).querySelector('#scenario .btn'), 'the scenario card')).click();
+    const btns = await until(() => { const o = [...top(f).querySelectorAll('.opt')]; return o.length === 4 ? o : null; }, 'scenario options');
+    btns[(b.scenario.answer + 1) % 4].click(); await sleep(100);
+    f.contentWindow.history.back(); await until(() => !D(f).querySelector('.sheet'), 'the sheet to close');
+    f = await load('/new', CFG.sunday);
+    D(f).querySelector('#scenario .btn').click();
+    await answer(f, [b.scenario], [true], 'click'); await score(f);
+    return { title: top(f).querySelector('.sbar strong').textContent, bonus: state().bonus || 0, points: state().points, ok: state().scen[CFG.sunday].ok, note: /come back in Review/.test(top(f).textContent) };
   });
 
   await run('sunday', async () => {
@@ -124,7 +142,15 @@
       if (name !== 'mid') s.end(n); await sleep(250);
       shots[name] = host.querySelector('canvas').toDataURL(); s.destroy(); host.remove();
     }
-    return { painted, small, seated: stg.dataset.seated, end: stg.dataset.end, endH: box().height, label: cv.getAttribute('aria-label'), fit: Math.max(...log.map(l => l.optBottom)), shots,
+    return { painted, small, seated: stg.dataset.seated, end: stg.dataset.end, endH: box().height, label: cv.getAttribute('aria-label'), fit: Math.max(...log.map(l => l.optBottom)), fitAfter: await (async () => {
+        localStorage.clear(); const g = await load('/new', CFG.real, 390); start(g); let before = 0, after = 0;
+        for (let i = 0; i < b.quiz.length; i++) {
+          const bt = await until(() => { const o = [...top(g).querySelectorAll('.opt')]; return o.length === 4 && !o[0].disabled && top(g).querySelector('.body h2').textContent === b.quiz[i].q ? o : null; }, 'q' + i);
+          before = Math.max(before, bt[3].getBoundingClientRect().bottom); bt[b.quiz[i].answer].click();
+          const nx = await until(() => [...top(g).querySelectorAll('.btn')].find(x => /Next question|See my score/.test(x.textContent)), 'next');
+          after = Math.max(after, nx.getBoundingClientRect().bottom); nx.click();
+        }
+        return { before, after }; })(), shots,
       tiers: [[5, 5], [4, 5], [3, 5], [2, 5], [1, 5], [0, 5], [7, 7], [6, 7], [5, 7], [4, 7], [1, 7], [0, 7]].map(([n, t]) => W.Service.tierOf(n, t)).join('') };
   });
   await run('fallback', async () => {
