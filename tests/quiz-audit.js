@@ -37,12 +37,12 @@
         const s = top(f), b = [...s.querySelectorAll('.opt')];
         return b.length === 4 && !b[0].disabled && s.querySelector('.body h2').textContent === it.q ? b : null;
       }, 'question ' + (i + 1));
-      const s = top(f), k = pattern[i] ? it.answer : (it.answer + 1) % 4;
+      const s = top(f), k = pattern[i] ? it.answer : (it.answer + 1) % 4, optBottom = btns[3].getBoundingClientRect().bottom;
       if (how === 'keys') D(f).dispatchEvent(new f.contentWindow.KeyboardEvent('keydown', { key: (i % 2 ? 'abcd' : '1234')[k], bubbles: true }));
       else btns[k].click();
       const nx = await until(() => [...s.querySelectorAll('.btn')].find(b => /Next question|See my score/.test(b.textContent)), 'the next button after question ' + (i + 1));
       const get = q => (s.querySelector(q) || {}).textContent || '';
-      log.push({ live: get('.sr'), focusNext: D(f).activeElement === nx, rev: get('.rev'), setup: get('.setup'), marks: btns.map(b => b.className), nextH: nx.getBoundingClientRect().height });
+      log.push({ live: get('.sr'), focusNext: D(f).activeElement === nx, rev: get('.rev'), setup: get('.setup'), marks: btns.map(b => b.className), optBottom, nextH: nx.getBoundingClientRect().height });
       nx.click();
     }
     return log;
@@ -105,6 +105,34 @@
     D(f).querySelector('#scenario .btn').click();
     await answer(f, [b.scenario], [true], 'click'); await score(f);
     return { first, card, again: { bonus: state().bonus, points: state().points, title: top(f).querySelector('.sbar strong').textContent } };
+  });
+
+  /* the Opening Day scene: drawn, counts the tables, ends in the right ending, and the quiz survives without it */
+  await run('scene', async () => {
+    localStorage.clear();
+    const b = await edition('/new', CFG.real), f = await load('/new', CFG.real, 320);
+    start(f);
+    const cv = await until(() => top(f).querySelector('.svc canvas'), 'the scene');
+    const box = () => cv.getBoundingClientRect(), painted = cv.getContext('2d').getImageData(cv.width >> 1, cv.height >> 1, 1, 1).data[3] > 0;
+    const small = { w: box().width, h: box().height };
+    const log = await answer(f, b.quiz, [true, false, true, true, true], 'click'); await score(f);
+    const stg = top(f).querySelector('.svc'), W = f.contentWindow;
+    const shots = {};
+    for (const [name, n, t] of [['5of5', 5, 5], ['4of5', 4, 5], ['3of5', 3, 5], ['2of5', 2, 5], ['0of5', 0, 5], ['7of7', 7, 7], ['mid', 3, 7]]) {
+      const host = D(f).createElement('div'); host.style.width = '320px'; D(f).body.append(host);
+      const s = W.Service.mount(host, { total: t, seats: Array(n).fill('#009b37') });
+      if (name !== 'mid') s.end(n); await sleep(250);
+      shots[name] = host.querySelector('canvas').toDataURL(); s.destroy(); host.remove();
+    }
+    return { painted, small, seated: stg.dataset.seated, end: stg.dataset.end, endH: box().height, label: cv.getAttribute('aria-label'), fit: Math.max(...log.map(l => l.optBottom)), shots,
+      tiers: [[5, 5], [4, 5], [3, 5], [2, 5], [1, 5], [0, 5], [7, 7], [6, 7], [5, 7], [4, 7], [1, 7], [0, 7]].map(([n, t]) => W.Service.tierOf(n, t)).join('') };
+  });
+  await run('fallback', async () => {
+    localStorage.clear();
+    const b = await edition('/new', CFG.real), f = await load('/new', CFG.real);
+    f.contentWindow.Service = { mount() { throw new Error('scene broke'); } };
+    start(f); await answer(f, b.quiz, b.quiz.map(() => true), 'click'); const sc = await score(f);
+    return { score: sc.textContent, scene: !!top(f).querySelector('.svc'), day: state().days[CFG.real] };
   });
 
   await run('layout', async () => {
